@@ -15,7 +15,6 @@ import org.koin.compose.viewmodel.koinViewModel
 fun LoginScreenRoot(
     viewModel: LoginViewModel = koinViewModel(),
     onRegisterClick: () -> Unit,
-    modifier: Modifier = Modifier,
 ) {
     val state = viewModel.state
     LoginScreen(
@@ -27,7 +26,6 @@ fun LoginScreenRoot(
             }
             viewModel.onAction(action)
         },
-        modifier = modifier
     )
 }
 
@@ -35,7 +33,6 @@ fun LoginScreenRoot(
 fun LoginScreen(
     state: LoginState,
     onAction: (LoginAction) -> Unit,
-    modifier: Modifier = Modifier,
 ) {
 
 
@@ -53,6 +50,12 @@ fun LoginScreen(
             onAction(LoginAction.OnLoginClick)
         }) {
             Text("Login")
+        }
+
+        Button(onClick = {
+            onAction(LoginAction.OnRegisterClick)
+        }) {
+            Text("Go to register")
         }
     }
 
