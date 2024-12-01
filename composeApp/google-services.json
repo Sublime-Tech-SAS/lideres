@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1048696109935",
+    "project_id": "lideres-d8625",
+    "storage_bucket": "lideres-d8625.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048696109935:android:1a45bc73f2a0e66c18869a",
+        "android_client_info": {
+          "package_name": "co.sublimetech.lideres"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByNmN9qDq4oP1SSpptsH-vMHyNYHE6oyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
