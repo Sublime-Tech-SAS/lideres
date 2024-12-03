@@ -1,6 +1,6 @@
 package co.sublimetech.lideres.di
 
-import androidx.sqlite.driver.bundled.BundledSQLiteDriver
+import co.sublimetech.lideres.app.MainViewModel
 import co.sublimetech.lideres.authentication.data.AuthRepositoryImpl
 import co.sublimetech.lideres.authentication.domain.AuthRepositoryInterface
 import co.sublimetech.lideres.authentication.presentation.login.LoginViewModel
@@ -18,7 +18,8 @@ val sharedModule = module {
     singleOf(::AuthRepositoryImpl).bind<AuthRepositoryInterface>()
 
 
-
+    viewModelOf(::MainViewModel)
     viewModelOf(::RegisterViewModel)
     viewModelOf(::LoginViewModel)
+
 }
