@@ -58,10 +58,9 @@ class AuthRepositoryImpl : AuthRepositoryInterface {
     ): Result<String, DataError> {
         return withContext(Dispatchers.IO) {
             try {
-                //  val loginIntent = auth.signInWithEmailAndPassword(userEmail, userPassword)
-                firestore.collection("prueba").document("11")
-                    .set(mapOf("nombre" to "si internet"))
-                Result.Success("7")
+                 val loginIntent = auth.signInWithEmailAndPassword(userEmail, userPassword)
+
+                Result.Success(loginIntent.user?.email.toString())
             } catch (e: Exception) {
                 Result.Error(e.message as DataError)
             }
