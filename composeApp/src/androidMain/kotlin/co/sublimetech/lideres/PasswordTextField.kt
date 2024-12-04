@@ -16,8 +16,8 @@ import androidx.compose.foundation.text.BasicSecureTextField
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.foundation.text.input.TextObfuscationMode
 import androidx.compose.foundation.text.input.rememberTextFieldState
-import androidx.compose.material.LocalTextStyle
-import androidx.compose.material.Text
+import androidx.compose.material3.LocalTextStyle
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

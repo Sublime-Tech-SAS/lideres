@@ -22,9 +22,9 @@ import androidx.compose.foundation.text.input.allCaps
 import androidx.compose.foundation.text.input.maxLength
 import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.foundation.text.input.then
-import androidx.compose.material.Icon
-import androidx.compose.material.LocalTextStyle
-import androidx.compose.material.Text
+import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalTextStyle
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -106,31 +106,30 @@ fun CustomTextField(
             cursorBrush = SolidColor(Color.White),
             inputTransformation = InputTransformation.maxLength(maxLength)
                 .then {
+                    val currentText = this.toString()
                     if (onlyDigits) {
-                        val currentText = this.toString()
-                        val filteredText = currentText.filter { it.isDigit() }
+                        val filteredText =
+                            currentText.filter { it.isDigit() }
                         if (filteredText != currentText) {
                             replace(0, length, filteredText)
                         }
-                    }
-                }
-                .then {
-                    if (onlyLetters) {
-                        val currentText = this.toString()
-                        val filteredText = currentText.filter { it.isDigit() }
+                    } else if (onlyLetters) {
+                        val filteredText =
+                            currentText.filter { it.isLetter() }
                         if (filteredText != currentText) {
                             replace(0, length, filteredText)
                         }
+                    } else if (dateFormat) {
+                        createDate(this)
                     }
-                }
-                .then {
-                   if(dateFormat){
-                       createDate(this)
-                   }
                 }
                 .then {
                     if (allCaps) {
-                        (InputTransformation.allCaps(Locale.current))
+                        val currentText = this.toString()
+                        val filteredText = currentText.uppercase()
+                        if (filteredText != currentText) {
+                            replace(0, length, filteredText)
+                        }
                     }
                 },
             modifier = Modifier
@@ -227,7 +226,6 @@ fun createDate(buffer: TextFieldBuffer) {
 }
 
 
-
 @Preview
 @Composable
 private fun TextFieldPreview() {
@@ -238,6 +236,7 @@ private fun TextFieldPreview() {
         hint = "example@test.com",
         title = "Email",
         error = null,
+        allCaps = true,
         additionalInfo = "Must be a valid email",
         modifier = Modifier
             .fillMaxWidth()

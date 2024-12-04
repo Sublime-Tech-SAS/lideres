@@ -14,6 +14,7 @@ androidx-test-junit = "1.2.1"
 compose-plugin = "1.7.0"
 firebase-sdk = "2.1.0"
 junit = "4.13.2"
+kmpauth-google = "2.3.0-beta01"
 kotlin = "2.0.21"
 kotlinx-coroutines = "1.9.0"
 kotlinxDatetime = "0.6.1"
@@ -27,12 +28,14 @@ sqlite = "2.5.0-alpha11"
 room = "2.7.0-alpha11"
 google-services ="4.4.2"
 connectivity = "1.1.3"
-coreI18n = "1.0.0-alpha01"
 
 
 [libraries]
 firebase-auth = { module = "dev.gitlive:firebase-auth", version.ref = "firebase-sdk" }
 firebase-firestore ={module = "dev.gitlive:firebase-firestore", version.ref = "firebase-sdk"}
+kmpauth-google = { module = "io.github.mirzemehdi:kmpauth-google", version.ref = "kmpauth-google" }
+kmpauth-uihelper = { module = "io.github.mirzemehdi:kmpauth-uihelper", version.ref = "kmpauth-google"}
+
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -78,7 +81,6 @@ sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sql
 connectivity-core = { module = "dev.jordond.connectivity:connectivity-core", version.ref = "connectivity" }
 connectivity-device = { module = "dev.jordond.connectivity:connectivity-device", version.ref = "connectivity" }
 connectivity-compose-device = { module = "dev.jordond.connectivity:connectivity-compose-device", version.ref = "connectivity" }
-androidx-core-i18n = { group = "androidx.core", name = "core-i18n", version.ref = "coreI18n" }
 
 
 

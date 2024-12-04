@@ -48,12 +48,13 @@ kotlin {
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+
 
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
@@ -70,6 +71,9 @@ kotlin {
 
             implementation(libs.firebase.auth)
             implementation(libs.firebase.firestore)
+            implementation(libs.kmpauth.google)
+            implementation(libs.kmpauth.uihelper)
+
 
             implementation(libs.connectivity.core)
             implementation(libs.connectivity.device)

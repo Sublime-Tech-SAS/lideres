@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>GIDClientID</key>
+	<string>1048696109935-1n4t7nu3rahmp5nggjf6okdbkac20ru2.apps.googleusercontent.com</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -38,6 +40,17 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>GIDServerClientID</key>
+	<string>1048696109935-vqkarjlqbh7ujllashtkudfkp662bva3.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1048696109935-1n4t7nu3rahmp5nggjf6okdbkac20ru2</string>
+			</array>
+		</dict>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

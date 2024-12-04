@@ -1,9 +1,11 @@
 package co.sublimetech.lideres.authentication.data
 
+import co.sublimetech.lideres.authentication.data.dto.User
 import co.sublimetech.lideres.authentication.domain.AuthRepositoryInterface
 import co.sublimetech.lideres.core.domain.DataError
 import co.sublimetech.lideres.core.domain.Result
 import dev.gitlive.firebase.Firebase
+import dev.gitlive.firebase.auth.GoogleAuthProvider
 import dev.gitlive.firebase.auth.auth
 import dev.gitlive.firebase.firestore.firestore
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +24,8 @@ class AuthRepositoryImpl : AuthRepositoryInterface {
         return withContext(Dispatchers.IO) {
             try {
                 val currentTimestamp = Clock.System.now()
-                val localDateTime = currentTimestamp.toLocalDateTime(TimeZone.currentSystemDefault())
+                val localDateTime =
+                    currentTimestamp.toLocalDateTime(TimeZone.currentSystemDefault())
                 val date = localDateTime.date
                 val time = localDateTime.time
 
@@ -38,32 +41,52 @@ class AuthRepositoryImpl : AuthRepositoryInterface {
 
     }
 
-    override suspend fun registerUser(
-        userEmail: String,
-        userPassword: String,
-    ): Result<Boolean, DataError.Network> {
+    override suspend fun loginUser(
+        tokenId: String,
+        accessToken: String,
+    ): Result<Boolean, DataError> {
         return withContext(Dispatchers.IO) {
             try {
-                val registerIntent = auth.createUserWithEmailAndPassword(userEmail, userPassword)
-                Result.Success(registerIntent.user?.email != null)
+                val credential = GoogleAuthProvider.credential(tokenId, accessToken)
+                val authResult = auth.signInWithCredential(credential)
+
+                if (authResult.user?.uid?.let { validateActiveUser(it) } is Result.Success) {
+                    Result.Success(true)
+                } else {
+                    Result.Error(DataError.Network.UNAUTHORIZED)
+                }
+
             } catch (e: Exception) {
+                println(e)
                 Result.Error(DataError.Network.UNKNOWN)
             }
         }
     }
 
-    override suspend fun loginUser(
-        userEmail: String,
-        userPassword: String,
-    ): Result<String, DataError> {
+    override suspend fun validateActiveUser(userId: String): Result<Boolean, DataError> {
         return withContext(Dispatchers.IO) {
             try {
-                 val loginIntent = auth.signInWithEmailAndPassword(userEmail, userPassword)
+                val docRef = firestore.collection("usuarios").document(userId)
+                val snapshot = docRef.get().data<User>()
+                val subscribed = snapshot.active
 
-                Result.Success(loginIntent.user?.email.toString())
+                if (subscribed) {
+                    println("Subscribed: $subscribed")
+                    Result.Success(subscribed)
+
+                } else {
+                    println("not subscribed")
+                    Result.Error(DataError.Network.UNAUTHORIZED)
+                }
             } catch (e: Exception) {
-                Result.Error(e.message as DataError)
+                println(e)
+                Result.Error(DataError.Network.UNKNOWN)
             }
         }
+    }
+
+
+    override suspend fun logout() {
+        auth.signOut()
     }
 }
