@@ -81,6 +81,8 @@ kotlin {
 
             implementation(libs.kotlinx.datetime)
 
+            implementation(libs.sain)
+
 
         }
         nativeMain.dependencies {
