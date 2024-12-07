@@ -1,4 +1,4 @@
-package co.sublimetech.lideres.authentication.data.dto
+package co.sublimetech.lideres.authentication.data.network.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

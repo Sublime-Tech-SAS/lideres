@@ -1,0 +1,43 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "a85022c4e813a9d53a0f9f3106575875",
+    "entities": [
+      {
+        "tableName": "FormEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`formId` TEXT NOT NULL, `enrollerUid` TEXT NOT NULL, `applicantName` TEXT NOT NULL, PRIMARY KEY(`formId`))",
+        "fields": [
+          {
+            "fieldPath": "formId",
+            "columnName": "formId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enrollerUid",
+            "columnName": "enrollerUid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "applicantName",
+            "columnName": "applicantName",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "formId"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a85022c4e813a9d53a0f9f3106575875')"
+    ]
+  }
+}

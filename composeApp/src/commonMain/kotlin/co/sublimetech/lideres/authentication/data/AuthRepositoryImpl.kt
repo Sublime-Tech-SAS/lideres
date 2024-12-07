@@ -1,6 +1,6 @@
 package co.sublimetech.lideres.authentication.data
 
-import co.sublimetech.lideres.authentication.data.dto.User
+import co.sublimetech.lideres.authentication.data.network.dto.User
 import co.sublimetech.lideres.authentication.domain.AuthRepositoryInterface
 import co.sublimetech.lideres.core.domain.DataError
 import co.sublimetech.lideres.core.domain.Result

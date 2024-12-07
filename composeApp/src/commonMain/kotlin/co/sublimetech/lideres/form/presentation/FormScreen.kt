@@ -17,6 +17,7 @@ import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -28,6 +29,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import co.sublimetech.lideres.core.design_system.DropdownComponent
 import io.github.joelkanyi.sain.Sain
 import io.github.joelkanyi.sain.SignatureAction
@@ -40,7 +42,10 @@ fun FormScreenRoot(
     viewModel: FormViewModel = koinViewModel(),
     onStatisticsClick: () -> Unit,
 ) {
-    val state = viewModel.state
+    val state by viewModel.state.collectAsStateWithLifecycle()
+
+
+
     FormScreen(
         state = state,
         onAction = { action ->
@@ -59,6 +64,9 @@ fun FormScreen(
     state: FormState,
     onAction: (FormAction) -> Unit,
 ) {
+    LaunchedEffect(Unit) { onAction(FormAction.OnGetFormsClick) }
+
+
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         BasicTextField(
             state = TextFieldState("Prueba"),
@@ -117,6 +125,27 @@ fun FormScreen(
                     Text("Complete")
                 }
             }
+        }
+
+        Button(onClick = {
+            onAction(FormAction.OnSaveFormClick)
+        }) {
+
+
+            Text("save form ")
+        }
+        Button(onClick = {
+            onAction(FormAction.OnGetFormClick)
+        }) {
+            Text("get form ")
+        }
+
+        Text(state.fetchedFormId)
+
+        Button(onClick = {
+            onAction(FormAction.OnGetFormsClick)
+        }) {
+            Text(state.fetchedForms.toString())
         }
     }
 }
