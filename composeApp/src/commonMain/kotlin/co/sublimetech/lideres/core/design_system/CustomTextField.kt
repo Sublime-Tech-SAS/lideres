@@ -1,4 +1,4 @@
-package co.sublimetech.lideres
+package co.sublimetech.lideres.core.design_system
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -18,7 +18,6 @@ import androidx.compose.foundation.text.input.InputTransformation
 import androidx.compose.foundation.text.input.TextFieldBuffer
 import androidx.compose.foundation.text.input.TextFieldLineLimits
 import androidx.compose.foundation.text.input.TextFieldState
-import androidx.compose.foundation.text.input.allCaps
 import androidx.compose.foundation.text.input.maxLength
 import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.foundation.text.input.then
@@ -38,17 +37,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.intl.Locale
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
 fun CustomTextField(
     state: TextFieldState,
-    startIcon: ImageVector?,
-    endIcon: ImageVector?,
-    hint: String,
+    startIcon: ImageVector? =null,
+    endIcon: ImageVector?=null,
+    hint: String?=null,
     title: String?,
     error: String? = null,
     keyboardType: KeyboardType = KeyboardType.Text,
@@ -76,7 +73,7 @@ fun CustomTextField(
             if (title != null) {
                 Text(
                     text = title,
-                    color = Color.LightGray
+                    color = Color.DarkGray
                 )
             }
             if (error != null) {
@@ -97,13 +94,13 @@ fun CustomTextField(
         BasicTextField(
             state = state,
             textStyle = LocalTextStyle.current.copy(
-                color = Color.White
+                color = Color.Black
             ),
             keyboardOptions = KeyboardOptions(
                 keyboardType = keyboardType
             ),
             lineLimits = TextFieldLineLimits.SingleLine,
-            cursorBrush = SolidColor(Color.White),
+            cursorBrush = SolidColor(Color.Gray),
             inputTransformation = InputTransformation.maxLength(maxLength)
                 .then {
                     val currentText = this.toString()
@@ -136,17 +133,17 @@ fun CustomTextField(
                 .clip(RoundedCornerShape(16.dp))
                 .background(
                     if (isFocused) {
-                        Color.Green.copy(
+                        Color.Blue.copy(
                             alpha = 0.05f
                         )
                     } else {
-                        Color.Gray
+                        Color.LightGray
                     }
                 )
                 .border(
                     width = 1.dp,
                     color = if (isFocused) {
-                        Color.Green
+                        Color.Blue
                     } else {
                         Color.Transparent
                     },
@@ -176,7 +173,7 @@ fun CustomTextField(
                     ) {
                         if (state.text.isEmpty() && !isFocused) {
                             Text(
-                                text = hint,
+                                text = hint?: "",
                                 color = Color.LightGray.copy(
                                     alpha = 0.4f
                                 ),
@@ -226,7 +223,7 @@ fun createDate(buffer: TextFieldBuffer) {
 }
 
 
-@Preview
+
 @Composable
 private fun TextFieldPreview() {
     CustomTextField(

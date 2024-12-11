@@ -51,6 +51,7 @@ fun LoginScreen(
 
     if (state.isLoggingIn) {
         //show loader
+        print("logging in")
     } else if (state.canLogin) {
         onAction(LoginAction.OnLoginSuccess)
     } else {

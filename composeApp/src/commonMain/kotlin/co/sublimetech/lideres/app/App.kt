@@ -41,16 +41,17 @@ fun App() {
         }
 
     }
-    if (state.isValidating) {
-        //show splash screen / loader
+
+    if (state.isValidating && currentUser != null) {
+       println("Validating user")
     } else
-        MaterialTheme {
-            val navController = rememberNavController()
-            NavigationRoot(
-                navController = navController,
-                isValidated = state.isUserValidated
-            )
-        }
+    MaterialTheme {
+        val navController = rememberNavController()
+        NavigationRoot(
+            navController = navController,
+            isValidated = state.isUserValidated
+        )
+    }
 }
 
 

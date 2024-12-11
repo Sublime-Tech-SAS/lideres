@@ -19,7 +19,7 @@
     <string name="landline">Teléfono Fijo</string>
     <string name="country">País</string>
     <string name="department">Departamento</string>
-    <string name="city">Ciudad / Municipio</string>
+    <string name="city">Ciudad/Municipio</string>
     <string name="email">Correo electrónico</string>
     <string name="number">Número</string>
     <string name="another">Otra</string>
@@ -27,16 +27,16 @@
 
 
     <!--BLOCK 1 FORM DETAILS-->
-    <string name="form_details">Datos del radicado</string>
+    <string name="form_details">Datos del radicado:</string>
     <string name="unp_use_disclaimer">(Espacio para uso exclusivo de la UNP)</string>
     <string name="form_number">Número de radicado</string>
-    <string name="form_date">Fecha de radicado</string>
-    <string name="office">Sede / Oficina :</string>
+    <string name="form_date">Fecha de radicado (Día/Mes/Año)</string>
+    <string name="office">Sede/Oficina</string>
 
     <!--BLOCK 2 FORM DATE-->
     <string name="form_date_title">DILIGENCIAMIENTO DEL FORMULARIO</string>
-    <string name="form_date_subtitle">1. Fecha y lugar de Diligenciamiento del Formulario:</string>
-    <string name="date">Fecha</string>
+    <string name="form_date_subtitle">1. Fecha y lugar de Diligenciamiento del Formulario</string>
+    <string name="date">Fecha (Día/Mes/Año):</string>
 
 
     <!-- BLOCK 3 APPLICANT PERSONAL DATA -->
@@ -49,10 +49,10 @@
     <string name="id_type_and_number">Tipo y Número del documento de identidad</string>
     <string name="national_id">Cédula de Ciudadanía</string>
     <string name="foreign_id">Cédula de Extranjería</string>
-    <string name="NUIP">NUIP</string>
-    <string name="id_expedition_date">Fecha de Expedición del DI</string>
-    <string name="place_of_birth">Lugar de Nacimiento:</string>
-    <string name="date_of_birth">Fecha de Nacimiento</string>
+    <string name="nuip">NUIP</string>
+    <string name="id_expedition_date">Fecha de Expedición del DI (Día/Mes/Año)</string>
+    <string name="place_of_birth">Lugar de Nacimiento</string>
+    <string name="date_of_birth">Fecha de Nacimiento (Día/Mes/Año):</string>
     <string name="home_location">Lugar de Domicilio</string>
     <string name="home_zone">Zona de Domicilio</string>
     <string name="home_address">Dirección del Domicilio</string>
@@ -84,22 +84,22 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="men">Hombre</string>
     <string name="women">Mujer</string>
     <string name="intersexual">Intersexual</string>
-    <string name="femenine">Femenino</string>
-    <string name="masculine">Masculino</string>
+    <string name="female">Femenino</string>
+    <string name="male">Masculino</string>
     <string name="transgender">Transgénero</string>
     <string name="sexual_orientation">Orientación Sexual:</string>
     <string name="heterosexual">Heterosexual</string>
     <string name="homosexual">Homosexual</string>
     <string name="bisexual">Bisexual</string>
     <string name="age">Etario</string>
-    <string name="boy_and_girl">Niña y Niño</string>
-    <string name="teenager">Adolescente</string>
-    <string name="young_adult">Joven</string>
-    <string name="adult">Adulto</string>
-    <string name="elderly">Adulto Mayor</string>
+    <string name="boy_and_girl">Niña y Niño (De 0 a 12 Años)</string>
+    <string name="teenager">Adolescente (De 13 a 17 Años)</string>
+    <string name="young_adult">Joven (De 18 a 27 Años)</string>
+    <string name="adult">Adulto (De 28 a 59 Años)</string>
+    <string name="elderly">Adulto Mayor (Desde 60 años)</string>
     <string name="different_identifying_trait">Otro Factor Diferencial:</string>
-    <string name="mother">Madre</string>
-    <string name="father">Padre</string>
+    <string name="mother">Madre Cabeza de Familia</string>
+    <string name="father">Padre Cabeza de Familia</string>
     <string name="caretaker">Cuidador</string>
     <string name="people_under_care">Con personas a Cargo</string>
     <string name="how_many">¿Cuántas?</string>
@@ -108,7 +108,8 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="18_27_range">(De 18 a 27 Años)</string>
     <string name="28_59_range">(De 28 a 59 Años)</string>
     <string name="60_plus_range">(Desde 60 años)</string>
-    <string name="disability_type_title">Si la respuesta fue afirmativa, seleccione el tipo de discapacidad que presenta</string>
+    <string name="disability_type_title">¿Posee algún tipo de discapacidad?</string>
+    <string name="disability_type_subtitle">Si la respuesta fue afirmativa, seleccione el tipo de discapacidad que presenta</string>
     <string name="physical">Física</string>
     <string name="hearing">Auditiva</string>
     <string name="visual">Visual</string>
@@ -123,7 +124,7 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="negro">Negro</string>
     <string name="african_american">Afrocolombiano</string>
     <string name="indigenous_to_san_andres">Raizal</string>
-    <string name="indigenous_to_santa_marta">Palenquero</string>
+    <string name="indigenous_to_bolivar">Palenquero</string>
     <string name="gipsy">Rrom o Gitano</string>
     <string name="indigenous_group_title">En caso de haber marcado el enfoque diferencial Étnico - Indígena, diligencie la siguiente información</string>
     <string name="indigenous_group">Etnia o Grupo Indígena</string>
@@ -131,13 +132,14 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="reservation_community">Comunidad dentro del Resguardo</string>
     <string name="parcial">Parcialidad</string>
     <string name="no_registry_community">Comunidad sin Registro ante la Dirección de Asuntos Indígenas del Ministerio del Interior</string>
-    <string name="african_american_community_name">En caso de haber marcado el enfoque diferencial Étnico - Negro o Afrocolombiano, diligencie el Nombre del Consejo comunitario a el que pertenece o es miembro:</string>
-    <string name="organization_membership">¿Pertenece a algún tipo de organización?</string>
+    <string name="african_american_community_name">En caso de haber marcado el enfoque diferencial Étnico - Negro o Afrocolombiano, diligencie el Nombre del Consejo comunitario a el que pertenece o es miembro</string>
+    <string name="organization_membership_title">¿Pertenece a algún tipo de organización?</string>
     <string name="organization_membership_subtitle">Si la respuesta fue afirmativa, seleccione la organización a la que pertenece</string>
     <string name="social">Social</string>
     <string name="guild">Gremial</string>
     <string name="civil">Cívica</string>
     <string name="communal">Comunal</string>
+    <string name="farmer">Campesina</string>
     <string name="victims">Víctimas</string>
     <string name="human_rights_watch">Defensora de Derechos Humanos</string>
     <string name="human_rights_watch_orgnization_name">En caso de pertenecer a una organización, indique el nombre de la organización</string>
@@ -146,7 +148,7 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="provisional_measures_beneficiary">¿Es beneficiario de alguna medida cautelar o provisional?</string>
     <string name="provisional_measures_type">Si la respuesta fue afirmativa, seleccione el tipo de medida</string>
     <string name="measure_by_inter_american_commission">Medida Cautelar otorgada por la Comisión Interamericana de Derechos Humanos</string>
-    <string name="measure_by_inter_american_council">Medida Provisional otorgada por la Corte Interamericana de Derechos Humanos</string>
+    <string name="measure_by_inter_american_court">Medida Provisional otorgada por la Corte Interamericana de Derechos Humanos</string>
     <string name="measure_by_national_judge">Medida Cautelar otorgadapor un juez nacional</string>
 
 
@@ -162,8 +164,8 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="attack">Atentado</string>
     <string name="kidnapping">Secuestro</string>
     <string name="family_member_homicide">Homicidio de Familiares</string>
-    <string name="extorsion">Extorsión</string>
-    <string name="extorted">Reclutamiento ilegal</string>
+    <string name="extortion">Extorsión</string>
+    <string name="recruitment">Reclutamiento ilegal</string>
     <string name="own_or_family">(propio o de familiares)</string>
     <string name="threat_means">Medio por el cual se presentó la Situación de Riesgo o Amenaza</string>
     <string name="by_phone">Telefónica</string>
