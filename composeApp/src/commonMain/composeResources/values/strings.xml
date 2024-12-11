@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<resources>
+
+    <!--GENERAL-->
+    <string name="form_title">FORMULARIO DE SOLICITUD DE INSCRIPCIÓN PARA EL PROGRAMA DE PREVENCIÒN Y PROTECCIÒN QUE COORDINA LA UNIDAD NACIONAL DE PROTECCIÓN - RUTA INDIVIDUAL</string>
+    <string name="day">DÍA</string>
+    <string name="month">MES</string>
+    <string name="year">AÑO</string>
+    <string name="yes">SI</string>
+    <string name="no">NO</string>
+    <string name="address">Dirección</string>
+    <string name="address_details">Indicaciones del Lugar de Domicilio</string>
+    <string name="district">Corregimiento</string>
+    <string name="settlement">Vereda</string>
+    <string name="neighborhood">Barrio</string>
+    <string name="cellphone_1">Número Celular 1</string>
+    <string name="cellphone_2">Número Celular 2</string>
+    <string name="landline">Teléfono Fijo</string>
+    <string name="country">País</string>
+    <string name="department">Departamento</string>
+    <string name="city">Ciudad / Municipio</string>
+    <string name="email">Correo electrónico</string>
+    <string name="number">Número</string>
+    <string name="another">Otra</string>
+    <string name="which">Cuál?</string>
+
+
+    <!--BLOCK 1 FORM DETAILS-->
+    <string name="form_details">Datos del radicado</string>
+    <string name="unp_use_disclaimer">(Espacio para uso exclusivo de la UNP)</string>
+    <string name="form_number">Número de radicado</string>
+    <string name="form_date">Fecha de radicado</string>
+    <string name="office">Sede / Oficina :</string>
+
+    <!--BLOCK 2 FORM DATE-->
+    <string name="form_date_title">DILIGENCIAMIENTO DEL FORMULARIO</string>
+    <string name="form_date_subtitle">1. Fecha y lugar de Diligenciamiento del Formulario:</string>
+    <string name="date">Fecha</string>
+
+
+    <!-- BLOCK 3 APPLICANT PERSONAL DATA -->
+    <string name="enroller_personal_data_title">DATOS PERSONALES DEL SOLICITANTE</string>
+    <string name="first_name">Primer Nombre</string>
+    <string name="second_name">Segundo Nombre y Otros</string>
+    <string name="first_last_name">Primer Apellido</string>
+    <string name="second_last_name">Segundo Apellido</string>
+    <string name="identifying_name">Nombre Identitario</string>
+    <string name="id_type_and_number">Tipo y Número del documento de identidad</string>
+    <string name="national_id">Cédula de Ciudadanía</string>
+    <string name="foreign_id">Cédula de Extranjería</string>
+    <string name="NUIP">NUIP</string>
+    <string name="id_expedition_date">Fecha de Expedición del DI</string>
+    <string name="place_of_birth">Lugar de Nacimiento:</string>
+    <string name="date_of_birth">Fecha de Nacimiento</string>
+    <string name="home_location">Lugar de Domicilio</string>
+    <string name="home_zone">Zona de Domicilio</string>
+    <string name="home_address">Dirección del Domicilio</string>
+    <string name="rural">Rural</string>
+    <string name="urban">Urbana</string>
+    <string name="contact_number">Contacto Telefónico:</string>
+    <string name="notifications_request">¿Autoriza el envío de comunicaciones y notificaciones a través del correo electrónico inscrito?</string>
+    <string name="notifications_disclaimer">*En caso de respuesta afirmativa, la UNP informa que durante el desarrollo de la actuación adelantada por la entidad podrá solicitar revocar esta autorización
+y solicitar por escrito que las notificaciones o comunicaciones sucesivas se realicen a través de otros medios previstos en la Ley 1437 de 2011 - CPACA
+**La actualización de los datos personales suministrados anteriormente durante el proceso es responsabilidad del solicitante</string>
+    <string name="notification_address">Dirección de Notificación</string>
+
+
+
+    <!-- BLOCK 4 THIRD PARTY REQUEST DATA -->
+    <string name="third_party_request_title">DATOS DE UN TERCERO COMO CONTACTO DEL SOLICITANTE</string>
+    <string name="third_party_request_disclaimer">*Si un familiar u otra persona lo ha autorizado para suministrar sus datos de contacto, que permita a la UNP establecer comunicación
+con usted. Favor diligenciar los siguientes campos*</string>
+    <string name="third_party_names_and_lastnames">Nombres y Apellidos del Tercero</string>
+    <string name="third_party_home_location">Lugar de Domicilio del Tercero</string>
+    <string name="third_party_home_address">Dirección del domicilio del Tercero</string>
+    <string name="third_party_contact_number">Contacto telefónico del Tercero</string>
+    <string name="third_party_notifications_request">¿Autoriza el envío de comunicaciones y notificaciones a través del correo electrónico del tercero?</string>
+
+
+    <!-- BLOCK 5 APPLICANT PERSONAL DATA2 -->
+    <string name="sex">Sexo</string>
+    <string name="gender">Género:</string>
+    <string name="men">Hombre</string>
+    <string name="women">Mujer</string>
+    <string name="intersexual">Intersexual</string>
+    <string name="femenine">Femenino</string>
+    <string name="masculine">Masculino</string>
+    <string name="transgender">Transgénero</string>
+    <string name="sexual_orientation">Orientación Sexual:</string>
+    <string name="heterosexual">Heterosexual</string>
+    <string name="homosexual">Homosexual</string>
+    <string name="bisexual">Bisexual</string>
+    <string name="age">Etario</string>
+    <string name="boy_and_girl">Niña y Niño</string>
+    <string name="teenager">Adolescente</string>
+    <string name="young_adult">Joven</string>
+    <string name="adult">Adulto</string>
+    <string name="elderly">Adulto Mayor</string>
+    <string name="different_identifying_trait">Otro Factor Diferencial:</string>
+    <string name="mother">Madre</string>
+    <string name="father">Padre</string>
+    <string name="caretaker">Cuidador</string>
+    <string name="people_under_care">Con personas a Cargo</string>
+    <string name="how_many">¿Cuántas?</string>
+    <string name="0_12_range">(De 0 a 12 Años)</string>
+    <string name="13_17_range">(De 13 a 17 Años)</string>
+    <string name="18_27_range">(De 18 a 27 Años)</string>
+    <string name="28_59_range">(De 28 a 59 Años)</string>
+    <string name="60_plus_range">(Desde 60 años)</string>
+    <string name="disability_type_title">Si la respuesta fue afirmativa, seleccione el tipo de discapacidad que presenta</string>
+    <string name="physical">Física</string>
+    <string name="hearing">Auditiva</string>
+    <string name="visual">Visual</string>
+    <string name="blindness">Sordo Ceguera</string>
+    <string name="mental">Psicosocial (mental)</string>
+    <string name="intellectual">Intelectual</string>
+    <string name="little_people">Talla Baja</string>
+    <string name="multiple">Múltiple</string>
+    <string name="ethnic_group_title">¿Se auto reconoce como miembro de algún grupo Étnico?</string>
+    <string name="ethnic_group_subtitle">Si la respuesta fue afirmativa, seleccione el grupo étnico al que pertenece</string>
+    <string name="indigenous">Indígena</string>
+    <string name="negro">Negro</string>
+    <string name="african_american">Afrocolombiano</string>
+    <string name="indigenous_to_san_andres">Raizal</string>
+    <string name="indigenous_to_santa_marta">Palenquero</string>
+    <string name="gipsy">Rrom o Gitano</string>
+    <string name="indigenous_group_title">En caso de haber marcado el enfoque diferencial Étnico - Indígena, diligencie la siguiente información</string>
+    <string name="indigenous_group">Etnia o Grupo Indígena</string>
+    <string name="indigenous_reservation">Resguardo</string>
+    <string name="reservation_community">Comunidad dentro del Resguardo</string>
+    <string name="parcial">Parcialidad</string>
+    <string name="no_registry_community">Comunidad sin Registro ante la Dirección de Asuntos Indígenas del Ministerio del Interior</string>
+    <string name="african_american_community_name">En caso de haber marcado el enfoque diferencial Étnico - Negro o Afrocolombiano, diligencie el Nombre del Consejo comunitario a el que pertenece o es miembro:</string>
+    <string name="organization_membership">¿Pertenece a algún tipo de organización?</string>
+    <string name="organization_membership_subtitle">Si la respuesta fue afirmativa, seleccione la organización a la que pertenece</string>
+    <string name="social">Social</string>
+    <string name="guild">Gremial</string>
+    <string name="civil">Cívica</string>
+    <string name="communal">Comunal</string>
+    <string name="victims">Víctimas</string>
+    <string name="human_rights_watch">Defensora de Derechos Humanos</string>
+    <string name="human_rights_watch_orgnization_name">En caso de pertenecer a una organización, indique el nombre de la organización</string>
+    <string name="human_rights_watch_legal_representant">¿La organización cuenta con Personería Jurídica?</string>
+    <string name="human_rights_watch_legal_representant_name">Si la respuesta fue afirmativa, escriba el número de identificación de la Personería Jurídica</string>
+    <string name="provisional_measures_beneficiary">¿Es beneficiario de alguna medida cautelar o provisional?</string>
+    <string name="provisional_measures_type">Si la respuesta fue afirmativa, seleccione el tipo de medida</string>
+    <string name="measure_by_inter_american_commission">Medida Cautelar otorgada por la Comisión Interamericana de Derechos Humanos</string>
+    <string name="measure_by_inter_american_council">Medida Provisional otorgada por la Corte Interamericana de Derechos Humanos</string>
+    <string name="measure_by_national_judge">Medida Cautelar otorgadapor un juez nacional</string>
+
+
+    <!-- BLOCK 6 RISK OR THREAT DATA -->
+    <string name="risk_or_threat_title">RELATO DE LOS HECHOS GENERADORES DEL RIESGO O AMENAZA</string>
+    <string name="risk_or_threat_subtitle">Describa de forma breve y detallada los hechos que generan la posible situación de riesgo o amenaza, de manera cronológica empezando del hecho más reciente al más antiguo, identificando quién es el posible generador del riesgo o amenaza; cómo, dónde y cuándo se generó el riesgo o amenaza; posible causa que genera el riesgo o la amenaza. Asimismo especifique las condiciones de vulnerabilidad que considera pueden incrementar el nivel de exposición a la amenaza.</string>
+
+
+    <!-- BLOCK 7 RISK SITUATION DATA -->
+    <string name="risk_situation_title">IDENTIFICACIÓN DE LA SITUACIÓN DE RIESGO</string>
+    <string name="risk_situation_subtitle">Indique la situación de riesgo o amenaza presentada</string>
+    <string name="threat">Amenaza</string>
+    <string name="attack">Atentado</string>
+    <string name="kidnapping">Secuestro</string>
+    <string name="family_member_homicide">Homicidio de Familiares</string>
+    <string name="extorsion">Extorsión</string>
+    <string name="extorted">Reclutamiento ilegal</string>
+    <string name="own_or_family">(propio o de familiares)</string>
+    <string name="threat_means">Medio por el cual se presentó la Situación de Riesgo o Amenaza</string>
+    <string name="by_phone">Telefónica</string>
+    <string name="verbal">Verbal</string>
+    <string name="written">Escrita</string>
+    <string name="through_third_party">A través de terceros</string>
+    <string name="symbolic">Simbólica</string>
+    <string name="social_media">Redes Sociales</string>
+
+
+    <!-- BLOCK 8 POPULATION OBJECT OF PROTECTION -->
+    <string name="population_object_of_protection_title">IDENTIFICACIÓN DE LA POBLACIÓN OBJETO DE PROTECCIÓN</string>
+    Poblaciones del programa de prevención y protección de los derechos a la vida, la libertad, la integridad y la seguridad de personas
+    <string name="population_object_of_protection_subtitle">Identifique la población a la cual pertenece el solicitante y QUE ESTÉ relacionada con la posible situación de riesgo o amenaza</string>
+    <string name="population_of_protection_and_prevention_program">Poblaciones del programa de prevención y protección de los derechos a la vida, la libertad, la integridad y la seguridad de personas</string>
+    <string name="protection_and_prevention_program_group_1">Dirigentes o activistas de grupos políticos; y directivos y miembros de organizaciones políticas, declaradas en oposición, de acuerdo con lo establecido en el artículo 30 de la Ley 1909 de 2018 o la norma que la modifique, adicione o sustituya</string>
+    <string name="protection_and_prevention_program_group_2">Dirigentes, representantes o activistas de organizaciones defensoras de derechos humanos, de víctimas, sociales, cívicas, comunales o de campesinos.</string>
+    <string name="protection_and_prevention_program_group_3">Dirigentes o activistas sindicales.</string>
+    <string name="protection_and_prevention_program_group_4">Dirigentes, representantes o activistas de organizaciones gremiales.</string>
+    <string name="protection_and_prevention_program_group_5">Dirigentes, Representantes o miembros de grupos étnicos.</string>
+    <string name="protection_and_prevention_program_group_6">Miembros de la Misión Médica</string>
+    <string name="protection_and_prevention_program_group_7">Testigos de casos de violación a los derechos humanos y de infracción al Derecho Internacional Humanitario.</string>
+    <string name="protection_and_prevention_program_group_8">Periodistas y comunicadores sociales.</string>
+    <string name="protection_and_prevention_program_group_9">Víctimas de violaciones a los Derechos Humanos e infracciones al Derecho Internacional Humanitario, incluyendo dirigentes, lideres, representantes de organizaciones de población desplazada o de reclamantes de tierras en situación de riesgo extraordinario o extremo.</string>
+    <string name="protection_and_prevention_program_group_10">Servidores públicos que tengan o hayan tenido bajo su responsabilidad el diseño, coordinación o ejecución de la política de derechos humanos y paz del Gobierno Nacional.</string>
+    <string name="protection_and_prevention_program_group_11">Ex servidores públicos que hayan tenido bajo su responsabilidad el diseño, coordinación o ejecución de la Política de Derechos Humanos o de Paz del Gobierno Nacional y Exservidores Públicos que hayan ocupado alguno de los cargos públicos enunciados en el artículo 2.4.1.2.7 del Decreto 1066 de 2015.</string>
+    <string name="protection_and_prevention_program_group_12">Dirigentes del Movimiento 19 de Abril (M-19), la Corriente de Renovación Socialista, (CRS), el Ejército Popular de Liberación, (EPL), el Partido Revolucionario de los Trabajadores, (PRT), el Movimiento Armado Quintín Lame, (MAQL), el Frente Francisco Garnica de la Coordinadora Guerrillera, el Movimiento Independiente Revolucionario Comandos Armados, MIR, COAR y las Milicias Populares del Pueblo y para el Pueblo, Milicias Independientes del Valle de Aburrá y Milicias Metropolitanas de la ciudad de Medellín, que suscribieron acuerdos de paz con el Gobierno Nacional en los años 1994 y 1998 y se reincorporaron a la vida civil.</string>
+    <string name="protection_and_prevention_program_group_13">Apoderados o profesionales forenses que participen en procesos judiciales o disciplinarios por violaciones de derechos humanos o infracciones al derecho internacional humanitario.</string>
+    <string name="protection_and_prevention_program_group_14">Docentes de acuerdo con la definición estipulada en la Resolución 1240 de 2010, o la normatividad que la modifique, adicione o sustituya, sin perjuicio de las responsabilidades de protección del Ministerio de Educación, estipuladas en la misma.</string>
+    <string name="protection_and_prevention_program_group_15">Servidores públicos, con excepción de aquellos mencionados en el numeral 10 y los funcionarios de la Procuraduría General de la Nación y la Fiscalía General de la Nación quienes tienen su propio marco normativo para su protección.</string>
+    <string name="protection_and_prevention_program_group_16">Magistrados de las Salas de Justicia (Sala de Reconocimiento de Verdad, de Responsabilidad y de Determinación de los Hechos y Conductas; Sala de Definición de las Situaciones Jurídicas, Sala de Amnistía o Indulto), Fiscales de la Unidad de Investigación y Acusación de la JEP y el Secretario Ejecutivo de la JEP.</string>
+    <string name="protection_and_prevention_program_group_17">Desmovilizados en proceso de Reintegración a cargo de la Agencia para la Reincorporación y la Normalización - ARN. (Parágrafo 6 Art 2.4.1.2.6 Dec. 1066/2015)</string>
+
+
+
+</resources>
