@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.HorizontalDivider
@@ -31,6 +30,82 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import co.sublimetech.lideres.core.design_system.CustomText
 import co.sublimetech.lideres.core.design_system.CustomTextField
 import co.sublimetech.lideres.core.design_system.DropdownComponent
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_CITY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_COUNTRY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_DEPARTMENT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_DETAILS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_DISTRICT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_NEIGHBORHOOD
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_SETTLEMENT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_ZONE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AFRICAN_AMERICAN_COMMUNITY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AGE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_CITY_OF_BIRTH
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_COUNTRY_OF_BIRTH
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DATE_OF_BIRTH
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DEPARTMENT_OF_BIRTH
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_STATUS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_EMAIL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_STATUS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FIRST_LAST_NAME
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FIRST_NAME
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_GENDER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_NAME
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_TRAIT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_TRAIT_AMOUNT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ID_EXPEDITION_DATE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ID_NUMBER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_NO_REGISTRY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_PARTIAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_LANDLINE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_ADDRESS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_CITY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_COUNTRY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_DEPARTMENT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_NAME
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_OTHER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_NAME
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PHONE_NUMBER_1
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PHONE_NUMBER_2
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PROVISIONAL_MEASURES_STATUS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SECOND_LAST_NAME
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SECOND_NAME
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEXUAL_ORIENTATION
+import co.sublimetech.lideres.core.presentation.Constants.FORM_CITY
+import co.sublimetech.lideres.core.presentation.Constants.FORM_COUNTRY
+import co.sublimetech.lideres.core.presentation.Constants.FORM_DATE
+import co.sublimetech.lideres.core.presentation.Constants.FORM_DEPARTMENT
+import co.sublimetech.lideres.core.presentation.Constants.FORM_FILL_DATE
+import co.sublimetech.lideres.core.presentation.Constants.FORM_NUMBER
+import co.sublimetech.lideres.core.presentation.Constants.FORM_OFFICE
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_OTHER
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_OTHER
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_CITY
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_COUNTRY
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_DEPARTMENT
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_DETAILS
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_DISTRICT
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_NEIGHBORHOOD
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_SETTLEMENT
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_EMAIL
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_LANDLINE
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_NAMES_AND_LASTNAMES
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_PHONE_NUMBER_1
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_PHONE_NUMBER_2
 import io.github.joelkanyi.sain.Sain
 import io.github.joelkanyi.sain.SignatureAction
 import io.github.joelkanyi.sain.SignatureState
@@ -42,6 +117,7 @@ import lideres.composeapp.generated.resources.african_american
 import lideres.composeapp.generated.resources.african_american_community_name
 import lideres.composeapp.generated.resources.age
 import lideres.composeapp.generated.resources.another
+import lideres.composeapp.generated.resources.applicant_personal_data_title
 import lideres.composeapp.generated.resources.attack
 import lideres.composeapp.generated.resources.bisexual
 import lideres.composeapp.generated.resources.blindness
@@ -64,7 +140,6 @@ import lideres.composeapp.generated.resources.disability_type_title
 import lideres.composeapp.generated.resources.district
 import lideres.composeapp.generated.resources.elderly
 import lideres.composeapp.generated.resources.email
-import lideres.composeapp.generated.resources.enroller_personal_data_title
 import lideres.composeapp.generated.resources.ethnic_group_subtitle
 import lideres.composeapp.generated.resources.ethnic_group_title
 import lideres.composeapp.generated.resources.extortion
@@ -90,8 +165,8 @@ import lideres.composeapp.generated.resources.home_zone
 import lideres.composeapp.generated.resources.homosexual
 import lideres.composeapp.generated.resources.how_many
 import lideres.composeapp.generated.resources.human_rights_watch
-import lideres.composeapp.generated.resources.human_rights_watch_legal_representant
-import lideres.composeapp.generated.resources.human_rights_watch_orgnization_name
+import lideres.composeapp.generated.resources.human_rights_watch_legal_representative
+import lideres.composeapp.generated.resources.human_rights_watch_organization_name
 import lideres.composeapp.generated.resources.id_expedition_date
 import lideres.composeapp.generated.resources.id_type_and_number
 import lideres.composeapp.generated.resources.identifying_name
@@ -125,7 +200,7 @@ import lideres.composeapp.generated.resources.number
 import lideres.composeapp.generated.resources.office
 import lideres.composeapp.generated.resources.organization_membership_subtitle
 import lideres.composeapp.generated.resources.organization_membership_title
-import lideres.composeapp.generated.resources.parcial
+import lideres.composeapp.generated.resources.partial
 import lideres.composeapp.generated.resources.people_under_care
 import lideres.composeapp.generated.resources.physical
 import lideres.composeapp.generated.resources.place_of_birth
@@ -200,27 +275,27 @@ fun FormScreen(
         item {
 
             /** Title*/
-            CustomText(stringResource(Res.string.enroller_personal_data_title))
+            CustomText(stringResource(Res.string.applicant_personal_data_title))
 
 
             /** Block 1*/
             CustomText(stringResource(Res.string.form_details))
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[FORM_NUMBER]!!,
                 title = stringResource(Res.string.form_number),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[FORM_DATE]!!,
                 title = stringResource(Res.string.form_date),
                 dateFormat = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[FORM_OFFICE]!!,
                 title = stringResource(Res.string.office),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -235,24 +310,25 @@ fun FormScreen(
             CustomText(stringResource(Res.string.form_date_title))
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[FORM_FILL_DATE]!!,
+                dateFormat = true,
                 title = stringResource(Res.string.date),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[FORM_COUNTRY]!!,
                 title = stringResource(Res.string.country),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[FORM_DEPARTMENT]!!,
                 title = stringResource(Res.string.department),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[FORM_CITY]!!,
                 title = stringResource(Res.string.city),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -264,39 +340,40 @@ fun FormScreen(
             )
 
             /** Block 3*/
-            CustomText(stringResource(Res.string.enroller_personal_data_title))
+            CustomText(stringResource(Res.string.applicant_personal_data_title))
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_FIRST_NAME]!!,
                 title = stringResource(Res.string.first_name),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_SECOND_NAME]!!,
                 title = stringResource(Res.string.second_name),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_FIRST_LAST_NAME]!!,
                 title = stringResource(Res.string.first_last_name),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_SECOND_LAST_NAME]!!,
                 title = stringResource(Res.string.second_last_name),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_IDENTIFYING_NAME]!!,
                 title = stringResource(Res.string.identifying_name),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_FIRST_NAME]!!,
                 title = stringResource(Res.string.id_type_and_number),
                 options = listOf(
                     stringResource(Res.string.national_id),
@@ -307,14 +384,15 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ID_NUMBER]!!,
                 title = stringResource(Res.string.number),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ID_EXPEDITION_DATE]!!,
                 title = stringResource(Res.string.id_expedition_date),
+                dateFormat = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -323,23 +401,24 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_COUNTRY_OF_BIRTH]!!,
                 title = stringResource(Res.string.country),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_DEPARTMENT_OF_BIRTH]!!,
                 title = stringResource(Res.string.department),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_CITY_OF_BIRTH]!!,
                 title = stringResource(Res.string.city),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_DATE_OF_BIRTH]!!,
                 title = stringResource(Res.string.date_of_birth),
+                dateFormat = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -348,37 +427,38 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ADDRESS_COUNTRY]!!,
                 title = stringResource(Res.string.country),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ADDRESS_DEPARTMENT]!!,
                 title = stringResource(Res.string.department),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ADDRESS_CITY]!!,
                 title = stringResource(Res.string.city),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ADDRESS_DISTRICT]!!,
                 title = stringResource(Res.string.district),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ADDRESS_SETTLEMENT]!!,
                 title = stringResource(Res.string.settlement),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ADDRESS_NEIGHBORHOOD]!!,
                 title = stringResource(Res.string.neighborhood),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_ADDRESS_ZONE]!!,
                 title = stringResource(Res.string.home_zone),
                 options = listOf(
                     stringResource(Res.string.rural),
@@ -388,12 +468,12 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ADDRESS]!!,
                 title = stringResource(Res.string.home_address),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ADDRESS_DETAILS]!!,
                 title = stringResource(Res.string.address_details),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -403,25 +483,25 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_PHONE_NUMBER_1]!!,
                 title = stringResource(Res.string.cellphone_1),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_PHONE_NUMBER_2]!!,
                 title = stringResource(Res.string.cellphone_2),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_LANDLINE]!!,
                 title = stringResource(Res.string.landline),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_EMAIL]!!,
                 title = stringResource(Res.string.email),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -432,22 +512,22 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_NOTIFICATION_COUNTRY]!!,
                 title = stringResource(Res.string.country),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_NOTIFICATION_DEPARTMENT]!!,
                 title = stringResource(Res.string.department),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_NOTIFICATION_CITY]!!,
                 title = stringResource(Res.string.city),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_NOTIFICATION_ADDRESS]!!,
                 title = stringResource(Res.string.address),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -465,7 +545,7 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_NAMES_AND_LASTNAMES]!!,
                 title = stringResource(Res.string.third_party_names_and_lastnames),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -475,44 +555,44 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_ADDRESS_COUNTRY]!!,
                 title = stringResource(Res.string.country),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_ADDRESS_DEPARTMENT]!!,
                 title = stringResource(Res.string.department),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_ADDRESS_CITY]!!,
                 title = stringResource(Res.string.city),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_ADDRESS_DISTRICT]!!,
                 title = stringResource(Res.string.district),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_ADDRESS_SETTLEMENT]!!,
                 title = stringResource(Res.string.settlement),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_ADDRESS_NEIGHBORHOOD]!!,
                 title = stringResource(Res.string.neighborhood),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_ADDRESS]!!,
                 title = stringResource(Res.string.third_party_home_address),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_ADDRESS_DETAILS]!!,
                 title = stringResource(Res.string.address_details),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -522,25 +602,25 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_PHONE_NUMBER_1]!!,
                 title = stringResource(Res.string.cellphone_1),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_PHONE_NUMBER_2]!!,
                 title = stringResource(Res.string.cellphone_2),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_LANDLINE]!!,
                 title = stringResource(Res.string.landline),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[THIRD_PARTY_EMAIL]!!,
                 title = stringResource(Res.string.email),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -552,19 +632,21 @@ fun FormScreen(
             )
 
             /** Block 5*/
-            CustomText(stringResource(Res.string.enroller_personal_data_title))
+            CustomText(stringResource(Res.string.applicant_personal_data_title))
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_SEX]!!,
                 title = stringResource(Res.string.sex),
                 options = listOf(
                     stringResource(Res.string.men),
                     stringResource(Res.string.women),
-                    stringResource(Res.string.intersexual)
+                    stringResource(Res.string.intersexual),
                 ),
                 padding = 16.dp
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_GENDER]!!,
                 title = stringResource(Res.string.gender),
                 options = listOf(
                     stringResource(Res.string.female),
@@ -575,6 +657,7 @@ fun FormScreen(
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_SEXUAL_ORIENTATION]!!,
                 title = stringResource(Res.string.sexual_orientation),
                 options = listOf(
                     stringResource(Res.string.heterosexual),
@@ -585,6 +668,7 @@ fun FormScreen(
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_AGE]!!,
                 title = stringResource(Res.string.age),
                 options = listOf(
                     stringResource(Res.string.boy_and_girl),
@@ -597,6 +681,7 @@ fun FormScreen(
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_IDENTIFYING_TRAIT]!!,
                 title = stringResource(Res.string.different_identifying_trait),
                 options = listOf(
                     stringResource(Res.string.mother),
@@ -608,12 +693,13 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_IDENTIFYING_TRAIT_AMOUNT]!!,
                 title = stringResource(Res.string.how_many),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_DISABILITY_STATUS]!!,
                 title = stringResource(Res.string.disability_type_title),
                 options = listOf(
                     stringResource(Res.string.yes),
@@ -623,6 +709,7 @@ fun FormScreen(
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_DISABILITY_TYPE]!!,
                 title = stringResource(Res.string.disability_type_subtitle),
                 options = listOf(
                     stringResource(Res.string.physical),
@@ -639,6 +726,7 @@ fun FormScreen(
 
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_ETHNIC_GROUP_STATUS]!!,
                 title = stringResource(Res.string.ethnic_group_title),
                 options = listOf(
                     stringResource(Res.string.yes),
@@ -648,6 +736,7 @@ fun FormScreen(
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_ETHNIC_GROUP_TYPE]!!,
                 title = stringResource(Res.string.ethnic_group_subtitle),
                 options = listOf(
                     stringResource(Res.string.indigenous),
@@ -662,46 +751,45 @@ fun FormScreen(
                 padding = 16.dp
             )
 
-            CustomTextField(
-                rememberTextFieldState(),
-                title = stringResource(Res.string.indigenous_group_title),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+            CustomText(
+                title = stringResource(Res.string.indigenous_group_title)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_INDIGENOUS_GROUP]!!,
                 title = stringResource(Res.string.indigenous_group),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_INDIGENOUS_GROUP_RESERVATION]!!,
                 title = stringResource(Res.string.indigenous_reservation),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY]!!,
                 title = stringResource(Res.string.reservation_community),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
-                title = stringResource(Res.string.parcial),
+                state.fieldValues[APPLICANT_INDIGENOUS_GROUP_PARTIAL]!!,
+                title = stringResource(Res.string.partial),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_INDIGENOUS_GROUP_NO_REGISTRY]!!,
                 title = stringResource(Res.string.no_registry_community),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_AFRICAN_AMERICAN_COMMUNITY]!!,
                 title = stringResource(Res.string.african_american_community_name),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS]!!,
                 title = stringResource(Res.string.organization_membership_title),
                 options = listOf(
                     stringResource(Res.string.yes),
@@ -711,6 +799,7 @@ fun FormScreen(
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_ORGANIZATION_TYPE]!!,
                 title = stringResource(Res.string.organization_membership_subtitle),
                 options = listOf(
                     stringResource(Res.string.social),
@@ -726,19 +815,20 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_OTHER]!!,
                 title = stringResource(Res.string.which),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomTextField(
-                rememberTextFieldState(),
-                title = stringResource(Res.string.human_rights_watch_orgnization_name),
+                state.fieldValues[APPLICANT_ORGANIZATION_NAME]!!,
+                title = stringResource(Res.string.human_rights_watch_organization_name),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             DropdownComponent(
-                title = stringResource(Res.string.human_rights_watch_legal_representant),
+                state.fieldValues[APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS]!!,
+                title = stringResource(Res.string.human_rights_watch_legal_representative),
                 options = listOf(
                     stringResource(Res.string.yes),
                     stringResource(Res.string.no)
@@ -747,12 +837,13 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
-                title = stringResource(Res.string.human_rights_watch_legal_representant),
+                state.fieldValues[APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_NAME]!!,
+                title = stringResource(Res.string.human_rights_watch_legal_representative),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_STATUS]!!,
                 title = stringResource(Res.string.provisional_measures_beneficiary),
                 options = listOf(
                     stringResource(Res.string.yes),
@@ -762,6 +853,7 @@ fun FormScreen(
             )
 
             DropdownComponent(
+                state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_TYPE]!!,
                 title = stringResource(Res.string.provisional_measures_type),
                 options = listOf(
                     stringResource(Res.string.measure_by_inter_american_commission),
@@ -781,6 +873,7 @@ fun FormScreen(
             CustomText(stringResource(Res.string.risk_situation_title))
 
             DropdownComponent(
+                state.fieldValues[RISK_SITUATION_TYPE]!!,
                 title = stringResource(Res.string.risk_situation_subtitle),
                 options = listOf(
                     stringResource(Res.string.threat),
@@ -795,13 +888,14 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[RISK_SITUATION_OTHER]!!,
                 title = stringResource(Res.string.which),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
 
             DropdownComponent(
+                state.fieldValues[RISK_SITUATION_MEANS_TYPE]!!,
                 title = stringResource(Res.string.threat_means),
                 options = listOf(
                     stringResource(Res.string.by_phone),
@@ -817,7 +911,7 @@ fun FormScreen(
             )
 
             CustomTextField(
-                rememberTextFieldState(),
+                state.fieldValues[RISK_SITUATION_MEANS_OTHER]!!,
                 title = stringResource(Res.string.which),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -911,7 +1005,6 @@ fun FormScreen(
                 Text("Traer Formualrio")
             }
 
-            Text(state.fetchedFormId)
 
             Button(colors = ButtonColors(
                 containerColor = Color.LightGray,
@@ -922,7 +1015,7 @@ fun FormScreen(
                 onClick = {
                     onAction(FormAction.OnGetFormsClick)
                 }) {
-                Text(state.fetchedForms.toString())
+                Text("Traer Formularios")
             }
         }
     }

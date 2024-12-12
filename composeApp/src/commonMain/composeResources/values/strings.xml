@@ -40,7 +40,7 @@
 
 
     <!-- BLOCK 3 APPLICANT PERSONAL DATA -->
-    <string name="enroller_personal_data_title">DATOS PERSONALES DEL SOLICITANTE</string>
+    <string name="applicant_personal_data_title">DATOS PERSONALES DEL SOLICITANTE</string>
     <string name="first_name">Primer Nombre</string>
     <string name="second_name">Segundo Nombre y Otros</string>
     <string name="first_last_name">Primer Apellido</string>
@@ -78,7 +78,7 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="third_party_notifications_request">¿Autoriza el envío de comunicaciones y notificaciones a través del correo electrónico del tercero?</string>
 
 
-    <!-- BLOCK 5 APPLICANT PERSONAL DATA2 -->
+    <!-- BLOCK 5 APPLICANT PERSONAL DATA 2 -->
     <string name="sex">Sexo</string>
     <string name="gender">Género:</string>
     <string name="men">Hombre</string>
@@ -130,7 +130,7 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="indigenous_group">Etnia o Grupo Indígena</string>
     <string name="indigenous_reservation">Resguardo</string>
     <string name="reservation_community">Comunidad dentro del Resguardo</string>
-    <string name="parcial">Parcialidad</string>
+    <string name="partial">Parcialidad</string>
     <string name="no_registry_community">Comunidad sin Registro ante la Dirección de Asuntos Indígenas del Ministerio del Interior</string>
     <string name="african_american_community_name">En caso de haber marcado el enfoque diferencial Étnico - Negro o Afrocolombiano, diligencie el Nombre del Consejo comunitario a el que pertenece o es miembro</string>
     <string name="organization_membership_title">¿Pertenece a algún tipo de organización?</string>
@@ -142,9 +142,9 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="farmer">Campesina</string>
     <string name="victims">Víctimas</string>
     <string name="human_rights_watch">Defensora de Derechos Humanos</string>
-    <string name="human_rights_watch_orgnization_name">En caso de pertenecer a una organización, indique el nombre de la organización</string>
-    <string name="human_rights_watch_legal_representant">¿La organización cuenta con Personería Jurídica?</string>
-    <string name="human_rights_watch_legal_representant_name">Si la respuesta fue afirmativa, escriba el número de identificación de la Personería Jurídica</string>
+    <string name="human_rights_watch_organization_name">En caso de pertenecer a una organización, indique el nombre de la organización</string>
+    <string name="human_rights_watch_legal_representative">¿La organización cuenta con Personería Jurídica?</string>
+    <string name="human_rights_watch_legal_representative_name">Si la respuesta fue afirmativa, escriba el número de identificación de la Personería Jurídica</string>
     <string name="provisional_measures_beneficiary">¿Es beneficiario de alguna medida cautelar o provisional?</string>
     <string name="provisional_measures_type">Si la respuesta fue afirmativa, seleccione el tipo de medida</string>
     <string name="measure_by_inter_american_commission">Medida Cautelar otorgada por la Comisión Interamericana de Derechos Humanos</string>

@@ -2,27 +2,63 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "a85022c4e813a9d53a0f9f3106575875",
+    "identityHash": "688e4768b751088a7ed836d4ea9a010e",
     "entities": [
       {
-        "tableName": "FormEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`formId` TEXT NOT NULL, `enrollerUid` TEXT NOT NULL, `applicantName` TEXT NOT NULL, PRIMARY KEY(`formId`))",
+        "tableName": "Form",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`formNumber` TEXT NOT NULL, `formDate` TEXT NOT NULL, `formOffice` TEXT NOT NULL, `formFillDate` TEXT NOT NULL, `formCountry` TEXT NOT NULL, `formDepartment` TEXT NOT NULL, `formCity` TEXT NOT NULL, `applicantData` TEXT NOT NULL, `thirdPartyData` TEXT NOT NULL, PRIMARY KEY(`formNumber`))",
         "fields": [
           {
-            "fieldPath": "formId",
-            "columnName": "formId",
+            "fieldPath": "formNumber",
+            "columnName": "formNumber",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "enrollerUid",
-            "columnName": "enrollerUid",
+            "fieldPath": "formDate",
+            "columnName": "formDate",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "applicantName",
-            "columnName": "applicantName",
+            "fieldPath": "formOffice",
+            "columnName": "formOffice",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "formFillDate",
+            "columnName": "formFillDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "formCountry",
+            "columnName": "formCountry",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "formDepartment",
+            "columnName": "formDepartment",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "formCity",
+            "columnName": "formCity",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "applicantData",
+            "columnName": "applicantData",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thirdPartyData",
+            "columnName": "thirdPartyData",
             "affinity": "TEXT",
             "notNull": true
           }
@@ -30,14 +66,14 @@
         "primaryKey": {
           "autoGenerate": false,
           "columnNames": [
-            "formId"
+            "formNumber"
           ]
         }
       }
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a85022c4e813a9d53a0f9f3106575875')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '688e4768b751088a7ed836d4ea9a010e')"
     ]
   }
 }

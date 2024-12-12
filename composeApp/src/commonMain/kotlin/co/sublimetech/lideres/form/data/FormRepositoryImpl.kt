@@ -3,10 +3,6 @@ package co.sublimetech.lideres.form.data
 import co.sublimetech.lideres.core.domain.DataError
 import co.sublimetech.lideres.core.domain.Result
 import co.sublimetech.lideres.form.data.database.FormDao
-import co.sublimetech.lideres.form.data.mappers.toForm
-import co.sublimetech.lideres.form.data.mappers.toFormDto
-import co.sublimetech.lideres.form.data.mappers.toFormEntity
-import co.sublimetech.lideres.form.data.network.dto.FormDto
 import co.sublimetech.lideres.form.domain.Form
 import co.sublimetech.lideres.form.domain.FormRepositoryInterface
 import dev.gitlive.firebase.Firebase
@@ -29,7 +25,7 @@ class FormRepositoryImpl(
         return withContext(Dispatchers.IO) {
             try {
                 // Save form locally
-                formDao.saveForm(form.toFormEntity(form.formId))
+                formDao.saveForm(form)
 
                 // Attempt to save remotely
                 try {
@@ -38,8 +34,8 @@ class FormRepositoryImpl(
                     firestore.collection("usuarios")
                         .document(uid)
                         .collection("formularios")
-                        .document(form.formId)
-                        .set(form.toFormDto())
+                        .document(form.formNumber)
+                        .set(form)
 
                 } catch (remoteException: Exception) {
                     // Log the remote error but do not fail the entire operation
@@ -60,7 +56,7 @@ class FormRepositoryImpl(
         return withContext(Dispatchers.IO) {
             try {
                 // Fetch local form
-                val localForm = formDao.getForm(formId)?.toForm()
+                val localForm = formDao.getForm(formId)
 
                 // Attempt to fetch remote form
                 try {
@@ -71,28 +67,21 @@ class FormRepositoryImpl(
                         .collection("formularios")
                         .document(formId)
 
-                    val snapshot = docRef.get().data<FormDto>()
-                    val remoteForm = snapshot.let {
-                        FormDto(
-                            it.formId,
-                            it.enrollerUid,
-                            it.applicantName
-                        ).toForm()
-                    }
+                    val snapshot = docRef.get().data<Form>()
 
                     // Compare forms and update remote form if outdated
-                    if (localForm != null && localForm != remoteForm) {
+                    if (localForm != null && localForm != snapshot) {
                         firestore.collection("usuarios")
                             .document(uid)
                             .collection("formularios")
-                            .document(localForm.formId)
-                            .set(localForm.toFormDto())
+                            .document(localForm.formNumber)
+                            .set(localForm)
                         Result.Success(localForm)
 
                     } else {
                         //If there was no local form but the is a remote, save it
-                        formDao.saveForm(remoteForm.toFormEntity(remoteForm.formId))
-                        Result.Success(remoteForm)
+                        formDao.saveForm(snapshot)
+                        Result.Success(snapshot)
                     }
                 } catch (remoteException: Exception) {
                     // Log the remote error but do not fail the entire operation
@@ -111,7 +100,7 @@ class FormRepositoryImpl(
         try {
             // Fetch local forms first
             val localForms = withContext(Dispatchers.IO) {
-                formDao.getForms().first().map { formEntity -> formEntity.toForm() }
+                formDao.getForms().first()
             }
 
             // Attempt to fetch remote forms without breaking on failure
@@ -125,22 +114,21 @@ class FormRepositoryImpl(
                 }
 
                 val remoteForms = remoteFormsSnapshot.documents
-                    .map { it.data<FormDto>() }
-                    .map { it.toForm() }
+                    .map { it.data<Form>() }
 
                 // Compare remote and local forms
                 val missingRemoteForms = remoteForms.filter { remoteForm ->
-                    remoteForm.formId !in localForms.map { it.formId }
+                    remoteForm.formNumber !in localForms.map { it.formNumber }
                 }
 
                 val missingLocalForms = localForms.filter { localForm ->
-                    localForm.formId !in remoteForms.map { it.formId }
+                    localForm.formNumber !in remoteForms.map { it.formNumber }
                 }
 
                 // Save new remote forms locally
                 for (remote in missingRemoteForms) {
                     withContext(Dispatchers.IO) {
-                        formDao.saveForm(remote.toFormEntity(uid))
+                        formDao.saveForm(remote)
                     }
                 }
 
@@ -150,8 +138,8 @@ class FormRepositoryImpl(
                         firestore.collection("usuarios")
                             .document(uid)
                             .collection("formularios")
-                            .document(local.formId)
-                            .set(local.toFormDto())
+                            .document(local.formNumber)
+                            .set(local)
                     }
                 }
                 emit(remoteForms + missingLocalForms)

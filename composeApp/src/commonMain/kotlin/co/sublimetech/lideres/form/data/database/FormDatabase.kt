@@ -4,9 +4,10 @@ import androidx.room.ConstructedBy
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import co.sublimetech.lideres.form.domain.Form
 
 @Database(
-    entities = [FormEntity::class],
+    entities = [Form::class],
     version = 1
 )
 @TypeConverters(StringListTypeConverter::class)
