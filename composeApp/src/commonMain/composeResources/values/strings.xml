@@ -66,7 +66,6 @@ y solicitar por escrito que las notificaciones o comunicaciones sucesivas se rea
     <string name="notification_address">Dirección de Notificación</string>
 
 
-
     <!-- BLOCK 4 THIRD PARTY REQUEST DATA -->
     <string name="third_party_request_title">DATOS DE UN TERCERO COMO CONTACTO DEL SOLICITANTE</string>
     <string name="third_party_request_disclaimer">*Si un familiar u otra persona lo ha autorizado para suministrar sus datos de contacto, que permita a la UNP establecer comunicación
@@ -178,7 +177,8 @@ con usted. Favor diligenciar los siguientes campos*</string>
 
     <!-- BLOCK 8 POPULATION OBJECT OF PROTECTION -->
     <string name="population_object_of_protection_title">IDENTIFICACIÓN DE LA POBLACIÓN OBJETO DE PROTECCIÓN</string>
-    Poblaciones del programa de prevención y protección de los derechos a la vida, la libertad, la integridad y la seguridad de personas
+    Poblaciones del programa de prevención y protección de los derechos a la vida, la libertad, la
+    integridad y la seguridad de personas
     <string name="population_object_of_protection_subtitle">Identifique la población a la cual pertenece el solicitante y QUE ESTÉ relacionada con la posible situación de riesgo o amenaza</string>
     <string name="population_of_protection_and_prevention_program">Poblaciones del programa de prevención y protección de los derechos a la vida, la libertad, la integridad y la seguridad de personas</string>
     <string name="protection_and_prevention_program_group_1">Dirigentes o activistas de grupos políticos; y directivos y miembros de organizaciones políticas, declaradas en oposición, de acuerdo con lo establecido en el artículo 30 de la Ley 1909 de 2018 o la norma que la modifique, adicione o sustituya</string>
@@ -199,6 +199,655 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="protection_and_prevention_program_group_16">Magistrados de las Salas de Justicia (Sala de Reconocimiento de Verdad, de Responsabilidad y de Determinación de los Hechos y Conductas; Sala de Definición de las Situaciones Jurídicas, Sala de Amnistía o Indulto), Fiscales de la Unidad de Investigación y Acusación de la JEP y el Secretario Ejecutivo de la JEP.</string>
     <string name="protection_and_prevention_program_group_17">Desmovilizados en proceso de Reintegración a cargo de la Agencia para la Reincorporación y la Normalización - ARN. (Parágrafo 6 Art 2.4.1.2.6 Dec. 1066/2015)</string>
 
+
+    <!-- BLOCK 9 PATRIOTIC UNION AND COMMUNIST PARTY SURVIVOR-->
+    <string name="patriotic_union_and_communist_party_survivor_title">Poblaciones del programa especial de protección integral para dirigentes, miembros y sobrevivientes de la unión patriótica y el partido comunista colombiano</string>
+    <string name="patriotic_union_and_communist_party_survivor">Dirigentes, miembros y sobrevivientes de la Unión Patriótica y del Partido Comunista Colombiano. (Capitulo 3 Dec. 1066/15)</string>
+
+
+    <!-- BLOCK 10 ESPECIAL SECURITY AND PROTECTION GROUP-->
+    <string name="especial_security_and_protection_group_title">Poblaciones del Programa de Protección Especializada de Seguridad y Protección</string>
+    <string name="especial_security_and_protection_group">Integrantes del nuevo movimiento o partido político que surja del tránsito de las FARC-EP a la actividad
+    política legal, sus actividades y sedes, a las y los antiguos integrantes de las FARC-EP que se reincorporen a la
+    vida civil, así como a las familias de todos los anteriores de acuerdo con el nivel de riesgo. (Capítulo Adicionado
+    por Decreto 299 de 2017, articulo 1) (Hoy Partido Comunes)</string>
+    <string name="especial_security_and_protection_group_role">De acuerdo con las poblaciones identificada en el numeral anterior y en caso de que proceda indique el rol al interior de la Organización o Comunidad</string>
+    <string name="leader">Dirigente</string>
+    <string name="representative">Representante</string>
+    <string name="member">Miembro o activista</string>
+
+
+    <!-- BLOCK 11 PREVENTION AND PROTECTION PROGRAM REGISTRY REQUEST PRESENTATION-->
+    <string name="prevention_and_protection_registry_request_presentation_title">PRESENTACIÓN DE LA SOLICITUD DE INGRESO A PROGRAMAS DE PREVENCIÓN Y/0 PROTECCIÓN</string>
+    <string name="registry_request_presentation_instruction_1">La solicitud de inscripción a los programas de prevención y/o protección coordinados por la UNP, se puede radicar por escrito ante oficina
+de correspondencia de la sede principal de la UNP, ubicada en la Carrera 44 # 20 - 21 Puente Aranda en la ciudad de Bogotá D.C., o en
+cualquiera de los Grupos Regionales de Protección (GURP ) de la UNP (El Directorio de GURP puede ser consultado en la página WEB de
+la entidad);</string>
+    <string name="registry_request_presentation_instruction_2">La radicación de la solicitud puede realizarse de manera personal, o a través de un tercero que actué en su nombre y representación, sin
+que genere una carga económica al peticionario.</string>
+    <string name="registry_request_presentation_instruction_3">Todos los trámites y servicios de la UNP son <b>GRATUITOS</b>.</string>
+    <string name="registry_request_presentation_instruction_4">Canal alternativo, la solicitud de inscripción con todos sus adjuntos puede radicarse a través del correo electrónico: correspondencia@unp.gov.co</string>
+    <string name="registry_request_presentation_instruction_5">Todas las solicitudes deben estar acompañadas de los siguientes documentos:</string>
+    <string name="registry_request_presentation_instruction_5_numeral_1">Formulario de solicitud de inscripción para el programa de prevención y protección, debidamente diligenciado y firmado por el
+solicitante, en el cual se aluda a una situación de riesgo o amenaza puntual, concreta y actual en contra de su vida e integridad.</string>
+    <string name="registry_request_presentation_instruction__5_numeral_2">Fotocopia del documento de identidad por ambas caras.</string>
+    <string name="registry_request_presentation_instruction__5_numeral_3">Documento a través del cual se acredite la pertenencia del solicitante a alguno de los grupos poblacionales, señalados en los campos
+38a, 38b, 38c según lo contemplado en el Decreto 1066 de 2015 y sus respectivos Decretos modificatorios.</string>
+    <string name="registry_request_presentation_instruction__5_numeral_4">Asmismo, en caso de contar con denuncias de los hechos recientes de amenaza ante la Fiscalía General de la Nación o en su
+defecto declaración de dichos hechos ante la Defensoría del Pueblo, Procuraduría o Personería; estos documentos también pueden
+ser enviados. * Este no es un requisito excluyente, que impida el inicio del procedimiento ordinario del programa de protección.</string>
+
+
+    <!-- BLOCK 12 NATIONAL PROTECTION UNIT PROGRAM MEMBERS DUTIES AND COMMITMENTS-->
+    <string name="national_protection_unit_program_members_duties_and_commitments_title">DEBERES Y COMPROMISOS DE LAS PERSONAS QUE SOLICITAN SER VINCULADAS
+A LOS PROGRAMAS DE PROTECCIÓN DE LA UNIDAD NACIONAL DE PROTECCIÓN.</string>
+    <string name="national_protection_unit_program_members_duties_and_commitments_disclaimer">La Unidad Nacional de Protección (UNP) creada mediante el Decreto Ley 4065 de 2011, tiene como objetivo articular, coordinar y
+ejecutar la prestación del servicio de protección a las personas que determine el Gobierno Nacional que por virtud de sus
+actividades, condiciones o situaciones políticas, públicas, sociales, humanitarias, culturales, étnicas, de género, de su calidad de
+víctima de la violencia, desplazado, actividad de derechos humanos, se encuentren en situación de riesgo extraordinario o extremo
+de sufrir daños contra su vida, integridad, libertad y seguridad personal o en razón al ejercicio de un cargo público u otras actividades
+que pueden generar riesgo extraordinario, como el liderazgo sindical, de ONG y de grupos de personas desplazadas. En ese
+sentido la UNP debe garantizar la eficiencia, idoneidad, oportunidad y el buen uso de las medidas de protección a implementarse
+en cada caso así como el correcto funcionamiento de la Entidad. De igual forma y en aras de evitar desgastes administrativos, la
+persona interesada en acogerse al Programa de Protección NO debe encontrarse incluida, en proceso de ser inscrita o aceptar
+paralelamente su vinculación en otro programa de protección ofrecido por otra Institución Estatal, entiéndase los ofrecidos por la
+Fiscalía General de la Nación, la Procuraduría General de la Nación y el Programa de Protección a Víctimas y Testigos de la le Ley
+906 de 2004 o de la Ley 975 de 2005 - Ley de Justicia y Paz-.
+De esa cuenta, las personas interesadas en ser acogidas dentro del Programa de Protección a cargo de la UNP deberán ceñirse
+a los siguientes Deberes:</string>
+    <string name="duties_and_commitments_line_1">La persona interesada en ingresar al Programa de Protección deberá someterse a la respectiva Evaluación de Nivel de Riesgo brindando
+a la UNP la información y soportes que se tengan a través de los cuales se evidencien los hostigamientos, amenazas de los cuales es
+víctima la situación particular de riesgo. Esto en función de lograr determinar el grado de vulnerabilidad al cual se encuentra expuesta.</string>
+    <string name="duties_and_commitments_line_2">La persona deberá acatar las distintas recomendaciones de autoprotección proporcionadas por el Programa de Prevención y Protección
+como también de otros organismos de seguridad del Estado.</string>
+    <string name="duties_and_commitments_line_3"><b>Obrar de buena fe, absteniéndose de suministrar información falsa, temeraria o que induzca a error a la Entidad. Teniendo en
+cuenta las implicaciones penales y/o disciplinarias que conlleva la entrega de información falsa o temeraria.</b></string>
+    <string name="duties_and_commitments_line_4">Adoptar posiciones de reserva y confidencialidad en torno a la información relacionada con su caso, en particular poniendo de manifiesto
+al Analista o a la persona responsable de atender su caso las distintas circunstancias o evidencias sobre las cuales aduce sentir
+desconfianza y/o temor por sus derechos a la vida, seguridad, libertad e integridad.</string>
+    <string name="duties_and_commitments_line_5">En caso de determinarse la viabilidad de asignar medidas de protección a favor de el o la peticionaria en razón a la ponderación de su
+Estudio de Nivel de Riesgo, éstos deberán suscribir un Acta de Compromiso en la cual se detallarán los distintos elementos entregados,
+su estado, compromisos, la periodicidad de la vigencia de los mismos y las consecuencias por el uso indebido de dichos elementos.</string>
+
+
+    <!-- BLOCK 13 CONSENT-->
+    <string name="consent_title">CONSENTIMIENTO</string>
+    <string name="consent_subtitle">Consentimiento para dar inicio a la ruta de protección y las actividades que con ella se despliegan, de acuerdo con los principios de los
+programas de prevención y/o protección:</string>
+    <string name="consent_disclaimer_1">*La vinculación al Programa de Prevención y Protección requerirá de la manifestación expresa, libre y voluntaria por parte del solicitante
+o protegido respecto de la aceptación o no de su vinculación. Así las cosas, en virtud del parágrafo 4 del Artículo 2.4.1.2.40 del Decreto
+1066 de 2015 parcialmente modificado por el Decreto 1139 de 2021, el consentimiento para el inicio de la evaluación de riesgo se
+entenderá otorgado por el solicitante, con el diligenciamiento de este formulario y la presentación de los requisitos mínimos exigidos.</string>
+    <string name="consent_disclaimer_2">*Declaro haber leído y comprendido los deberes y compromisos que como solicitante de inscripción para el Programa de Prevención y
+Protección debo cumplir.</string>
+    <string name="consent_disclaimer_3">*Manifiesto bajo la gravedad de juramento que toda la información declarada en el presente formulario es verdadera, por lo tanto
+autorizo para que la información suministrada pueda ser verificada y en caso de falsedad, se apliquen las sanciones contempladas por
+la Ley.</string>
+    <string name="consent_disclaimer_4">*La Unidad Nacional de Protección - UNP, conforme los lineamientos establecidos en la <b>Ley 1581 de 2012</b> y su Decreto reglamentario,
+como responsable de la recolección de los datos personales suministrados en el presente documento, garantiza la seguridad y
+confidencialidad respecto del tratamiento de los datos sensibles o personales suministrados para los fines de esta solicitud y para
+elaboración de estadísticas que se reflejarán en los ejercicios de caracterización e informes exigidos por Ley, con la finalidad siempre de
+mejorar la atención al ciudadano; igualmente propenderá por su debida custodia, y uso.</string>
+    <string name="consent_acceptance">Manifiesto y acepto, que conozco los términos y condiciones de la Política de Tratamiento y Protección de Datos
+Personales de la UNP y autorizo, el uso de mis datos personales para recibir comunicaciones y/o notificaciones sobre
+los trámites relacionados con las actividades misionales adelantadas por la entidad.
+Términos y condiciones.</string>
+    <string name="national_police_preventive_measures_authorization">¿Autoriza la implementación de medidas preventivas por parte de la Policía Nacional?</string>
+    <string name="cerrem_women_committee_authorization">¿Autoriza que su caso sea tratado en Comité de Evaluación de Riesgo y Recomendación de Medidas - CERREM de Mujeres?</string>
+    <string name="cerrem_women_committee_disclaimer">Resolución 0805 de 2012 " Por el cual se expide el Protocolo con enfoque de género y de
+los derechos de las mujeres a que se refiere el artículo 50 del Decreto 4912 de 2011". En caso de que la mujer solicitante de medidas de protección no manifieste expresamente su deseo que el caso sea conocido por el CERREM de Mujeres, el mismo será llevado al CERREM de la Población a la que pertenece.</string>
+    <string name="applicant_complete_name">Nombre completo del Solicitante</string>
+    <string name="applicant_signature">Firma del Solicitante</string>
+    <string name="fingerprint">Huella</string>
+    <string name="applicant_personal_data_disclaimer">Ley de Habeas Data contenidas en Ley 1266 de 2008 y demás normas reglamentarias: El arriba firmante manifiesta que han sido informado que tiene el derecho a acceder, modificar, rectificar, solicitar la copia de su autorización y formular quejas, reclamos y consultas frente al tratamiento que haga la Unidad Nacional de Protección de sus datos personales. De igual manera los datos aqui consignados serán usados para temas estadísticos y de caracterización poblacional.</string>
+
+
+    <!-- BLOCK 14 ENROLLER INFORMATION-->
+    <string name="enroller_information_title">DATOS DE QUIEN DILIGENCIA EL FORMULARIO</string>
+    <string name="application_done_by_applicant">¿El formulario es diligenciado por el solicitante?</string>
+    <string name="application_done_by_enroller">Si el formulario es diligenciado por un servidor público o contratista , Favor diligenciar los siguientes campos</string>
+    <string name="enroller_names_and_lastnames">Nombres y Apellidos (si es persona natural)</string>
+    <string name="enroller_entity_name">Nombre de la Entidad ( Si es persona Jurídica u otra Organización)</string>
+    <string name="enroller_phone_number">Contacto telefónico</string>
+    <string name="enroller_email">Correo electrónico</string>
+
+
+    <!-- BLOCK 15 PUBLIC SERVANT OR UNP FORM RECEIVER INFORMATION-->
+    <string name="public_servant_or_unp_form_receiver_information_title">DATOS DEL SERVIDOR PÚBLICO O CONTRATISTA DE LA UNP QUE RECEPCIONA EL FORMULARIO</string>
+    <string name="names_and_lastnames">Nombres y Apellidos</string>
+    <string name="file_in">Archívese en:</string>
+
+
+    <!-- BLOCK 16 FORM INSTRUCTIONS PAGE 1-->
+    <string name="form_instructions_title">INSTRUCCIONES DE DILIGENCIAMIENTO</string>
+
+    <string name="record_data">Datos del Radicado</string>
+
+    <string name="exclusive_data">Datos exclusivos para diligenciamiento por parte de la UNP.</string>
+
+    <string name="date_place_filling">1. Fecha y Lugar de Diligenciamiento</string>
+    <string name="date_place_filling_desc">
+        Corresponde al día, mes y año, en el cual el peticionario llena y suscribe el Formulario De Inscripción Para El Programa De Protección Liderado Por La Unidad Nacional De Protección – UNP-.
+    </string>
+
+    <string name="applicant_first_name">2. Datos Personales del Solicitante: Primer Nombre</string>
+    <string name="first_name_desc">Escribir el primer nombre como aparece en el documento de identificación</string>
+
+    <string name="applicant_second_name">3. Datos Personales del Solicitante: Segundo Nombre y Otros</string>
+    <string name="second_name_desc">
+        Escribir el segundo nombre como aparece en el documento de identificación, si tiene un tercer nombre también registrarlo.
+    </string>
+
+    <string name="applicant_first_last_name">4. Datos Personales del Solicitante: Primer Apellido</string>
+    <string name="first_last_name_desc">Escribir el primer apellido como aparece en el documento de identificación.</string>
+
+    <string name="applicant_second_last_name">5. Datos Personales del Solicitante: Segundo Apellido</string>
+    <string name="second_last_name_desc">Escribir el segundo apellido como se encuentra en el documento de identificación.</string>
+
+    <string name="identitary_name">6. Nombre identitario</string>
+    <string name="identitary_name_desc">
+        Responde al proceso de construcción de la identidad del sujeto, que lo lleva a adoptar un nombre que lo identifique y respecto del cual puede elegir libremente mantenerlo o no.
+    </string>
+
+    <string name="id_type_number">7. Tipo y Número de documento de identidad</string>
+    <string name="id_type_number_desc">
+        Cedula de Ciudadanía: Es el único documento de identificación válido en el país, otorgado a los ciudadanos colombianos al cumplir la mayoría de edad, es decir 18 años. Cumple sus fines como instrumento electoral y documento de identificación.
+
+        Cédula de Extranjería: es el documento destinado para la identificación de los extranjeros en el territorio nacional y su utilización es acorde con la visa otorgada.
+
+        El Número Único de Identificación Personal, NUIP está vigente desde marzo del 2000, fecha en la cual se empezó a utilizar en todo el país y corresponde a un número único de identificación que permite que la información que reposa en el registro civil quede vigente para toda la vida, es decir desde su nacimiento hasta su muerte.
+    </string>
+
+    <string name="id_issue_date">8. Fecha de Expedición del Documento de Identificación</string>
+    <string name="id_issue_date_desc">
+        Corresponde al día, mes y año, en el cual fue expedida la cédula de ciudadanía, cédula de extranjería o NUIP.
+    </string>
+
+    <string name="birth_place">9. Lugar de Nacimiento</string>
+    <string name="birth_place_desc">
+        País: es el área geográfica bien delimitada; políticamente soberana e independiente; con su propio gobierno; administración y ordenamiento jurídico en la cual reside el peticionario con ánimo de permanencia y desea ser notificado.
+
+        Departamento: Es el área geográfica dentro del territorio nacional que en Colombia corresponde al nivel intermedio de gobierno y en el cual reside el peticionario con ánimo de permanencia y desea ser notificado.
+
+        Municipio: Entiéndase para efectos del diligenciamiento del formulario como como el Distrito o Municipio en el cual fue registrado el nacimiento del solicitante.
+    </string>
+
+    <string name="birth_date">10. Fecha de Nacimiento</string>
+    <string name="birth_date_desc">
+        Corresponde al día; mes y año del nacimiento del ciudadano y que se encuentra registrado en la cédula de ciudadanía; cédula de extranjería o NUIP. Escriba la fecha de nacimiento, por favor complete todos los campos.
+    </string>
+
+    <string name="residence_place">11. Lugar de Domicilio</string>
+    <string name="residence_place_desc">
+        Corregimiento: Es un término usado en Colombia para definir un tipo de subdivisión del área rural de los diferentes municipios del país; el cual incluye un núcleo de población. Un corregimiento puede estar subdividido a su vez por veredas; y puede contener inspecciones de policía; caseríos y sitios. Para efectos del diligenciamiento del formulario es aquel en el cual reside el peticionario con ánimo de permanencia.
+
+        Vereda: las veredas comprenden principalmente zonas rurales; aunque en ocasiones puede contener un centro micro urbano. Para efectos del diligenciamiento del formulario es aquel en el cual reside el peticionario con ánimo de permanencia.
+
+        Barrio: Parte de una población de extensión relativamente grande; que contiene un agrupamiento social espontáneo y que tiene un carácter peculiar; físico; social; económico o étnico por el que se identifica. Para efectos del diligenciamiento del formulario es aquel en el cual reside el solicitante con ánimo de permanencia.
+    </string>
+
+    <string name="residence_zone">12. Zona de Domicilio</string>
+    <string name="residence_zone_desc">
+        Rural: hace referencia a lo perteneciente o relativo a la vida en el campo. Lo rural; por lo tanto; es aquello opuesto a lo urbano (el ámbito de la ciudad); Marque con una X la zona donde vive el solicitante, si es rural o si es Urbana.
+
+        Urbano: hace referencia a la vida de ciudad, la de aquel peticionario cuyo origen es de zona urbana que se caracteriza por estar habitada de forma permanente por más de 2.000 habitantes.; Marque con una X la zona donde vive el solicitante, si es rural o si es Urbana.
+    </string>
+
+    <string name="residence_address">13. Dirección del Domicilio</string>
+    <string name="residence_address_desc">Escriba la dirección completa de donde vive el solicitante.</string>
+
+    <string name="residence_instructions">14. Indicaciones del Lugar de Domicilio</string>
+    <string name="residence_instructions_desc">
+        Describa puntos de referencia donde está ubicado su domicilio por ejemplo: frente al Polideportivo - diagonal a la tienda el Rosal.
+    </string>
+
+    <string name="phone_contact">15. Contacto Telefónico</string>
+    <string name="phone_contact_desc">
+        Numero Celular 1: Corresponde al consecutivo numérico necesario para obtener contacto telefónico a través de una línea móvil o celular con el peticionario. Escriba el contacto telefónico de la persona solicitante.
+
+        Número Celular 2: Corresponde al consecutivo numérico necesario para obtener contacto telefónico a través de una línea móvil o celular con el peticionario. Si el solicitante tiene un segundo número de celular por favor escríbalo.
+
+        Teléfono fijo: Corresponde al consecutivo numérico a través del cual se puede obtener contacto telefónico a través de una línea fija con el peticionario. En caso de contar con número fijo por favor escríbalo.
+    </string>
+
+    <string name="email_desc">
+        Es un servicio que permite el intercambio de mensajes a través de sistemas de comunicación electrónicos, permiten enviar y recibir mensajes, que llegan a destino gracias a la existencia de una dirección electrónica. Escriba el correo electrónico de la persona solicitante.
+        Es la materialización del capítulo IV de la ley 1437 de 2011; por el cual se dispone la utilización de medios electrónicos en el procedimiento administrativo; para efectos del envío y recepción de comunicaciones y/o notificaciones. Por favor marque con una X si autoriza o no, notificaciones a través de correo electrónico para que la entidad se comunique con el solicitante.
+    </string>
+
+    <string name="consent_email_communication">17. Autoriza el envío de comunicaciones y notificaciones a través del correo electrónico inscrito?</string>
+    <string name="consent_email_communication_desc">
+        *En caso respuesta afirmativa, la UNP informa que durante el desarrollo de la actuación adelantada por la entidad podrá solicitar revocar esta autorización y solicitar por escrito que las notificaciones o comunicaciones sucesivas se realicen a través de otros medios previstos en la Ley 1437 de 2011 - CPACA
+        **La actualización de los datos personales suministrados anteriormente durante el proceso es responsabilidad del solicitante
+    </string>
+
+    <string name="notification_address_instruction">18. Dirección de Notificación</string>
+    <string name="notification_address_desc">
+        Dirección de Notificación: lugar donde el solicitante desea que se le comunique de manera formal una resolución, noticia o una respuesta con un propósito cierto. Por favor diligenciar en su totalidad.
+
+        Dirección: es la ubicación física donde el solicitante desea ser notificado. Por ejemplo Cra. 63 #14-97 Puente Aranda, Torre 1 Apto 518
+    </string>
+
+
+    <!-- BLOCK 16 FORM INSTRUCTIONS PAGE 2-->
+    <string name="third_party_full_name">19. Nombres y apellidos del Tercero</string>
+    <string name="third_party_full_name_desc">
+        Escriba los nombres y apellidos de una tercera persona, la cual ha sido autorizada para servir como contacto con el solicitante.
+    </string>
+
+    <string name="third_party_residence_place">20. Lugar de Domicilio del Tercero</string>
+    <string name="third_party_residence_place_desc">
+        Lugar de Domicilio del Tercero: Escriba el lugar donde vive la persona (tercero) que el solicitante ha autorizado para que la entidad establezca comunicación. Por favor diligenciar todos los campos.
+
+        País: es el área geográfica bien delimitada; políticamente soberana e independiente; con su propio gobierno; administración y ordenamiento jurídico en el cual reside el Tercero, persona que ha sido autorizada para recibir o brindar información del solicitante.
+
+        Departamento: Es el área geográfica dentro del territorio nacional que en Colombia corresponde al nivel intermedio de gobierno y en el cual reside el Tercero, persona que ha sido autorizada para recibir o brindar información del solicitante.
+
+        Ciudad / Municipio: Entiéndase para efectos del diligenciamiento del formulario como como el Distrito o Municipio en el en el cual reside el Tercero, persona que ha sido autorizada para recibir o brindar información del solicitante.
+
+        Corregimiento: Es un término usado en Colombia para definir un tipo de subdivisión del área rural de los diferentes municipios del país; el cual incluye un núcleo de población. Un corregimiento puede estar subdividido a su vez por veredas; en el cual reside el Tercero, persona que ha sido autorizada para recibir o brindar información del solicitante.
+
+        Vereda: las veredas comprenden principalmente zonas rurales; aunque en ocasiones puede contener un centro micro urbano. Para efectos del diligenciamiento del formulario es aquel en el en el cual reside el Tercero, persona que ha sido autorizada para recibir o brindar información del solicitante.
+
+        Barrio: Parte de una población de extensión relativamente grande; que contiene un agrupamiento social espontáneo y que tiene un carácter peculiar; físico; social; económico o étnico por el que se identifica. en el cual reside el Tercero, persona que ha sido autorizada para recibir o brindar información del solicitante.
+    </string>
+
+    <string name="third_party_residence_address">21. Dirección del domicilio del Tercero</string>
+    <string name="third_party_residence_address_desc">
+        Escriba la dirección completa donde vive la persona (Tercero) que el solicitante autorizó para que la entidad establezca comunicación respecto al caso que se está tratando o del cual el solicitante espera una respuesta.
+    </string>
+
+    <string name="third_party_residence_instructions">22. Indicaciones del Lugar del Domicilio</string>
+    <string name="third_party_residence_instructions_desc">
+        Puntos de referencia que sirvan para ubicar la dirección, se utiliza especialmente cuando no hay nomenclatura en el sitio donde vive el tercero.
+    </string>
+
+    <string name="third_party_phone_contact">23. Contacto Telefónico del Tercero</string>
+    <string name="third_party_phone_contact_desc">
+        Contacto Telefónico del Tercero: Corresponde al consecutivo numérico necesario para obtener contacto telefónico a través de una línea móvil o celular con la persona. Escriba los números de contacto de la persona (Tercero), que el solicitante autorizó para que la entidad lo contacte.
+
+        Contacto telefónico - Celular: Corresponde al consecutivo numérico necesario para obtener contacto telefónico a través de una línea móvil o celular con el Tercero.
+
+        Contacto telefónico - Teléfono fijo: Corresponde al consecutivo numérico a través del cual se puede obtener contacto telefónico a través de una línea fija con el tercero.
+    </string>
+
+    <string name="third_party_email">24. Correo electrónico del Tercero</string>
+    <string name="third_party_email_desc">
+        Escriba el correo electrónico de la persona que el solicitante autoriza para recibir notificaciones por parte de la entidad, relacionadas con el caso que ha expuesto el solicitante.
+    </string>
+
+    <string name="consent_third_party_email_communication">25. ¿Autoriza el envío de comunicaciones y notificaciones a través del correo electrónico del tercero?</string>
+    <string name="consent_third_party_email_communication_desc">
+        Correo electrónico: (en inglés: e-mail); es un servicio de red que permite a los usuarios enviar y recibir mensajes (también denominados mensajes electrónicos o cartas digitales) mediante sistemas de comunicación electrónica. ejemplo@mail.com;
+        Por favor marque con una X si autoriza o no, notificaciones a través de correo electrónico de un tercero para que la entidad le haga llegar alguna notificación.
+
+        *En caso respuesta afirmativa, la UNP informa que durante el desarrollo de la actuación adelantada por la entidad podrá solicitar revocar esta autorización y solicitar por escrito que las notificaciones o comunicaciones sucesivas se realicen a través de otros medios previstos en la Ley 1437 de 2011 - CPACA
+        **La actualización de los datos personales suministrados anteriormente durante el proceso es responsabilidad del solicitante
+    </string>
+
+    <string name="sex_instruction">26. Sexo</string>
+    <string name="sex_desc">
+        Sexo: Condición biológica que distingue a los hombres de las mujeres; se distingue el concepto de sexo como una característica natural o biológica del concepto de género; una significación cultural que hace referencia a un conjunto de roles. Por favor marque con una X según corresponda.
+
+        Hombre: Persona adulta de sexo masculino.
+
+        Mujer: Persona adulta de sexo femenino.
+
+        Intersexual: se refiere a una situación donde no es posible saber, con absoluta certeza, cuál es el sexo del bebé si únicamente se observan sus genitales. Se puede producir por discrepancias entre genitales externos e internos o entre cromosomas y genitales, ambigüedades genitales o presencia simultánea de tejido ovárico y testicular. Tomado de http://www.abc.es/sociedad/20141020/abci-intersexualidad-cuerpos-enganan-201410170853.html octubre 29 de 2015 [Concepto utilizado en el formulario de solicitudes de protección]
+    </string>
+
+    <string name="gender_instruction">27. Género</string>
+    <string name="gender_desc">
+        Género: "Es el conjunto de características sociales; culturales; políticas; psicológicas; jurídicas y económicas que la sociedad asigna a las personas de forma diferenciada como propias de hombres y mujeres. Los géneros son construcciones socioculturales que varían a través de la historia y se refieren a los rasgos psicológicos y culturales que la sociedad atribuye a lo que considera 'masculino' o 'femenino' mediante la educación; el uso del lenguaje; la familia; las instituciones o la religión."; Por favor marque con una X según corresponda.
+
+        Femenino: se refiere a aquello que resulta propio, relativo o perteneciente a las mujeres. Se trata, por lo tanto, de algo o alguien que dispone de las características distintivas de la feminidad.
+
+        Masculino: uno de los tipos sexuales en que se divide la población en las especies con reproducción sexual, individuo con características masculinas, relaciona a todo lo que comprende ser Hombre o Varón.
+
+        Transgénero: Es el estado de la identidad de género (identificarse como hombre; mujer; ambos; ninguno; etcétera); que no se corresponde con el asignado (la identificación por parte de los demás de si se es hombre o mujer en función del sexo genético o genital).
+    </string>
+
+    <string name="sexual_orientation_instruction">28. Orientación Sexual</string>
+    <string name="sexual_orientation_desc">
+        Orientación Sexual: es la organización específica del erotismo y/o el vínculo emocional de un individuo en relación al género de la pareja involucrada en la actividad sexual, es decir la atracción emocional, afectiva, romántica o sexual que un individuo puede sentir hacia otros (Asociación América de Psicología [APA]). Por favor marque con una X según corresponda.
+
+        Heterosexual: es una orientación sexual caracterizada por el deseo y la atracción hacia personas del sexo opuesto. Un hombre heterosexual se siente atraído por las mujeres, mientras que una mujer heterosexual siente atracción por los hombres.
+
+        Homosexual: es una atracción romántica, atracción sexual o comportamiento sexual entre miembros del mismo sexo o género. Como orientación sexual, la homosexualidad es "un patrón duradero de atracción emocional, romántica y/o sexual" hacia personas del mismo sexo.
+
+        Bisexual: El término bisexualidad se utiliza principalmente en el contexto de la atracción humana para denotar sentimientos románticos o sexuales hacia los hombres y las mujeres. [Concepto utilizado en el formulario de solicitudes de protección]
+    </string>
+
+    <string name="age_group">29. Etario</string>
+    <string name="age_group_desc"> Etario: Para efectos del trámite del estudio de nivel de riesgo; se da aplicación al enfoque diferencial etario; en los casos de los peticionarios que para la fecha en la cual diligencian el formulario del programa de protección tienen 60 años o más.
+        Niña: Se entiende por niño o niña aquella persona que aún no ha alcanzado un grado de madurez suficiente para tener autonomía. Desarrollo físico: Es la denominación utilizada para referirse a toda criatura humana que no ha alcanzado la pubertad.
+        Niño: es un ser humano que aún no ha alcanzado la pubertad.
+        Adolescente: se caracteriza por el crecimiento físico y desarrollo psicológico, y es la fase del desarrollo humano situada entre la infancia y la edad adulta. Esta transición es tanto física como psicológica por lo que debe considerarse un fenómeno biológico, cultural y social.
+        Joven: Es la edad que se sitúa entre la infancia y la edad adulta. Según la Organización de las Naciones Unidas, la juventud se ubica entre los 10 y los 24 años; abarca la pubertad (de 10 a 14 años), la adolescencia media o tardía (de 15 a 19 años) y la juventud plena, desde los 20 a 24 años.
+        Adulto: En gran parte del mundo una persona se considera mayor de edad y por tanto plenamente adulta a partir de los 25 a 60 años. Generalmente, se puede decir que la edad adulta supone la presunción legal de que existe capacidad plena en el individuo para decidir y actuar en consecuencia.
+        Adulto: Adulto Mayor: Según la OMS ( Organización Mundial de la Salud), las personas de 60 a 74 años son consideradas de edad avanzada; de 75 a 90 viejas o ancianas, y las que sobrepasan los 90 se les denomina grandes viejos o grandes longevos. A todo individuo mayor de 60 años se le llamará de forma indistinta persona de la tercera edad.</string>
+
+
+    <!-- BLOCK 16 FORM INSTRUCTIONS PAGE 3-->
+    <string name="another_differential_factor">30. Otro Factor Diferencial:</string>
+    <string name="single_mother_head_of_household">
+        Madre Cabeza de Familia: quien tiene a cargo exclusivo la responsabilidad económica del hogar, cuando los demás miembros tienen incapacidad para trabajar debidamente comprobada, a quien el Estado le debe una especial protección, bajo lo dispuesto en el artículo 43 de la Constitución, desarrollado por el artículo 2o de la Ley 82 de 1993.
+    </string>
+    <string name="single_father_head_of_household">
+        Padre Cabeza de Familia: la Ley 790 de 2002, el alto tribunal determina que el padre debe tener a su cargo la responsabilidad de los hijos menores o de personas incapacitadas para trabajar, la responsabilidad sobre el hijo debe ser permanente, y su pareja sustraiga completamente el incumplimiento de sus obligaciones, que la pareja no asuma la responsabilidad por incapacidad física, sensorial, síquica o la muerte. Por último, el alto tribunal consideró que deben existir la responsabilidad solitaria del padre para sostener el hogar.
+    </string>
+    <string name="caregiver">
+        Cuidador: es un prestador de servicios hecho por quienes no son profesionales en salud y cuyos esfuerzos son enfocados en la satisfacción de actividades catalogadas como básicas, de la vida diaria. La ley 33 de 2009 en Colombia reconoció la figura jurídica del cuidador familiar en casa, refiriéndose a personas que están a cargo de familiares que por su situación física, mental, intelectual o sensorial dependen de otro.
+    </string>
+    <string name="dependents">
+        Personas a cargo: son los dependientes del trabajador afiliado, como: hijos legítimos, naturales, adoptivos e hijastros hasta los 18 años que cumplan los requisitos de escolaridad, hermanos huérfanos de padres, dependientes del trabajador, hasta los 18 años que cumplan con los requisitos de escolaridad, sin límite de edad, cuando sean inválidos o de capacidad física disminuida que les impida trabajar; en este caso tienen derecho a doble cuota de subsidio familiar.
+    </string>
+    <string name="how_many_instruction">
+        ¿Cuántos?: usado para indicar la totalidad de elementos expresados, hace referencia a la cantidad.
+    </string>
+    <string name="any_disability">31. ¿Posee algún tipo de discapacidad?:</string>
+    <string name="disability_desc">
+        Discapacidad: es aquella condición bajo la cual ciertas personas presentan alguna deficiencia física; mental; intelectual o sensorial que a largo plazo afectan la forma de interactuar y participar plenamente en la sociedad. Por favor marque con una X según corresponda.
+    </string>
+    <string name="physical_disability">
+        Discapacidad Física: La diversidad funcional motora se puede definir como la disminución o ausencia de las funciones motoras o físicas (ausencia de una mano; pierna; pie; entre otros); disminuyendo su desenvolvimiento normal diario.
+    </string>
+    <string name="hearing_disability">
+        Discapacidad Auditiva: Condición bajo la cual ciertas personas presentan alguna deficiencia en la percepción sonora.
+    </string>
+    <string name="visual_disability">
+        Discapacidad Visual: Condición bajo la cual ciertas personas presentan alguna deficiencia en la capacidad de interpretar su entorno gracias a los rayos de luz que alcanzan el ojo.
+    </string>
+    <string name="deafblind_disability">
+        Discapacidad Sordo Ceguera: es una discapacidad que resulta de la combinación de dos deficiencias sensoriales (visual y auditiva), que genera en las personas que la padecen problemas de comunicación únicos y necesidades especiales derivadas de la dificultad para percibir de manera global, conocer, y por tanto interesarse y desenvolverse en su entorno.
+    </string>
+    <string name="psychosocial_disability">
+        Discapacidad Psicosocial (mental): Se considera que una persona tiene discapacidad psíquica cuando presenta "trastornos en el comportamiento adaptativo, previsiblemente permanentes". [Concepto utilizado en el formulario de solicitudes de protección]
+    </string>
+    <string name="intellectual_disability">
+        Discapacidad Intelectual: El término Discapacidad Intelectual no ha sido definido como tal. En la actualidad el concepto más empleado es el que propone la AAMR (American Asociación en Mental Retardation) en 1992: Limitaciones sustanciales en el funcionamiento intelectual. Se caracteriza por un funcionamiento intelectual inferior a la media; que coexiste junto a limitaciones en dos o más de las siguientes áreas de habilidades de adaptación: comunicación; cuidado propio; vida en el hogar; habilidades sociales; uso de la comunidad; autodirección; salud y seguridad; contenidos escolares funcionales; ocio y trabajo. El retraso mental se ha de manifestar antes de los 18 años de edad.
+    </string>
+    <string name="short_stature">
+        Talla Baja: Mediante Ley 1275 de 2009 se declara como personas en condición de discapacidad a las personas que presentan enanismo.
+    </string>
+    <string name="multiple_disability">
+        Discapacidad Múltiple: se caracteriza por la presencia de distintas discapacidades en diferentes grados y combinaciones: discapacidad intelectual, auditiva, motora, visual, autismo, parálisis cerebral, algunos síndromes específicos, epilepsia, hidrocefalia, escoliosis y problemas de comportamiento.
+    </string>
+    <string name="ethnic_group">32. ¿Se auto reconoce como miembro de algún Grupo Étnico?</string>
+    <string name="ethnic_group_desc">
+        Grupo étnico: Son poblaciones cuyas condiciones y prácticas sociales, culturales y económicas, los distinguen del resto de la sociedad y que han mantenido su identidad a lo largo de la historia, como sujetos colectivos que aducen un origen, una historia y unas características culturales propias, que están dadas en sus cosmovisiones, costumbres y tradiciones. Si la respuesta fue afirmativa, debe marcar con una X el grupo étnico al cual pertenece.
+    </string>
+    <string name="indigenous_instructions">
+        Indígena: un conjunto de familias de ascendencia amerindia que comparten sentimientos de identificación con su pasado aborigen, manteniendo rasgos y valores propios de su cultura tradicional, así como formas de organización y control social propios que los distinguen de otros grupos étnicos.
+    </string>
+    <string name="black">
+        Negro: También denominada raza africana; melanoderma o negroide; es aquel grupo biológico humano que conforma a todos los habitantes originarios del África subsahariana llamada también "África negra" y a sus descendientes en todo el mundo. Si bien la denominación de una persona como negra varía de cultura en cultura; lo que hoy se entiende generalmente por "negro" o "raza negra" se refiere a la raza congoide; diversificada a partir de eventuales cruzamientos con otras razas.
+    </string>
+    <string name="afrocolombian">
+        Afrocolombiano: Las comunidades negras que son un conjunto de familias de ascendencia afrocolombiana que poseen una cultura propia, y tienen sus propias tradiciones y costumbre dentro de la relación campo-poblado.
+    </string>
+    <string name="raizal">
+    Raizal: Es la manera con la que se define la cultura característica propia del Archipiélago de San Andrés; Providencia y Santa Catalina. Si bien estos
+    son conocidos también como sanandresanos; lo cierto es que dicho gentilicio corresponde en sentido amplio a un grupo más diverso que incluye a los
+    inmigrantes a las islas durante el siglo XX. Los raizales en cambio se entienden aquellos que tienen una identidad definida basada en su historia; sus
+    manifestaciones culturales; su lengua (el sanandresano) y su identidad.</string>
+    <string name="palenquero">Palenquero: La comunidad palenquera está conformada por los descendientes de los esclavizados que mediante actos de resistencia y de libertad,
+    se refugiaron en los territorios de la Costa Norte de Colombia desde el Siglo XV denominados palenques.</string>
+    <string name="gipsy_instructions">Se denominan gitanos; romaníes; zíngaros; rom; sinti o pueblo gitano a una comunidad o etnia originaria del subcontinente indio;
+    que data de los Reinos medios de la India; con rasgos culturales comunes aunque con enormes diferencias entre sus subgrupos.</string>
+
+    <string name="indigenous_group_instructions">32a. En caso de haber marcado el enfoque  diferencial Étnico - Indígena. Diligencie la siguiente  información:</string>
+    <string name="differential_approach">Enfoque Diferencial: hace referencia al reconocimiento legal, constitucional de grupos poblacionales con características particulares como edad, género, diversidad sexual, pertenencia a un grupo étnico discapacidad, entre otras, siendo intrínsecos a estos grupos unos derechos que deben ser garantizados por el Estado en atención a sus necesidades, capacidades y oportunidades especificas, como ciudadanos o como colectivos. Por favor diligencie los campos asociados según corresponda.</string>
+
+    <string name="ethnicity_or_indigenous_group">Etnia o Grupo Indígena : Persona que desciende de poblaciones que habitaban el país o una región geográfica a la que pertenece el país en la época de la conquista o colonización o del establecimiento de las actuales fronteras estatales y que cualquiera que sea su situación jurídica; conservan todas sus propias instituciones sociales; económicas; culturales y políticas o parte de ellas.</string>
+
+    <string name="reservation">Resguardo: son propiedad colectiva de las comunidades indígenas a favor de las cuales se constituyen y conforme a los artículos 63 y 329 de la Constitución Política; tienen el carácter de inalienables; imprescriptibles e inembargables. Los resguardos indígenas son una institución legal y sociopolítica de carácter especial; conformada por una o más comunidades indígenas; que con un título de propiedad colectiva que goza de las garantías de la propiedad privada; poseen su territorio y se rigen para el manejo de éste y su vida interna por una organización autónoma amparada por el fuero indígena y su sistema normativo propio. (Artículo 21; decreto 2164 de 1995). *articulo tomado de la página del Ministerio del Interior.
+https://www.mininterior.gov.co/content/resguardo-indigena.</string>
+
+    <string name="community_within_reservation">Comunidad dentro del Resguardo: Los resguardos indígenas son propiedad colectiva de las comunidades indígenas a favor de las cuales se constituyen y conforme a los artículos 63 y 329 de la Constitución Política, tienen el carácter de inalienables, imprescriptibles e inembargables. Los resguardos indígenas son una institución legal y sociopolítica de carácter especial, conformada por una o más comunidades indígenas, que con un título de propiedad colectiva que goza de las garantías de la propiedad privada, poseen su territorio y se rigen para el manejo de éste y su vida interna por una organización autónoma amparada por el fuero indígena y su sistema normativo propio. (Artículo 21, decreto 2164 de 1995).Resguardo Indígena https://www.mininterior.gov.co/content/resguardo-indigena. Escriba el nombre la comunidad Indígena a la cual pertenece dentro del resguardo.</string>
+
+    <string name="partiality">Parcialidad: Es el grupo o conjunto de familias de ascendencia amerindia, que tienen conciencia de identidad y comparten valores, rasgos, usos o costumbres de su cultura, así como formas de gobierno, gestión, control social o sistemas normativos propios que la distinguen de otras comunidades, tengan o no títulos de propiedad, o que no puedan acreditarlos legalmente, o que sus resguardos fueron disueltos, divididos o declarados vacantes (Artículo 2o. Decreto 2164 de 1995) *articulo tomado de la página del Ministerio del Interior. http://www.mininterior.gov.co/atencion-al-ciudadano/glosario [Concepto utilizado en el formulario de solicitudes de protección]</string>
+
+    <string name="community_without_registration">Comunidad sin registro ante la Dirección de Asuntos Indígenas del Ministerio del Interior: las personas que hacen parte de la comunidad indígena se encuentran registrados en la oficina de asuntos indígenas del Ministerio del Interior, los cuales emiten una certificación que identifica a que comunidad pertenece. en los casos que no se han registrado se les explica cómo deben hacerlo para que aparezcan en la base de datos y puedan tener los beneficios que han adquirido.</string>
+
+    <!-- BLOCK 16 FORM INSTRUCTIONS PAGE 4-->
+    <string name="differential_approach_ethnic_afrocolombian">32b. En caso de haber marcado Enfoque diferencial Étnico - Negro o Afrocolombiano, diligencie el nombre del consejo comunitario:
+Étnico - Negro o Afrocolombiano: descendientes de personas africanas esclavizadas por los españoles y las comunidades cimarronas que conquistaron su libertad; entre 1510 y 1852. Son africanas por su ancestro genético; étnico; cultural y espiritual; asumiendo la africanidad como un valor personal y de la sociedad colombiana.; Por favor diligencie los campos asociados según corresponda</string>
+
+    <string name="community_council">Consejo Comunitario: El Consejo de Estado los ha definido como “personas jurídicas cuya creación está autorizada por el Artículo 5o de la ley 70 de 1993, que tienen entre sus funciones las de administrar internamente las tierras de propiedad colectiva que se les adjudique, delimitar y asignar áreas al interior de las tierras adjudicadas, velar por la conservación y protección de los derechos de la propiedad colectiva, la preservación de la identidad cultural, el aprovechamiento y la conservación de los recursos naturales y hacer de amigables componedores en los conflictos internos factibles de conciliación”.</string>
+
+    <string name="belong_to_organization">33. ¿Pertenece a algún tipo de Organización ? Organización: es una estructura administrativa creada para lograr metas u objetivos con apoyo de los propios seres humanos, y/o con apoyo del talento humano. si la respuesta fue afirmativa, debe marcar con una X la Organización a la cual pertenece.</string>
+
+    <string name="social_organization">Organización Social: Es un grupo de personas que interactúan entre sí; en virtud de que mantienen determinadas relaciones sociales con el fin de obtener ciertos objetivos. También puede definirse en un sentido más estrecho como cualquier institución en una sociedad que trabaja para socializar a los grupos o gente que pertenece a ellos. Algunos ejemplos de esto incluyen educación; gobiernos; familias; sistemas económicos; religiones; comunidades y cualquier persona o grupo de personas con los que se tenga una interacción. Se trata de una esfera de vida social más amplia que se organiza para satisfacer necesidades humanas.</string>
+
+    <string name="guild_organization">Organización Gremial: Conjunto de personas que tienen un mismo ejercicio; profesión o estado social. En referencia a lo anterior; se puede entender que todas aquellas personas que poseen una misma profesión pueden ser llamadas gremio; por ejemplo: el gremio de médicos; el gremio de ingenieros; el gremio de abogados; sin embargo; también es extensivo aquel grupo de personas que ejerce una misma actividad u oficio; como el gremio de estudiantes; el gremio de artesanos; etc.</string>
+
+    <string name="civic_organization">Organización Cívica: como concepto de la ciencia social; designa a la diversidad de personas que; con categoría de ciudadanos y generalmente de manera colectiva; actúan para tomar decisiones en el ámbito público que consideran a todo individuo que se halla fuera de las estructuras gubernamentales.</string>
+
+    <string name="communal_organization">Organización Comunal: Es aquella organización con personalidad jurídica y sin fines de lucro; que tiene por objeto representar y promover valores e intereses específicos de la comunidad. Por tanto; una Organización Comunitaria no puede perseguir fines de lucro y deberá respetar la libertad religiosa y política de sus integrantes; quedándoles prohibida toda propaganda; campaña o acto proselitista por estas materias. *Tomado de http://www.estacioncentral.cl/portada_2009/guia_tramites/org_comu/que_es_org_comunitaria.pd</string>
+
+    <string name="peasant_organization">Organización Campesina: también llamadas organizaciones locales; comunitarias; rurales o populares son agrupaciones de base; formales o informales; voluntarias; democráticas; cuyo fin primario es promover los objetivos económicos o sociales de sus miembros. Independientemente de su situación jurídica o grado de formalización se caracterizan por ser grupos de personas que tienen por lo menos un objetivo común. Actúan conjuntamente ante las autoridades locales asociadas a la idea del desarrollo “de abajo hacia arriba” y constituyen mecanismos para la obtención de créditos; insumos; capacitación y otros servicios promoviendo el bienestar de sus miembros.</string>
+
+    <string name="victims_organization">Organización Victimas: Son aquellos grupos conformados en el territorio colombiano; bien sea a nivel municipal o distrital; departamental y nacional; por personas que individual o colectivamente hayan sufrido daños en los términos establecidos en el artículo 3 de la Ley 1448 de 2011. Las organizaciones a que se refiere este artículo; existen y obtienen su reconocimiento por el solo hecho de su constitución (Artículo 265 del Decreto Reglamentario 4800 de 2011)" *Texto tomado de la página de la defensoría del pueblo http://www.defensoria.gov.co/public/minisite/leydevictimas/.</string>
+
+    <string name="human_rights_organization">Organización Defensora de Derechos Humanos: Se usa la expresión “defensor de los derechos humanos” para describir a la persona que; individualmente o junto con otras; se esfuerza en promover o proteger esos derechos. Se les conoce sobre todo por lo que hacen; y la mejor forma de explicar lo que son consiste en describir sus actividades.</string>
+
+    <string name="other_organizations">Otras Organizaciones: Sindicatos, Cooperativas, Otras organizaciones Barriales.</string>
+
+    <string name="organization_membership">33a. En caso de pertenecer a una organización, indique el nombre de la organización
+Por favor marque con una X según corresponda. Y si pertenece a otra Organización escríbala.</string>
+
+    <string name="organization_legal_status">33b. ¿La Organización cuenta con Personería Jurídica?
+Personería Jurídica: El Artículo 633 del Código Civil Colombiano, se llama persona jurídica, una persona ficticia, capaz de ejercer derechos y contraer obligaciones civiles, y de ser representada judicial y extrajudicialmente. Las personas jurídicas son de dos especies: corporaciones y fundaciones de beneficencia pública. si la respuesta fue afirmativa, debe marcar con una X y escriba el nombre de la personería Jurídica.</string>
+
+    <string name="beneficiary_of_precautionary_measures">34. ¿Es beneficiario de alguna medida cautelar o provisional?
+Medida Cautelar: son disposiciones judiciales que se dictan para garantizar el resultado de un proceso y asegurar el cumplimiento de la sentencia, evitando la frustración del derecho del peticionario derivada de la duración del mismo. si la respuesta es afirmativa por favor marque con una X y seleccione el tipo de medida según corresponda.
+Medida Provisional: son disposiciones que las autoridades pueden adoptar en el marco de un procedimiento, de forma provisional y hasta que se dicte sentencia judicial.
+Medida Cautelar Otorgada por la Comisión Interamericana de Derechos Humanos: El mecanismo de medidas cautelares se encuentra previsto en el artículo 25 del Reglamento de la CIDH (Comisión Interamericana de Derechos Humanos). Según lo que establece el Reglamento, en situaciones de gravedad y urgencia la Comisión podrá, a iniciativa propia o a solicitud de parte, “solicitar que un Estado adopte medidas cautelares.
+Medida Cautelar Provisional por la Comisión Interamericana de Derechos Humanos: El mecanismo de medidas cautelares se encuentra previsto en el artículo 25 del Reglamento de la CIDH (Comisión Interamericana de Derechos Humanos). Según lo que establece el Reglamento, en situaciones de gravedad y urgencia la Comisión podrá, a iniciativa propia o a solicitud de parte, “solicitar que un Estado adopte medidas provisionales mientras se determine una sentencia judicial.
+Medida Cautelar Otorgada por un Juez Nacional: son disposiciones judiciales que dicta un juez Nacional para garantizar el resultado de un proceso y asegurar el cumplimiento de la sentencia, evitando la frustración del derecho del peticionario derivada de la duración del mismo.</string>
+
+    <string name="risk_event_narrative">35. Relato de los Hechos Generadores del Riesgo o Amenaza
+Relato: es una narración que se lleva a cabo con la intención de contar los detalles de determinados sucesos. Para el caso del diligenciamiento del formulario de solicitud de ingreso al programa de protección de la UNP; hace referencia a mencionar los detalles (tiempo, modo, lugar) de lo ocurrido en donde se identifique que hay un riesgo o amenaza para el solicitante.
+Hecho: permite describir a aquello que ocurre, las acciones, la obra o la cuestión a la cual se hace referencia. Escriba los hechos que le generan el riesgo o la amenaza de forma Breve sin omitir detalles importantes y por los cuales está solicitando protección a la Entidad.
+Riesgo: Probabilidad de ocurrencia de un daño al que se encuentra expuesta una persona, un grupo o una comunidad, como consecuencia directa del ejercicio de sus actividades o funciones políticas, públicas, sociales o humanitarias, o en razón al ejercicio de su cargo, en unas condiciones determinadas de modo, tiempo y lugar.
+Amenaza: Factor del riesgo que comprende las situaciones o hechos externos con la potencialidad de causar daño a una persona, grupo o comunidad, a través de una acción intencionada y por cualquier medio.
+Cronológico: es el espacio de tiempo en que los acontecimientos se desarrollan y los personajes realizan sus acciones, en el correr de un tiempo en secuencia.
+Generador: Son aquellos individuos, grupos u organizaciones que con su actuar materializan la violencia. Como: Delincuentes comunes y bandas organizadas, Narcotraficantes y grupos subversivos.
+Vulnerabilidad: Está relacionado con el riesgo y la amenaza y se puede definir como la debilidad o grado de exposición de un sujeto, objeto o sistema. También son aquellas fallas, omisiones o deficiencias de seguridad que puedan ser aprovechadas por los delincuentes.
+Incremento: hace referencia al aumento, para éste caso se relaciona con el aumento en la exposición a la amenaza o a los factores de riesgo.
+Exposición: Es la frecuencia con que se presenta la situación de riesgo, se definen como el daño, debido al riesgo que se considera, más grave razonadamente posible, incluyendo desgracias personales y daños materiales.</string>
+
+    <string name="indicate_risk_situation_instruction">36. Indique la Situación de Riesgo
+Situación de Riesgo: Probabilidad de ocurrencia de un daño al que se encuentra expuesta una persona, un grupo o una comunidad, como consecuencia directa del ejercicio de sus actividades o funciones políticas, públicas, sociales o humanitarias, o en razón al ejercicio de su cargo, en unas condiciones determinadas de modo, tiempo y lugar. Por favor marque con una X según corresponda.</string>
+
+    <string name="attack_desc">Atentado: Todo ataque dirigido contra una persona; sus derechos o bienes.</string>
+
+    <string name="kidnapping_desc">Secuestro: Substraer; retener u ocultar a una persona en contra de su voluntad.</string>
+
+
+    <!-- BLOCK 16 FORM INSTRUCTIONS PAGE 5-->
+
+    <string name="indicate_risk_situation">36. Indique la Situación de Riesgo</string>
+
+    <string name="homicide">Homicidio: Delito que se refiere a la muerte de un ser humano causada por otra persona. El término, por lo tanto, puede utilizarse como sinónimo de asesinato o crimen.</string>
+
+    <string name="illegal_recruitment">Reclutamiento ilegal: Delito que consiste en la vinculación permanente o transitoria de personas a grupos organizados al margen de la ley, mediante la fuerza o engaño.</string>
+
+    <string name="extortion_desc">Extorsión: Es un delito consistente en obligar a través de la utilización de violencia y amenazas a una persona para realizar, tolerar u omitir un acto en contra de su voluntad, con la intención de generar provecho ilícito o beneficio económico para sí o para un tercero.</string>
+
+    <string name="medium_of_threat">37. Medio por el cual se presentó la situación de Riesgo o Amenaza: Por favor marque con una X según corresponda.</string>
+    <string name="mark_with_x_accordingly">Por favor marque con una X según corresponda.</string>
+
+    <string name="phone">Telefónica: para éste caso hace referencia a la llamada que se realiza vía telefónica, con la intención de perturbar la tranquilidad. Algunas no pasan de insultos, algunas son abiertas promesas de agresión o muerte.</string>
+
+    <string name="verbal_desc">Verbal: El maltrato emocional o psicológico se da en aquellas situaciones en las que los individuos lo descalifican, humillan, discriminan, someten su voluntad o lo subordinan en distintos aspectos de su existencia que inciden en su dignidad, autoestima e integridad psíquica y moral. algunas son abiertas promesas de agresión o muerte.</string>
+
+    <string name="written_desc">Escrita: para éste caso es el medio como un individuo atemoriza a otro, imponiendo condiciones con un fin determinado, se puede realizar de diferentes formas para éste caso escrita.</string>
+
+    <string name="through_third_parties_instruction">A través de Terceros: en éste caso se utilizan terceras personas para perturbar la tranquilidad de una persona, o comunidad mediante información suministrada por el aparente victimario donde anuncia que le puede causar daño a la victima o a su familia, no hace la amenaza directamente.</string>
+
+    <string name="symbolic_desc">Simbólica: es un medio utilizado para describir una relación social donde el “victimario” ejerce un modo de violencia indirecta y no físicamente directa en contra de los “victimas”, por medio de imágenes, elementos que hacen pensar que le puede causar daño o la muerte. Por ejemplo: un sufragio.</string>
+
+    <string name="social_networks">Redes Sociales: son sitios de Internet formados por comunidades de individuos con intereses o actividades en común (como amistad, parentesco, trabajo) y que permiten el contacto entre estos, de manera que se puedan comunicar e intercambiar información. Las más utilizadas en Colombia son Facebook, WhatsApp, Instagram y YouTube.</string>
+
+    <string name="identify_population">38. Identifique la población a la cual pertenece el solicitante y QUÉ ESTÉ relacionada con la posible situación de seguridad: </string>
+    <string name="identify_population_desc"> Proceda a identificar la población a la cual pertenece el solicitante y QUE ESTÉ relacionada con la posible situación de riesgo o amenaza.</string>
+
+    <string name="risk_prevention_program_population">38a. Poblaciones del Programa de Prevención y protección de los Derechos a la vida, la Libertad, la integridad y seguridad de las personas</string>
+
+    <string name="indicate_population">Marque con una X la población a la cual pertenece el solicitante y que esté relacionada con la posible situación de riesgo o amenaza.</string>
+
+    <string name="right_to_life">Derecho a la vida: es un derecho universal, es decir que le corresponde a todo ser humano. Es un derecho necesario para poder concretizar todos los demás derechos universales. El derecho a la vida significa tener la oportunidad de vivir nuestra propia vida. es el derecho más importante para los seres humanos. La Constitución Política de Colombia, garantiza el derecho a la vida en el “ Artículo 11. El derecho a la vida es inviolable, No habrá pena de muerte.”</string>
+
+    <string name="right_to_freedom">Derecho a la Libertad: es un derecho sagrado e imprescriptible que todos los seres humanos poseen. La libertad es la facultad de obrar según su voluntad, respetando la ley y el derecho ajeno. La Constitución Política de Colombia, garantiza el derecho a la Libertad en el " Artículo 13. Todas las personas nacen libres e iguales ante la ley, recibirán la misma protección y trato de las autoridades y gozarán de los mismos derechos, libertades y oportunidades sin ninguna discriminación por razones de sexo, raza, origen nacional o familiar, lengua, religión, opinión política o filosófica".</string>
+
+    <string name="right_to_integrity">Derecho a la Integridad: Toda persona tiene derecho a que se respete su integridad física, psíquica y moral. 2. Nadie debe ser sometido a torturas ni a penas o tratos crueles, inhumanos o degradantes. Toda persona privada de libertad será tratada con el respeto debido a la dignidad inherente al ser humano. La Constitución Política de Colombia, garantiza el derecho a la integridad en el "Artículo 12. Nadie será sometido a desaparición forzada, a torturas ni a tratos o penas crueles, inhumanos o degradantes".</string>
+
+    <string name="security">Seguridad: humana significa proteger las libertades vitales, es decir, proteger a las personas expuestas a amenazas y a ciertas situaciones,
+    robusteciendo su fortaleza y aspiraciones, también es crear sistemas que faciliten a las personas los elementos básicos de supervivencia, dignidad y
+    medios de vida.
+    Derecho a la Seguridad: CAPITULO VI DERECHO A LA SEGURIDAD E INTEGRIDAD PERSONAL se transcriben las normas internacionales
+    contenidas en la Convención Interamericana sobre Derechos Humanos, y las nacionales contempladas en la nueva Constitución Política de la
+    República de Colombia de 1991.
+    Artículo 5. Derecho a la Integridad Personal: 1. Toda persona tiene derecho a que se respete su integridad física, psíquica y moral.
+    Artículo 12. Nadie será sometido a desaparición forzada, a torturas ni a tratos o penas crueles, inhumanos o degradantes.
+    Artículo 44. Son derechos fundamentales de los niños: la vida la integridad física, la salud y la seguridad social, la alimentación equilibrada, su nombre
+    y nacionalidad, tener una familia y no ser separados de ella, el cuidado y amor, la educación y la cultura, la recreación y la libre expresión de su opinión.
+    Serán protegidos contra toda forma de abandono, violencia física o moral, secuestro, venta, abuso sexual, explotación laboral o económica y trabajos
+    riesgosos. Gozarán también de los demás derechos consagrados en la Constitución, en las leyes y en los tratados internacionales ratificados por
+    Colombia.
+    Sentencia T-399 -18: Existen hechos reales que, de por sí, implican la alteración del uso pacífico del derecho a la tranquilidad y que hacen suponer que
+    la integridad o la libertad de la persona corren verdadero peligro.
+    Derecho a la Seguridad: CAPITULO VI DERECHO A LA SEGURIDAD E INTEGRIDAD PERSONAL se transcriben las normas internacionales
+    contenidas en la Convención Interamericana sobre Derechos Humanos, y las nacionales contempladas en la nueva Constitución Política de la
+    República de Colombia de 1991.
+    Artículo 5. Derecho a la Integridad Personal: 1. Toda persona tiene derecho a que se respete su integridad física, psíquica y moral.
+    Artículo 12. Nadie será sometido a desaparición forzada, a torturas ni a tratos o penas crueles, inhumanos o degradantes.
+    Artículo 44. Son derechos fundamentales de los niños: la vida la integridad física, la salud y la seguridad social, la alimentación equilibrada, su nombre
+    y nacionalidad, tener una familia y no ser separados de ella, el cuidado y amor, la educación y la cultura, la recreación y la libre expresión de su opinión.
+    Serán protegidos contra toda forma de abandono, violencia física o moral, secuestro, venta, abuso sexual, explotación laboral o económica y trabajos
+    riesgosos. Gozarán también de los demás derechos consagrados en la Constitución, en las leyes y en los tratados internacionales ratificados por
+    Colombia.
+    Sentencia T-399 -18: Existen hechos reales que, de por sí, implican la alteración del uso pacífico del derecho a la tranquilidad y que hacen suponer que
+    la integridad o la libertad de la persona corren verdadero peligro.</string>
+
+
+    <string name="program_population_38b">38b. Poblaciones del Programa especial de protección integral para dirigentes , miembros y sobrevivientes de la unión patriótica y el partido comunista Colombia.</string>
+
+    <string name="cidh_request">La Comisión Interamericana de Derechos Humanos - CIDH desde el 23 de octubre de 1992 le solicitó al Gobierno colombiano implementar medidas cautelares para proteger a dirigentes y miembros de la UP. Así mismo, el Decreto 1066 de 2015, unifica el Programa Especial de Protección Integral para dirigentes, miembros y sobrevivientes de la Unión Patriótica y del Partido Comunista Colombiano, con el fin de atender los requerimientos de protección presentados por aquellas personas que por razones de vinculación ideológica o partidista, con una de tales agrupaciones políticas, se encuentren en una situación de riesgo extraordinario o extremo. Marque con una X si pertenece a esta población y que esté relacionada con la posible situación de riesgo o amenaza.</string>
+
+
+    <!-- BLOCK 16 FORM INSTRUCTIONS PAGE 6-->
+    <string name="program_population_38c">38c. Población del Programa de Protección Especializada de Seguridad y Protección (Decreto 299 de 2017)</string>
+
+    <string name="specialized_security_protection_program">Población del Programa de Protección Especializada de Seguridad y Protección (Decreto 299 de 2017): integrantes del nuevo movimiento o partido político que surja del tránsito de las FARC-EP a la actividad política legal. Sus actividades y sedes, a las y los antiguos integrantes de las FARC-EP que se reincorporen a la vida civil, así como a las familias de todos los anteriores de acuerdo con el nivel de riesgo. (Capitulo adicionado por Decreto 299 de 2017, articulo1).</string>
+
+    <string name="member_definition">Integrante: que integra un grupo o forma parte de él junto a otras personas. Son todas aquellas personas que ingresan al Partido Político de Fuerza Alternativa Revolucionaria del Común (FARC) IF: Integrante FARC- EP</string>
+
+    <string name="ex_member_farc_ep">Ex Integrante FARC-EP: persona que hizo parte del GOAML de las FARC-EP y que ha realizado su proceso de desmovilización / movilización a la vida civil.</string>
+
+    <string name="activities_definition">Actividades: que puede traducirse como “llevado a cabo”. Para el caso del Formulario hace referencia a las tareas que realiza el ex integrante FARC-EP dentro del partido político.</string>
+
+    <string name="headquarters_definition">Sedes: con relación al formulario hace referencia a los espacios destinados a garantizar la Reincorporación Integral de los exintegrantes FARC-EP y sus familias donde se les brinda acompañamiento psicosocial, para el desarrollo propio de actividades del partido político de las FARC.</string>
+
+    <string name="reincorporation_definition">Reincorporación: Es la implementación de medidas co-construidas de corto, mediano y largo plazo, que les permitirá a las FARC incorporarse a la vida civil para ser ciudadanos con derechos y obligaciones. Según lo establece el acuerdo de paz y lo acordado en el Consejo Nacional de Reincorporación, este se trabajará en dos fases: la primera se ha denominado reincorporación temprana y la segunda fase, reincorporación a largo plazo.</string>
+
+    <string name="civil_life">Vida civil: Facultad de gozar de todas las ventajas concedidas a los ciudadanos por las leyes del Estado, personas que no pertenecen a ninguna fuerza armada ya sea del Estado o Revolucionaria.</string>
+
+    <string name="risk_level">Nivel de riesgo: Es el resultado del análisis técnico de seguridad sobre la gravedad e inminencia de la amenaza en que se encuentra una persona natural, familia o grupo de personas, así como de las condiciones particulares de vulnerabilidad que les afectan, en relación directa con la amenaza.</string>
+
+    <string name="farc_ep">FARC EP: Fuerza Alternativa Revolucionaria del Común (FARC): Es la denominación que le otorgaron al nuevo partido político de los ex integrantes de las FARC-EP.</string>
+
+    <string name="through_third_parties">A través de Terceros: en éste caso se utilizan terceras personas par a perturbar la tranquilidad de una persona, o comunidad mediante información suministrada por el aparente victimario donde anuncia que le puede causar daño a la victima o a su familia, no hace la amenaza directamente.</string>
+
+    <string name="farc_political_party">Partido Político FARC: Fuerza Alternativa Revolucionaria del Común (FARC) es el partido político colombiano fundado en agosto de 2017 por los excombatientes de la guerrilla Fuerzas Armadas Revolucionarias de Colombia (FARC), tras la firma de los Acuerdos de Paz entre el Gobierno de Juan Manuel Santos y las FARC en 2016. (Hoy Partido Comunes)</string>
+
+    <string name="jep">JEP: Estará constituida por una serie de salas de justicia, entre las que se incluye una Sala de Amnistía e Indulto y un Tribunal para la Paz, para administrar justicia e investigar, esclarecer, perseguir y sancionar las graves violaciones a los derechos humanos y las graves infracciones al Derecho Internacional Humanitario. La Jurisdicción Especial para la Paz hace parte del Sistema Integral de Verdad, Justicia, Reparación y No Repetición, y al ocuparse exclusivamente y de manera transitoria de las conductas relacionadas directa e indirectamente con el conflicto armado, no implica la sustitución de la jurisdicción ordinaria.</string>
+
+    <string name="family_group">Grupo Familiar: es una institución social, un grupo humano de convivencia, un grupo que se relaciona con otros grupos y personas de su entorno. Los comportamientos que aprendemos de la familia son muy importantes para ayudarnos a crecer como personas y a relacionarnos con los demás miembros de la sociedad.</string>
+
+    <string name="program_population_38d">38d. De acuerdo con las poblaciones identificada en el numeral anterior y en caso de que proceda indique el rol al interior de la Organización o Comunidad.</string>
+
+    <string name="decree_299">DECRETO 299 del 23 FEB 2017 hace referencia a un programa de Protección, Que el Acuerdo Final suscrito el 24 de noviembre de 2016 contempla en el "Protocolo del Capítulo de Seguridad para las y los integrantes de las FARC-EP del Acuerdo del Cese al Fuego y de Hostilidades Bilateral y Definitivo (CFHBD) y Dejación de las Armas (DA), la seguridad para las y los integrantes de las FARC-EP durante el CFHBD y DA".</string>
+
+    <string name="role">Rol: conjunto de habilidades, competencias y responsabilidades que están relacionadas. Los roles sirven a las tareas para especificar quién las realiza así como para definir un conjunto de productos de trabajo de los que son responsables. Por favor marque con una X según corresponda.</string>
+
+    <string name="leader_desc">Dirigente: Persona que ocupa un cargo directivo o ejerce la representación de una organización o grupo al que pertenece. La acreditación de una persona como dirigente o representante será expedida por la misma organización o grupo del que hace parte.</string>
+
+    <string name="representative_desc">Representante: Persona que ocupa un cargo directivo o ejerce la representación de una organización</string>
+
+    <string name="member_or_activist">Miembro o Activista: Persona que interviene activamente en la defensa de los derechos humanos. La acreditación de una persona como activista, se efectuará mediante certificación que expida por la respectiva organización o grupo al que pertenece o por una autoridad legalmente reconocida.</string>
+
+    <string name="consent_name">Consentimiento: Nombre del Solicitante</string>
+
+    <string name="consent">Consentimiento: La vinculación al Programa de Prevención y Protección requerirá de la manifestación expresa, libre y voluntaria por parte del solicitante o protegido respecto de la aceptación o no de su vinculación.</string>
+
+    <string name="informed_consent">Consentimiento Informado: El consentimiento informado es el procedimiento mediante el cual se garantiza que el ciudadano ha expresado voluntariamente su intención de presentar la solicitud de vinculación al Programa de Prevención y Protección, después de haber comprendido la información que se le ha brindado.</string>
+
+    <string name="data_protection_policy">En virtud de la Ley 1581 de 2012 y su Decreto reglamentario, la UNP como responsable de la recolección de los datos personales suministrados en el presente documento, garantiza la seguridad y confidencialidad respecto del tratamiento de los datos sensibles o personales suministrados para los fines de esta solicitud y para elaboración de estadísticas que se reflejarán en los ejercicios de caracterización e informes exigidos por Ley, con la finalidad siempre de mejorar la atención al ciudadano; igualmente propenderá por su debida custodia, y uso.</string>
+
+    <string name="unp_data_policy">Política de Tratamiento y Protección de Datos Personales de la UNP y autorización sobre el uso de los datos personales del solicitante para recibir comunicaciones y/o notificaciones sobre los trámites relacionados con las actividades misionales adelantadas por la entidad.</string>
+
+    <string name="authorize_preventive_measures">39. ¿Autoriza la implementación de medidas preventivas por parte de la Policía Nacional?</string>
+
+    <string name="implementation">Implementación: Instalación y puesta en marcha de un sistema o conjunto de programas de utilidad para el usuario, en este caso hace referencia a la implementación de medidas preventivas para evitar que el riesgo se vaya a materializar y a causarle daño al solicitante de protección.</string>
+
+    <string name="preventive_measures">Medidas preventivas: se refiere a aquellos medios asistenciales, consecuentes a prevenir un hecho que puede generar un riesgo para personas de una población específica, instalación física, donde la policía Nacional realiza actividades tendientes a evitar que se materialice el riesgo y exista afectación a su integridad, vida, y seguridad de la persona objeto de protección.</string>
+
+    <string name="national_police">Policía Nacional: es un cuerpo armado de naturaleza civil, a cargo de la seguridad pública de la República de Colombia. El presidente de la República es el comandante supremo de la institución y ejerce su autoridad mediante el Ministro de Defensa y el Director General de la Policía Nacional.</string>
+
+    <string name="authorize_risk_committee">39.a ¿Autoriza que su caso sea tratado en Comité de Evaluación de Riesgo y Recomendación de Medidas - CERREM de Mujeres?</string>
+
+    <string name="resolution_0805">Resolución 0805 de 2012 " Por el cual se expide el Protocolo con enfoque de género y de los derechos de las mujeres a que se refiere el artículo 50 del Decreto 4912 de 2011". En caso de que la mujer solicitante de medidas de protección no manifieste expresamente su deseo que el caso sea conocido por el CERREM de Mujeres, el mismo será llevado al CERREM de la Población a la que pertenece de acuerdo al Decreto 4912 de 2011.</string>
+
+
+    <string name="applicant_full_name">40. Nombre completo del Solicitante:</string>
+
+    <string name="applicant_definition">Solicitante: Persona que solicita o pide una cosa, en especial si lo hace formalmente y siguiendo un procedimiento establecido. Para éste caso la persona solicita Protección a la Entidad. Escriba el nombre completo del Solicitante, quien autoriza, para que la entidad inicie la Ruta de atención y con ella las actividades que se desarrollan para obtener un resultado del estudio de evaluación del riesgo y determine su ingreso al programa.</string>
+
+    <string name="applicant_signature_instruction">41. Firma del Solicitante</string>
+
+    <string name="signature_instruction">Registrar la firma (rúbrica) del solicitante quien autoriza, para que la entidad inicie la Ruta de atención y con ella las actividades que se desarrollan para obtener un resultado del estudio de evaluación del riesgo y determine su ingreso al programa.</string>
+
+    <string name="fingerprint_definition">42. Huella dactilar:</string>
+
+    <string name="fingerprint_instruction">Una huella dactilar o dermatoglifo es la impresión visible o moldeada que produce el contacto de las crestas papilares de un dedo de la mano sobre una superficie.</string>
+
+    <string name="habeas_data_law">Ley de Habeas Data:</string>
+
+    <string name="habeas_data_definition">Esta Ley en Colombia permite a los ciudadanos conocer, actualizar y rectificar toda la información que tengan las diferentes entidades y bases de datos del país. En esta ley está contemplado todo el manejo de la información de una persona.</string>
+
+    <string name="form_filler_details">43. Datos de quien diligencia el Formulario: ¿El Formulario es diligenciado por el solicitante?</string>
+
+    <string name="applicant_definition_short">Solicitante: Persona que solicita o pide una cosa, en especial si lo hace formalmente y siguiendo un procedimiento establecido. Para éste caso la persona solicita Protección a la Entidad.</string>
+    <string name="applicant_mark_with_x">Por favor marque con una X si el formulario es diligenciado por el solicitante .</string>
+
+    <string name="form_filler_names">44. Datos de quien diligencia el Formulario: nombres y apellidos (si es persona natural)</string>
+
+    <string name="form_filler_names_instruction">Escriba nombres y apellidos de quien diligencia el formulario.</string>
+
+    <string name="entity_name">45. Datos de quien diligencia el Formulario: Nombre de la Entidad (Si es persona Jurídica u otra Organización)</string>
+
+    <string name="entity_name_instruction">Escriba la entidad a la cual pertenece quien diligencia el formulario.</string>
+
+    <string name="contact_details">46. Datos de quien diligencia el Formulario: Contacto Telefónico</string>
+
+    <string name="contact_details_instruction">Escriba los datos del contacto de quien diligencia el formulario.</string>
+
+    <string name="email_details">47. Datos de quien diligencia el Formulario: Correo electrónico</string>
+
+    <string name="email_details_instruction">Escriba el correo electrónico de quien diligencia el formulario.</string>
+
+    <string name="unp_receptionist_name">48. Datos del funcionario y/o contratista de la UNP que recepciona el formulario: Nombres y apellidos</string>
+
+    <string name="unp_receptionist_email">49. Datos del servidor público o contratista de la UNP que recepciona el formulario: correo electrónico</string>
+
+    <string name="unp_receptionist_email_instruction">Escriba el correo electrónico del servidor público o contratista de la UNP que recepciona el formulario.</string>
+
+    <string name="form_storage">50. Archívese en:</string>
+
+    <string name="form_storage_instruction">Escriba el lugar donde el servidor público o contratista de la UNP archivará el formulario ya sea en archivo central físico en carpeta digital Share-Point</string>
 
 
 </resources>

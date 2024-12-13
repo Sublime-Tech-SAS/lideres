@@ -24,8 +24,10 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_T
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_EMAIL
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_STATUS
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FINGERPRINT
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FIRST_LAST_NAME
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FIRST_NAME
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FULL_NAME
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_GENDER
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_NAME
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_TRAIT
@@ -38,6 +40,7 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_G
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_PARTIAL
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IS_FORM_ENROLLER
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_LANDLINE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_ADDRESS
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_APPROVAL
@@ -58,13 +61,45 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SECOND_LAST_
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SECOND_NAME
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEXUAL_ORIENTATION
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SIGNATURE
+import co.sublimetech.lideres.core.presentation.Constants.CERREM_WOMEN_ACCEPTANCE
+import co.sublimetech.lideres.core.presentation.Constants.DATA_CONSENT_ACCEPTANCE
+import co.sublimetech.lideres.core.presentation.Constants.ENROLLER_ENTITY_NAME
+import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP
+import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.FILED_IN_IDENTIFIER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_CITY
 import co.sublimetech.lideres.core.presentation.Constants.FORM_COUNTRY
 import co.sublimetech.lideres.core.presentation.Constants.FORM_DATE
 import co.sublimetech.lideres.core.presentation.Constants.FORM_DEPARTMENT
+import co.sublimetech.lideres.core.presentation.Constants.FORM_ENROLLER_EMAIL
+import co.sublimetech.lideres.core.presentation.Constants.FORM_ENROLLER_NAME_AND_LASTNAME
+import co.sublimetech.lideres.core.presentation.Constants.FORM_ENROLLER_PHONE_NUMBER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_FILL_DATE
 import co.sublimetech.lideres.core.presentation.Constants.FORM_NUMBER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_OFFICE
+import co.sublimetech.lideres.core.presentation.Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE
+import co.sublimetech.lideres.core.presentation.Constants.PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_1
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_10
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_11
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_12
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_13
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_14
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_15
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_16
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_17
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_2
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_3
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_4
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_5
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_6
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_7
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_8
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_9
+import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL
+import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME
+import co.sublimetech.lideres.core.presentation.Constants.RISK_OR_THREAT_REPORT
 import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_OTHER
 import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE
 import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_OTHER
@@ -182,11 +217,53 @@ class FormViewModel : ViewModel(), KoinComponent {
             APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_NAME,
             APPLICANT_PROVISIONAL_MEASURES_STATUS,
             APPLICANT_PROVISIONAL_MEASURES_TYPE,
+            // BLOCK 6 RISK OR THREAT DATA
+            RISK_OR_THREAT_REPORT,
             // BLOCK 7 RISK SITUATION DATA
             RISK_SITUATION_TYPE,
             RISK_SITUATION_OTHER,
             RISK_SITUATION_MEANS_TYPE,
-            RISK_SITUATION_MEANS_OTHER
+            RISK_SITUATION_MEANS_OTHER,
+            // BLOCK 8 POPULATION OBJECT OF PROTECTION
+            PROTECTION_GROUP_1,
+            PROTECTION_GROUP_2,
+            PROTECTION_GROUP_3,
+            PROTECTION_GROUP_4,
+            PROTECTION_GROUP_5,
+            PROTECTION_GROUP_6,
+            PROTECTION_GROUP_7,
+            PROTECTION_GROUP_8,
+            PROTECTION_GROUP_9,
+            PROTECTION_GROUP_10,
+            PROTECTION_GROUP_11,
+            PROTECTION_GROUP_12,
+            PROTECTION_GROUP_13,
+            PROTECTION_GROUP_14,
+            PROTECTION_GROUP_15,
+            PROTECTION_GROUP_16,
+            PROTECTION_GROUP_17,
+            //BLOCK 9 PATRIOTIC UNION AND COMMUNIST PARTY SURVIVOR
+            PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR,
+            //BLOCK 10 ESPECIAL SECURITY AND PROTECTION GROUP
+            ESPECIAL_SECURITY_AND_PROTECTION_GROUP,
+            ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE,
+            //BLOCK 13 CONSENT
+            DATA_CONSENT_ACCEPTANCE,
+            NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE,
+            CERREM_WOMEN_ACCEPTANCE,
+            APPLICANT_FULL_NAME,
+            APPLICANT_SIGNATURE,
+            APPLICANT_FINGERPRINT,
+            //BLOCK 14 ENROLLER INFORMATION
+            APPLICANT_IS_FORM_ENROLLER,
+            FORM_ENROLLER_NAME_AND_LASTNAME,
+            ENROLLER_ENTITY_NAME,
+            FORM_ENROLLER_PHONE_NUMBER,
+            FORM_ENROLLER_EMAIL,
+            //BLOCK 15 PUBLIC SERVANT OR UNP FORM RECEIVER INFORMATION
+            PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME,
+            PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL,
+            FILED_IN_IDENTIFIER
         )
         val initialFields = fieldKeys.associateWith { TextFieldState() }
         _state.value = FormState(fieldValues = initialFields)
@@ -232,8 +309,7 @@ class FormViewModel : ViewModel(), KoinComponent {
 
     private fun getForm() {
         viewModelScope.launch {
-            val result = repository.getForm("push")
-
+            val result = repository.getForm(state.value.fieldValues[FORM_NUMBER]!!.text.toString())
             when (result) {
                 is Result.Error -> {
                     //HANDLE ERRORS, LOG TO SYSTEM, WARN ETC
