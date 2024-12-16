@@ -1,5 +1,6 @@
 package co.sublimetech.lideres.form.data
 
+import co.sublimetech.lideres.BuildKonfig
 import co.sublimetech.lideres.core.domain.DataError
 import co.sublimetech.lideres.core.domain.Result
 import co.sublimetech.lideres.form.data.database.FormDao
@@ -31,7 +32,7 @@ class FormRepositoryImpl(
                 try {
                     val uid = auth.currentUser?.uid ?: throw Exception("User not authenticated")
 
-                    firestore.collection("usuarios")
+                    firestore.collection(BuildKonfig.FIREBASE_STORAGE)
                         .document(uid)
                         .collection("formularios")
                         .document(form.formNumber)
@@ -54,6 +55,7 @@ class FormRepositoryImpl(
 
     override suspend fun getForm(formId: String): Result<Form, DataError.Local> {
         return withContext(Dispatchers.IO) {
+
             try {
                 // Fetch local form
                 val localForm = formDao.getForm(formId)
@@ -62,7 +64,7 @@ class FormRepositoryImpl(
                 try {
                     val uid = auth.currentUser?.uid ?: throw Exception("User not authenticated")
                     val docRef = firestore
-                        .collection("usuarios")
+                        .collection(BuildKonfig.FIREBASE_STORAGE)
                         .document(uid)
                         .collection("formularios")
                         .document(formId)
@@ -71,7 +73,7 @@ class FormRepositoryImpl(
 
                     // Compare forms and update remote form if outdated
                     if (localForm != null && localForm != snapshot) {
-                        firestore.collection("usuarios")
+                        firestore.collection(BuildKonfig.FIREBASE_STORAGE)
                             .document(uid)
                             .collection("formularios")
                             .document(localForm.formNumber)
@@ -107,7 +109,7 @@ class FormRepositoryImpl(
             try {
                 val uid = auth.currentUser?.uid ?: throw Exception("User not authenticated")
                 val remoteFormsSnapshot = withContext(Dispatchers.IO) {
-                    firestore.collection("usuarios")
+                    firestore.collection(BuildKonfig.FIREBASE_STORAGE)
                         .document(uid)
                         .collection("formularios")
                         .get()
@@ -135,7 +137,7 @@ class FormRepositoryImpl(
                 // Save new local forms remotely
                 for (local in missingLocalForms) {
                     withContext(Dispatchers.IO) {
-                        firestore.collection("usuarios")
+                        firestore.collection(BuildKonfig.FIREBASE_STORAGE)
                             .document(uid)
                             .collection("formularios")
                             .document(local.formNumber)

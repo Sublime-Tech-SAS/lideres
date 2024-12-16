@@ -300,7 +300,6 @@ class FormViewModel : ViewModel(), KoinComponent {
 
                 is Result.Success -> {
                     _state.value = _state.value.copy()
-                    getForms()
                     //LET USER KNOW?
                 }
             }

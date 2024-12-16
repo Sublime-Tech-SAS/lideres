@@ -16,7 +16,6 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -268,7 +267,7 @@ fun FormScreen(
     state: FormState,
     onAction: (FormAction) -> Unit,
 ) {
-    LaunchedEffect(Unit) { onAction(FormAction.OnGetFormsClick) }
+
 
 
     LazyColumn(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.Start) {

@@ -1,5 +1,6 @@
 package co.sublimetech.lideres.authentication.data
 
+import co.sublimetech.lideres.BuildKonfig
 import co.sublimetech.lideres.authentication.data.network.dto.User
 import co.sublimetech.lideres.authentication.domain.AuthRepositoryInterface
 import co.sublimetech.lideres.core.domain.DataError
@@ -29,9 +30,9 @@ class AuthRepositoryImpl : AuthRepositoryInterface {
                 val date = localDateTime.date
                 val time = localDateTime.time
 
-                firestore.collection("prueba")
-                    .document("syncTrigger")
-                    .set(mapOf("timestamp" to "${time.hour}:${time.minute} $date"))
+                firestore.collection(BuildKonfig.FIREBASE_STORAGE)
+                    .document(auth.currentUser?.uid.toString())
+                    .update( Pair("ultima_actualizacion","${time.hour}:${time.minute} $date"))
 
                 Result.Success(true)
             } catch (e: Exception) {
@@ -66,7 +67,7 @@ class AuthRepositoryImpl : AuthRepositoryInterface {
     override suspend fun validateActiveUser(userId: String): Result<Boolean, DataError> {
         return withContext(Dispatchers.IO) {
             try {
-                val docRef = firestore.collection("usuarios").document(userId)
+                val docRef = firestore.collection(BuildKonfig.FIREBASE_STORAGE).document(userId)
                 val snapshot = docRef.get().data<User>()
                 val subscribed = snapshot.active
 

@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -10,6 +11,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
     alias(libs.plugins.google.services)
+    id("com.codingfeline.buildkonfig") version "0.15.2"
 }
 
 kotlin {
@@ -124,6 +126,31 @@ android {
 
 dependencies {
     debugImplementation(compose.uiTooling)
+}
+
+buildkonfig {
+    packageName = "co.sublimetech.lideres"
+
+    defaultConfigs {
+        buildConfigField(STRING, "FIREBASE_STORAGE", "prueba")
+    }
+
+    targetConfigs {
+        create("ios") {
+            buildConfigField(STRING, "FIREBASE_STORAGE", "prueba")
+        }
+    }
+
+
+    targetConfigs("production") {
+        create("android") {
+            buildConfigField(STRING, "FIREBASE_STORAGE", "usuarios")
+        }
+
+        create("ios") {
+            buildConfigField(STRING, "FIREBASE_STORAGE", "usuarios")
+        }
+    }
 }
 
 
