@@ -279,10 +279,6 @@ class FormViewModel : ViewModel(), KoinComponent {
                 getForm()
             }
 
-            FormAction.OnGetFormsClick -> {
-                getForms()
-            }
-
             FormAction.OnStatisticsClick -> {
                 //travel to statistics
             }
@@ -320,21 +316,6 @@ class FormViewModel : ViewModel(), KoinComponent {
                     //LET USER KNOW?
                 }
             }
-        }
-    }
-
-
-    private fun getForms() {
-        viewModelScope.launch {
-            repository.getForms()
-                .catch { e ->
-                    e.printStackTrace()
-                    _state.value = _state.value.copy(fetchedForms = emptyList())
-
-                }
-                .collect { forms ->
-                    _state.value = _state.value.copy(fetchedForms = forms)
-                }
         }
     }
 }

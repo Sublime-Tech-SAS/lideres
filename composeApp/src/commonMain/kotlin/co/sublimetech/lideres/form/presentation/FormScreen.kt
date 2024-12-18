@@ -1004,18 +1004,6 @@ fun FormScreen(
                 Text("Traer Formualrio")
             }
 
-
-            Button(colors = ButtonColors(
-                containerColor = Color.LightGray,
-                contentColor = Color.Black,
-                disabledContainerColor = Color.LightGray,
-                disabledContentColor = Color.LightGray
-            ), modifier = Modifier.padding(start = 16.dp),
-                onClick = {
-                    onAction(FormAction.OnGetFormsClick)
-                }) {
-                Text("Traer Formularios")
-            }
         }
     }
 }

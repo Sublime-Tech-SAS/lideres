@@ -10,6 +10,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -68,6 +69,24 @@ fun StatisticsScreen(
         Triple("Intersexual", 4.0, MaterialTheme.colorScheme.tertiary)
     )
 
+    val hombreCount = state.fetchedForms.count { it.applicantData.sex == "Hombre" }
+    val mujerCount = state.fetchedForms.count { it.applicantData.sex == "Mujer" }
+    val intersexualCount = state.fetchedForms.count { it.applicantData.sex == "Intersexual" }
+
+    val totalCount = hombreCount + mujerCount + intersexualCount
+
+    val hombrePercentage = if (totalCount > 0) (hombreCount.toDouble() / totalCount) * 100 else 0.0
+    val mujerPercentage = if (totalCount > 0) (mujerCount.toDouble() / totalCount) * 100 else 0.0
+    val intersexualPercentage =
+        if (totalCount > 0) (intersexualCount.toDouble() / totalCount) * 100 else 0.0
+
+
+    val newSexData = listOf(
+        Triple("Hombre", hombrePercentage, MaterialTheme.colorScheme.primary),
+        Triple("Mujer", mujerPercentage, MaterialTheme.colorScheme.secondary),
+        Triple("Intersexual", intersexualPercentage, MaterialTheme.colorScheme.tertiary)
+    )
+
     val tendenciaTemporal = listOf(
         Pair("Ene", 30.0),
         Pair("Ene", 0.0),
@@ -78,6 +97,10 @@ fun StatisticsScreen(
         Pair("Feb", 143.0),
     )
 
+
+    LaunchedEffect(Unit) {
+        onAction(StatisticsAction.OnGetForms)
+    }
 
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Fixed(1),
@@ -109,7 +132,7 @@ fun StatisticsScreen(
         }
         item {
             MyDonutChart(
-                data = sexoData,
+                data = newSexData,
                 title = "Sexo",
                 maxHeight = 500.dp,
                 chartSize = 250.dp,
@@ -117,7 +140,7 @@ fun StatisticsScreen(
                 donutThickness = 20.dp
             )
         }
-        item{
+        item {
             Button(
                 onClick = { onAction(StatisticsAction.OnFormClick) }
             ) {
