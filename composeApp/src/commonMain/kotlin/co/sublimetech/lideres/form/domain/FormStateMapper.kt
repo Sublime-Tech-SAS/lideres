@@ -58,7 +58,21 @@ fun FormState.toForm(): Form {
         legalRepresentativeStatus = fieldValues[Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS]!!.text.toString(),
         legalRepresentativeName = fieldValues[Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_NAME]!!.text.toString(),
         provisionalMeasuresStatus = fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_STATUS]!!.text.toString(),
-        provisionalMeasuresType = fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE]!!.text.toString()
+        provisionalMeasuresType = fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE]!!.text.toString(),
+        riskOrThreatReport = fieldValues[Constants.RISK_OR_THREAT_REPORT]!!.text.toString(),
+        riskSituationType = fieldValues[Constants.RISK_SITUATION_TYPE]!!.text.toString(),
+        riskSituationOther = fieldValues[Constants.RISK_SITUATION_OTHER]!!.text.toString(),
+        riskSituationMeansType =fieldValues[Constants.RISK_SITUATION_MEANS_TYPE]!!.text.toString(),
+        riskSituationMeansOther = fieldValues[Constants.RISK_SITUATION_MEANS_OTHER]!!.text.toString(),
+        protectionAndPreventionGroup = fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP]!!.text.toString(),
+        patrioticUnionComunistParty = fieldValues[Constants.PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR]!!.text.toString(),
+        especialSecurityProtection = fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP]!!.text.toString(),
+        especialSecurityProtectionType = fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE]!!.text.toString(),
+        dataConsentAcceptance = fieldValues[Constants.DATA_CONSENT_ACCEPTANCE]!!.text.toString(),
+        nationalPolicePreventiveMeasuresAcceptance = fieldValues[Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE]!!.text.toString(),
+        cerremWomenAcceptance = fieldValues[Constants.CERREM_WOMEN_ACCEPTANCE]!!.text.toString(),
+        applicantFullName = fieldValues[Constants.APPLICANT_FULL_NAME]!!.text.toString(),
+        applicantSignature = fieldValues[Constants.APPLICANT_SIGNATURE]!!.text.toString(),
     )
 
     val thirdParty = ThirdParty(
@@ -78,6 +92,14 @@ fun FormState.toForm(): Form {
         notificationApproval = fieldValues[Constants.THIRD_PARTY_NOTIFICATION_APPROVAL]!!.text.toString()
     )
 
+    val enroller = Enroller(
+        applicantIsFormEnroller = fieldValues[Constants.APPLICANT_IS_FORM_ENROLLER]!!.text.toString(),
+        formEnrollerNameAndLastName = fieldValues[Constants.FORM_ENROLLER_NAME_AND_LASTNAME]!!.text.toString(),
+        enrollerEntityName = fieldValues[Constants.APPLICANT_IS_FORM_ENROLLER]!!.text.toString(),
+        formEnrollerFormNumber = fieldValues[Constants.FORM_ENROLLER_PHONE_NUMBER]!!.text.toString(),
+        formEnrollerFormEmail = fieldValues[Constants.FORM_ENROLLER_EMAIL]!!.text.toString(),
+    )
+
     return Form(
         formNumber = fieldValues[Constants.FORM_NUMBER]!!.text.toString(),
         formDate = fieldValues[Constants.FORM_DATE]!!.text.toString(),
@@ -86,8 +108,12 @@ fun FormState.toForm(): Form {
         formCountry = fieldValues[Constants.FORM_COUNTRY]!!.text.toString(),
         formDepartment = fieldValues[Constants.FORM_DEPARTMENT]!!.text.toString(),
         formCity = fieldValues[Constants.FORM_CITY]!!.text.toString(),
+        publicServantUnpReceiverName = fieldValues[Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME]!!.text.toString(),
+        publicServantUnpReceiverEmail = fieldValues[Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL]!!.text.toString(),
+        filedInIdentifier = fieldValues[Constants.FILED_IN_IDENTIFIER]!!.text.toString(),
         applicantData = applicant,
-        thirdPartyData = thirdParty
+        thirdPartyData = thirdParty,
+        enrollerData = enroller
     )
 }
 

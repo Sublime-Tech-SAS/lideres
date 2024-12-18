@@ -80,23 +80,7 @@ import co.sublimetech.lideres.core.presentation.Constants.FORM_NUMBER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_OFFICE
 import co.sublimetech.lideres.core.presentation.Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE
 import co.sublimetech.lideres.core.presentation.Constants.PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_1
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_10
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_11
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_12
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_13
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_14
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_15
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_16
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_17
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_2
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_3
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_4
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_5
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_6
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_7
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_8
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_GROUP_9
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP
 import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL
 import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME
 import co.sublimetech.lideres.core.presentation.Constants.RISK_OR_THREAT_REPORT
@@ -225,23 +209,7 @@ class FormViewModel : ViewModel(), KoinComponent {
             RISK_SITUATION_MEANS_TYPE,
             RISK_SITUATION_MEANS_OTHER,
             // BLOCK 8 POPULATION OBJECT OF PROTECTION
-            PROTECTION_GROUP_1,
-            PROTECTION_GROUP_2,
-            PROTECTION_GROUP_3,
-            PROTECTION_GROUP_4,
-            PROTECTION_GROUP_5,
-            PROTECTION_GROUP_6,
-            PROTECTION_GROUP_7,
-            PROTECTION_GROUP_8,
-            PROTECTION_GROUP_9,
-            PROTECTION_GROUP_10,
-            PROTECTION_GROUP_11,
-            PROTECTION_GROUP_12,
-            PROTECTION_GROUP_13,
-            PROTECTION_GROUP_14,
-            PROTECTION_GROUP_15,
-            PROTECTION_GROUP_16,
-            PROTECTION_GROUP_17,
+            PROTECTION_AND_PREVENTION_GROUP,
             //BLOCK 9 PATRIOTIC UNION AND COMMUNIST PARTY SURVIVOR
             PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR,
             //BLOCK 10 ESPECIAL SECURITY AND PROTECTION GROUP

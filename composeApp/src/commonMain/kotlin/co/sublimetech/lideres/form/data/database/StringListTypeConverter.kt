@@ -2,6 +2,7 @@ package co.sublimetech.lideres.form.data.database
 
 import androidx.room.TypeConverter
 import co.sublimetech.lideres.form.domain.Applicant
+import co.sublimetech.lideres.form.domain.Enroller
 import co.sublimetech.lideres.form.domain.ThirdParty
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -34,6 +35,16 @@ object StringListTypeConverter {
 
     @TypeConverter
     fun toThirdParty(value: String): ThirdParty {
+        return Json.decodeFromString(value)
+    }
+
+    @TypeConverter
+    fun fromEnroller(enroller: Enroller): String {
+        return Json.encodeToString(enroller)
+    }
+
+    @TypeConverter
+    fun toEnroller(value: String): Enroller {
         return Json.decodeFromString(value)
     }
 }

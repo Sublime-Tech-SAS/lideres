@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "688e4768b751088a7ed836d4ea9a010e",
+    "identityHash": "e5714d7249126a23568a3656221d9665",
     "entities": [
       {
         "tableName": "Form",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`formNumber` TEXT NOT NULL, `formDate` TEXT NOT NULL, `formOffice` TEXT NOT NULL, `formFillDate` TEXT NOT NULL, `formCountry` TEXT NOT NULL, `formDepartment` TEXT NOT NULL, `formCity` TEXT NOT NULL, `applicantData` TEXT NOT NULL, `thirdPartyData` TEXT NOT NULL, PRIMARY KEY(`formNumber`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`formNumber` TEXT NOT NULL, `formDate` TEXT NOT NULL, `formOffice` TEXT NOT NULL, `formFillDate` TEXT NOT NULL, `formCountry` TEXT NOT NULL, `formDepartment` TEXT NOT NULL, `formCity` TEXT NOT NULL, `publicServantUnpReceiverName` TEXT NOT NULL, `publicServantUnpReceiverEmail` TEXT NOT NULL, `filedInIdentifier` TEXT NOT NULL, `applicantData` TEXT NOT NULL, `thirdPartyData` TEXT NOT NULL, `enrollerData` TEXT NOT NULL, PRIMARY KEY(`formNumber`))",
         "fields": [
           {
             "fieldPath": "formNumber",
@@ -51,6 +51,24 @@
             "notNull": true
           },
           {
+            "fieldPath": "publicServantUnpReceiverName",
+            "columnName": "publicServantUnpReceiverName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "publicServantUnpReceiverEmail",
+            "columnName": "publicServantUnpReceiverEmail",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "filedInIdentifier",
+            "columnName": "filedInIdentifier",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
             "fieldPath": "applicantData",
             "columnName": "applicantData",
             "affinity": "TEXT",
@@ -59,6 +77,12 @@
           {
             "fieldPath": "thirdPartyData",
             "columnName": "thirdPartyData",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enrollerData",
+            "columnName": "enrollerData",
             "affinity": "TEXT",
             "notNull": true
           }
@@ -73,7 +97,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '688e4768b751088a7ed836d4ea9a010e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e5714d7249126a23568a3656221d9665')"
     ]
   }
 }

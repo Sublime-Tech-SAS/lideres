@@ -24,10 +24,18 @@ data class Form(
     val formDepartment: String,
     @SerialName("ciudad")
     val formCity: String,
+    @SerialName("nombres_servidor_publico_contratista_unp")
+    val publicServantUnpReceiverName: String,
+    @SerialName("email_servidor_publico_contratista_unp")
+    val publicServantUnpReceiverEmail: String,
+    @SerialName("archivo_formulario")
+    val filedInIdentifier: String,
     @SerialName("solicitante")
     val applicantData: Applicant,
     @SerialName("tercero")
     val thirdPartyData: ThirdParty,
+    @SerialName("diligenciador")
+    val enrollerData: Enroller,
 )
 
 @Serializable
@@ -85,7 +93,6 @@ data class Applicant(
     @SerialName("autorizacion_de_notificaciones")
     val notificationApproval: String,
     @SerialName("pais_de_notificacion")
-
     val notificationCountry: String,
     @SerialName("departamento_de_notificacion")
     val notificationDepartment: String,
@@ -141,6 +148,34 @@ data class Applicant(
     val provisionalMeasuresStatus: String,
     @SerialName("tipo_de_medidas_provisionales")
     val provisionalMeasuresType: String,
+    @SerialName("relato_hechos_riesgo_amenaza")
+    val riskOrThreatReport: String,
+    @SerialName("situacion_riesgo_amenaza")
+    val riskSituationType: String,
+    @SerialName("situacion_riesgo_amenaza_otro")
+    val riskSituationOther: String,
+    @SerialName("medio_riesgo_amenaza")
+    val riskSituationMeansType: String,
+    @SerialName("medio_riesgo_amenaza_otro")
+    val riskSituationMeansOther: String,
+    @SerialName("poblacion_objeto_proteccion")
+    val protectionAndPreventionGroup: String,
+    @SerialName("poblacion_union_patriotca_partido_comunista")
+    val patrioticUnionComunistParty: String,
+    @SerialName("poblacion_programa_especial_proteccion")
+    val especialSecurityProtection: String,
+    @SerialName("tipo_poblacion_programa_especial_proteccion")
+    val especialSecurityProtectionType: String,
+    @SerialName("autorizacion_politica_datos")
+    val dataConsentAcceptance: String,
+    @SerialName("autorizacion_medidas_proteccion_policia")
+    val nationalPolicePreventiveMeasuresAcceptance: String,
+    @SerialName("autorizacion_cerrem_mujeres")
+    val cerremWomenAcceptance: String,
+    @SerialName("nombre_completo_aplicante")
+    val applicantFullName: String,
+    @SerialName("firma_applicante")
+    val applicantSignature: String,
 )
 
 @Serializable
@@ -152,7 +187,6 @@ data class ThirdParty(
     @SerialName("departamento_de_domicilio_de_tercero")
     val addressDepartment: String,
     @SerialName("ciudad_de_domicilio_de_tercero")
-
     val addressCity: String,
     @SerialName("distrito_de_domicilio_de_tercero")
     val addressDistrict: String,
@@ -174,4 +208,19 @@ data class ThirdParty(
     val email: String,
     @SerialName("autorizacion_de_notificaciones_de_tercero")
     val notificationApproval: String,
+)
+
+@Serializable
+data class Enroller(
+    @SerialName("diligenicador_es_applicante")
+    val applicantIsFormEnroller: String,
+    @SerialName("nombre_completo_diligenciador")
+    val formEnrollerNameAndLastName: String,
+    @SerialName("nombre_entidad_diligenciante")
+    val enrollerEntityName: String,
+    @SerialName("numero_telefonico_diligenciador")
+    val formEnrollerFormNumber: String,
+    @SerialName("email_diligenciador")
+    val formEnrollerFormEmail: String,
+
 )
