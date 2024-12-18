@@ -86,6 +86,10 @@ kotlin {
             implementation(libs.sain)
 
 
+            implementation(compose.materialIconsExtended)
+
+
+
         }
         nativeMain.dependencies {
             implementation(libs.ktor.client.darwin)

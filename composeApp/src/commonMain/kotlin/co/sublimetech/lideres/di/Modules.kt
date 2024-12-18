@@ -10,6 +10,7 @@ import co.sublimetech.lideres.form.data.database.DatabaseFactory
 import co.sublimetech.lideres.form.data.database.FormDatabase
 import co.sublimetech.lideres.form.domain.FormRepositoryInterface
 import co.sublimetech.lideres.form.presentation.FormViewModel
+import co.sublimetech.lideres.statistics.presentation.StatisticsViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
 import org.koin.core.module.dsl.viewModelOf
@@ -34,5 +35,6 @@ val sharedModule = module {
     viewModelOf(::MainViewModel)
     viewModelOf(::LoginViewModel)
     viewModelOf(::FormViewModel)
+    viewModelOf(::StatisticsViewModel)
 
 }

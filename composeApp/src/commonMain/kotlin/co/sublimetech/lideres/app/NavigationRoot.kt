@@ -10,6 +10,8 @@ import co.sublimetech.lideres.authentication.presentation.login.LoginScreenRoot
 import co.sublimetech.lideres.authentication.presentation.login.LoginViewModel
 import co.sublimetech.lideres.form.presentation.FormScreenRoot
 import co.sublimetech.lideres.form.presentation.FormViewModel
+import co.sublimetech.lideres.statistics.presentation.StatisticsScreenRoot
+import co.sublimetech.lideres.statistics.presentation.StatisticsViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 
@@ -49,12 +51,18 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController) {
 private fun NavGraphBuilder.appGraph(navController: NavHostController) {
 
     navigation<Route.App>(
-        startDestination = Route.Form
+        startDestination = Route.Statistics
     ) {
         composable<Route.Form> {
             FormScreenRoot(
                 viewModel = koinViewModel<FormViewModel>(),
                 onStatisticsClick = { navController.navigate(Route.Statistics) })
+        }
+
+        composable<Route.Statistics> {
+            StatisticsScreenRoot(
+                viewModel = koinViewModel<StatisticsViewModel>(),
+                onStatisticsClick = { navController.navigate(Route.Form) })
         }
     }
 }
