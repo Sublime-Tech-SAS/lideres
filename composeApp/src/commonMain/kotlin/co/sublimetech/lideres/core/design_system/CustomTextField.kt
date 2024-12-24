@@ -15,7 +15,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.text.input.InputTransformation
-import androidx.compose.foundation.text.input.TextFieldBuffer
 import androidx.compose.foundation.text.input.TextFieldLineLimits
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.foundation.text.input.maxLength
@@ -43,9 +42,9 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun CustomTextField(
     state: TextFieldState,
-    startIcon: ImageVector? =null,
-    endIcon: ImageVector?=null,
-    hint: String?=null,
+    startIcon: ImageVector? = null,
+    endIcon: ImageVector? = null,
+    hint: String? = null,
     title: String?,
     error: String? = null,
     keyboardType: KeyboardType = KeyboardType.Text,
@@ -54,8 +53,8 @@ fun CustomTextField(
     onlyDigits: Boolean = false,
     onlyLetters: Boolean = false,
     dateFormat: Boolean = false,
-    allCaps: Boolean = false,
-    modifier: Modifier = Modifier,
+    phoneNumber:Boolean = false,
+    modifier: Modifier = Modifier
 ) {
 
     var isFocused by remember {
@@ -79,8 +78,7 @@ fun CustomTextField(
             if (error != null) {
                 Text(
                     text = error,
-                    color = Color.Red,
-                    fontSize = 12.sp
+                    color = Color.Red
                 )
             } else if (additionalInfo != null) {
                 Text(
@@ -103,30 +101,15 @@ fun CustomTextField(
             cursorBrush = SolidColor(Color.Gray),
             inputTransformation = InputTransformation.maxLength(maxLength)
                 .then {
-                    val currentText = this.toString()
-                    if (onlyDigits) {
-                        val filteredText =
-                            currentText.filter { it.isDigit() }
-                        if (filteredText != currentText) {
-                            replace(0, length, filteredText)
-                        }
-                    } else if (onlyLetters) {
-                        val filteredText =
-                            currentText.filter { it.isLetter() }
-                        if (filteredText != currentText) {
-                            replace(0, length, filteredText)
-                        }
-                    } else if (dateFormat) {
-                        createDate(this)
+                    if(phoneNumber){
+                        numbersStartingWithThree(this)
                     }
-                }
-                .then {
-                    if (allCaps) {
-                        val currentText = this.toString()
-                        val filteredText = currentText.uppercase()
-                        if (filteredText != currentText) {
-                            replace(0, length, filteredText)
-                        }
+                    if (onlyDigits) {
+                        checkNumbers(this)
+                    } else if (onlyLetters) {
+                        capitalizeText(this)
+                    } else if (dateFormat) {
+                        formatToDate(this)
                     }
                 },
             modifier = Modifier
@@ -173,7 +156,7 @@ fun CustomTextField(
                     ) {
                         if (state.text.isEmpty() && !isFocused) {
                             Text(
-                                text = hint?: "",
+                                text = hint ?: "",
                                 color = Color.LightGray.copy(
                                     alpha = 0.4f
                                 ),
@@ -198,29 +181,7 @@ fun CustomTextField(
     }
 }
 
-fun createDate(buffer: TextFieldBuffer) {
-    val currentText = buffer.asCharSequence().toString()
-    val filteredText = currentText.filter { it.isDigit() }
 
-    val formattedText = buildString {
-        for (i in filteredText.indices) {
-            append(filteredText[i])
-            if ((i == 1 || i == 3) && i != filteredText.length - 1) {
-                append("/")
-            }
-        }
-    }
-
-    val finalText = if (formattedText.length > 10) {
-        formattedText.substring(0, 10)
-    } else {
-        formattedText
-    }
-
-    if (finalText != currentText) {
-        buffer.replace(0, buffer.length, finalText)
-    }
-}
 
 
 
@@ -233,8 +194,9 @@ private fun TextFieldPreview() {
         hint = "example@test.com",
         title = "Email",
         error = null,
-        allCaps = true,
-        additionalInfo = "Must be a valid email",
+        onlyDigits = true,
+        dateFormat = false,
+        onlyLetters = false,
         modifier = Modifier
             .fillMaxWidth()
     )

@@ -16,6 +16,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -29,6 +30,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import co.sublimetech.lideres.core.design_system.CustomText
 import co.sublimetech.lideres.core.design_system.CustomTextField
 import co.sublimetech.lideres.core.design_system.DropdownComponent
+import co.sublimetech.lideres.core.design_system.isDateBeforeToday
+import co.sublimetech.lideres.core.design_system.isValidEmail
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_CITY
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_COUNTRY
@@ -268,6 +271,8 @@ fun FormScreen(
     onAction: (FormAction) -> Unit,
 ) {
 
+    var dateError by remember { mutableStateOf("") }
+    var emailPatternError by remember { mutableStateOf("") }
 
 
     LazyColumn(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.Start) {
@@ -283,6 +288,7 @@ fun FormScreen(
             CustomTextField(
                 state.fieldValues[FORM_NUMBER]!!,
                 title = stringResource(Res.string.form_number),
+                onlyDigits = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -296,6 +302,7 @@ fun FormScreen(
             CustomTextField(
                 state.fieldValues[FORM_OFFICE]!!,
                 title = stringResource(Res.string.office),
+                maxLength = 100,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -312,6 +319,7 @@ fun FormScreen(
                 state.fieldValues[FORM_FILL_DATE]!!,
                 dateFormat = true,
                 title = stringResource(Res.string.date),
+                error = dateError,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -621,6 +629,7 @@ fun FormScreen(
             CustomTextField(
                 state.fieldValues[THIRD_PARTY_EMAIL]!!,
                 title = stringResource(Res.string.email),
+                error = emailPatternError,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -986,24 +995,36 @@ fun FormScreen(
                 disabledContentColor = Color.LightGray
             ), modifier = Modifier.padding(start = 16.dp),
                 onClick = {
-                onAction(FormAction.OnSaveFormClick)
-            }) {
 
-
+                    onAction(FormAction.OnSaveFormClick)
+                }) {
                 Text("Guardar Formulario")
             }
-            Button(colors = ButtonColors(
-                containerColor = Color.LightGray,
-                contentColor = Color.Black,
-                disabledContainerColor = Color.LightGray,
-                disabledContentColor = Color.LightGray
-            ), modifier = Modifier.padding(start = 16.dp),
-                onClick = {
-                    onAction(FormAction.OnGetFormClick)
-                }) {
-                Text("Traer Formualrio")
+
+
+
+            LaunchedEffect(state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString()) {
+                if (isValidEmail(state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString())) {
+                    emailPatternError = ""
+                } else {
+                    emailPatternError = "Invalid email format"
+                }
             }
 
+
+            //Button(colors = ButtonColors(
+            //    containerColor = Color.LightGray,
+            //    contentColor = Color.Black,
+            //    disabledContainerColor = Color.LightGray,
+            //    disabledContentColor = Color.LightGray
+            //), modifier = Modifier.padding(start = 16.dp),
+            //    onClick = {
+            //        onAction(FormAction.OnGetFormClick)
+            //    }) {
+            //    Text("Traer Formualrio")
+            //}
+//
         }
     }
 }
+
