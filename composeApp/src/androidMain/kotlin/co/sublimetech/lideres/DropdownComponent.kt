@@ -1,4 +1,4 @@
-package co.sublimetech.lideres.core.design_system
+package co.sublimetech.lideres
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

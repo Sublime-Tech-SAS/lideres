@@ -6,6 +6,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.compose.rememberNavController
+import co.sublimetech.lideres.core.design_system.theme.LideresTheme
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import dev.jordond.connectivity.Connectivity
@@ -45,12 +46,13 @@ fun App() {
     if (state.isValidating && currentUser != null) {
        println("Validating user")
     } else
-    MaterialTheme {
-        val navController = rememberNavController()
-        NavigationRoot(
-            navController = navController,
-            isValidated = state.isUserValidated
-        )
+    LideresTheme {
+        BlockTitlePreview()
+      //  val navController = rememberNavController()
+      //  NavigationRoot(
+      //      navController = navController,
+      //      isValidated = state.isUserValidated
+      //  )
     }
 }
 

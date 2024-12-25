@@ -27,9 +27,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import co.sublimetech.lideres.core.design_system.CustomText
-import co.sublimetech.lideres.core.design_system.CustomTextField
-import co.sublimetech.lideres.core.design_system.DropdownComponent
 import co.sublimetech.lideres.core.design_system.isDateBeforeToday
 import co.sublimetech.lideres.core.design_system.isValidEmail
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS
@@ -265,751 +262,752 @@ fun FormScreenRoot(
 }
 
 
+
 @Composable
 fun FormScreen(
     state: FormState,
     onAction: (FormAction) -> Unit,
 ) {
 
-    var dateError by remember { mutableStateOf("") }
-    var emailPatternError by remember { mutableStateOf("") }
-
-
-    LazyColumn(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.Start) {
-        item {
-
-            /** Title*/
-            CustomText(stringResource(Res.string.applicant_personal_data_title))
-
-
-            /** Block 1*/
-            CustomText(stringResource(Res.string.form_details))
-
-            CustomTextField(
-                state.fieldValues[FORM_NUMBER]!!,
-                title = stringResource(Res.string.form_number),
-                onlyDigits = true,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[FORM_DATE]!!,
-                title = stringResource(Res.string.form_date),
-                dateFormat = true,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[FORM_OFFICE]!!,
-                title = stringResource(Res.string.office),
-                maxLength = 100,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            HorizontalDivider(
-                thickness = 1.dp,
-                color = Color.Black,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            /** Block 2*/
-            CustomText(stringResource(Res.string.form_date_title))
-
-            CustomTextField(
-                state.fieldValues[FORM_FILL_DATE]!!,
-                dateFormat = true,
-                title = stringResource(Res.string.date),
-                error = dateError,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[FORM_COUNTRY]!!,
-                title = stringResource(Res.string.country),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[FORM_DEPARTMENT]!!,
-                title = stringResource(Res.string.department),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[FORM_CITY]!!,
-                title = stringResource(Res.string.city),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            HorizontalDivider(
-                thickness = 1.dp,
-                color = Color.Black,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            /** Block 3*/
-            CustomText(stringResource(Res.string.applicant_personal_data_title))
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_FIRST_NAME]!!,
-                title = stringResource(Res.string.first_name),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_SECOND_NAME]!!,
-                title = stringResource(Res.string.second_name),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_FIRST_LAST_NAME]!!,
-                title = stringResource(Res.string.first_last_name),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_SECOND_LAST_NAME]!!,
-                title = stringResource(Res.string.second_last_name),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_IDENTIFYING_NAME]!!,
-                title = stringResource(Res.string.identifying_name),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_FIRST_NAME]!!,
-                title = stringResource(Res.string.id_type_and_number),
-                options = listOf(
-                    stringResource(Res.string.national_id),
-                    stringResource(Res.string.foreign_id),
-                    stringResource(Res.string.nuip)
-                ),
-                padding = 16.dp
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_ID_NUMBER]!!,
-                title = stringResource(Res.string.number),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_ID_EXPEDITION_DATE]!!,
-                title = stringResource(Res.string.id_expedition_date),
-                dateFormat = true,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomText(
-                stringResource(Res.string.place_of_birth),
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_COUNTRY_OF_BIRTH]!!,
-                title = stringResource(Res.string.country),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_DEPARTMENT_OF_BIRTH]!!,
-                title = stringResource(Res.string.department),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_CITY_OF_BIRTH]!!,
-                title = stringResource(Res.string.city),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_DATE_OF_BIRTH]!!,
-                title = stringResource(Res.string.date_of_birth),
-                dateFormat = true,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomText(
-                stringResource(Res.string.home_location),
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_ADDRESS_COUNTRY]!!,
-                title = stringResource(Res.string.country),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_ADDRESS_DEPARTMENT]!!,
-                title = stringResource(Res.string.department),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_ADDRESS_CITY]!!,
-                title = stringResource(Res.string.city),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_ADDRESS_DISTRICT]!!,
-                title = stringResource(Res.string.district),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_ADDRESS_SETTLEMENT]!!,
-                title = stringResource(Res.string.settlement),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_ADDRESS_NEIGHBORHOOD]!!,
-                title = stringResource(Res.string.neighborhood),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_ADDRESS_ZONE]!!,
-                title = stringResource(Res.string.home_zone),
-                options = listOf(
-                    stringResource(Res.string.rural),
-                    stringResource(Res.string.urban),
-                ),
-                padding = 16.dp
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_ADDRESS]!!,
-                title = stringResource(Res.string.home_address),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_ADDRESS_DETAILS]!!,
-                title = stringResource(Res.string.address_details),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomText(
-                stringResource(Res.string.contact_number),
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_PHONE_NUMBER_1]!!,
-                title = stringResource(Res.string.cellphone_1),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_PHONE_NUMBER_2]!!,
-                title = stringResource(Res.string.cellphone_2),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_LANDLINE]!!,
-                title = stringResource(Res.string.landline),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_EMAIL]!!,
-                title = stringResource(Res.string.email),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-
-            CustomText(
-                stringResource(Res.string.notification_address),
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_NOTIFICATION_COUNTRY]!!,
-                title = stringResource(Res.string.country),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_NOTIFICATION_DEPARTMENT]!!,
-                title = stringResource(Res.string.department),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_NOTIFICATION_CITY]!!,
-                title = stringResource(Res.string.city),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_NOTIFICATION_ADDRESS]!!,
-                title = stringResource(Res.string.address),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            HorizontalDivider(
-                thickness = 1.dp,
-                color = Color.Black,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-
-            /** Block 4*/
-            CustomText(
-                stringResource(Res.string.third_party_request_title),
-            )
-
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_NAMES_AND_LASTNAMES]!!,
-                title = stringResource(Res.string.third_party_names_and_lastnames),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomText(
-                stringResource(Res.string.third_party_home_location),
-            )
-
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_ADDRESS_COUNTRY]!!,
-                title = stringResource(Res.string.country),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_ADDRESS_DEPARTMENT]!!,
-                title = stringResource(Res.string.department),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_ADDRESS_CITY]!!,
-                title = stringResource(Res.string.city),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_ADDRESS_DISTRICT]!!,
-                title = stringResource(Res.string.district),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_ADDRESS_SETTLEMENT]!!,
-                title = stringResource(Res.string.settlement),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_ADDRESS_NEIGHBORHOOD]!!,
-                title = stringResource(Res.string.neighborhood),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_ADDRESS]!!,
-                title = stringResource(Res.string.third_party_home_address),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_ADDRESS_DETAILS]!!,
-                title = stringResource(Res.string.address_details),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomText(
-                stringResource(Res.string.contact_number),
-            )
-
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_PHONE_NUMBER_1]!!,
-                title = stringResource(Res.string.cellphone_1),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_PHONE_NUMBER_2]!!,
-                title = stringResource(Res.string.cellphone_2),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_LANDLINE]!!,
-                title = stringResource(Res.string.landline),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[THIRD_PARTY_EMAIL]!!,
-                title = stringResource(Res.string.email),
-                error = emailPatternError,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            HorizontalDivider(
-                thickness = 1.dp,
-                color = Color.Black,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            /** Block 5*/
-            CustomText(stringResource(Res.string.applicant_personal_data_title))
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_SEX]!!,
-                title = stringResource(Res.string.sex),
-                options = listOf(
-                    stringResource(Res.string.men),
-                    stringResource(Res.string.women),
-                    stringResource(Res.string.intersexual),
-                ),
-                padding = 16.dp
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_GENDER]!!,
-                title = stringResource(Res.string.gender),
-                options = listOf(
-                    stringResource(Res.string.female),
-                    stringResource(Res.string.male),
-                    stringResource(Res.string.transgender)
-                ),
-                padding = 16.dp
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_SEXUAL_ORIENTATION]!!,
-                title = stringResource(Res.string.sexual_orientation),
-                options = listOf(
-                    stringResource(Res.string.heterosexual),
-                    stringResource(Res.string.homosexual),
-                    stringResource(Res.string.bisexual)
-                ),
-                padding = 16.dp
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_AGE]!!,
-                title = stringResource(Res.string.age),
-                options = listOf(
-                    stringResource(Res.string.boy_and_girl),
-                    stringResource(Res.string.teenager),
-                    stringResource(Res.string.young_adult),
-                    stringResource(Res.string.adult),
-                    stringResource(Res.string.elderly)
-                ),
-                padding = 16.dp
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_IDENTIFYING_TRAIT]!!,
-                title = stringResource(Res.string.different_identifying_trait),
-                options = listOf(
-                    stringResource(Res.string.mother),
-                    stringResource(Res.string.father),
-                    stringResource(Res.string.caretaker),
-                    stringResource(Res.string.people_under_care),
-                ),
-                padding = 16.dp
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_IDENTIFYING_TRAIT_AMOUNT]!!,
-                title = stringResource(Res.string.how_many),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_DISABILITY_STATUS]!!,
-                title = stringResource(Res.string.disability_type_title),
-                options = listOf(
-                    stringResource(Res.string.yes),
-                    stringResource(Res.string.no)
-                ),
-                padding = 16.dp
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_DISABILITY_TYPE]!!,
-                title = stringResource(Res.string.disability_type_subtitle),
-                options = listOf(
-                    stringResource(Res.string.physical),
-                    stringResource(Res.string.hearing),
-                    stringResource(Res.string.visual),
-                    stringResource(Res.string.blindness),
-                    stringResource(Res.string.mental),
-                    stringResource(Res.string.intellectual),
-                    stringResource(Res.string.little_people),
-                    stringResource(Res.string.multiple)
-                ),
-                padding = 16.dp
-            )
-
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_ETHNIC_GROUP_STATUS]!!,
-                title = stringResource(Res.string.ethnic_group_title),
-                options = listOf(
-                    stringResource(Res.string.yes),
-                    stringResource(Res.string.no)
-                ),
-                padding = 16.dp
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_ETHNIC_GROUP_TYPE]!!,
-                title = stringResource(Res.string.ethnic_group_subtitle),
-                options = listOf(
-                    stringResource(Res.string.indigenous),
-                    stringResource(Res.string.negro),
-                    stringResource(Res.string.african_american),
-                    stringResource(Res.string.indigenous_to_san_andres),
-                    stringResource(Res.string.indigenous_to_bolivar),
-                    stringResource(Res.string.gipsy),
-                    stringResource(Res.string.little_people),
-                    stringResource(Res.string.multiple)
-                ),
-                padding = 16.dp
-            )
-
-            CustomText(
-                title = stringResource(Res.string.indigenous_group_title)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_INDIGENOUS_GROUP]!!,
-                title = stringResource(Res.string.indigenous_group),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_INDIGENOUS_GROUP_RESERVATION]!!,
-                title = stringResource(Res.string.indigenous_reservation),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY]!!,
-                title = stringResource(Res.string.reservation_community),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_INDIGENOUS_GROUP_PARTIAL]!!,
-                title = stringResource(Res.string.partial),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-            CustomTextField(
-                state.fieldValues[APPLICANT_INDIGENOUS_GROUP_NO_REGISTRY]!!,
-                title = stringResource(Res.string.no_registry_community),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_AFRICAN_AMERICAN_COMMUNITY]!!,
-                title = stringResource(Res.string.african_american_community_name),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS]!!,
-                title = stringResource(Res.string.organization_membership_title),
-                options = listOf(
-                    stringResource(Res.string.yes),
-                    stringResource(Res.string.no)
-                ),
-                padding = 16.dp
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_ORGANIZATION_TYPE]!!,
-                title = stringResource(Res.string.organization_membership_subtitle),
-                options = listOf(
-                    stringResource(Res.string.social),
-                    stringResource(Res.string.guild),
-                    stringResource(Res.string.civil),
-                    stringResource(Res.string.communal),
-                    stringResource(Res.string.farmer),
-                    stringResource(Res.string.victims),
-                    stringResource(Res.string.human_rights_watch),
-                    stringResource(Res.string.another)
-                ),
-                padding = 16.dp
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_OTHER]!!,
-                title = stringResource(Res.string.which),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_ORGANIZATION_NAME]!!,
-                title = stringResource(Res.string.human_rights_watch_organization_name),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS]!!,
-                title = stringResource(Res.string.human_rights_watch_legal_representative),
-                options = listOf(
-                    stringResource(Res.string.yes),
-                    stringResource(Res.string.no)
-                ),
-                padding = 16.dp
-            )
-
-            CustomTextField(
-                state.fieldValues[APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_NAME]!!,
-                title = stringResource(Res.string.human_rights_watch_legal_representative),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_STATUS]!!,
-                title = stringResource(Res.string.provisional_measures_beneficiary),
-                options = listOf(
-                    stringResource(Res.string.yes),
-                    stringResource(Res.string.no)
-                ),
-                padding = 16.dp
-            )
-
-            DropdownComponent(
-                state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_TYPE]!!,
-                title = stringResource(Res.string.provisional_measures_type),
-                options = listOf(
-                    stringResource(Res.string.measure_by_inter_american_commission),
-                    stringResource(Res.string.measure_by_inter_american_court),
-                    stringResource(Res.string.measure_by_national_judge)
-                ),
-                padding = 16.dp
-            )
-
-            HorizontalDivider(
-                thickness = 1.dp,
-                color = Color.Black,
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-            /** Block 7*/
-            CustomText(stringResource(Res.string.risk_situation_title))
-
-            DropdownComponent(
-                state.fieldValues[RISK_SITUATION_TYPE]!!,
-                title = stringResource(Res.string.risk_situation_subtitle),
-                options = listOf(
-                    stringResource(Res.string.threat),
-                    stringResource(Res.string.attack),
-                    stringResource(Res.string.kidnapping),
-                    stringResource(Res.string.family_member_homicide),
-                    stringResource(Res.string.extortion),
-                    stringResource(Res.string.recruitment),
-                    stringResource(Res.string.another)
-                ),
-                padding = 16.dp
-            )
-
-            CustomTextField(
-                state.fieldValues[RISK_SITUATION_OTHER]!!,
-                title = stringResource(Res.string.which),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-
-            DropdownComponent(
-                state.fieldValues[RISK_SITUATION_MEANS_TYPE]!!,
-                title = stringResource(Res.string.threat_means),
-                options = listOf(
-                    stringResource(Res.string.by_phone),
-                    stringResource(Res.string.verbal),
-                    stringResource(Res.string.written),
-                    stringResource(Res.string.family_member_homicide),
-                    stringResource(Res.string.through_third_party),
-                    stringResource(Res.string.symbolic),
-                    stringResource(Res.string.social_media),
-                    stringResource(Res.string.another)
-                ),
-                padding = 16.dp
-            )
-
-            CustomTextField(
-                state.fieldValues[RISK_SITUATION_MEANS_OTHER]!!,
-                title = stringResource(Res.string.which),
-                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
-            )
-
-
-            var imageBitmap: ImageBitmap? by remember { mutableStateOf(null) }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-
-            Sain(
-                state = SignatureState(),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(250.dp)
-                    .padding(horizontal = 16.dp)
-                    .border(
-                        BorderStroke(
-                            width = .5.dp,
-                            color = MaterialTheme.colorScheme.onSurface
-                        ),
-                        shape = RoundedCornerShape(8.dp)
-                    ),
-                onComplete = { signatureBitmap ->
-                    if (signatureBitmap != null) {
-                        imageBitmap = signatureBitmap
-                    } else {
-                        println("Signature is empty")
-                    }
-                },
-            ) { action ->
-                Row(
-                    modifier = Modifier
-                        .padding(top = 16.dp)
-                        .padding(horizontal = 16.dp)
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(16.dp)
-                ) {
-                    Button(
-                        modifier = Modifier.weight(1f),
-                        colors = ButtonColors(
-                            containerColor = Color.LightGray,
-                            contentColor = Color.Black,
-                            disabledContainerColor = Color.LightGray,
-                            disabledContentColor = Color.LightGray
-                        ),
-                        onClick = {
-                            imageBitmap = null
-                            action(SignatureAction.CLEAR)
-                        }) {
-                        Text("Borrar")
-                    }
-                    Button(
-                        modifier = Modifier.weight(1f),
-                        colors = ButtonColors(
-                            containerColor = Color.LightGray,
-                            contentColor = Color.Black,
-                            disabledContainerColor = Color.LightGray,
-                            disabledContentColor = Color.LightGray
-                        ),
-                        onClick = {
-                            action(SignatureAction.COMPLETE)
-                        }) {
-                        Text("Completar")
-                    }
-                }
-            }
-
-            Button(colors = ButtonColors(
-                containerColor = Color.LightGray,
-                contentColor = Color.Black,
-                disabledContainerColor = Color.LightGray,
-                disabledContentColor = Color.LightGray
-            ), modifier = Modifier.padding(start = 16.dp),
-                onClick = {
-
-                    onAction(FormAction.OnSaveFormClick)
-                }) {
-                Text("Guardar Formulario")
-            }
-
-
-
-            LaunchedEffect(state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString()) {
-                if (isValidEmail(state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString())) {
-                    emailPatternError = ""
-                } else {
-                    emailPatternError = "Invalid email format"
-                }
-            }
+//    var dateError by remember { mutableStateOf("") }
+//    var emailPatternError by remember { mutableStateOf("") }
+//
+//
+//    LazyColumn(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.Start) {
+//        item {
+//
+//            /** Title*/
+//            CustomText(stringResource(Res.string.applicant_personal_data_title))
+//
+//
+//            /** Block 1*/
+//            CustomText(stringResource(Res.string.form_details))
+//
+//            CustomTextField(
+//                state.fieldValues[FORM_NUMBER]!!,
+//                title = stringResource(Res.string.form_number),
+//                onlyDigits = true,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[FORM_DATE]!!,
+//                title = stringResource(Res.string.form_date),
+//                dateFormat = true,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[FORM_OFFICE]!!,
+//                title = stringResource(Res.string.office),
+//                maxLength = 100,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            HorizontalDivider(
+//                thickness = 1.dp,
+//                color = Color.Black,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            /** Block 2*/
+//            CustomText(stringResource(Res.string.form_date_title))
+//
+//            CustomTextField(
+//                state.fieldValues[FORM_FILL_DATE]!!,
+//                dateFormat = true,
+//                title = stringResource(Res.string.date),
+//                error = dateError,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[FORM_COUNTRY]!!,
+//                title = stringResource(Res.string.country),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[FORM_DEPARTMENT]!!,
+//                title = stringResource(Res.string.department),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[FORM_CITY]!!,
+//                title = stringResource(Res.string.city),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            HorizontalDivider(
+//                thickness = 1.dp,
+//                color = Color.Black,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            /** Block 3*/
+//            CustomText(stringResource(Res.string.applicant_personal_data_title))
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_FIRST_NAME]!!,
+//                title = stringResource(Res.string.first_name),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_SECOND_NAME]!!,
+//                title = stringResource(Res.string.second_name),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_FIRST_LAST_NAME]!!,
+//                title = stringResource(Res.string.first_last_name),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_SECOND_LAST_NAME]!!,
+//                title = stringResource(Res.string.second_last_name),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_IDENTIFYING_NAME]!!,
+//                title = stringResource(Res.string.identifying_name),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            DropdownComponent(
+//                state.fieldValues[APPLICANT_FIRST_NAME]!!,
+//                title = stringResource(Res.string.id_type_and_number),
+//                options = listOf(
+//                    stringResource(Res.string.national_id),
+//                    stringResource(Res.string.foreign_id),
+//                    stringResource(Res.string.nuip)
+//                ),
+//                padding = 16.dp
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ID_NUMBER]!!,
+//                title = stringResource(Res.string.number),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ID_EXPEDITION_DATE]!!,
+//                title = stringResource(Res.string.id_expedition_date),
+//                dateFormat = true,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomText(
+//                stringResource(Res.string.place_of_birth),
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_COUNTRY_OF_BIRTH]!!,
+//                title = stringResource(Res.string.country),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_DEPARTMENT_OF_BIRTH]!!,
+//                title = stringResource(Res.string.department),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_CITY_OF_BIRTH]!!,
+//                title = stringResource(Res.string.city),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_DATE_OF_BIRTH]!!,
+//                title = stringResource(Res.string.date_of_birth),
+//                dateFormat = true,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomText(
+//                stringResource(Res.string.home_location),
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ADDRESS_COUNTRY]!!,
+//                title = stringResource(Res.string.country),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ADDRESS_DEPARTMENT]!!,
+//                title = stringResource(Res.string.department),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ADDRESS_CITY]!!,
+//                title = stringResource(Res.string.city),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ADDRESS_DISTRICT]!!,
+//                title = stringResource(Res.string.district),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ADDRESS_SETTLEMENT]!!,
+//                title = stringResource(Res.string.settlement),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ADDRESS_NEIGHBORHOOD]!!,
+//                title = stringResource(Res.string.neighborhood),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            DropdownComponent(
+//                state.fieldValues[APPLICANT_ADDRESS_ZONE]!!,
+//                title = stringResource(Res.string.home_zone),
+//                options = listOf(
+//                    stringResource(Res.string.rural),
+//                    stringResource(Res.string.urban),
+//                ),
+//                padding = 16.dp
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ADDRESS]!!,
+//                title = stringResource(Res.string.home_address),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_ADDRESS_DETAILS]!!,
+//                title = stringResource(Res.string.address_details),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomText(
+//                stringResource(Res.string.contact_number),
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_PHONE_NUMBER_1]!!,
+//                title = stringResource(Res.string.cellphone_1),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_PHONE_NUMBER_2]!!,
+//                title = stringResource(Res.string.cellphone_2),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_LANDLINE]!!,
+//                title = stringResource(Res.string.landline),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_EMAIL]!!,
+//                title = stringResource(Res.string.email),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//
+//            CustomText(
+//                stringResource(Res.string.notification_address),
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_NOTIFICATION_COUNTRY]!!,
+//                title = stringResource(Res.string.country),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_NOTIFICATION_DEPARTMENT]!!,
+//                title = stringResource(Res.string.department),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_NOTIFICATION_CITY]!!,
+//                title = stringResource(Res.string.city),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[APPLICANT_NOTIFICATION_ADDRESS]!!,
+//                title = stringResource(Res.string.address),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            HorizontalDivider(
+//                thickness = 1.dp,
+//                color = Color.Black,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//
+//            /** Block 4*/
+//            CustomText(
+//                stringResource(Res.string.third_party_request_title),
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_NAMES_AND_LASTNAMES]!!,
+//                title = stringResource(Res.string.third_party_names_and_lastnames),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomText(
+//                stringResource(Res.string.third_party_home_location),
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_ADDRESS_COUNTRY]!!,
+//                title = stringResource(Res.string.country),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_ADDRESS_DEPARTMENT]!!,
+//                title = stringResource(Res.string.department),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_ADDRESS_CITY]!!,
+//                title = stringResource(Res.string.city),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_ADDRESS_DISTRICT]!!,
+//                title = stringResource(Res.string.district),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_ADDRESS_SETTLEMENT]!!,
+//                title = stringResource(Res.string.settlement),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_ADDRESS_NEIGHBORHOOD]!!,
+//                title = stringResource(Res.string.neighborhood),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_ADDRESS]!!,
+//                title = stringResource(Res.string.third_party_home_address),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_ADDRESS_DETAILS]!!,
+//                title = stringResource(Res.string.address_details),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomText(
+//                stringResource(Res.string.contact_number),
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_PHONE_NUMBER_1]!!,
+//                title = stringResource(Res.string.cellphone_1),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_PHONE_NUMBER_2]!!,
+//                title = stringResource(Res.string.cellphone_2),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_LANDLINE]!!,
+//                title = stringResource(Res.string.landline),
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//            CustomTextField(
+//                state.fieldValues[THIRD_PARTY_EMAIL]!!,
+//                title = stringResource(Res.string.email),
+//                error = emailPatternError,
+//                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//            )
+//
+//          HorizontalDivider(
+//              thickness = 1.dp,
+//              color = Color.Black,
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+//          /** Block 5*/
+//          CustomText(stringResource(Res.string.applicant_personal_data_title))
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_SEX]!!,
+//              title = stringResource(Res.string.sex),
+//              options = listOf(
+//                  stringResource(Res.string.men),
+//                  stringResource(Res.string.women),
+//                  stringResource(Res.string.intersexual),
+//              ),
+//              padding = 16.dp
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_GENDER]!!,
+//              title = stringResource(Res.string.gender),
+//              options = listOf(
+//                  stringResource(Res.string.female),
+//                  stringResource(Res.string.male),
+//                  stringResource(Res.string.transgender)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_SEXUAL_ORIENTATION]!!,
+//              title = stringResource(Res.string.sexual_orientation),
+//              options = listOf(
+//                  stringResource(Res.string.heterosexual),
+//                  stringResource(Res.string.homosexual),
+//                  stringResource(Res.string.bisexual)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_AGE]!!,
+//              title = stringResource(Res.string.age),
+//              options = listOf(
+//                  stringResource(Res.string.boy_and_girl),
+//                  stringResource(Res.string.teenager),
+//                  stringResource(Res.string.young_adult),
+//                  stringResource(Res.string.adult),
+//                  stringResource(Res.string.elderly)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_IDENTIFYING_TRAIT]!!,
+//              title = stringResource(Res.string.different_identifying_trait),
+//              options = listOf(
+//                  stringResource(Res.string.mother),
+//                  stringResource(Res.string.father),
+//                  stringResource(Res.string.caretaker),
+//                  stringResource(Res.string.people_under_care),
+//              ),
+//              padding = 16.dp
+//          )
+
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_IDENTIFYING_TRAIT_AMOUNT]!!,
+//              title = stringResource(Res.string.how_many),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_DISABILITY_STATUS]!!,
+//              title = stringResource(Res.string.disability_type_title),
+//              options = listOf(
+//                  stringResource(Res.string.yes),
+//                  stringResource(Res.string.no)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_DISABILITY_TYPE]!!,
+//              title = stringResource(Res.string.disability_type_subtitle),
+//              options = listOf(
+//                  stringResource(Res.string.physical),
+//                  stringResource(Res.string.hearing),
+//                  stringResource(Res.string.visual),
+//                  stringResource(Res.string.blindness),
+//                  stringResource(Res.string.mental),
+//                  stringResource(Res.string.intellectual),
+//                  stringResource(Res.string.little_people),
+//                  stringResource(Res.string.multiple)
+//              ),
+//              padding = 16.dp
+//          )
+
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_ETHNIC_GROUP_STATUS]!!,
+//              title = stringResource(Res.string.ethnic_group_title),
+//              options = listOf(
+//                  stringResource(Res.string.yes),
+//                  stringResource(Res.string.no)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_ETHNIC_GROUP_TYPE]!!,
+//              title = stringResource(Res.string.ethnic_group_subtitle),
+//              options = listOf(
+//                  stringResource(Res.string.indigenous),
+//                  stringResource(Res.string.negro),
+//                  stringResource(Res.string.african_american),
+//                  stringResource(Res.string.indigenous_to_san_andres),
+//                  stringResource(Res.string.indigenous_to_bolivar),
+//                  stringResource(Res.string.gipsy),
+//                  stringResource(Res.string.little_people),
+//                  stringResource(Res.string.multiple)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          CustomText(
+//              title = stringResource(Res.string.indigenous_group_title)
+//          )
+
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_INDIGENOUS_GROUP]!!,
+//              title = stringResource(Res.string.indigenous_group),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_INDIGENOUS_GROUP_RESERVATION]!!,
+//              title = stringResource(Res.string.indigenous_reservation),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY]!!,
+//              title = stringResource(Res.string.reservation_community),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_INDIGENOUS_GROUP_PARTIAL]!!,
+//              title = stringResource(Res.string.partial),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_INDIGENOUS_GROUP_NO_REGISTRY]!!,
+//              title = stringResource(Res.string.no_registry_community),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_AFRICAN_AMERICAN_COMMUNITY]!!,
+//              title = stringResource(Res.string.african_american_community_name),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS]!!,
+//              title = stringResource(Res.string.organization_membership_title),
+//              options = listOf(
+//                  stringResource(Res.string.yes),
+//                  stringResource(Res.string.no)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_ORGANIZATION_TYPE]!!,
+//              title = stringResource(Res.string.organization_membership_subtitle),
+//              options = listOf(
+//                  stringResource(Res.string.social),
+//                  stringResource(Res.string.guild),
+//                  stringResource(Res.string.civil),
+//                  stringResource(Res.string.communal),
+//                  stringResource(Res.string.farmer),
+//                  stringResource(Res.string.victims),
+//                  stringResource(Res.string.human_rights_watch),
+//                  stringResource(Res.string.another)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_OTHER]!!,
+//              title = stringResource(Res.string.which),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_ORGANIZATION_NAME]!!,
+//              title = stringResource(Res.string.human_rights_watch_organization_name),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS]!!,
+//              title = stringResource(Res.string.human_rights_watch_legal_representative),
+//              options = listOf(
+//                  stringResource(Res.string.yes),
+//                  stringResource(Res.string.no)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          CustomTextField(
+//              state.fieldValues[APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_NAME]!!,
+//              title = stringResource(Res.string.human_rights_watch_legal_representative),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_STATUS]!!,
+//              title = stringResource(Res.string.provisional_measures_beneficiary),
+//              options = listOf(
+//                  stringResource(Res.string.yes),
+//                  stringResource(Res.string.no)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          DropdownComponent(
+//              state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_TYPE]!!,
+//              title = stringResource(Res.string.provisional_measures_type),
+//              options = listOf(
+//                  stringResource(Res.string.measure_by_inter_american_commission),
+//                  stringResource(Res.string.measure_by_inter_american_court),
+//                  stringResource(Res.string.measure_by_national_judge)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          HorizontalDivider(
+//              thickness = 1.dp,
+//              color = Color.Black,
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+//          /** Block 7*/
+//          CustomText(stringResource(Res.string.risk_situation_title))
+
+//          DropdownComponent(
+//              state.fieldValues[RISK_SITUATION_TYPE]!!,
+//              title = stringResource(Res.string.risk_situation_subtitle),
+//              options = listOf(
+//                  stringResource(Res.string.threat),
+//                  stringResource(Res.string.attack),
+//                  stringResource(Res.string.kidnapping),
+//                  stringResource(Res.string.family_member_homicide),
+//                  stringResource(Res.string.extortion),
+//                  stringResource(Res.string.recruitment),
+//                  stringResource(Res.string.another)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          CustomTextField(
+//              state.fieldValues[RISK_SITUATION_OTHER]!!,
+//              title = stringResource(Res.string.which),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+
+//          DropdownComponent(
+//              state.fieldValues[RISK_SITUATION_MEANS_TYPE]!!,
+//              title = stringResource(Res.string.threat_means),
+//              options = listOf(
+//                  stringResource(Res.string.by_phone),
+//                  stringResource(Res.string.verbal),
+//                  stringResource(Res.string.written),
+//                  stringResource(Res.string.family_member_homicide),
+//                  stringResource(Res.string.through_third_party),
+//                  stringResource(Res.string.symbolic),
+//                  stringResource(Res.string.social_media),
+//                  stringResource(Res.string.another)
+//              ),
+//              padding = 16.dp
+//          )
+
+//          CustomTextField(
+//              state.fieldValues[RISK_SITUATION_MEANS_OTHER]!!,
+//              title = stringResource(Res.string.which),
+//              modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+//          )
+
+
+//          var imageBitmap: ImageBitmap? by remember { mutableStateOf(null) }
+
+//          Spacer(modifier = Modifier.height(16.dp))
+
+
+//          Sain(
+//              state = SignatureState(),
+//              modifier = Modifier
+//                  .fillMaxWidth()
+//                  .height(250.dp)
+//                  .padding(horizontal = 16.dp)
+//                  .border(
+//                      BorderStroke(
+//                          width = .5.dp,
+//                          color = MaterialTheme.colorScheme.onSurface
+//                      ),
+//                      shape = RoundedCornerShape(8.dp)
+//                  ),
+//              onComplete = { signatureBitmap ->
+//                  if (signatureBitmap != null) {
+//                      imageBitmap = signatureBitmap
+//                  } else {
+//                      println("Signature is empty")
+//                  }
+//              },
+//          ) { action ->
+//              Row(
+//                  modifier = Modifier
+//                      .padding(top = 16.dp)
+//                      .padding(horizontal = 16.dp)
+//                      .fillMaxWidth(),
+//                  horizontalArrangement = Arrangement.spacedBy(16.dp)
+//              ) {
+//                  Button(
+//                      modifier = Modifier.weight(1f),
+//                      colors = ButtonColors(
+//                          containerColor = Color.LightGray,
+//                          contentColor = Color.Black,
+//                          disabledContainerColor = Color.LightGray,
+//                          disabledContentColor = Color.LightGray
+//                      ),
+//                      onClick = {
+//                          imageBitmap = null
+//                          action(SignatureAction.CLEAR)
+//                      }) {
+//                      Text("Borrar")
+//                  }
+//                  Button(
+//                      modifier = Modifier.weight(1f),
+//                      colors = ButtonColors(
+//                          containerColor = Color.LightGray,
+//                          contentColor = Color.Black,
+//                          disabledContainerColor = Color.LightGray,
+//                          disabledContentColor = Color.LightGray
+//                      ),
+//                      onClick = {
+//                          action(SignatureAction.COMPLETE)
+//                      }) {
+//                      Text("Completar")
+//                  }
+//              }
+//          }
+
+//          Button(colors = ButtonColors(
+//              containerColor = Color.LightGray,
+//              contentColor = Color.Black,
+//              disabledContainerColor = Color.LightGray,
+//              disabledContentColor = Color.LightGray
+//          ), modifier = Modifier.padding(start = 16.dp),
+//              onClick = {
+
+//                  onAction(FormAction.OnSaveFormClick)
+//              }) {
+//              Text("Guardar Formulario")
+//          }
+
+
+
+//          LaunchedEffect(state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString()) {
+//              if (isValidEmail(state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString())) {
+//                  emailPatternError = ""
+//              } else {
+//                  emailPatternError = "Invalid email format"
+//              }
+//          }
 
 
             //Button(colors = ButtonColors(
@@ -1025,6 +1023,6 @@ fun FormScreen(
             //}
 //
         }
-    }
-}
+//    }
+//}
 
