@@ -25,6 +25,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import lideres.composeapp.generated.resources.Res
@@ -38,10 +40,11 @@ import org.jetbrains.compose.resources.stringResource
 @Composable
 fun CustomCheckbox(
     isFilled: Boolean,
+    modifier: Modifier = Modifier,
     onCheckedChange: (Boolean) -> Unit,
 ) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .clip(RoundedCornerShape(4.dp))
             .size(12.dp)
             .background(
@@ -58,7 +61,8 @@ fun OptionsGrid(
     options: List<Pair<String, TextFieldState>>,
     columns: Int,
     onOptionSelected: (Int) -> Unit,
-    bottomPadding :Int =30
+    bottomPadding: Int = 30,
+    inverted: Boolean = false,
 ) {
     val rows = (options.size + columns - 1) / columns
     Column(
@@ -77,28 +81,57 @@ fun OptionsGrid(
                     val optionIndex = rowIndex * columns + columnIndex
                     if (optionIndex < options.size) {
                         val option = options[optionIndex]
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                //.weight(1f)
-                                .padding(start = 4.dp, top = 2.dp, bottom = 2.dp, end = 24.dp)
-                        ) {
-                            Text(
-                                text = option.first,
-                                fontSize = 12.sp,
-                                color = MaterialTheme.colorScheme.tertiary,
-                                modifier = Modifier.padding(end = 12.dp).widthIn(max = 270.dp),
-                                fontFamily = FontFamily(Font(Res.font.futura_md_bt)),
-                                maxLines = Int.MAX_VALUE
-                            )
+                        if (inverted) {
+                            Row(
+                                verticalAlignment = Alignment.Top,
+                                modifier = Modifier
+                                    .padding(start = 4.dp, top = 2.dp, bottom = 2.dp, end = 24.dp)
+                            ) {
 
-                            CustomCheckbox(
-                                isFilled = option.second.text.isNotBlank(),
-                                onCheckedChange = { isSelected ->
-                                    if (isSelected) {
-                                        onOptionSelected(optionIndex)
+                                CustomCheckbox(
+                                    isFilled = option.second.text.isNotBlank(),
+                                    modifier = Modifier.padding(top = 6.dp),
+                                    onCheckedChange = { isSelected ->
+                                        if (isSelected) {
+                                            onOptionSelected(optionIndex)
+                                        }
                                     }
-                                })
+                                )
+                                Text(
+                                    text = option.first,
+                                    fontSize = 12.sp,
+                                    color = MaterialTheme.colorScheme.tertiary,
+                                    modifier = Modifier.padding(start = 12.dp),
+                                    fontFamily = FontFamily(Font(Res.font.futura_md_bt)),
+                                    textAlign = TextAlign.Justify,
+                                    maxLines = Int.MAX_VALUE
+                                )
+                            }
+                        } else {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .padding(start = 4.dp, top = 2.dp, bottom = 2.dp, end = 24.dp)
+                            ) {
+
+                                Text(
+                                    text = option.first,
+                                    fontSize = 12.sp,
+                                    color = MaterialTheme.colorScheme.tertiary,
+                                    modifier = Modifier.padding(end = 12.dp).widthIn(max = 270.dp),
+                                    fontFamily = FontFamily(Font(Res.font.futura_md_bt)),
+                                    maxLines = Int.MAX_VALUE
+                                )
+
+                                CustomCheckbox(
+                                    isFilled = option.second.text.isNotBlank(),
+                                    onCheckedChange = { isSelected ->
+                                        if (isSelected) {
+                                            onOptionSelected(optionIndex)
+                                        }
+                                    }
+                                )
+                            }
                         }
                     } else {
                         Spacer(modifier = Modifier.weight(1f))

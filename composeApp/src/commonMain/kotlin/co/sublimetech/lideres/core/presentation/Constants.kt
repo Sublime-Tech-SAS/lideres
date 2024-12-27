@@ -154,7 +154,23 @@ object Constants {
     const val RISK_SITUATION_MEANS_OTHER_ACTUAL = "risk_situation_means_other"
 
     // BLOCK 8 POPULATION OBJECT OF PROTECTION
-    const val PROTECTION_AND_PREVENTION_GROUP = "protection_and_prevention_group"
+    const val PROTECTION_AND_PREVENTION_GROUP_1 = "protection_and_prevention_program_group_1"
+    const val PROTECTION_AND_PREVENTION_GROUP_2 = "protection_and_prevention_program_group_2"
+    const val PROTECTION_AND_PREVENTION_GROUP_3 = "protection_and_prevention_program_group_3"
+    const val PROTECTION_AND_PREVENTION_GROUP_4 = "protection_and_prevention_program_group_4"
+    const val PROTECTION_AND_PREVENTION_GROUP_5 = "protection_and_prevention_program_group_5"
+    const val PROTECTION_AND_PREVENTION_GROUP_6 = "protection_and_prevention_program_group_6"
+    const val PROTECTION_AND_PREVENTION_GROUP_7 = "protection_and_prevention_program_group_7"
+    const val PROTECTION_AND_PREVENTION_GROUP_8 = "protection_and_prevention_program_group_8"
+    const val PROTECTION_AND_PREVENTION_GROUP_9 = "protection_and_prevention_program_group_9"
+    const val PROTECTION_AND_PREVENTION_GROUP_10 = "protection_and_prevention_program_group_10"
+    const val PROTECTION_AND_PREVENTION_GROUP_11 = "protection_and_prevention_program_group_11"
+    const val PROTECTION_AND_PREVENTION_GROUP_12 = "protection_and_prevention_program_group_12"
+    const val PROTECTION_AND_PREVENTION_GROUP_13 = "protection_and_prevention_program_group_13"
+    const val PROTECTION_AND_PREVENTION_GROUP_14 = "protection_and_prevention_program_group_14"
+    const val PROTECTION_AND_PREVENTION_GROUP_15 = "protection_and_prevention_program_group_15"
+    const val PROTECTION_AND_PREVENTION_GROUP_16 = "protection_and_prevention_program_group_16"
+    const val PROTECTION_AND_PREVENTION_GROUP_17 = "protection_and_prevention_program_group_17"
 
 
     //BLOCK 9 PATRIOTIC UNION AND COMMUNIST PARTY SURVIVOR
@@ -162,7 +178,9 @@ object Constants {
 
     //BLOCK 10 ESPECIAL SECURITY AND PROTECTION GROUP
     const val ESPECIAL_SECURITY_AND_PROTECTION_GROUP = "especial_security_and_protection_group"
-    const val ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE = "especial_security_and_protection_group_type"
+    const val ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_LEADER = "especial_security_and_protection_group_type_leader"
+    const val ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_REPRESENTATIVE = "especial_security_and_protection_group_type_representative"
+    const val ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_MEMBER = "especial_security_and_protection_group_type_member"
 
     //BLOCK 13 CONSENT
     const val DATA_CONSENT_ACCEPTANCE = "data_consent_acceptance"

@@ -109,7 +109,9 @@ import co.sublimetech.lideres.core.presentation.Constants.CERREM_WOMEN_ACCEPTANC
 import co.sublimetech.lideres.core.presentation.Constants.DATA_CONSENT_ACCEPTANCE
 import co.sublimetech.lideres.core.presentation.Constants.ENROLLER_ENTITY_NAME
 import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP
-import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_LEADER
+import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_MEMBER
+import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_REPRESENTATIVE
 import co.sublimetech.lideres.core.presentation.Constants.FILED_IN_IDENTIFIER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_CITY
 import co.sublimetech.lideres.core.presentation.Constants.FORM_COUNTRY
@@ -123,7 +125,23 @@ import co.sublimetech.lideres.core.presentation.Constants.FORM_NUMBER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_OFFICE
 import co.sublimetech.lideres.core.presentation.Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE
 import co.sublimetech.lideres.core.presentation.Constants.PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_1
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_10
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_11
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_12
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_13
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_14
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_15
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_16
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_17
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_2
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_3
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_4
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_5
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_6
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_7
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_8
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_9
 import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL
 import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME
 import co.sublimetech.lideres.core.presentation.Constants.RISK_OR_THREAT_REPORT
@@ -320,12 +338,30 @@ class FormViewModel : ViewModel(), KoinComponent {
             RISK_SITUATION_MEANS_TYPE_OTHER,
             RISK_SITUATION_MEANS_OTHER_ACTUAL,
             // BLOCK 8 POPULATION OBJECT OF PROTECTION
-            PROTECTION_AND_PREVENTION_GROUP,
+            PROTECTION_AND_PREVENTION_GROUP_1,
+            PROTECTION_AND_PREVENTION_GROUP_2,
+            PROTECTION_AND_PREVENTION_GROUP_3,
+            PROTECTION_AND_PREVENTION_GROUP_4,
+            PROTECTION_AND_PREVENTION_GROUP_5,
+            PROTECTION_AND_PREVENTION_GROUP_6,
+            PROTECTION_AND_PREVENTION_GROUP_7,
+            PROTECTION_AND_PREVENTION_GROUP_8,
+            PROTECTION_AND_PREVENTION_GROUP_9,
+            PROTECTION_AND_PREVENTION_GROUP_10,
+            PROTECTION_AND_PREVENTION_GROUP_11,
+            PROTECTION_AND_PREVENTION_GROUP_12,
+            PROTECTION_AND_PREVENTION_GROUP_13,
+            PROTECTION_AND_PREVENTION_GROUP_14,
+            PROTECTION_AND_PREVENTION_GROUP_15,
+            PROTECTION_AND_PREVENTION_GROUP_16,
+            PROTECTION_AND_PREVENTION_GROUP_17,
             //BLOCK 9 PATRIOTIC UNION AND COMMUNIST PARTY SURVIVOR
             PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR,
             //BLOCK 10 ESPECIAL SECURITY AND PROTECTION GROUP
             ESPECIAL_SECURITY_AND_PROTECTION_GROUP,
-            ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE,
+            ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_LEADER,
+            ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_REPRESENTATIVE,
+            ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_MEMBER,
             //BLOCK 13 CONSENT
             DATA_CONSENT_ACCEPTANCE,
             NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE,

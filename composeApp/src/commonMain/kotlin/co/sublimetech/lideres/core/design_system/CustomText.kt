@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
@@ -16,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import co.sublimetech.lideres.core.design_system.theme.Black
@@ -29,6 +31,7 @@ fun BlockTitle(
     title: String?,
     subtitle: String?,
     onClick: (() -> Unit)? = null,
+    width: Int? = null,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -37,11 +40,12 @@ fun BlockTitle(
             .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(8.dp))
             .fillMaxWidth()
     ) {
-        Row() {
+        Row(verticalAlignment = if (subtitle != null) Alignment.CenterVertically else Alignment.Top) {
             if (title != null) {
                 Text(
-                    title.uppercase(),
+                    title,
                     modifier = Modifier
+                        .then(if (width != null) Modifier.width(width.dp) else Modifier)
                         .padding(start = 16.dp, end = 4.dp)
                         .padding(top = 16.dp, bottom = if (subtitle == null) 16.dp else 0.dp),
                     color = MaterialTheme.colorScheme.background,
@@ -55,7 +59,7 @@ fun BlockTitle(
                     contentDescription = "Expandir gráfica",
                     tint = MaterialTheme.colorScheme.background,
                     modifier = Modifier
-                        .padding(top = 20.dp)
+                        .padding(top = if (subtitle != null) 12.dp else 18.dp)
                         .size(16.dp)
                 )
             }
@@ -90,16 +94,23 @@ fun Title(title: String, bottomPadding: Int = 20) {
 }
 
 @Composable
-fun Disclaimer(title: String, bottomPadding: Int = 20) {
+fun Disclaimer(
+    title: String,
+    bottomPadding: Int = 20,
+    fontSize: Int = 12,
+    justify: Boolean = false,
+) {
     Text(
         title,
         modifier = Modifier
-            .padding(bottom = bottomPadding.dp),
+            .padding(bottom = bottomPadding.dp)
+            .padding(horizontal = 16.dp),
         color = MaterialTheme.colorScheme.tertiary,
-        fontSize = 12.sp,
+        fontSize = fontSize.sp,
         fontFamily = FontFamily(
             Font(Res.font.futura_md_bt)
-        )
+        ),
+        textAlign = if (justify) TextAlign.Justify else TextAlign.Start // Corrected this line
     )
 }
 

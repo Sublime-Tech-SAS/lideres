@@ -27,7 +27,7 @@
 
 
     <!--BLOCK 1 FORM DETAILS-->
-    <string name="form_details">Datos del radicado</string>
+    <string name="form_details">DATOS DEL RADICADO</string>
     <string name="unp_use_disclaimer">(Espacio para uso exclusivo de la UNP)</string>
     <string name="form_number">Número de radicado</string>
     <string name="form_date">Fecha de radicado (Día/Mes/Año)</string>
@@ -182,38 +182,35 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <!-- BLOCK 8 POPULATION OBJECT OF PROTECTION -->
     <string name="population_object_of_protection_title">IDENTIFICACIÓN DE LA POBLACIÓN OBJETO DE PROTECCIÓN</string>
     <string name="population_object_of_protection_subtitle">38. Identifique la población a la cual pertenece el solicitante y QUE ESTÉ relacionada con la posible situación de riesgo o amenaza</string>
-    <string name="population_of_protection_and_prevention_program">38a. Poblaciones del programa de prevención y protección de los derechos a la vida, la libertad, la integridad y la seguridad de personas \u24D8</string>
-    <string name="protection_and_prevention_program_group_1">Dirigentes o activistas de grupos políticos; y directivos y miembros de organizaciones políticas, declaradas en oposición, de acuerdo con lo establecido en el artículo 30 de la Ley 1909 de 2018 o la norma que la modifique, adicione o sustituya</string>
-    <string name="protection_and_prevention_program_group_2">Dirigentes, representantes o activistas de organizaciones defensoras de derechos humanos, de víctimas, sociales, cívicas, comunales o de campesinos.</string>
-    <string name="protection_and_prevention_program_group_3">Dirigentes o activistas sindicales.</string>
-    <string name="protection_and_prevention_program_group_4">Dirigentes, representantes o activistas de organizaciones gremiales.</string>
-    <string name="protection_and_prevention_program_group_5">Dirigentes, Representantes o miembros de grupos étnicos.</string>
-    <string name="protection_and_prevention_program_group_6">Miembros de la Misión Médica</string>
-    <string name="protection_and_prevention_program_group_7">Testigos de casos de violación a los derechos humanos y de infracción al Derecho Internacional Humanitario.</string>
-    <string name="protection_and_prevention_program_group_8">Periodistas y comunicadores sociales.</string>
-    <string name="protection_and_prevention_program_group_9">Víctimas de violaciones a los Derechos Humanos e infracciones al Derecho Internacional Humanitario, incluyendo dirigentes, lideres, representantes de organizaciones de población desplazada o de reclamantes de tierras en situación de riesgo extraordinario o extremo.</string>
-    <string name="protection_and_prevention_program_group_10">Servidores públicos que tengan o hayan tenido bajo su responsabilidad el diseño, coordinación o ejecución de la política de derechos humanos y paz del Gobierno Nacional.</string>
-    <string name="protection_and_prevention_program_group_11">Ex servidores públicos que hayan tenido bajo su responsabilidad el diseño, coordinación o ejecución de la Política de Derechos Humanos o de Paz del Gobierno Nacional y Exservidores Públicos que hayan ocupado alguno de los cargos públicos enunciados en el artículo 2.4.1.2.7 del Decreto 1066 de 2015.</string>
-    <string name="protection_and_prevention_program_group_12">Dirigentes del Movimiento 19 de Abril (M-19), la Corriente de Renovación Socialista, (CRS), el Ejército Popular de Liberación, (EPL), el Partido Revolucionario de los Trabajadores, (PRT), el Movimiento Armado Quintín Lame, (MAQL), el Frente Francisco Garnica de la Coordinadora Guerrillera, el Movimiento Independiente Revolucionario Comandos Armados, MIR, COAR y las Milicias Populares del Pueblo y para el Pueblo, Milicias Independientes del Valle de Aburrá y Milicias Metropolitanas de la ciudad de Medellín, que suscribieron acuerdos de paz con el Gobierno Nacional en los años 1994 y 1998 y se reincorporaron a la vida civil.</string>
-    <string name="protection_and_prevention_program_group_13">Apoderados o profesionales forenses que participen en procesos judiciales o disciplinarios por violaciones de derechos humanos o infracciones al derecho internacional humanitario.</string>
-    <string name="protection_and_prevention_program_group_14">Docentes de acuerdo con la definición estipulada en la Resolución 1240 de 2010, o la normatividad que la modifique, adicione o sustituya, sin perjuicio de las responsabilidades de protección del Ministerio de Educación, estipuladas en la misma.</string>
-    <string name="protection_and_prevention_program_group_15">Servidores públicos, con excepción de aquellos mencionados en el numeral 10 y los funcionarios de la Procuraduría General de la Nación y la Fiscalía General de la Nación quienes tienen su propio marco normativo para su protección.</string>
-    <string name="protection_and_prevention_program_group_16">Magistrados de las Salas de Justicia (Sala de Reconocimiento de Verdad, de Responsabilidad y de Determinación de los Hechos y Conductas; Sala de Definición de las Situaciones Jurídicas, Sala de Amnistía o Indulto), Fiscales de la Unidad de Investigación y Acusación de la JEP y el Secretario Ejecutivo de la JEP.</string>
-    <string name="protection_and_prevention_program_group_17">Desmovilizados en proceso de Reintegración a cargo de la Agencia para la Reincorporación y la Normalización - ARN. (Parágrafo 6 Art 2.4.1.2.6 Dec. 1066/2015)</string>
+    <string name="population_of_protection_and_prevention_program">38a. Poblaciones del programa de prevención y protección de los derechos a la vida, la libertad, la integridad y la seguridad de personas</string>
+    <string name="protection_and_prevention_program_group_1">1. Dirigentes o activistas de grupos políticos; y directivos y miembros de organizaciones políticas, declaradas en oposición, de acuerdo con lo establecido en el artículo 30 de la Ley 1909 de 2018 o la norma que la modifique, adicione o sustituya</string>
+    <string name="protection_and_prevention_program_group_2">2. Dirigentes, representantes o activistas de organizaciones defensoras de derechos humanos, de víctimas, sociales, cívicas, comunales o de campesinos.</string>
+    <string name="protection_and_prevention_program_group_3">3. Dirigentes o activistas sindicales.</string>
+    <string name="protection_and_prevention_program_group_4">4. Dirigentes, representantes o activistas de organizaciones gremiales.</string>
+    <string name="protection_and_prevention_program_group_5">5. Dirigentes, Representantes o miembros de grupos étnicos.</string>
+    <string name="protection_and_prevention_program_group_6">6. Miembros de la Misión Médica</string>
+    <string name="protection_and_prevention_program_group_7">7. Testigos de casos de violación a los derechos humanos y de infracción al Derecho Internacional Humanitario.</string>
+    <string name="protection_and_prevention_program_group_8">8. Periodistas y comunicadores sociales.</string>
+    <string name="protection_and_prevention_program_group_9">9. Víctimas de violaciones a los Derechos Humanos e infracciones al Derecho Internacional Humanitario, incluyendo dirigentes, lideres, representantes de organizaciones de población desplazada o de reclamantes de tierras en situación de riesgo extraordinario o extremo.</string>
+    <string name="protection_and_prevention_program_group_10">10. Servidores públicos que tengan o hayan tenido bajo su responsabilidad el diseño, coordinación o ejecución de la política de derechos humanos y paz del Gobierno Nacional.</string>
+    <string name="protection_and_prevention_program_group_11">11. Ex servidores públicos que hayan tenido bajo su responsabilidad el diseño, coordinación o ejecución de la Política de Derechos Humanos o de Paz del Gobierno Nacional y Exservidores Públicos que hayan ocupado alguno de los cargos públicos enunciados en el artículo 2.4.1.2.7 del Decreto 1066 de 2015.</string>
+    <string name="protection_and_prevention_program_group_12">12. Dirigentes del Movimiento 19 de Abril (M-19), la Corriente de Renovación Socialista, (CRS), el Ejército Popular de Liberación, (EPL), el Partido Revolucionario de los Trabajadores, (PRT), el Movimiento Armado Quintín Lame, (MAQL), el Frente Francisco Garnica de la Coordinadora Guerrillera, el Movimiento Independiente Revolucionario Comandos Armados, MIR, COAR y las Milicias Populares del Pueblo y para el Pueblo, Milicias Independientes del Valle de Aburrá y Milicias Metropolitanas de la ciudad de Medellín, que suscribieron acuerdos de paz con el Gobierno Nacional en los años 1994 y 1998 y se reincorporaron a la vida civil.</string>
+    <string name="protection_and_prevention_program_group_13">13. Apoderados o profesionales forenses que participen en procesos judiciales o disciplinarios por violaciones de derechos humanos o infracciones al derecho internacional humanitario.</string>
+    <string name="protection_and_prevention_program_group_14">14. Docentes de acuerdo con la definición estipulada en la Resolución 1240 de 2010, o la normatividad que la modifique, adicione o sustituya, sin perjuicio de las responsabilidades de protección del Ministerio de Educación, estipuladas en la misma.</string>
+    <string name="protection_and_prevention_program_group_15">15. Servidores públicos, con excepción de aquellos mencionados en el numeral 10 y los funcionarios de la Procuraduría General de la Nación y la Fiscalía General de la Nación quienes tienen su propio marco normativo para su protección.</string>
+    <string name="protection_and_prevention_program_group_16">16. Magistrados de las Salas de Justicia (Sala de Reconocimiento de Verdad, de Responsabilidad y de Determinación de los Hechos y Conductas; Sala de Definición de las Situaciones Jurídicas, Sala de Amnistía o Indulto), Fiscales de la Unidad de Investigación y Acusación de la JEP y el Secretario Ejecutivo de la JEP.</string>
+    <string name="protection_and_prevention_program_group_17">17. Desmovilizados en proceso de Reintegración a cargo de la Agencia para la Reincorporación y la Normalización - ARN. (Parágrafo 6 Art 2.4.1.2.6 Dec. 1066/2015)</string>
 
 
     <!-- BLOCK 9 PATRIOTIC UNION AND COMMUNIST PARTY SURVIVOR-->
-    <string name="patriotic_union_and_communist_party_survivor_title">Poblaciones del programa especial de protección integral para dirigentes, miembros y sobrevivientes de la unión patriótica y el partido comunista colombiano</string>
-    <string name="patriotic_union_and_communist_party_survivor">Dirigentes, miembros y sobrevivientes de la Unión Patriótica y del Partido Comunista Colombiano. (Capitulo 3 Dec. 1066/15)</string>
+    <string name="patriotic_union_and_communist_party_survivor_title">38b. Poblaciones del programa especial de protección integral para dirigentes, miembros y sobrevivientes de la unión patriótica y el partido comunista colombiano</string>
+    <string name="patriotic_union_and_communist_party_survivor">1. Dirigentes, miembros y sobrevivientes de la Unión Patriótica y del Partido Comunista Colombiano. (Capitulo 3 Dec. 1066/15)</string>
 
 
     <!-- BLOCK 10 ESPECIAL SECURITY AND PROTECTION GROUP-->
-    <string name="especial_security_and_protection_group_title">Poblaciones del Programa de Protección Especializada de Seguridad y Protección</string>
-    <string name="especial_security_and_protection_group">Integrantes del nuevo movimiento o partido político que surja del tránsito de las FARC-EP a la actividad
-    política legal, sus actividades y sedes, a las y los antiguos integrantes de las FARC-EP que se reincorporen a la
-    vida civil, así como a las familias de todos los anteriores de acuerdo con el nivel de riesgo. (Capítulo Adicionado
-    por Decreto 299 de 2017, articulo 1) (Hoy Partido Comunes)</string>
-    <string name="especial_security_and_protection_group_role">De acuerdo con las poblaciones identificada en el numeral anterior y en caso de que proceda indique el rol al interior de la Organización o Comunidad</string>
+    <string name="especial_security_and_protection_group_title">38c. Poblaciones del Programa de Protección Especializada de Seguridad y Protección</string>
+    <string name="especial_security_and_protection_group">1. Integrantes del nuevo movimiento o partido político que surja del tránsito de las FARC-EP a la actividad política legal, sus actividades y sedes, a las y los antiguos integrantes de las FARC-EP que se reincorporen a la vida civil, así como a las familias de todos los anteriores de acuerdo con el nivel de riesgo. (Capítulo Adicionado por Decreto 299 de 2017, articulo 1) (Hoy Partido Comunes)</string>
+    <string name="especial_security_and_protection_group_role">38d. De acuerdo con las poblaciones identificada en el numeral anterior y en caso de que proceda indique el rol al interior de la Organización o Comunidad</string>
     <string name="leader">Dirigente</string>
     <string name="representative">Representante</string>
     <string name="member">Miembro o activista</string>
@@ -221,83 +218,38 @@ con usted. Favor diligenciar los siguientes campos*</string>
 
     <!-- BLOCK 11 PREVENTION AND PROTECTION PROGRAM REGISTRY REQUEST PRESENTATION-->
     <string name="prevention_and_protection_registry_request_presentation_title">PRESENTACIÓN DE LA SOLICITUD DE INGRESO A PROGRAMAS DE PREVENCIÓN Y/0 PROTECCIÓN</string>
-    <string name="registry_request_presentation_instruction_1">La solicitud de inscripción a los programas de prevención y/o protección coordinados por la UNP, se puede radicar por escrito ante oficina
-de correspondencia de la sede principal de la UNP, ubicada en la Carrera 44 # 20 - 21 Puente Aranda en la ciudad de Bogotá D.C., o en
-cualquiera de los Grupos Regionales de Protección (GURP ) de la UNP (El Directorio de GURP puede ser consultado en la página WEB de
-la entidad);</string>
-    <string name="registry_request_presentation_instruction_2">La radicación de la solicitud puede realizarse de manera personal, o a través de un tercero que actué en su nombre y representación, sin
-que genere una carga económica al peticionario.</string>
-    <string name="registry_request_presentation_instruction_3">Todos los trámites y servicios de la UNP son <b>GRATUITOS</b>.</string>
-    <string name="registry_request_presentation_instruction_4">Canal alternativo, la solicitud de inscripción con todos sus adjuntos puede radicarse a través del correo electrónico: correspondencia@unp.gov.co</string>
-    <string name="registry_request_presentation_instruction_5">Todas las solicitudes deben estar acompañadas de los siguientes documentos:</string>
-    <string name="registry_request_presentation_instruction_5_numeral_1">Formulario de solicitud de inscripción para el programa de prevención y protección, debidamente diligenciado y firmado por el
-solicitante, en el cual se aluda a una situación de riesgo o amenaza puntual, concreta y actual en contra de su vida e integridad.</string>
-    <string name="registry_request_presentation_instruction__5_numeral_2">Fotocopia del documento de identidad por ambas caras.</string>
-    <string name="registry_request_presentation_instruction__5_numeral_3">Documento a través del cual se acredite la pertenencia del solicitante a alguno de los grupos poblacionales, señalados en los campos
-38a, 38b, 38c según lo contemplado en el Decreto 1066 de 2015 y sus respectivos Decretos modificatorios.</string>
-    <string name="registry_request_presentation_instruction__5_numeral_4">Asmismo, en caso de contar con denuncias de los hechos recientes de amenaza ante la Fiscalía General de la Nación o en su
-defecto declaración de dichos hechos ante la Defensoría del Pueblo, Procuraduría o Personería; estos documentos también pueden
-ser enviados. * Este no es un requisito excluyente, que impida el inicio del procedimiento ordinario del programa de protección.</string>
+    <string name="registry_request_presentation_instruction_1">1. La solicitud de inscripción a los programas de prevención y/o protección coordinados por la UNP, se puede radicar por escrito ante oficina de correspondencia de la sede principal de la UNP, ubicada en la Carrera 44 # 20 - 21 Puente Aranda en la ciudad de Bogotá D.C., o en cualquiera de los Grupos Regionales de Protección (GURP ) de la UNP (El Directorio de GURP puede ser consultado en la página WEB de la entidad);</string>
+    <string name="registry_request_presentation_instruction_2">2. La radicación de la solicitud puede realizarse de manera personal, o a través de un tercero que actué en su nombre y representación, sin que genere una carga económica al peticionario.</string>
+    <string name="registry_request_presentation_instruction_3">3. Todos los trámites y servicios de la UNP son <b>GRATUITOS</b>.</string>
+    <string name="registry_request_presentation_instruction_4">4. Canal alternativo, la solicitud de inscripción con todos sus adjuntos puede radicarse a través del correo electrónico: correspondencia@unp.gov.co</string>
+    <string name="registry_request_presentation_instruction_5">5. Todas las solicitudes deben estar acompañadas de los siguientes documentos:</string>
+    <string name="registry_request_presentation_instruction_5_numeral_1">• Formulario de solicitud de inscripción para el programa de prevención y protección, debidamente diligenciado y firmado por el solicitante, en el cual se aluda a una situación de riesgo o amenaza puntual, concreta y actual en contra de su vida e integridad.</string>
+    <string name="registry_request_presentation_instruction_5_numeral_2">• Fotocopia del documento de identidad por ambas caras.</string>
+    <string name="registry_request_presentation_instruction_5_numeral_3">• Documento a través del cual se acredite la pertenencia del solicitante a alguno de los grupos poblacionales, señalados en los campos 38a, 38b, 38c según lo contemplado en el Decreto 1066 de 2015 y sus respectivos Decretos modificatorios.</string>
+    <string name="registry_request_presentation_instruction_5_numeral_4">• Asmismo, en caso de contar con denuncias de los hechos recientes de amenaza ante la Fiscalía General de la Nación o en su defecto declaración de dichos hechos ante la Defensoría del Pueblo, Procuraduría o Personería; estos documentos también pueden ser enviados. * Este no es un requisito excluyente, que impida el inicio del procedimiento ordinario del programa de protección.</string>
 
 
     <!-- BLOCK 12 NATIONAL PROTECTION UNIT PROGRAM MEMBERS DUTIES AND COMMITMENTS-->
-    <string name="national_protection_unit_program_members_duties_and_commitments_title">DEBERES Y COMPROMISOS DE LAS PERSONAS QUE SOLICITAN SER VINCULADAS
-A LOS PROGRAMAS DE PROTECCIÓN DE LA UNIDAD NACIONAL DE PROTECCIÓN.</string>
-    <string name="national_protection_unit_program_members_duties_and_commitments_disclaimer">La Unidad Nacional de Protección (UNP) creada mediante el Decreto Ley 4065 de 2011, tiene como objetivo articular, coordinar y
-ejecutar la prestación del servicio de protección a las personas que determine el Gobierno Nacional que por virtud de sus
-actividades, condiciones o situaciones políticas, públicas, sociales, humanitarias, culturales, étnicas, de género, de su calidad de
-víctima de la violencia, desplazado, actividad de derechos humanos, se encuentren en situación de riesgo extraordinario o extremo
-de sufrir daños contra su vida, integridad, libertad y seguridad personal o en razón al ejercicio de un cargo público u otras actividades
-que pueden generar riesgo extraordinario, como el liderazgo sindical, de ONG y de grupos de personas desplazadas. En ese
-sentido la UNP debe garantizar la eficiencia, idoneidad, oportunidad y el buen uso de las medidas de protección a implementarse
-en cada caso así como el correcto funcionamiento de la Entidad. De igual forma y en aras de evitar desgastes administrativos, la
-persona interesada en acogerse al Programa de Protección NO debe encontrarse incluida, en proceso de ser inscrita o aceptar
-paralelamente su vinculación en otro programa de protección ofrecido por otra Institución Estatal, entiéndase los ofrecidos por la
-Fiscalía General de la Nación, la Procuraduría General de la Nación y el Programa de Protección a Víctimas y Testigos de la le Ley
-906 de 2004 o de la Ley 975 de 2005 - Ley de Justicia y Paz-.
-De esa cuenta, las personas interesadas en ser acogidas dentro del Programa de Protección a cargo de la UNP deberán ceñirse
-a los siguientes Deberes:</string>
-    <string name="duties_and_commitments_line_1">La persona interesada en ingresar al Programa de Protección deberá someterse a la respectiva Evaluación de Nivel de Riesgo brindando
-a la UNP la información y soportes que se tengan a través de los cuales se evidencien los hostigamientos, amenazas de los cuales es
-víctima la situación particular de riesgo. Esto en función de lograr determinar el grado de vulnerabilidad al cual se encuentra expuesta.</string>
-    <string name="duties_and_commitments_line_2">La persona deberá acatar las distintas recomendaciones de autoprotección proporcionadas por el Programa de Prevención y Protección
-como también de otros organismos de seguridad del Estado.</string>
-    <string name="duties_and_commitments_line_3"><b>Obrar de buena fe, absteniéndose de suministrar información falsa, temeraria o que induzca a error a la Entidad. Teniendo en
-cuenta las implicaciones penales y/o disciplinarias que conlleva la entrega de información falsa o temeraria.</b></string>
-    <string name="duties_and_commitments_line_4">Adoptar posiciones de reserva y confidencialidad en torno a la información relacionada con su caso, en particular poniendo de manifiesto
-al Analista o a la persona responsable de atender su caso las distintas circunstancias o evidencias sobre las cuales aduce sentir
-desconfianza y/o temor por sus derechos a la vida, seguridad, libertad e integridad.</string>
-    <string name="duties_and_commitments_line_5">En caso de determinarse la viabilidad de asignar medidas de protección a favor de el o la peticionaria en razón a la ponderación de su
-Estudio de Nivel de Riesgo, éstos deberán suscribir un Acta de Compromiso en la cual se detallarán los distintos elementos entregados,
-su estado, compromisos, la periodicidad de la vigencia de los mismos y las consecuencias por el uso indebido de dichos elementos.</string>
+    <string name="national_protection_unit_program_members_duties_and_commitments_title">DEBERES Y COMPROMISOS DE LAS PERSONAS QUE SOLICITAN SER VINCULADAS A LOS PROGRAMAS DE PROTECCIÓN DE LA UNIDAD NACIONAL DE PROTECCIÓN.</string>
+    <string name="national_protection_unit_program_members_duties_and_commitments_disclaimer">La Unidad Nacional de Protección (UNP) creada mediante el Decreto Ley 4065 de 2011, tiene como objetivo articular, coordinar y ejecutar la prestación del servicio de protección a las personas que determine el Gobierno Nacional que por virtud de sus actividades, condiciones o situaciones políticas, públicas, sociales, humanitarias, culturales, étnicas, de género, de su calidad de víctima de la violencia, desplazado, actividad de derechos humanos, se encuentren en situación de riesgo extraordinario o extremo de sufrir daños contra su vida, integridad, libertad y seguridad personal o en razón al ejercicio de un cargo público u otras actividades que pueden generar riesgo extraordinario, como el liderazgo sindical, de ONG y de grupos de personas desplazadas. En ese sentido la UNP debe garantizar la eficiencia, idoneidad, oportunidad y el buen uso de las medidas de protección a implementarse en cada caso así como el correcto funcionamiento de la Entidad. De igual forma y en aras de evitar desgastes administrativos, la persona interesada en acogerse al Programa de Protección NO debe encontrarse incluida, en proceso de ser inscrita o aceptar paralelamente su vinculación en otro programa de protección ofrecido por otra Institución Estatal, entiéndase los ofrecidos por la Fiscalía General de la Nación, la Procuraduría General de la Nación y el Programa de Protección a Víctimas y Testigos de la le Ley 906 de 2004 o de la Ley 975 de 2005 - Ley de Justicia y Paz-. De esa cuenta, las personas interesadas en ser acogidas dentro del Programa de Protección a cargo de la UNP deberán ceñirse a los siguientes Deberes:</string>
+    <string name="duties_and_commitments_line_1">1. La persona interesada en ingresar al Programa de Protección deberá someterse a la respectiva Evaluación de Nivel de Riesgo brindando a la UNP la información y soportes que se tengan a través de los cuales se evidencien los hostigamientos, amenazas de los cuales es víctima la situación particular de riesgo. Esto en función de lograr determinar el grado de vulnerabilidad al cual se encuentra expuesta.</string>
+    <string name="duties_and_commitments_line_2">2. La persona deberá acatar las distintas recomendaciones de autoprotección proporcionadas por el Programa de Prevención y Protección como también de otros organismos de seguridad del Estado.</string>
+    <string name="duties_and_commitments_line_3">3. Obrar de buena fe, absteniéndose de suministrar información falsa, temeraria o que induzca a error a la Entidad. Teniendo en cuenta las implicaciones penales y/o disciplinarias que conlleva la entrega de información falsa o temeraria.</string>
+    <string name="duties_and_commitments_line_4">4. Adoptar posiciones de reserva y confidencialidad en torno a la información relacionada con su caso, en particular poniendo de manifiesto al Analista o a la persona responsable de atender su caso las distintas circunstancias o evidencias sobre las cuales aduce sentir desconfianza y/o temor por sus derechos a la vida, seguridad, libertad e integridad.</string>
+    <string name="duties_and_commitments_line_5">5. En caso de determinarse la viabilidad de asignar medidas de protección a favor de el o la peticionaria en razón a la ponderación de su Estudio de Nivel de Riesgo, éstos deberán suscribir un Acta de Compromiso en la cual se detallarán los distintos elementos entregados, su estado, compromisos, la periodicidad de la vigencia de los mismos y las consecuencias por el uso indebido de dichos elementos.</string>
 
 
     <!-- BLOCK 13 CONSENT-->
     <string name="consent_title">CONSENTIMIENTO</string>
-    <string name="consent_subtitle">Consentimiento para dar inicio a la ruta de protección y las actividades que con ella se despliegan, de acuerdo con los principios de los
-programas de prevención y/o protección:</string>
-    <string name="consent_disclaimer_1">*La vinculación al Programa de Prevención y Protección requerirá de la manifestación expresa, libre y voluntaria por parte del solicitante
-o protegido respecto de la aceptación o no de su vinculación. Así las cosas, en virtud del parágrafo 4 del Artículo 2.4.1.2.40 del Decreto
-1066 de 2015 parcialmente modificado por el Decreto 1139 de 2021, el consentimiento para el inicio de la evaluación de riesgo se
-entenderá otorgado por el solicitante, con el diligenciamiento de este formulario y la presentación de los requisitos mínimos exigidos.</string>
-    <string name="consent_disclaimer_2">*Declaro haber leído y comprendido los deberes y compromisos que como solicitante de inscripción para el Programa de Prevención y
-Protección debo cumplir.</string>
-    <string name="consent_disclaimer_3">*Manifiesto bajo la gravedad de juramento que toda la información declarada en el presente formulario es verdadera, por lo tanto
-autorizo para que la información suministrada pueda ser verificada y en caso de falsedad, se apliquen las sanciones contempladas por
-la Ley.</string>
-    <string name="consent_disclaimer_4">*La Unidad Nacional de Protección - UNP, conforme los lineamientos establecidos en la <b>Ley 1581 de 2012</b> y su Decreto reglamentario,
-como responsable de la recolección de los datos personales suministrados en el presente documento, garantiza la seguridad y
-confidencialidad respecto del tratamiento de los datos sensibles o personales suministrados para los fines de esta solicitud y para
-elaboración de estadísticas que se reflejarán en los ejercicios de caracterización e informes exigidos por Ley, con la finalidad siempre de
-mejorar la atención al ciudadano; igualmente propenderá por su debida custodia, y uso.</string>
-    <string name="consent_acceptance">Manifiesto y acepto, que conozco los términos y condiciones de la Política de Tratamiento y Protección de Datos
-Personales de la UNP y autorizo, el uso de mis datos personales para recibir comunicaciones y/o notificaciones sobre
-los trámites relacionados con las actividades misionales adelantadas por la entidad.
-Términos y condiciones.</string>
-    <string name="national_police_preventive_measures_authorization">¿Autoriza la implementación de medidas preventivas por parte de la Policía Nacional?</string>
-    <string name="cerrem_women_committee_authorization">¿Autoriza que su caso sea tratado en Comité de Evaluación de Riesgo y Recomendación de Medidas - CERREM de Mujeres?</string>
-    <string name="cerrem_women_committee_disclaimer">Resolución 0805 de 2012 " Por el cual se expide el Protocolo con enfoque de género y de
-los derechos de las mujeres a que se refiere el artículo 50 del Decreto 4912 de 2011". En caso de que la mujer solicitante de medidas de protección no manifieste expresamente su deseo que el caso sea conocido por el CERREM de Mujeres, el mismo será llevado al CERREM de la Población a la que pertenece.</string>
+    <string name="consent_subtitle">Consentimiento para dar inicio a la ruta de protección y las actividades que con ella se despliegan, de acuerdo con los principios de los programas de prevención y/o protección:</string>
+    <string name="consent_disclaimer_1">*La vinculación al Programa de Prevención y Protección requerirá de la manifestación expresa, libre y voluntaria por parte del solicitante o protegido respecto de la aceptación o no de su vinculación. Así las cosas, en virtud del parágrafo 4 del Artículo 2.4.1.2.40 del Decreto 1066 de 2015 parcialmente modificado por el Decreto 1139 de 2021, el consentimiento para el inicio de la evaluación de riesgo se entenderá otorgado por el solicitante, con el diligenciamiento de este formulario y la presentación de los requisitos mínimos exigidos.</string>
+    <string name="consent_disclaimer_2">*Declaro haber leído y comprendido los deberes y compromisos que como solicitante de inscripción para el Programa de Prevención y Protección debo cumplir.</string>
+    <string name="consent_disclaimer_3">*Manifiesto bajo la gravedad de juramento que toda la información declarada en el presente formulario es verdadera, por lo tanto autorizo para que la información suministrada pueda ser verificada y en caso de falsedad, se apliquen las sanciones contempladas por la Ley.</string>
+    <string name="consent_disclaimer_4">*La Unidad Nacional de Protección - UNP, conforme los lineamientos establecidos en la <b>Ley 1581 de 2012</b> y su Decreto reglamentario, como responsable de la recolección de los datos personales suministrados en el presente documento, garantiza la seguridad y confidencialidad respecto del tratamiento de los datos sensibles o personales suministrados para los fines de esta solicitud y para elaboración de estadísticas que se reflejarán en los ejercicios de caracterización e informes exigidos por Ley, con la finalidad siempre de mejorar la atención al ciudadano; igualmente propenderá por su debida custodia, y uso.</string>
+    <string name="consent_acceptance">Manifiesto y acepto, que conozco los términos y condiciones de la <b>Política de Tratamiento y Protección de Datos Personales de la UNP</b> y autorizo, el uso de mis datos personales para recibir comunicaciones y/o notificaciones sobre los trámites relacionados con las actividades misionales adelantadas por la entidad. <b>Términos y condiciones.</b></string>
+    <string name="national_police_preventive_measures_authorization">39. ¿Autoriza la implementación de medidas preventivas por parte de la Policía Nacional?</string>
+    <string name="cerrem_women_committee_authorization">39a. ¿Autoriza que su caso sea tratado en Comité de Evaluación de Riesgo y Recomendación de Medidas - CERREM de Mujeres?</string>
+    <string name="cerrem_women_committee_disclaimer">Resolución 0805 de 2012 " Por el cual se expide el Protocolo con enfoque de género y de los derechos de las mujeres a que se refiere el artículo 50 del Decreto 4912 de 2011". En caso de que la mujer solicitante de medidas de protección no manifieste expresamente su deseo que el caso sea conocido por el CERREM de Mujeres, el mismo será llevado al CERREM de la Población a la que pertenece.</string>
     <string name="applicant_complete_name">Nombre completo del Solicitante</string>
     <string name="applicant_signature">Firma del Solicitante</string>
     <string name="fingerprint">Huella</string>

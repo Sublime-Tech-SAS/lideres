@@ -285,10 +285,69 @@ fun FormState.toForm(): Form {
                 fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_OTHER]!!.text.toString()
         },
         riskSituationMeansOther = fieldValues[Constants.RISK_SITUATION_MEANS_OTHER_ACTUAL]!!.text.toString(),
-        protectionAndPreventionGroup = fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP]!!.text.toString(),
+        protectionAndPreventionGroup = when {
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_1]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_1]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_2]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_2]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_3]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_3]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_4]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_4]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_5]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_5]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_6]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_6]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_7]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_7]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_8]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_8]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_9]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_9]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_10]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_10]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_11]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_11]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_12]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_12]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_13]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_13]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_14]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_14]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_15]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_15]!!.text.toString()
+
+            fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_16]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_16]!!.text.toString()
+            else ->
+                fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP_17]!!.text.toString()
+                                            },
         patrioticUnionComunistParty = fieldValues[Constants.PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR]!!.text.toString(),
         especialSecurityProtection = fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP]!!.text.toString(),
-        especialSecurityProtectionType = fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE]!!.text.toString(),
+        especialSecurityProtectionType = when {
+            fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_LEADER]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_LEADER]!!.text.toString()
+
+            fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_REPRESENTATIVE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_REPRESENTATIVE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_MEMBER]!!.text.toString()
+        },
         dataConsentAcceptance = fieldValues[Constants.DATA_CONSENT_ACCEPTANCE]!!.text.toString(),
         nationalPolicePreventiveMeasuresAcceptance = fieldValues[Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE]!!.text.toString(),
         cerremWomenAcceptance = fieldValues[Constants.CERREM_WOMEN_ACCEPTANCE]!!.text.toString(),

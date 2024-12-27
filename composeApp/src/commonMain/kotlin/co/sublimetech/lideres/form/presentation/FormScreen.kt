@@ -134,6 +134,10 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEXUAL_ORIEN
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_INTERSEXUAL
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_MEN
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_WOMEN
+import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP
+import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_LEADER
+import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_MEMBER
+import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_REPRESENTATIVE
 import co.sublimetech.lideres.core.presentation.Constants.FORM_CITY
 import co.sublimetech.lideres.core.presentation.Constants.FORM_COUNTRY
 import co.sublimetech.lideres.core.presentation.Constants.FORM_DATE
@@ -141,6 +145,24 @@ import co.sublimetech.lideres.core.presentation.Constants.FORM_DEPARTMENT
 import co.sublimetech.lideres.core.presentation.Constants.FORM_FILL_DATE
 import co.sublimetech.lideres.core.presentation.Constants.FORM_NUMBER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_OFFICE
+import co.sublimetech.lideres.core.presentation.Constants.PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_1
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_17
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_16
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_15
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_14
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_13
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_12
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_11
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_10
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_9
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_2
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_3
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_4
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_5
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_6
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_7
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_8
 import co.sublimetech.lideres.core.presentation.Constants.RISK_OR_THREAT_REPORT
 import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_OTHER_ACTUAL
 import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE_BY_PHONE
@@ -194,6 +216,13 @@ import lideres.composeapp.generated.resources.cellphone_2
 import lideres.composeapp.generated.resources.city
 import lideres.composeapp.generated.resources.civil
 import lideres.composeapp.generated.resources.communal
+import lideres.composeapp.generated.resources.consent_acceptance
+import lideres.composeapp.generated.resources.consent_disclaimer_1
+import lideres.composeapp.generated.resources.consent_disclaimer_2
+import lideres.composeapp.generated.resources.consent_disclaimer_3
+import lideres.composeapp.generated.resources.consent_disclaimer_4
+import lideres.composeapp.generated.resources.consent_subtitle
+import lideres.composeapp.generated.resources.consent_title
 import lideres.composeapp.generated.resources.contact_number
 import lideres.composeapp.generated.resources.country
 import lideres.composeapp.generated.resources.date
@@ -203,7 +232,15 @@ import lideres.composeapp.generated.resources.different_identifying_trait
 import lideres.composeapp.generated.resources.disability_type_subtitle
 import lideres.composeapp.generated.resources.disability_type_title
 import lideres.composeapp.generated.resources.district
+import lideres.composeapp.generated.resources.duties_and_commitments_line_1
+import lideres.composeapp.generated.resources.duties_and_commitments_line_2
+import lideres.composeapp.generated.resources.duties_and_commitments_line_3
+import lideres.composeapp.generated.resources.duties_and_commitments_line_4
+import lideres.composeapp.generated.resources.duties_and_commitments_line_5
 import lideres.composeapp.generated.resources.elderly
+import lideres.composeapp.generated.resources.especial_security_and_protection_group
+import lideres.composeapp.generated.resources.especial_security_and_protection_group_role
+import lideres.composeapp.generated.resources.especial_security_and_protection_group_title
 import lideres.composeapp.generated.resources.ethnic_group_subtitle
 import lideres.composeapp.generated.resources.ethnic_group_title
 import lideres.composeapp.generated.resources.extortion
@@ -246,16 +283,20 @@ import lideres.composeapp.generated.resources.intellectual
 import lideres.composeapp.generated.resources.intersexual
 import lideres.composeapp.generated.resources.kidnapping
 import lideres.composeapp.generated.resources.landline
+import lideres.composeapp.generated.resources.leader
 import lideres.composeapp.generated.resources.little_people
 import lideres.composeapp.generated.resources.male
 import lideres.composeapp.generated.resources.measure_by_inter_american_commission
 import lideres.composeapp.generated.resources.measure_by_inter_american_court
 import lideres.composeapp.generated.resources.measure_by_national_judge
+import lideres.composeapp.generated.resources.member
 import lideres.composeapp.generated.resources.men
 import lideres.composeapp.generated.resources.mental
 import lideres.composeapp.generated.resources.mother
 import lideres.composeapp.generated.resources.multiple
 import lideres.composeapp.generated.resources.national_id
+import lideres.composeapp.generated.resources.national_protection_unit_program_members_duties_and_commitments_disclaimer
+import lideres.composeapp.generated.resources.national_protection_unit_program_members_duties_and_commitments_title
 import lideres.composeapp.generated.resources.negro
 import lideres.composeapp.generated.resources.neighborhood
 import lideres.composeapp.generated.resources.no
@@ -273,15 +314,45 @@ import lideres.composeapp.generated.resources.organization_membership_title
 import lideres.composeapp.generated.resources.organization_name
 import lideres.composeapp.generated.resources.other
 import lideres.composeapp.generated.resources.partial
+import lideres.composeapp.generated.resources.patriotic_union_and_communist_party_survivor
+import lideres.composeapp.generated.resources.patriotic_union_and_communist_party_survivor_title
 import lideres.composeapp.generated.resources.people_under_care
 import lideres.composeapp.generated.resources.physical
 import lideres.composeapp.generated.resources.place_of_birth
 import lideres.composeapp.generated.resources.population_object_of_protection_subtitle
 import lideres.composeapp.generated.resources.population_object_of_protection_title
 import lideres.composeapp.generated.resources.population_of_protection_and_prevention_program
+import lideres.composeapp.generated.resources.prevention_and_protection_registry_request_presentation_title
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_1
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_10
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_11
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_12
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_13
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_14
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_15
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_16
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_17
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_2
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_3
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_4
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_5
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_6
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_7
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_8
+import lideres.composeapp.generated.resources.protection_and_prevention_program_group_9
 import lideres.composeapp.generated.resources.provisional_measures_beneficiary
 import lideres.composeapp.generated.resources.provisional_measures_type
 import lideres.composeapp.generated.resources.recruitment
+import lideres.composeapp.generated.resources.registry_request_presentation_instruction_1
+import lideres.composeapp.generated.resources.registry_request_presentation_instruction_2
+import lideres.composeapp.generated.resources.registry_request_presentation_instruction_3
+import lideres.composeapp.generated.resources.registry_request_presentation_instruction_4
+import lideres.composeapp.generated.resources.registry_request_presentation_instruction_5
+import lideres.composeapp.generated.resources.registry_request_presentation_instruction_5_numeral_1
+import lideres.composeapp.generated.resources.registry_request_presentation_instruction_5_numeral_2
+import lideres.composeapp.generated.resources.registry_request_presentation_instruction_5_numeral_3
+import lideres.composeapp.generated.resources.registry_request_presentation_instruction_5_numeral_4
+import lideres.composeapp.generated.resources.representative
 import lideres.composeapp.generated.resources.reservation_community
 import lideres.composeapp.generated.resources.risk_or_threat_subtitle
 import lideres.composeapp.generated.resources.risk_or_threat_title
@@ -1393,6 +1464,7 @@ fun FormScreen(
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
+            /** Block 8*/
             BlockTitle(
                 stringResource(Res.string.population_object_of_protection_title),
                 stringResource(Res.string.population_object_of_protection_subtitle),
@@ -1400,10 +1472,258 @@ fun FormScreen(
             )
 
             BlockTitle(
-                title = null,
-                subtitle = stringResource(Res.string.population_of_protection_and_prevention_program),
-                modifier = Modifier.padding(top = 10.dp, bottom = 24.dp).clickable {},
+                title = stringResource(Res.string.population_of_protection_and_prevention_program),
+                subtitle = null,
+                width = 350,
+                onClick = {},
+                modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
+
+            val preventionAndProtectionProgramOptions = listOf(
+                stringResource(Res.string.protection_and_prevention_program_group_1) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_1]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_2) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_2]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_3) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_3]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_4) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_4]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_5) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_5]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_6) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_6]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_7) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_7]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_8) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_8]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_9) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_9]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_10) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_10]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_11) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_11]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_12) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_12]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_13) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_13]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_14) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_14]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_15) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_15]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_16) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_16]!!,
+                stringResource(Res.string.protection_and_prevention_program_group_17) to state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_17]!!,
+            )
+
+            OptionsGrid(
+                options = preventionAndProtectionProgramOptions,
+                columns = 1,
+                bottomPadding = 20,
+                inverted = true,
+                onOptionSelected = { selectedIndex ->
+                    preventionAndProtectionProgramOptions.forEachIndexed { index, pair ->
+                        pair.second.edit {
+                            replace(
+                                0,
+                                length,
+                                if (index == selectedIndex) preventionAndProtectionProgramOptions[index].first else ""
+                            )
+                        }
+                    }
+                }
+            )
+
+
+            /** Block 9*/
+            BlockTitle(
+                title = stringResource(Res.string.patriotic_union_and_communist_party_survivor_title),
+                subtitle = null,
+                width = 350,
+                onClick = {},
+                modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
+            )
+
+            val patrioticUnionCommunistPartyMember = listOf(
+                stringResource(Res.string.patriotic_union_and_communist_party_survivor) to state.fieldValues[PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR]!!,
+            )
+
+            OptionsGrid(
+                options = patrioticUnionCommunistPartyMember,
+                columns = 1,
+                bottomPadding = 20,
+                inverted = true,
+                onOptionSelected = { selectedIndex ->
+                    patrioticUnionCommunistPartyMember.forEachIndexed { index, pair ->
+                        pair.second.edit {
+                            replace(
+                                0,
+                                length,
+                                if (index == selectedIndex) patrioticUnionCommunistPartyMember[index].first else ""
+                            )
+                        }
+                    }
+                }
+            )
+
+            /** Block 10*/
+            BlockTitle(
+                title = stringResource(Res.string.especial_security_and_protection_group_title),
+                subtitle = null,
+                width = 350,
+                onClick = {},
+                modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
+            )
+
+            val especialSecurityAndProtectionGroup = listOf(
+                stringResource(Res.string.especial_security_and_protection_group) to state.fieldValues[ESPECIAL_SECURITY_AND_PROTECTION_GROUP]!!,
+            )
+
+            OptionsGrid(
+                options = especialSecurityAndProtectionGroup,
+                columns = 1,
+                bottomPadding = 20,
+                inverted = true,
+                onOptionSelected = { selectedIndex ->
+                    especialSecurityAndProtectionGroup.forEachIndexed { index, pair ->
+                        pair.second.edit {
+                            replace(
+                                0,
+                                length,
+                                if (index == selectedIndex) especialSecurityAndProtectionGroup[index].first else ""
+                            )
+                        }
+                    }
+                }
+            )
+
+            Title(
+                title = stringResource(Res.string.especial_security_and_protection_group_role)
+            )
+
+            val especialSecurityAndProtectionRole = listOf(
+                stringResource(Res.string.leader) to state.fieldValues[ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_LEADER]!!,
+                stringResource(Res.string.representative) to state.fieldValues[ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_REPRESENTATIVE]!!,
+                stringResource(Res.string.member) to state.fieldValues[ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_MEMBER]!!,
+            )
+
+            OptionsGrid(
+                options = especialSecurityAndProtectionRole,
+                columns = 2,
+                bottomPadding = 20,
+                onOptionSelected = { selectedIndex ->
+                    especialSecurityAndProtectionRole.forEachIndexed { index, pair ->
+                        pair.second.edit {
+                            replace(
+                                0,
+                                length,
+                                if (index == selectedIndex) especialSecurityAndProtectionRole[index].first else ""
+                            )
+                        }
+                    }
+                }
+            )
+
+            /** Block 11*/
+            BlockTitle(
+                stringResource(Res.string.prevention_and_protection_registry_request_presentation_title),
+                null,
+                width = 350,
+                onClick = {},
+                modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
+            )
+            Disclaimer(
+                stringResource(Res.string.registry_request_presentation_instruction_1),
+                8,
+                justify = true
+            )
+            Disclaimer(
+                stringResource(Res.string.registry_request_presentation_instruction_2),
+                8,
+                justify = true
+            )
+            Disclaimer(
+                stringResource(Res.string.registry_request_presentation_instruction_3),
+                8,
+                justify = true
+            )
+            Disclaimer(
+                stringResource(Res.string.registry_request_presentation_instruction_4),
+                8,
+                justify = true
+            )
+            Disclaimer(
+                stringResource(Res.string.registry_request_presentation_instruction_5),
+                8,
+                justify = true
+            )
+            Disclaimer(
+                stringResource(Res.string.registry_request_presentation_instruction_5_numeral_1),
+                4,
+                11,
+                justify = true
+            )
+            Disclaimer(
+                stringResource(Res.string.registry_request_presentation_instruction_5_numeral_2),
+                4,
+                11,
+                justify = true
+            )
+            Disclaimer(
+                stringResource(Res.string.registry_request_presentation_instruction_5_numeral_3),
+                4,
+                11,
+                justify = true
+            )
+            Disclaimer(
+                stringResource(Res.string.registry_request_presentation_instruction_5_numeral_4),
+                fontSize = 11,
+                justify = true
+            )
+
+            /** Block 12*/
+            BlockTitle(
+                stringResource(Res.string.national_protection_unit_program_members_duties_and_commitments_title),
+                null,
+                width = 350,
+                onClick = {},
+                modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
+            )
+
+            Disclaimer(
+                stringResource(Res.string.national_protection_unit_program_members_duties_and_commitments_disclaimer),
+                8,
+                justify = true
+            )
+            Disclaimer(stringResource(Res.string.duties_and_commitments_line_1), 8, justify = true)
+            Disclaimer(stringResource(Res.string.duties_and_commitments_line_2), 8, justify = true)
+            Disclaimer(stringResource(Res.string.duties_and_commitments_line_3), 8, justify = true)
+            Disclaimer(stringResource(Res.string.duties_and_commitments_line_4), 8, justify = true)
+            Disclaimer(stringResource(Res.string.duties_and_commitments_line_5), justify = true)
+
+            /** Block 13*/
+            BlockTitle(
+                stringResource(Res.string.consent_title),
+                null,
+                onClick = {},
+                modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
+            )
+
+            Disclaimer(stringResource(Res.string.consent_subtitle), 0,justify = true)
+            Disclaimer(stringResource(Res.string.consent_disclaimer_1), 8, justify = true)
+            Disclaimer(stringResource(Res.string.consent_disclaimer_2), 8, justify = true)
+            Disclaimer(stringResource(Res.string.consent_disclaimer_3), 8, justify = true)
+            Disclaimer(stringResource(Res.string.consent_disclaimer_4), 8, justify = true)
+
+
+            val consentAcceptance = listOf(
+                stringResource(Res.string.consent_acceptance) to state.fieldValues[ESPECIAL_SECURITY_AND_PROTECTION_GROUP]!!,
+            )
+
+            OptionsGrid(
+                options = consentAcceptance,
+                columns = 1,
+                bottomPadding = 20,
+                inverted = true,
+                onOptionSelected = { selectedIndex ->
+                    consentAcceptance.forEachIndexed { index, pair ->
+                        pair.second.edit {
+                            replace(
+                                0,
+                                length,
+                                if (index == selectedIndex) consentAcceptance[index].first else ""
+                            )
+                        }
+                    }
+                }
+            )
+
+
+
+
 
 
             var imageBitmap: ImageBitmap? by remember { mutableStateOf(null) }
