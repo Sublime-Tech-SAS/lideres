@@ -250,26 +250,27 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="national_police_preventive_measures_authorization">39. ¿Autoriza la implementación de medidas preventivas por parte de la Policía Nacional?</string>
     <string name="cerrem_women_committee_authorization">39a. ¿Autoriza que su caso sea tratado en Comité de Evaluación de Riesgo y Recomendación de Medidas - CERREM de Mujeres?</string>
     <string name="cerrem_women_committee_disclaimer">Resolución 0805 de 2012 " Por el cual se expide el Protocolo con enfoque de género y de los derechos de las mujeres a que se refiere el artículo 50 del Decreto 4912 de 2011". En caso de que la mujer solicitante de medidas de protección no manifieste expresamente su deseo que el caso sea conocido por el CERREM de Mujeres, el mismo será llevado al CERREM de la Población a la que pertenece.</string>
-    <string name="applicant_complete_name">Nombre completo del Solicitante</string>
-    <string name="applicant_signature">Firma del Solicitante</string>
+    <string name="applicant_complete_name">40. Nombre completo del Solicitante</string>
+    <string name="applicant_signature">41. Firma del Solicitante</string>
     <string name="fingerprint">Huella</string>
     <string name="applicant_personal_data_disclaimer">Ley de Habeas Data contenidas en Ley 1266 de 2008 y demás normas reglamentarias: El arriba firmante manifiesta que han sido informado que tiene el derecho a acceder, modificar, rectificar, solicitar la copia de su autorización y formular quejas, reclamos y consultas frente al tratamiento que haga la Unidad Nacional de Protección de sus datos personales. De igual manera los datos aqui consignados serán usados para temas estadísticos y de caracterización poblacional.</string>
 
 
     <!-- BLOCK 14 ENROLLER INFORMATION-->
     <string name="enroller_information_title">DATOS DE QUIEN DILIGENCIA EL FORMULARIO</string>
-    <string name="application_done_by_applicant">¿El formulario es diligenciado por el solicitante?</string>
+    <string name="application_done_by_applicant">43. ¿El formulario es diligenciado por el solicitante?</string>
     <string name="application_done_by_enroller">Si el formulario es diligenciado por un servidor público o contratista , Favor diligenciar los siguientes campos</string>
     <string name="enroller_names_and_lastnames">Nombres y Apellidos (si es persona natural)</string>
     <string name="enroller_entity_name">Nombre de la Entidad ( Si es persona Jurídica u otra Organización)</string>
-    <string name="enroller_phone_number">Contacto telefónico</string>
-    <string name="enroller_email">Correo electrónico</string>
+    <string name="enroller_phone_number">46. Contacto telefónico</string>
+    <string name="enroller_email">47. Correo electrónico</string>
 
 
     <!-- BLOCK 15 PUBLIC SERVANT OR UNP FORM RECEIVER INFORMATION-->
     <string name="public_servant_or_unp_form_receiver_information_title">DATOS DEL SERVIDOR PÚBLICO O CONTRATISTA DE LA UNP QUE RECEPCIONA EL FORMULARIO</string>
-    <string name="names_and_lastnames">Nombres y Apellidos</string>
-    <string name="file_in">Archívese en:</string>
+    <string name="servant_upn_names_and_lastnames">48. Nombres y Apellidos</string>
+    <string name="servant_upn_email">49. Correo electrónico</string>
+    <string name="file_in">50. Archívese en:</string>
 
 
     <!-- BLOCK 16 FORM INSTRUCTIONS PAGE 1-->

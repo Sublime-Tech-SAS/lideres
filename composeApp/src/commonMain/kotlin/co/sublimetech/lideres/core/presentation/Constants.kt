@@ -184,14 +184,17 @@ object Constants {
 
     //BLOCK 13 CONSENT
     const val DATA_CONSENT_ACCEPTANCE = "data_consent_acceptance"
-    const val NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE = "national_police_preventive_measures_acceptance"
-    const val CERREM_WOMEN_ACCEPTANCE = "cerrem_women_acceptance"
+    const val NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_POSITIVE = "national_police_preventive_measures_acceptance_positive"
+    const val NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_NEGATIVE = "national_police_preventive_measures_acceptance_negative"
+    const val CERREM_WOMEN_ACCEPTANCE_POSITIVE = "cerrem_women_acceptance_positive"
+    const val CERREM_WOMEN_ACCEPTANCE_NEGATIVE = "cerrem_women_acceptance_negative"
     const val APPLICANT_FULL_NAME = "applicant_full_name"
     const val APPLICANT_SIGNATURE = "applicant_signature"
     const val APPLICANT_FINGERPRINT = "applicant_fingerprint"
 
     //BLOCK 14 ENROLLER INFORMATION
-    const val APPLICANT_IS_FORM_ENROLLER = "applicant_is_form_enroller"
+    const val APPLICANT_IS_FORM_ENROLLER_POSITIVE = "applicant_is_form_enroller_positive"
+    const val APPLICANT_IS_FORM_ENROLLER_NEGATIVE = "applicant_is_form_enroller_negative"
     const val FORM_ENROLLER_NAME_AND_LASTNAME = "form_enroller_name"
     const val ENROLLER_ENTITY_NAME = "enroller_entity_name"
     const val FORM_ENROLLER_PHONE_NUMBER = "form_enroller_phone_number"

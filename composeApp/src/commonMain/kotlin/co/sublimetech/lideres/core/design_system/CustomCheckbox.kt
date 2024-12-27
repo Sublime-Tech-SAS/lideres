@@ -20,12 +20,13 @@ import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -64,6 +65,8 @@ fun OptionsGrid(
     bottomPadding: Int = 30,
     inverted: Boolean = false,
 ) {
+    val selectedIndex = remember { mutableStateOf(-1) }
+
     val rows = (options.size + columns - 1) / columns
     Column(
         modifier = Modifier.fillMaxSize().padding(bottom = bottomPadding.dp),
@@ -75,12 +78,13 @@ fun OptionsGrid(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
                     .fillMaxWidth()
-
             ) {
                 for (columnIndex in 0 until columns) {
                     val optionIndex = rowIndex * columns + columnIndex
                     if (optionIndex < options.size) {
                         val option = options[optionIndex]
+                        val isSelected = selectedIndex.value == optionIndex
+
                         if (inverted) {
                             Row(
                                 verticalAlignment = Alignment.Top,
@@ -89,12 +93,12 @@ fun OptionsGrid(
                             ) {
 
                                 CustomCheckbox(
-                                    isFilled = option.second.text.isNotBlank(),
+                                    isFilled = isSelected,
                                     modifier = Modifier.padding(top = 6.dp),
-                                    onCheckedChange = { isSelected ->
-                                        if (isSelected) {
-                                            onOptionSelected(optionIndex)
-                                        }
+                                    onCheckedChange = {
+                                        selectedIndex.value =
+                                            if (isSelected) -1 else optionIndex // Toggle logic
+                                        onOptionSelected(selectedIndex.value)
                                     }
                                 )
                                 Text(
@@ -124,11 +128,11 @@ fun OptionsGrid(
                                 )
 
                                 CustomCheckbox(
-                                    isFilled = option.second.text.isNotBlank(),
-                                    onCheckedChange = { isSelected ->
-                                        if (isSelected) {
-                                            onOptionSelected(optionIndex)
-                                        }
+                                    isFilled = isSelected,
+                                    onCheckedChange = {
+                                        selectedIndex.value =
+                                            if (isSelected) -1 else optionIndex
+                                        onOptionSelected(selectedIndex.value)
                                     }
                                 )
                             }
@@ -141,6 +145,7 @@ fun OptionsGrid(
         }
     }
 }
+
 
 @Composable
 fun OptionsGridPreview() {

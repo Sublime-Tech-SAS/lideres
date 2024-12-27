@@ -66,7 +66,8 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_G
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_PARTIAL
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IS_FORM_ENROLLER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IS_FORM_ENROLLER_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IS_FORM_ENROLLER_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_LANDLINE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_ADDRESS
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_APPROVAL_NEGATIVE
@@ -105,7 +106,8 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_INTERSEX
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_MEN
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_WOMEN
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SIGNATURE
-import co.sublimetech.lideres.core.presentation.Constants.CERREM_WOMEN_ACCEPTANCE
+import co.sublimetech.lideres.core.presentation.Constants.CERREM_WOMEN_ACCEPTANCE_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.CERREM_WOMEN_ACCEPTANCE_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.DATA_CONSENT_ACCEPTANCE
 import co.sublimetech.lideres.core.presentation.Constants.ENROLLER_ENTITY_NAME
 import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP
@@ -123,7 +125,8 @@ import co.sublimetech.lideres.core.presentation.Constants.FORM_ENROLLER_PHONE_NU
 import co.sublimetech.lideres.core.presentation.Constants.FORM_FILL_DATE
 import co.sublimetech.lideres.core.presentation.Constants.FORM_NUMBER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_OFFICE
-import co.sublimetech.lideres.core.presentation.Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE
+import co.sublimetech.lideres.core.presentation.Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_1
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_10
@@ -364,13 +367,16 @@ class FormViewModel : ViewModel(), KoinComponent {
             ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_MEMBER,
             //BLOCK 13 CONSENT
             DATA_CONSENT_ACCEPTANCE,
-            NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE,
-            CERREM_WOMEN_ACCEPTANCE,
+            NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_POSITIVE,
+            NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_NEGATIVE,
+            CERREM_WOMEN_ACCEPTANCE_POSITIVE,
+            CERREM_WOMEN_ACCEPTANCE_NEGATIVE,
             APPLICANT_FULL_NAME,
             APPLICANT_SIGNATURE,
             APPLICANT_FINGERPRINT,
             //BLOCK 14 ENROLLER INFORMATION
-            APPLICANT_IS_FORM_ENROLLER,
+            APPLICANT_IS_FORM_ENROLLER_POSITIVE,
+            APPLICANT_IS_FORM_ENROLLER_NEGATIVE,
             FORM_ENROLLER_NAME_AND_LASTNAME,
             ENROLLER_ENTITY_NAME,
             FORM_ENROLLER_PHONE_NUMBER,

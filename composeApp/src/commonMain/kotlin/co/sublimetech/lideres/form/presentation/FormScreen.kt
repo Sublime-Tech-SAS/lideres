@@ -3,7 +3,6 @@ package co.sublimetech.lideres.form.presentation
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -24,7 +23,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
@@ -78,6 +76,7 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE_SAN_ANDRES
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FIRST_LAST_NAME
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FIRST_NAME
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FULL_NAME
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_GENDER_FEMALE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_GENDER_MALE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_GENDER_TRANSGENDER
@@ -97,6 +96,8 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_G
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_PARTIAL
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IS_FORM_ENROLLER_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IS_FORM_ENROLLER_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_LANDLINE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_ADDRESS
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_APPROVAL_NEGATIVE
@@ -134,28 +135,38 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEXUAL_ORIEN
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_INTERSEXUAL
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_MEN
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_WOMEN
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SIGNATURE
+import co.sublimetech.lideres.core.presentation.Constants.CERREM_WOMEN_ACCEPTANCE_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.CERREM_WOMEN_ACCEPTANCE_POSITIVE
+import co.sublimetech.lideres.core.presentation.Constants.DATA_CONSENT_ACCEPTANCE
+import co.sublimetech.lideres.core.presentation.Constants.ENROLLER_ENTITY_NAME
 import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP
 import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_LEADER
 import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_MEMBER
 import co.sublimetech.lideres.core.presentation.Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_REPRESENTATIVE
+import co.sublimetech.lideres.core.presentation.Constants.FILED_IN_IDENTIFIER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_CITY
 import co.sublimetech.lideres.core.presentation.Constants.FORM_COUNTRY
 import co.sublimetech.lideres.core.presentation.Constants.FORM_DATE
 import co.sublimetech.lideres.core.presentation.Constants.FORM_DEPARTMENT
+import co.sublimetech.lideres.core.presentation.Constants.FORM_ENROLLER_EMAIL
+import co.sublimetech.lideres.core.presentation.Constants.FORM_ENROLLER_NAME_AND_LASTNAME
+import co.sublimetech.lideres.core.presentation.Constants.FORM_ENROLLER_PHONE_NUMBER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_FILL_DATE
 import co.sublimetech.lideres.core.presentation.Constants.FORM_NUMBER
 import co.sublimetech.lideres.core.presentation.Constants.FORM_OFFICE
+import co.sublimetech.lideres.core.presentation.Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_1
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_17
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_16
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_15
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_14
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_13
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_12
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_11
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_10
-import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_9
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_11
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_12
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_13
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_14
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_15
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_16
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_17
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_2
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_3
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_4
@@ -163,6 +174,9 @@ import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENT
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_6
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_7
 import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_8
+import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENTION_GROUP_9
+import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL
+import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME
 import co.sublimetech.lideres.core.presentation.Constants.RISK_OR_THREAT_REPORT
 import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_OTHER_ACTUAL
 import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE_BY_PHONE
@@ -193,6 +207,7 @@ import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_LANDLINE
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_NAMES_AND_LASTNAMES
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_PHONE_NUMBER_1
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_PHONE_NUMBER_2
+import co.sublimetech.lideres.core.presentation.toBase64
 import io.github.joelkanyi.sain.Sain
 import io.github.joelkanyi.sain.SignatureAction
 import io.github.joelkanyi.sain.SignatureState
@@ -202,8 +217,13 @@ import lideres.composeapp.generated.resources.adult
 import lideres.composeapp.generated.resources.african_american
 import lideres.composeapp.generated.resources.african_american_community_name
 import lideres.composeapp.generated.resources.age
+import lideres.composeapp.generated.resources.applicant_complete_name
 import lideres.composeapp.generated.resources.applicant_email
+import lideres.composeapp.generated.resources.applicant_personal_data_disclaimer
 import lideres.composeapp.generated.resources.applicant_personal_data_title
+import lideres.composeapp.generated.resources.applicant_signature
+import lideres.composeapp.generated.resources.application_done_by_applicant
+import lideres.composeapp.generated.resources.application_done_by_enroller
 import lideres.composeapp.generated.resources.attack
 import lideres.composeapp.generated.resources.birth_date
 import lideres.composeapp.generated.resources.bisexual
@@ -213,6 +233,8 @@ import lideres.composeapp.generated.resources.by_phone
 import lideres.composeapp.generated.resources.caretaker
 import lideres.composeapp.generated.resources.cellphone_1
 import lideres.composeapp.generated.resources.cellphone_2
+import lideres.composeapp.generated.resources.cerrem_women_committee_authorization
+import lideres.composeapp.generated.resources.cerrem_women_committee_disclaimer
 import lideres.composeapp.generated.resources.city
 import lideres.composeapp.generated.resources.civil
 import lideres.composeapp.generated.resources.communal
@@ -238,6 +260,11 @@ import lideres.composeapp.generated.resources.duties_and_commitments_line_3
 import lideres.composeapp.generated.resources.duties_and_commitments_line_4
 import lideres.composeapp.generated.resources.duties_and_commitments_line_5
 import lideres.composeapp.generated.resources.elderly
+import lideres.composeapp.generated.resources.enroller_email
+import lideres.composeapp.generated.resources.enroller_entity_name
+import lideres.composeapp.generated.resources.enroller_information_title
+import lideres.composeapp.generated.resources.enroller_names_and_lastnames
+import lideres.composeapp.generated.resources.enroller_phone_number
 import lideres.composeapp.generated.resources.especial_security_and_protection_group
 import lideres.composeapp.generated.resources.especial_security_and_protection_group_role
 import lideres.composeapp.generated.resources.especial_security_and_protection_group_title
@@ -248,6 +275,7 @@ import lideres.composeapp.generated.resources.family_member_homicide
 import lideres.composeapp.generated.resources.farmer
 import lideres.composeapp.generated.resources.father
 import lideres.composeapp.generated.resources.female
+import lideres.composeapp.generated.resources.file_in
 import lideres.composeapp.generated.resources.first_last_name
 import lideres.composeapp.generated.resources.first_name
 import lideres.composeapp.generated.resources.foreign_id
@@ -295,6 +323,7 @@ import lideres.composeapp.generated.resources.mental
 import lideres.composeapp.generated.resources.mother
 import lideres.composeapp.generated.resources.multiple
 import lideres.composeapp.generated.resources.national_id
+import lideres.composeapp.generated.resources.national_police_preventive_measures_authorization
 import lideres.composeapp.generated.resources.national_protection_unit_program_members_duties_and_commitments_disclaimer
 import lideres.composeapp.generated.resources.national_protection_unit_program_members_duties_and_commitments_title
 import lideres.composeapp.generated.resources.negro
@@ -342,6 +371,7 @@ import lideres.composeapp.generated.resources.protection_and_prevention_program_
 import lideres.composeapp.generated.resources.protection_and_prevention_program_group_9
 import lideres.composeapp.generated.resources.provisional_measures_beneficiary
 import lideres.composeapp.generated.resources.provisional_measures_type
+import lideres.composeapp.generated.resources.public_servant_or_unp_form_receiver_information_title
 import lideres.composeapp.generated.resources.recruitment
 import lideres.composeapp.generated.resources.registry_request_presentation_instruction_1
 import lideres.composeapp.generated.resources.registry_request_presentation_instruction_2
@@ -361,6 +391,8 @@ import lideres.composeapp.generated.resources.risk_situation_title
 import lideres.composeapp.generated.resources.rural
 import lideres.composeapp.generated.resources.second_last_name
 import lideres.composeapp.generated.resources.second_name
+import lideres.composeapp.generated.resources.servant_upn_email
+import lideres.composeapp.generated.resources.servant_upn_names_and_lastnames
 import lideres.composeapp.generated.resources.settlement
 import lideres.composeapp.generated.resources.sex
 import lideres.composeapp.generated.resources.sexual_orientation
@@ -1692,7 +1724,7 @@ fun FormScreen(
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
 
-            Disclaimer(stringResource(Res.string.consent_subtitle), 0,justify = true)
+            Disclaimer(stringResource(Res.string.consent_subtitle), 0, justify = true)
             Disclaimer(stringResource(Res.string.consent_disclaimer_1), 8, justify = true)
             Disclaimer(stringResource(Res.string.consent_disclaimer_2), 8, justify = true)
             Disclaimer(stringResource(Res.string.consent_disclaimer_3), 8, justify = true)
@@ -1700,7 +1732,7 @@ fun FormScreen(
 
 
             val consentAcceptance = listOf(
-                stringResource(Res.string.consent_acceptance) to state.fieldValues[ESPECIAL_SECURITY_AND_PROTECTION_GROUP]!!,
+                stringResource(Res.string.consent_acceptance) to state.fieldValues[DATA_CONSENT_ACCEPTANCE]!!,
             )
 
             OptionsGrid(
@@ -1721,32 +1753,103 @@ fun FormScreen(
                 }
             )
 
+            Title(
+                stringResource(Res.string.national_police_preventive_measures_authorization), 12,
+            )
+
+            val nationalPoliceMeasuresOptions = listOf(
+                stringResource(Res.string.yes) to state.fieldValues[NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_POSITIVE]!!,
+                stringResource(Res.string.no) to state.fieldValues[NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_NEGATIVE]!!,
+            )
 
 
+            OptionsGrid(
+                options = nationalPoliceMeasuresOptions,
+                columns = 2,
+                bottomPadding = 10,
+                onOptionSelected = { selectedIndex ->
+                    nationalPoliceMeasuresOptions.forEachIndexed { index, pair ->
+                        pair.second.edit {
+                            replace(
+                                0,
+                                length,
+                                if (index == selectedIndex) nationalPoliceMeasuresOptions[index].first else ""
+                            )
+                        }
+                    }
+                }
+            )
 
+
+            Title(
+                stringResource(Res.string.cerrem_women_committee_authorization), 12,
+            )
+
+            val cerremOptions = listOf(
+                stringResource(Res.string.yes) to state.fieldValues[CERREM_WOMEN_ACCEPTANCE_POSITIVE]!!,
+                stringResource(Res.string.no) to state.fieldValues[CERREM_WOMEN_ACCEPTANCE_NEGATIVE]!!,
+            )
+
+
+            OptionsGrid(
+                options = cerremOptions,
+                columns = 2,
+                bottomPadding = 10,
+                onOptionSelected = { selectedIndex ->
+                    cerremOptions.forEachIndexed { index, pair ->
+                        pair.second.edit {
+                            replace(
+                                0,
+                                length,
+                                if (index == selectedIndex) cerremOptions[index].first else ""
+                            )
+                        }
+                    }
+                }
+            )
+
+            Disclaimer(
+                stringResource(Res.string.cerrem_women_committee_disclaimer),
+                40,
+                justify = true
+            )
+
+            CustomOutlineTextField(
+                state.fieldValues[APPLICANT_FULL_NAME]!!,
+                title = stringResource(Res.string.applicant_complete_name),
+                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+            )
+
+            Title(
+                stringResource(Res.string.applicant_signature), 16,
+            )
 
 
             var imageBitmap: ImageBitmap? by remember { mutableStateOf(null) }
 
-            Spacer(modifier = Modifier.height(16.dp))
+
 
 
             Sain(
                 state = SignatureState(),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(250.dp)
-                    .padding(horizontal = 16.dp)
+                    .height(150.dp)
+                    .padding(horizontal = 4.dp)
+                    .padding(bottom = 16.dp)
                     .border(
                         BorderStroke(
                             width = .5.dp,
-                            color = MaterialTheme.colorScheme.onSurface
+                            color = MaterialTheme.colorScheme.outline
                         ),
                         shape = RoundedCornerShape(8.dp)
                     ),
                 onComplete = { signatureBitmap ->
                     if (signatureBitmap != null) {
-                        imageBitmap = signatureBitmap
+                        state.fieldValues[APPLICANT_SIGNATURE]!!.edit {
+                            replace(0, length, signatureBitmap.toBase64())
+                        }
+
                     } else {
                         println("Signature is empty")
                     }
@@ -1754,45 +1857,186 @@ fun FormScreen(
             ) { action ->
                 Row(
                     modifier = Modifier
-                        .padding(top = 16.dp)
-                        .padding(horizontal = 16.dp)
+                        .padding(top = 8.dp)
                         .fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
                     Button(
                         modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp),
                         colors = ButtonColors(
-                            containerColor = Color.LightGray,
-                            contentColor = Color.Black,
-                            disabledContainerColor = Color.LightGray,
-                            disabledContentColor = Color.LightGray
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = White,
+                            disabledContainerColor = MaterialTheme.colorScheme.outline,
+                            disabledContentColor = MaterialTheme.colorScheme.outline
                         ),
                         onClick = {
                             imageBitmap = null
                             action(SignatureAction.CLEAR)
-                        }) { Text("Borrar") }
+                        }) {
+                        Text(
+                            "Borrar",
+                            color = White,
+                            fontSize = 14.sp,
+                            fontFamily = FontFamily(
+                                Font(Res.font.futura_md_bt)
+                            )
+                        )
+                    }
                     Button(modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp),
                         colors = ButtonColors(
-                            containerColor = Color.LightGray,
-                            contentColor = Color.Black,
-                            disabledContainerColor = Color.LightGray,
-                            disabledContentColor = Color.LightGray
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = White,
+                            disabledContainerColor = MaterialTheme.colorScheme.outline,
+                            disabledContentColor = MaterialTheme.colorScheme.outline
                         ),
                         onClick = {
                             action(SignatureAction.COMPLETE)
-                        }) { Text("Completar") }
+                        }) {
+                        Text(
+                            "Completar",
+                            color = White,
+                            fontSize = 14.sp,
+                            fontFamily = FontFamily(
+                                Font(Res.font.futura_md_bt)
+                            )
+                        )
+                    }
                 }
             }
-            Button(
-                colors = ButtonColors(
-                    containerColor = Color.LightGray,
-                    contentColor = Color.Black,
-                    disabledContainerColor = Color.LightGray,
-                    disabledContentColor = Color.LightGray
-                ), modifier = Modifier.padding(start = 16.dp), onClick = {
 
-                    onAction(FormAction.OnSaveFormClick)
-                }) { Text("Guardar Formulario") }
+            Spacer(modifier = Modifier.height(30.dp))
+
+            Disclaimer(
+                stringResource(Res.string.applicant_personal_data_disclaimer),
+                30,
+                justify = true
+            )
+
+            /** Block 14*/
+
+            BlockTitle(
+                title = stringResource(Res.string.enroller_information_title),
+                subtitle = null,
+                onClick = {},
+                modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
+            )
+
+            Title(
+                stringResource(Res.string.application_done_by_applicant), 12,
+            )
+
+            val doneByApplicantOptions = listOf(
+                stringResource(Res.string.yes) to state.fieldValues[APPLICANT_IS_FORM_ENROLLER_POSITIVE]!!,
+                stringResource(Res.string.no) to state.fieldValues[APPLICANT_IS_FORM_ENROLLER_NEGATIVE]!!,
+            )
+
+
+            OptionsGrid(
+                options = doneByApplicantOptions,
+                columns = 2,
+                bottomPadding = 10,
+                onOptionSelected = { selectedIndex ->
+                    doneByApplicantOptions.forEachIndexed { index, pair ->
+                        pair.second.edit {
+                            replace(
+                                0,
+                                length,
+                                if (index == selectedIndex) doneByApplicantOptions[index].first else ""
+                            )
+                        }
+                    }
+                }
+            )
+
+
+            Disclaimer(
+                stringResource(Res.string.application_done_by_enroller),
+            )
+
+            CustomOutlineTextField(
+                state.fieldValues[FORM_ENROLLER_NAME_AND_LASTNAME]!!,
+                title = stringResource(Res.string.enroller_names_and_lastnames),
+                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+            )
+
+            Disclaimer(
+                stringResource(Res.string.enroller_entity_name),
+                8,
+            )
+
+            CustomOutlineTextField(
+                state.fieldValues[ENROLLER_ENTITY_NAME]!!,
+                title = "",
+                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+            )
+
+            CustomOutlineTextField(
+                state.fieldValues[FORM_ENROLLER_PHONE_NUMBER]!!,
+                title = stringResource(Res.string.enroller_phone_number),
+                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+            )
+
+            CustomOutlineTextField(
+                state.fieldValues[FORM_ENROLLER_EMAIL]!!,
+                title = stringResource(Res.string.enroller_email),
+                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+            )
+
+
+            /** Block 15*/
+
+            BlockTitle(
+                title = stringResource(Res.string.public_servant_or_unp_form_receiver_information_title),
+                subtitle = null,
+                width = 350,
+                onClick = {},
+                modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
+            )
+
+            CustomOutlineTextField(
+                state.fieldValues[PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME]!!,
+                title = stringResource(Res.string.servant_upn_names_and_lastnames),
+                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+            )
+
+            CustomOutlineTextField(
+                state.fieldValues[PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL]!!,
+                title = stringResource(Res.string.servant_upn_email),
+                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+            )
+
+            CustomOutlineTextField(
+                state.fieldValues[FILED_IN_IDENTIFIER]!!,
+                title = stringResource(Res.string.file_in),
+                modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+            )
+
+
+            Row() {
+                Spacer(modifier = Modifier.weight(1f))
+                Button(
+                    shape = RoundedCornerShape(8.dp),
+                    colors = ButtonColors(
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = White,
+                        disabledContainerColor = MaterialTheme.colorScheme.outline,
+                        disabledContentColor = MaterialTheme.colorScheme.outline
+                    ),
+                    onClick = {
+                        onAction(FormAction.OnSaveFormClick)
+                    }) {
+                    Text(
+                        "Guardar Formulario",
+                        color = White,
+                        fontSize = 14.sp,
+                        fontFamily = FontFamily(
+                            Font(Res.font.futura_md_bt)
+                        )
+                    )
+                }
+            }
 
 
             LaunchedEffect(state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString()) {
@@ -1805,17 +2049,3 @@ fun FormScreen(
         }
     }
 }
-
-
-//Button(colors = ButtonColors(
-//    containerColor = Color.LightGray,
-//    contentColor = Color.Black,
-//    disabledContainerColor = Color.LightGray,
-//    disabledContentColor = Color.LightGray
-//), modifier = Modifier.padding(start = 16.dp),
-//    onClick = {
-//        onAction(FormAction.OnGetFormClick)
-//    }) {
-//    Text("Traer Formualrio")
-//} } }
-

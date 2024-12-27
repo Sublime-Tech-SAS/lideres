@@ -349,8 +349,18 @@ fun FormState.toForm(): Form {
                 fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP_TYPE_MEMBER]!!.text.toString()
         },
         dataConsentAcceptance = fieldValues[Constants.DATA_CONSENT_ACCEPTANCE]!!.text.toString(),
-        nationalPolicePreventiveMeasuresAcceptance = fieldValues[Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE]!!.text.toString(),
-        cerremWomenAcceptance = fieldValues[Constants.CERREM_WOMEN_ACCEPTANCE]!!.text.toString(),
+        nationalPolicePreventiveMeasuresAcceptance = when {
+            fieldValues[Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_POSITIVE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_POSITIVE]!!.text.toString()
+            else ->
+                fieldValues[Constants.NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_NEGATIVE]!!.text.toString()
+        },
+        cerremWomenAcceptance = when {
+            fieldValues[Constants.CERREM_WOMEN_ACCEPTANCE_POSITIVE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.CERREM_WOMEN_ACCEPTANCE_POSITIVE]!!.text.toString()
+            else ->
+                fieldValues[Constants.CERREM_WOMEN_ACCEPTANCE_NEGATIVE]!!.text.toString()
+        },
         applicantFullName = fieldValues[Constants.APPLICANT_FULL_NAME]!!.text.toString(),
         applicantSignature = fieldValues[Constants.APPLICANT_SIGNATURE]!!.text.toString(),
     )
@@ -380,9 +390,14 @@ fun FormState.toForm(): Form {
     )
 
     val enroller = Enroller(
-        applicantIsFormEnroller = fieldValues[Constants.APPLICANT_IS_FORM_ENROLLER]!!.text.toString(),
+        applicantIsFormEnroller = when {
+            fieldValues[Constants.APPLICANT_IS_FORM_ENROLLER_POSITIVE]!!.text.toString().isNotBlank() ->
+            fieldValues[Constants.APPLICANT_IS_FORM_ENROLLER_POSITIVE]!!.text.toString()
+            else ->
+            fieldValues[Constants.APPLICANT_IS_FORM_ENROLLER_NEGATIVE]!!.text.toString()
+        },
         formEnrollerNameAndLastName = fieldValues[Constants.FORM_ENROLLER_NAME_AND_LASTNAME]!!.text.toString(),
-        enrollerEntityName = fieldValues[Constants.APPLICANT_IS_FORM_ENROLLER]!!.text.toString(),
+        enrollerEntityName = fieldValues[Constants.ENROLLER_ENTITY_NAME]!!.text.toString(),
         formEnrollerFormNumber = fieldValues[Constants.FORM_ENROLLER_PHONE_NUMBER]!!.text.toString(),
         formEnrollerFormEmail = fieldValues[Constants.FORM_ENROLLER_EMAIL]!!.text.toString(),
     )

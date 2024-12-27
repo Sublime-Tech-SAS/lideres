@@ -104,7 +104,7 @@ fun Disclaimer(
         title,
         modifier = Modifier
             .padding(bottom = bottomPadding.dp)
-            .padding(horizontal = 16.dp),
+            .padding(horizontal = 4.dp),
         color = MaterialTheme.colorScheme.tertiary,
         fontSize = fontSize.sp,
         fontFamily = FontFamily(
