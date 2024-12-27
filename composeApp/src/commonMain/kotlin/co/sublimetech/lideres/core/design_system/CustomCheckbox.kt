@@ -30,6 +30,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import co.sublimetech.lideres.core.presentation.Platform
+import co.sublimetech.lideres.core.presentation.getPlatform
 import lideres.composeapp.generated.resources.Res
 import lideres.composeapp.generated.resources.foreign_id
 import lideres.composeapp.generated.resources.futura_md_bt
@@ -68,6 +70,11 @@ fun OptionsGrid(
     val selectedIndex = remember { mutableStateOf(-1) }
 
     val rows = (options.size + columns - 1) / columns
+
+    val platform: Platform = getPlatform()
+
+    val ios = platform.name.contains("iOS", ignoreCase = true)
+
     Column(
         modifier = Modifier.fillMaxSize().padding(bottom = bottomPadding.dp),
         verticalArrangement = Arrangement.Center,
@@ -92,15 +99,21 @@ fun OptionsGrid(
                                     .padding(start = 4.dp, top = 2.dp, bottom = 2.dp, end = 24.dp)
                             ) {
 
-                                CustomCheckbox(
-                                    isFilled = isSelected,
-                                    modifier = Modifier.padding(top = 6.dp),
-                                    onCheckedChange = {
-                                        selectedIndex.value =
-                                            if (isSelected) -1 else optionIndex
-                                        onOptionSelected(selectedIndex.value)
+                                Column {
+                                    if (ios) {
+                                        Spacer(modifier = Modifier.padding(top = 4.dp))
                                     }
-                                )
+
+                                    CustomCheckbox(
+                                        isFilled = isSelected,
+                                        modifier = Modifier.padding(top = 6.dp),
+                                        onCheckedChange = {
+                                            selectedIndex.value =
+                                                if (isSelected) -1 else optionIndex
+                                            onOptionSelected(selectedIndex.value)
+                                        }
+                                    )
+                                }
                                 Text(
                                     text = option.first,
                                     fontSize = 12.sp,
@@ -127,14 +140,19 @@ fun OptionsGrid(
                                     maxLines = Int.MAX_VALUE
                                 )
 
-                                CustomCheckbox(
-                                    isFilled = isSelected,
-                                    onCheckedChange = {
-                                        selectedIndex.value =
-                                            if (isSelected) -1 else optionIndex
-                                        onOptionSelected(selectedIndex.value)
+                                Column {
+                                    if (ios) {
+                                        Spacer(modifier = Modifier.padding(top = 6.dp))
                                     }
-                                )
+                                    CustomCheckbox(
+                                        isFilled = isSelected,
+                                        onCheckedChange = {
+                                            selectedIndex.value =
+                                                if (isSelected) -1 else optionIndex
+                                            onOptionSelected(selectedIndex.value)
+                                        }
+                                    )
+                                }
                             }
                         }
                     } else {

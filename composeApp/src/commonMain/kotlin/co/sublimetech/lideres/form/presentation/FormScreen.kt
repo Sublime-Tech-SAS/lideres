@@ -45,6 +45,8 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_DETA
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_DISTRICT
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_NEIGHBORHOOD
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_SETTLEMENT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_ZONE_RURAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_ZONE_URBAN
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AFRICAN_AMERICAN_COMMUNITY
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AGE_ADULT
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AGE_CHILD
@@ -587,7 +589,7 @@ fun FormScreen(
 
             OptionsGrid(
                 options = applicantIdOptions,
-                columns = 2,
+                columns = 1,
                 onOptionSelected = { selectedIndex ->
                     applicantIdOptions.forEachIndexed { index, pair ->
                         pair.second.edit {
@@ -685,8 +687,8 @@ fun FormScreen(
             )
 
             val homeZoneOptions = listOf(
-                stringResource(Res.string.rural) to state.fieldValues[APPLICANT_ID_NATIONAL_ID]!!,
-                stringResource(Res.string.urban) to state.fieldValues[APPLICANT_ID_FOREIGN_ID]!!,
+                stringResource(Res.string.rural) to state.fieldValues[APPLICANT_ADDRESS_ZONE_RURAL]!!,
+                stringResource(Res.string.urban) to state.fieldValues[APPLICANT_ADDRESS_ZONE_URBAN]!!,
             )
 
 
