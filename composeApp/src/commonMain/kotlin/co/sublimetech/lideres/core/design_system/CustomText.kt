@@ -31,7 +31,7 @@ fun BlockTitle(
     title: String?,
     subtitle: String?,
     onClick: (() -> Unit)? = null,
-    width: Int? = null,
+    width: Boolean = false,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -45,8 +45,8 @@ fun BlockTitle(
                 Text(
                     title,
                     modifier = Modifier
-                        .then(if (width != null) Modifier.width(width.dp) else Modifier)
-                        .padding(start = 16.dp, end = 4.dp)
+                        .then(if (width) Modifier.width(330.dp) else Modifier)
+                        .padding(start = 16.dp, end = if(onClick != null)6.dp else 12.dp)
                         .padding(top = 16.dp, bottom = if (subtitle == null) 16.dp else 0.dp),
                     color = MaterialTheme.colorScheme.background,
                     fontSize = 14.sp,
@@ -59,7 +59,7 @@ fun BlockTitle(
                     contentDescription = "Expandir gráfica",
                     tint = MaterialTheme.colorScheme.background,
                     modifier = Modifier
-                        .padding(top = if (subtitle != null) 12.dp else 18.dp)
+                        .padding(top = if (subtitle != null) 16.dp else 19.dp)
                         .size(16.dp)
                 )
             }

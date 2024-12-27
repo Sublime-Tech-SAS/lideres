@@ -97,7 +97,7 @@ fun OptionsGrid(
                                     modifier = Modifier.padding(top = 6.dp),
                                     onCheckedChange = {
                                         selectedIndex.value =
-                                            if (isSelected) -1 else optionIndex // Toggle logic
+                                            if (isSelected) -1 else optionIndex
                                         onOptionSelected(selectedIndex.value)
                                     }
                                 )

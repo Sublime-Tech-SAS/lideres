@@ -1506,7 +1506,7 @@ fun FormScreen(
             BlockTitle(
                 title = stringResource(Res.string.population_of_protection_and_prevention_program),
                 subtitle = null,
-                width = 350,
+                width = true,
                 onClick = {},
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
@@ -1554,7 +1554,7 @@ fun FormScreen(
             BlockTitle(
                 title = stringResource(Res.string.patriotic_union_and_communist_party_survivor_title),
                 subtitle = null,
-                width = 350,
+                width = true,
                 onClick = {},
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
@@ -1585,7 +1585,7 @@ fun FormScreen(
             BlockTitle(
                 title = stringResource(Res.string.especial_security_and_protection_group_title),
                 subtitle = null,
-                width = 350,
+                width = true,
                 onClick = {},
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
@@ -1643,7 +1643,7 @@ fun FormScreen(
             BlockTitle(
                 stringResource(Res.string.prevention_and_protection_registry_request_presentation_title),
                 null,
-                width = 350,
+                width = true,
                 onClick = {},
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
@@ -1700,7 +1700,7 @@ fun FormScreen(
             BlockTitle(
                 stringResource(Res.string.national_protection_unit_program_members_duties_and_commitments_title),
                 null,
-                width = 350,
+                width = true,
                 onClick = {},
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
@@ -1990,7 +1990,7 @@ fun FormScreen(
             BlockTitle(
                 title = stringResource(Res.string.public_servant_or_unp_form_receiver_information_title),
                 subtitle = null,
-                width = 350,
+                width = true,
                 onClick = {},
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )

@@ -161,8 +161,9 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="risk_or_threat_subtitle">35. Describa de forma breve y detallada los hechos que generan la posible situación de riesgo o amenaza, de manera cronológica empezando del hecho más reciente al más antiguo, identificando quién es el posible generador del riesgo o amenaza; cómo, dónde y cuándo se generó el riesgo o amenaza; posible causa que genera el riesgo o la amenaza. Asimismo especifique las condiciones de vulnerabilidad que considera pueden incrementar el nivel de exposición a la amenaza.</string>
 
 
+
     <!-- BLOCK 7 RISK SITUATION DATA -->
-    <string name="risk_situation_title">IDENTIFICACIÓN DE LA SITUACIÓN DE RIESGO</string>
+    <string name="risk_situation_title">IDENTIFICACIÓN DE LA SITUACIÓN DE \nRIESGO</string>
     <string name="risk_situation_subtitle">36. Indique la situación de riesgo o amenaza presentada</string>
     <string name="threat">Amenaza (propio o de familiares)</string>
     <string name="attack">Atentado (propio o de familiares)</string>
@@ -257,7 +258,7 @@ con usted. Favor diligenciar los siguientes campos*</string>
 
 
     <!-- BLOCK 14 ENROLLER INFORMATION-->
-    <string name="enroller_information_title">DATOS DE QUIEN DILIGENCIA EL FORMULARIO</string>
+    <string name="enroller_information_title">DATOS DE QUIEN DILIGENCIA EL \nFORMULARIO</string>
     <string name="application_done_by_applicant">43. ¿El formulario es diligenciado por el solicitante?</string>
     <string name="application_done_by_enroller">Si el formulario es diligenciado por un servidor público o contratista , Favor diligenciar los siguientes campos</string>
     <string name="enroller_names_and_lastnames">Nombres y Apellidos (si es persona natural)</string>
