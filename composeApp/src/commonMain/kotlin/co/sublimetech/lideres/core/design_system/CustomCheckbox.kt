@@ -13,14 +13,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.input.TextFieldState
+import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -29,8 +28,12 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import lideres.composeapp.generated.resources.Res
+import lideres.composeapp.generated.resources.foreign_id
 import lideres.composeapp.generated.resources.futura_md_bt
+import lideres.composeapp.generated.resources.national_id
+import lideres.composeapp.generated.resources.nuip
 import org.jetbrains.compose.resources.Font
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun CustomCheckbox(
@@ -55,11 +58,11 @@ fun OptionsGrid(
     options: List<Pair<String, TextFieldState>>,
     columns: Int,
     onOptionSelected: (Int) -> Unit,
+    bottomPadding :Int =30
 ) {
     val rows = (options.size + columns - 1) / columns
-
     Column(
-        modifier = Modifier.fillMaxSize().padding(bottom = 30.dp),
+        modifier = Modifier.fillMaxSize().padding(bottom = bottomPadding.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -78,23 +81,24 @@ fun OptionsGrid(
                             verticalAlignment = Alignment.CenterVertically,
                             modifier = Modifier
                                 //.weight(1f)
-                                .padding(start =4.dp, top = 2.dp, bottom = 2.dp, end = 24.dp)
+                                .padding(start = 4.dp, top = 2.dp, bottom = 2.dp, end = 24.dp)
                         ) {
                             Text(
                                 text = option.first,
                                 fontSize = 12.sp,
                                 color = MaterialTheme.colorScheme.tertiary,
-                                modifier = Modifier.padding(end = 12.dp),
-                                fontFamily = FontFamily(Font(Res.font.futura_md_bt))
+                                modifier = Modifier.padding(end = 12.dp).widthIn(max = 270.dp),
+                                fontFamily = FontFamily(Font(Res.font.futura_md_bt)),
+                                maxLines = Int.MAX_VALUE
                             )
+
                             CustomCheckbox(
-                                isFilled = option.second.text == "true",
+                                isFilled = option.second.text.isNotBlank(),
                                 onCheckedChange = { isSelected ->
                                     if (isSelected) {
                                         onOptionSelected(optionIndex)
                                     }
-                                }
-                            )
+                                })
                         }
                     } else {
                         Spacer(modifier = Modifier.weight(1f))
@@ -105,20 +109,16 @@ fun OptionsGrid(
     }
 }
 
-
 @Composable
 fun OptionsGridPreview() {
-    val options by remember {
-        mutableStateOf(
-            listOf(
-                "Cédula de Ciudadanía" to TextFieldState("false"),
-                "Cédula de Extranjería" to TextFieldState("false"),
-                "NUIP" to TextFieldState("false"),
-            )
-        )
-    }
-
-    Column(modifier = Modifier.background(Color.White)) {
+    val options = listOf(
+        stringResource(Res.string.national_id) to rememberTextFieldState("cedula"),
+        stringResource(Res.string.foreign_id) to rememberTextFieldState("extranejra"),
+        stringResource(Res.string.nuip) to rememberTextFieldState("nuip")
+    )
+    Column(
+        modifier = Modifier.background(Color.White)
+    ) {
         OptionsGrid(
             options = options,
             columns = 2,
@@ -136,4 +136,3 @@ fun OptionsGridPreview() {
         )
     }
 }
-

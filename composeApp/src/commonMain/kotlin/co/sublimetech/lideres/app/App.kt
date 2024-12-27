@@ -1,12 +1,11 @@
 package co.sublimetech.lideres.app
 
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.navigation.compose.rememberNavController
 import co.sublimetech.lideres.core.design_system.theme.LideresTheme
+import co.sublimetech.lideres.form.presentation.FormScreenRoot
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import dev.jordond.connectivity.Connectivity
@@ -47,7 +46,7 @@ fun App() {
        println("Validating user")
     } else
     LideresTheme {
-        BlockTitlePreview()
+        FormScreenRoot(){}
       //  val navController = rememberNavController()
       //  NavigationRoot(
       //      navController = navController,

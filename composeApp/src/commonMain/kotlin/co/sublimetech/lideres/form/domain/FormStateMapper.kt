@@ -10,7 +10,16 @@ fun FormState.toForm(): Form {
         firstLastName = fieldValues[Constants.APPLICANT_FIRST_LAST_NAME]!!.text.toString(),
         secondLastName = fieldValues[Constants.APPLICANT_SECOND_LAST_NAME]!!.text.toString(),
         identifyingName = fieldValues[Constants.APPLICANT_IDENTIFYING_NAME]!!.text.toString(),
-        idType = fieldValues[Constants.APPLICANT_ID_TYPE]!!.text.toString(),
+        idType = when {
+            fieldValues[Constants.APPLICANT_ID_NATIONAL_ID]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ID_NATIONAL_ID]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ID_FOREIGN_ID]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ID_FOREIGN_ID]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_ID_NUIP]!!.text.toString()
+        },
         idNumber = fieldValues[Constants.APPLICANT_ID_NUMBER]!!.text.toString(),
         idExpeditionDate = fieldValues[Constants.APPLICANT_ID_EXPEDITION_DATE]!!.text.toString(),
         countryOfBirth = fieldValues[Constants.APPLICANT_COUNTRY_OF_BIRTH]!!.text.toString(),
@@ -23,47 +32,259 @@ fun FormState.toForm(): Form {
         addressDistrict = fieldValues[Constants.APPLICANT_ADDRESS_DISTRICT]!!.text.toString(),
         addressSettlement = fieldValues[Constants.APPLICANT_ADDRESS_SETTLEMENT]!!.text.toString(),
         addressNeighborhood = fieldValues[Constants.APPLICANT_ADDRESS_NEIGHBORHOOD]!!.text.toString(),
-        addressZone = fieldValues[Constants.APPLICANT_ADDRESS_ZONE]!!.text.toString(),
+        addressZone = when {
+            fieldValues[Constants.APPLICANT_ADDRESS_ZONE_URBAN]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ADDRESS_ZONE_URBAN]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_ADDRESS_ZONE_RURAL]!!.text.toString()
+        },
         address = fieldValues[Constants.APPLICANT_ADDRESS]!!.text.toString(),
         addressDetails = fieldValues[Constants.APPLICANT_ADDRESS_DETAILS]!!.text.toString(),
         phoneNumber1 = fieldValues[Constants.APPLICANT_PHONE_NUMBER_1]!!.text.toString(),
         phoneNumber2 = fieldValues[Constants.APPLICANT_PHONE_NUMBER_2]!!.text.toString(),
         landline = fieldValues[Constants.APPLICANT_LANDLINE]!!.text.toString(),
         email = fieldValues[Constants.APPLICANT_EMAIL]!!.text.toString(),
-        notificationApproval = fieldValues[Constants.APPLICANT_NOTIFICATION_APPROVAL]!!.text.toString(),
+        notificationApproval = when {
+            fieldValues[Constants.APPLICANT_NOTIFICATION_APPROVAL_POSITIVE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_NOTIFICATION_APPROVAL_POSITIVE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_NOTIFICATION_APPROVAL_NEGATIVE]!!.text.toString()
+        },
         notificationCountry = fieldValues[Constants.APPLICANT_NOTIFICATION_COUNTRY]!!.text.toString(),
         notificationDepartment = fieldValues[Constants.APPLICANT_NOTIFICATION_DEPARTMENT]!!.text.toString(),
         notificationCity = fieldValues[Constants.APPLICANT_NOTIFICATION_CITY]!!.text.toString(),
         notificationAddress = fieldValues[Constants.APPLICANT_NOTIFICATION_ADDRESS]!!.text.toString(),
-        sex = fieldValues[Constants.APPLICANT_SEX]!!.text.toString(),
-        gender = fieldValues[Constants.APPLICANT_GENDER]!!.text.toString(),
-        sexualOrientation = fieldValues[Constants.APPLICANT_SEXUAL_ORIENTATION]!!.text.toString(),
-        age = fieldValues[Constants.APPLICANT_AGE]!!.text.toString(),
-        identifyingTrait = fieldValues[Constants.APPLICANT_IDENTIFYING_TRAIT]!!.text.toString(),
+        sex = when {
+            fieldValues[Constants.APPLICANT_SEX_MEN]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_SEX_MEN]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_SEX_WOMEN]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_SEX_WOMEN]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_SEX_INTERSEXUAL]!!.text.toString()
+        },
+        gender = when {
+            fieldValues[Constants.APPLICANT_GENDER_MALE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_GENDER_MALE]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_GENDER_FEMALE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_GENDER_FEMALE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_GENDER_TRANSGENDER]!!.text.toString()
+        },
+        sexualOrientation = when {
+            fieldValues[Constants.APPLICANT_SEXUAL_ORIENTATION_HETEROSEXUAL]!!.text.toString()
+                .isNotBlank() ->
+                fieldValues[Constants.APPLICANT_SEXUAL_ORIENTATION_HETEROSEXUAL]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_SEXUAL_ORIENTATION_HOMOSEXUAL]!!.text.toString()
+                .isNotBlank() ->
+                fieldValues[Constants.APPLICANT_SEXUAL_ORIENTATION_HOMOSEXUAL]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_SEXUAL_ORIENTATION_BISEXUAL]!!.text.toString()
+        },
+        age = when {
+            fieldValues[Constants.APPLICANT_AGE_CHILD]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_AGE_CHILD]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_AGE_TEENAGER]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_AGE_TEENAGER]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_AGE_YOUNG_ADULT]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_AGE_YOUNG_ADULT]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_AGE_ADULT]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_AGE_ADULT]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_AGE_ELDERLY]!!.text.toString()
+        },
+        identifyingTrait = when {
+            fieldValues[Constants.APPLICANT_IDENTIFYING_TRAIT_FATHER]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_IDENTIFYING_TRAIT_FATHER]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_IDENTIFYING_TRAIT_MOTHER]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_IDENTIFYING_TRAIT_MOTHER]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_IDENTIFYING_TRAIT_CARETAKER]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_IDENTIFYING_TRAIT_CARETAKER]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_IDENTIFYING_TRAIT_PEOPLE_UNDER_CARE]!!.text.toString()
+        },
         identifyingTraitAmount = fieldValues[Constants.APPLICANT_IDENTIFYING_TRAIT_AMOUNT]!!.text.toString(),
-        disabilityStatus = fieldValues[Constants.APPLICANT_DISABILITY_STATUS]!!.text.toString(),
-        disabilityType = fieldValues[Constants.APPLICANT_DISABILITY_TYPE]!!.text.toString(),
-        ethnicGroupStatus = fieldValues[Constants.APPLICANT_ETHNIC_GROUP_STATUS]!!.text.toString(),
-        ethnicGroupType = fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE]!!.text.toString(),
+        disabilityStatus = when {
+            fieldValues[Constants.APPLICANT_DISABILITY_STATUS_POSITIVE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_DISABILITY_STATUS_POSITIVE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_DISABILITY_STATUS_NEGATIVE]!!.text.toString()
+        },
+        disabilityType = when {
+            fieldValues[Constants.APPLICANT_DISABILITY_TYPE_PHYSICAL]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_DISABILITY_TYPE_PHYSICAL]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_DISABILITY_TYPE_HEARING]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_DISABILITY_TYPE_HEARING]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_DISABILITY_TYPE_VISUAL]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_DISABILITY_TYPE_VISUAL]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_DISABILITY_TYPE_BLINDNESS]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_DISABILITY_TYPE_BLINDNESS]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_DISABILITY_TYPE_MENTAL]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_DISABILITY_TYPE_MENTAL]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_DISABILITY_TYPE_INTELLECTUAL]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_DISABILITY_TYPE_INTELLECTUAL]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_DISABILITY_TYPE_LITTLE_PEOPLE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_DISABILITY_TYPE_LITTLE_PEOPLE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_DISABILITY_TYPE_MULTIPLE]!!.text.toString()
+        },
+        ethnicGroupStatus = when {
+            fieldValues[Constants.APPLICANT_ETHNIC_GROUP_STATUS_POSITIVE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ETHNIC_GROUP_STATUS_POSITIVE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_ETHNIC_GROUP_STATUS_NEGATIVE]!!.text.toString()
+        },
+        ethnicGroupType = when {
+            fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_INDIGENOUS]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_INDIGENOUS]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_NEGRO]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_NEGRO]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_AFRICAN_AMERICAN]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_AFRICAN_AMERICAN]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_SAN_ANDRES]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_SAN_ANDRES]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_BOLIVAR]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_BOLIVAR]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_ETHNIC_GROUP_TYPE_GIPSY]!!.text.toString()
+        },
         indigenousGroup = fieldValues[Constants.APPLICANT_INDIGENOUS_GROUP]!!.text.toString(),
         indigenousGroupReservation = fieldValues[Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION]!!.text.toString(),
         indigenousGroupReservationCommunity = fieldValues[Constants.APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY]!!.text.toString(),
         indigenousGroupPartial = fieldValues[Constants.APPLICANT_INDIGENOUS_GROUP_PARTIAL]!!.text.toString(),
         indigenousGroupNoRegistry = fieldValues[Constants.APPLICANT_INDIGENOUS_GROUP_NO_REGISTRY]!!.text.toString(),
         africanAmericanCommunity = fieldValues[Constants.APPLICANT_AFRICAN_AMERICAN_COMMUNITY]!!.text.toString(),
-        organizationMembershipStatus = fieldValues[Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS]!!.text.toString(),
-        organizationType = fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE]!!.text.toString(),
+        organizationMembershipStatus = when {
+            fieldValues[Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS_POSITIVE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS_POSITIVE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS_NEGATIVE]!!.text.toString()
+        },
+        organizationType = when {
+            fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_SOCIAL]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_SOCIAL]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_GUILD]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_GUILD]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_CIVIL]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_CIVIL]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_COMMUNAL]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_COMMUNAL]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_FARMER]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_FARMER]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_VICTIMS]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_VICTIMS]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_HUMANS_RIGHT_WATCH]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_HUMANS_RIGHT_WATCH]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_TYPE_OTHER]!!.text.toString()
+        },
         organizationMembershipOther = fieldValues[Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_OTHER]!!.text.toString(),
         organizationName = fieldValues[Constants.APPLICANT_ORGANIZATION_NAME]!!.text.toString(),
-        legalRepresentativeStatus = fieldValues[Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS]!!.text.toString(),
-        legalRepresentativeName = fieldValues[Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_NAME]!!.text.toString(),
-        provisionalMeasuresStatus = fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_STATUS]!!.text.toString(),
-        provisionalMeasuresType = fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE]!!.text.toString(),
+        legalRepresentativeStatus = when {
+            fieldValues[Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS_POSITIVE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS_POSITIVE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS_NEGATIVE]!!.text.toString()
+        },
+        legalRepresentativeName = fieldValues[Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_ID_NUMBER]!!.text.toString(),
+        provisionalMeasuresStatus = when {
+            fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_STATUS_POSITIVE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_STATUS_POSITIVE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_STATUS_NEGATIVE]!!.text.toString()
+        },
+        provisionalMeasuresType = when {
+            fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COMMISSION]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COMMISSION]!!.text.toString()
+
+            fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COURT]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COURT]!!.text.toString()
+            else ->
+                fieldValues[Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE_NATIONAL_JUDGE]!!.text.toString()
+        },
         riskOrThreatReport = fieldValues[Constants.RISK_OR_THREAT_REPORT]!!.text.toString(),
-        riskSituationType = fieldValues[Constants.RISK_SITUATION_TYPE]!!.text.toString(),
-        riskSituationOther = fieldValues[Constants.RISK_SITUATION_OTHER]!!.text.toString(),
-        riskSituationMeansType =fieldValues[Constants.RISK_SITUATION_MEANS_TYPE]!!.text.toString(),
-        riskSituationMeansOther = fieldValues[Constants.RISK_SITUATION_MEANS_OTHER]!!.text.toString(),
+        riskSituationType = when {
+            fieldValues[Constants.RISK_SITUATION_TYPE_THREAT]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_TYPE_THREAT]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_TYPE_ATTACK]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_TYPE_ATTACK]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_TYPE_KIDNAPPING]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_TYPE_KIDNAPPING]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_TYPE_FAMILY_MEMBER_HOMICIDE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_TYPE_FAMILY_MEMBER_HOMICIDE]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_TYPE_EXTORTION]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_TYPE_EXTORTION]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_TYPE_RECRUITMENT]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_TYPE_RECRUITMENT]!!.text.toString()
+            else ->
+                fieldValues[Constants.RISK_SITUATION_TYPE_OTHER]!!.text.toString()
+        },
+        riskSituationOther = fieldValues[Constants.RISK_SITUATION_OTHER_ACTUAL]!!.text.toString(),
+        riskSituationMeansType =when {
+            fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_BY_PHONE]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_BY_PHONE]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_VERBAL]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_VERBAL]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_WRITTEN]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_WRITTEN]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_THROUGH_THIRD_PARTY]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_THROUGH_THIRD_PARTY]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_SYMBOLIC]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_SYMBOLIC]!!.text.toString()
+
+            fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_SOCIAL_MEDIA]!!.text.toString().isNotBlank() ->
+                fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_SOCIAL_MEDIA]!!.text.toString()
+            else ->
+                fieldValues[Constants.RISK_SITUATION_MEANS_TYPE_OTHER]!!.text.toString()
+        },
+        riskSituationMeansOther = fieldValues[Constants.RISK_SITUATION_MEANS_OTHER_ACTUAL]!!.text.toString(),
         protectionAndPreventionGroup = fieldValues[Constants.PROTECTION_AND_PREVENTION_GROUP]!!.text.toString(),
         patrioticUnionComunistParty = fieldValues[Constants.PATRIOTIC_UNION_AND_COMMUNIST_PARTY_SURVIVOR]!!.text.toString(),
         especialSecurityProtection = fieldValues[Constants.ESPECIAL_SECURITY_AND_PROTECTION_GROUP]!!.text.toString(),
@@ -89,7 +310,14 @@ fun FormState.toForm(): Form {
         phoneNumber2 = fieldValues[Constants.THIRD_PARTY_PHONE_NUMBER_2]!!.text.toString(),
         landline = fieldValues[Constants.THIRD_PARTY_LANDLINE]!!.text.toString(),
         email = fieldValues[Constants.THIRD_PARTY_EMAIL]!!.text.toString(),
-        notificationApproval = fieldValues[Constants.THIRD_PARTY_NOTIFICATION_APPROVAL]!!.text.toString()
+        notificationApproval = when {
+            fieldValues[Constants.THIRD_PARTY_NOTIFICATION_APPROVAL_POSITIVE]!!.text.toString()
+                .isNotBlank() ->
+                fieldValues[Constants.THIRD_PARTY_NOTIFICATION_APPROVAL_POSITIVE]!!.text.toString()
+
+            else ->
+                fieldValues[Constants.THIRD_PARTY_NOTIFICATION_APPROVAL_NEGATIVE]!!.text.toString()
+        }
     )
 
     val enroller = Enroller(

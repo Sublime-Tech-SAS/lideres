@@ -12,29 +12,55 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_DETA
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_DISTRICT
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_NEIGHBORHOOD
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_SETTLEMENT
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_ZONE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_ZONE_RURAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_ZONE_URBAN
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AFRICAN_AMERICAN_COMMUNITY
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AGE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AGE_ADULT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AGE_CHILD
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AGE_ELDERLY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AGE_TEENAGER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_AGE_YOUNG_ADULT
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_CITY_OF_BIRTH
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_COUNTRY_OF_BIRTH
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DATE_OF_BIRTH
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DEPARTMENT_OF_BIRTH
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_STATUS
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_STATUS_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_STATUS_POSITIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE_BLINDNESS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE_HEARING
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE_INTELLECTUAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE_LITTLE_PEOPLE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE_MENTAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE_MULTIPLE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE_PHYSICAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_DISABILITY_TYPE_VISUAL
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_EMAIL
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_STATUS
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_STATUS_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_STATUS_POSITIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE_AFRICAN_AMERICAN
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE_BOLIVAR
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE_GIPSY
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE_INDIGENOUS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE_NEGRO
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ETHNIC_GROUP_TYPE_SAN_ANDRES
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FINGERPRINT
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FIRST_LAST_NAME
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FIRST_NAME
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_FULL_NAME
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_GENDER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_GENDER_FEMALE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_GENDER_MALE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_GENDER_TRANSGENDER
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_NAME
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_TRAIT
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_TRAIT_AMOUNT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_TRAIT_CARETAKER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_TRAIT_FATHER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_TRAIT_MOTHER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IDENTIFYING_TRAIT_PEOPLE_UNDER_CARE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ID_EXPEDITION_DATE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ID_FOREIGN_ID
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ID_NATIONAL_ID
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ID_NUIP
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ID_NUMBER
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ID_TYPE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_NO_REGISTRY
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_GROUP_PARTIAL
@@ -43,24 +69,41 @@ import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_INDIGENOUS_G
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_IS_FORM_ENROLLER
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_LANDLINE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_ADDRESS
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_APPROVAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_APPROVAL_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_APPROVAL_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_CITY
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_COUNTRY
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_NOTIFICATION_DEPARTMENT
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_NAME
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_ID_NUMBER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_OTHER
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_NAME
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE_CIVIL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE_COMMUNAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE_FARMER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE_GUILD
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE_HUMANS_RIGHT_WATCH
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE_OTHER
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE_SOCIAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ORGANIZATION_TYPE_VICTIMS
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PHONE_NUMBER_1
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PHONE_NUMBER_2
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PROVISIONAL_MEASURES_STATUS
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PROVISIONAL_MEASURES_STATUS_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PROVISIONAL_MEASURES_STATUS_POSITIVE
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COMMISSION
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COURT
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_PROVISIONAL_MEASURES_TYPE_NATIONAL_JUDGE
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SECOND_LAST_NAME
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SECOND_NAME
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX
-import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEXUAL_ORIENTATION
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEXUAL_ORIENTATION_BISEXUAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEXUAL_ORIENTATION_HETEROSEXUAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEXUAL_ORIENTATION_HOMOSEXUAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_INTERSEXUAL
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_MEN
+import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SEX_WOMEN
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_SIGNATURE
 import co.sublimetech.lideres.core.presentation.Constants.CERREM_WOMEN_ACCEPTANCE
 import co.sublimetech.lideres.core.presentation.Constants.DATA_CONSENT_ACCEPTANCE
@@ -84,10 +127,22 @@ import co.sublimetech.lideres.core.presentation.Constants.PROTECTION_AND_PREVENT
 import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL
 import co.sublimetech.lideres.core.presentation.Constants.PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME
 import co.sublimetech.lideres.core.presentation.Constants.RISK_OR_THREAT_REPORT
-import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_OTHER
-import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE
-import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_OTHER
-import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_TYPE
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_OTHER_ACTUAL
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE_BY_PHONE
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE_OTHER
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE_SOCIAL_MEDIA
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE_SYMBOLIC
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE_THROUGH_THIRD_PARTY
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE_VERBAL
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_MEANS_TYPE_WRITTEN
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_OTHER_ACTUAL
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_TYPE_ATTACK
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_TYPE_EXTORTION
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_TYPE_FAMILY_MEMBER_HOMICIDE
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_TYPE_KIDNAPPING
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_TYPE_OTHER
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_TYPE_RECRUITMENT
+import co.sublimetech.lideres.core.presentation.Constants.RISK_SITUATION_TYPE_THREAT
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_CITY
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_COUNTRY
@@ -99,14 +154,14 @@ import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_SE
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_EMAIL
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_LANDLINE
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_NAMES_AND_LASTNAMES
-import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_NOTIFICATION_APPROVAL
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_NOTIFICATION_APPROVAL_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_NOTIFICATION_APPROVAL_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_PHONE_NUMBER_1
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_PHONE_NUMBER_2
 import co.sublimetech.lideres.form.domain.FormRepositoryInterface
 import co.sublimetech.lideres.form.domain.toForm
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.get
@@ -136,7 +191,9 @@ class FormViewModel : ViewModel(), KoinComponent {
             APPLICANT_FIRST_LAST_NAME,
             APPLICANT_SECOND_LAST_NAME,
             APPLICANT_IDENTIFYING_NAME,
-            APPLICANT_ID_TYPE,
+            APPLICANT_ID_NATIONAL_ID,
+            APPLICANT_ID_FOREIGN_ID,
+            APPLICANT_ID_NUIP,
             APPLICANT_ID_NUMBER,
             APPLICANT_ID_EXPEDITION_DATE,
             APPLICANT_COUNTRY_OF_BIRTH,
@@ -149,14 +206,16 @@ class FormViewModel : ViewModel(), KoinComponent {
             APPLICANT_ADDRESS_DISTRICT,
             APPLICANT_ADDRESS_SETTLEMENT,
             APPLICANT_ADDRESS_NEIGHBORHOOD,
-            APPLICANT_ADDRESS_ZONE,
+            APPLICANT_ADDRESS_ZONE_URBAN,
+            APPLICANT_ADDRESS_ZONE_RURAL,
             APPLICANT_ADDRESS,
             APPLICANT_ADDRESS_DETAILS,
             APPLICANT_PHONE_NUMBER_1,
             APPLICANT_PHONE_NUMBER_2,
             APPLICANT_LANDLINE,
             APPLICANT_EMAIL,
-            APPLICANT_NOTIFICATION_APPROVAL,
+            APPLICANT_NOTIFICATION_APPROVAL_POSITIVE,
+            APPLICANT_NOTIFICATION_APPROVAL_NEGATIVE,
             APPLICANT_NOTIFICATION_COUNTRY,
             APPLICANT_NOTIFICATION_DEPARTMENT,
             APPLICANT_NOTIFICATION_CITY,
@@ -175,39 +234,91 @@ class FormViewModel : ViewModel(), KoinComponent {
             THIRD_PARTY_PHONE_NUMBER_2,
             THIRD_PARTY_LANDLINE,
             THIRD_PARTY_EMAIL,
-            THIRD_PARTY_NOTIFICATION_APPROVAL,
+            THIRD_PARTY_NOTIFICATION_APPROVAL_POSITIVE,
+            THIRD_PARTY_NOTIFICATION_APPROVAL_NEGATIVE,
             // BLOCK 5 APPLICANT PERSONAL DATA 2
-            APPLICANT_SEX,
-            APPLICANT_GENDER,
-            APPLICANT_SEXUAL_ORIENTATION,
-            APPLICANT_AGE,
-            APPLICANT_IDENTIFYING_TRAIT,
+            APPLICANT_SEX_MEN,
+            APPLICANT_SEX_WOMEN,
+            APPLICANT_SEX_INTERSEXUAL,
+            APPLICANT_GENDER_MALE,
+            APPLICANT_GENDER_FEMALE,
+            APPLICANT_GENDER_TRANSGENDER,
+            APPLICANT_SEXUAL_ORIENTATION_HETEROSEXUAL,
+            APPLICANT_SEXUAL_ORIENTATION_HOMOSEXUAL,
+            APPLICANT_SEXUAL_ORIENTATION_BISEXUAL,
+            APPLICANT_AGE_CHILD,
+            APPLICANT_AGE_TEENAGER,
+            APPLICANT_AGE_YOUNG_ADULT,
+            APPLICANT_AGE_ADULT,
+            APPLICANT_AGE_ELDERLY,
+            APPLICANT_IDENTIFYING_TRAIT_FATHER,
+            APPLICANT_IDENTIFYING_TRAIT_MOTHER,
+            APPLICANT_IDENTIFYING_TRAIT_CARETAKER,
+            APPLICANT_IDENTIFYING_TRAIT_PEOPLE_UNDER_CARE,
             APPLICANT_IDENTIFYING_TRAIT_AMOUNT,
-            APPLICANT_DISABILITY_STATUS,
-            APPLICANT_DISABILITY_TYPE,
-            APPLICANT_ETHNIC_GROUP_STATUS,
-            APPLICANT_ETHNIC_GROUP_TYPE,
+            APPLICANT_DISABILITY_STATUS_POSITIVE,
+            APPLICANT_DISABILITY_STATUS_NEGATIVE,
+            APPLICANT_DISABILITY_TYPE_PHYSICAL,
+            APPLICANT_DISABILITY_TYPE_HEARING,
+            APPLICANT_DISABILITY_TYPE_VISUAL,
+            APPLICANT_DISABILITY_TYPE_BLINDNESS,
+            APPLICANT_DISABILITY_TYPE_MENTAL,
+            APPLICANT_DISABILITY_TYPE_INTELLECTUAL,
+            APPLICANT_DISABILITY_TYPE_LITTLE_PEOPLE,
+            APPLICANT_DISABILITY_TYPE_MULTIPLE,
+            APPLICANT_ETHNIC_GROUP_STATUS_POSITIVE,
+            APPLICANT_ETHNIC_GROUP_STATUS_NEGATIVE,
+            APPLICANT_ETHNIC_GROUP_TYPE_INDIGENOUS,
+            APPLICANT_ETHNIC_GROUP_TYPE_NEGRO,
+            APPLICANT_ETHNIC_GROUP_TYPE_AFRICAN_AMERICAN,
+            APPLICANT_ETHNIC_GROUP_TYPE_SAN_ANDRES,
+            APPLICANT_ETHNIC_GROUP_TYPE_BOLIVAR,
+            APPLICANT_ETHNIC_GROUP_TYPE_GIPSY,
             APPLICANT_INDIGENOUS_GROUP,
             APPLICANT_INDIGENOUS_GROUP_RESERVATION,
             APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY,
             APPLICANT_INDIGENOUS_GROUP_PARTIAL,
             APPLICANT_INDIGENOUS_GROUP_NO_REGISTRY,
             APPLICANT_AFRICAN_AMERICAN_COMMUNITY,
-            APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS,
-            APPLICANT_ORGANIZATION_TYPE,
+            APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS_POSITIVE,
+            APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS_NEGATIVE,
+            APPLICANT_ORGANIZATION_TYPE_SOCIAL,
+            APPLICANT_ORGANIZATION_TYPE_GUILD,
+            APPLICANT_ORGANIZATION_TYPE_CIVIL,
+            APPLICANT_ORGANIZATION_TYPE_COMMUNAL,
+            APPLICANT_ORGANIZATION_TYPE_FARMER,
+            APPLICANT_ORGANIZATION_TYPE_VICTIMS,
+            APPLICANT_ORGANIZATION_TYPE_HUMANS_RIGHT_WATCH,
+            APPLICANT_ORGANIZATION_TYPE_OTHER,
             APPLICANT_ORGANIZATION_MEMBERSHIP_OTHER,
             APPLICANT_ORGANIZATION_NAME,
-            APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS,
-            APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_NAME,
-            APPLICANT_PROVISIONAL_MEASURES_STATUS,
-            APPLICANT_PROVISIONAL_MEASURES_TYPE,
+            APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS_POSITIVE,
+            APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS_NEGATIVE,
+            APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_ID_NUMBER,
+            APPLICANT_PROVISIONAL_MEASURES_STATUS_POSITIVE,
+            APPLICANT_PROVISIONAL_MEASURES_STATUS_NEGATIVE,
+            APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COMMISSION,
+            APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COURT,
+            APPLICANT_PROVISIONAL_MEASURES_TYPE_NATIONAL_JUDGE,
             // BLOCK 6 RISK OR THREAT DATA
             RISK_OR_THREAT_REPORT,
             // BLOCK 7 RISK SITUATION DATA
-            RISK_SITUATION_TYPE,
-            RISK_SITUATION_OTHER,
-            RISK_SITUATION_MEANS_TYPE,
-            RISK_SITUATION_MEANS_OTHER,
+            RISK_SITUATION_TYPE_THREAT,
+            RISK_SITUATION_TYPE_ATTACK,
+            RISK_SITUATION_TYPE_KIDNAPPING,
+            RISK_SITUATION_TYPE_FAMILY_MEMBER_HOMICIDE,
+            RISK_SITUATION_TYPE_EXTORTION,
+            RISK_SITUATION_TYPE_RECRUITMENT,
+            RISK_SITUATION_TYPE_OTHER,
+            RISK_SITUATION_OTHER_ACTUAL,
+            RISK_SITUATION_MEANS_TYPE_BY_PHONE,
+            RISK_SITUATION_MEANS_TYPE_VERBAL,
+            RISK_SITUATION_MEANS_TYPE_WRITTEN,
+            RISK_SITUATION_MEANS_TYPE_THROUGH_THIRD_PARTY,
+            RISK_SITUATION_MEANS_TYPE_SYMBOLIC,
+            RISK_SITUATION_MEANS_TYPE_SOCIAL_MEDIA,
+            RISK_SITUATION_MEANS_TYPE_OTHER,
+            RISK_SITUATION_MEANS_OTHER_ACTUAL,
             // BLOCK 8 POPULATION OBJECT OF PROTECTION
             PROTECTION_AND_PREVENTION_GROUP,
             //BLOCK 9 PATRIOTIC UNION AND COMMUNIST PARTY SURVIVOR

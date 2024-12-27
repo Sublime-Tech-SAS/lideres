@@ -6,6 +6,7 @@ import kotlinx.datetime.LocalDate
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 
+
 fun formatToDate(buffer: TextFieldBuffer) {
     val currentText = buffer.toString()
     val filteredText = currentText.filter { it.isDigit() }
@@ -48,7 +49,7 @@ fun formatToDate(buffer: TextFieldBuffer) {
     val validFormattedText = validParts.joinToString("/") { it }
 
     if (validFormattedText != currentText) {
-        buffer.replace(0, buffer.length, validFormattedText)
+        buffer.replace(0, buffer.length, validFormattedText )
     }
 }
 
@@ -82,6 +83,12 @@ fun checkNumbers(buffer: TextFieldBuffer) {
     val filteredText = currentText.filter { it.isDigit() }
     if (filteredText != currentText) {
         buffer.replace(0, buffer.length, filteredText)
+    }
+}
+
+fun limitLength(buffer: TextFieldBuffer, maxLength: Int) {
+    if (buffer.length > maxLength) {
+        buffer.replace(maxLength, buffer.length, "")
     }
 }
 
