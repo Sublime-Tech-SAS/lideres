@@ -16,7 +16,6 @@ import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,9 +33,10 @@ import co.sublimetech.lideres.core.design_system.CustomTextField
 import co.sublimetech.lideres.core.design_system.Disclaimer
 import co.sublimetech.lideres.core.design_system.OptionsGrid
 import co.sublimetech.lideres.core.design_system.Title
-import co.sublimetech.lideres.core.design_system.isValidEmail
 import co.sublimetech.lideres.core.design_system.theme.Black
 import co.sublimetech.lideres.core.design_system.theme.White
+import co.sublimetech.lideres.core.design_system.validateDateField
+import co.sublimetech.lideres.core.design_system.validateEmailField
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_CITY
 import co.sublimetech.lideres.core.presentation.Constants.APPLICANT_ADDRESS_COUNTRY
@@ -458,8 +458,13 @@ fun FormScreen(
     onAction: (FormAction) -> Unit,
 ) {
 
-    var dateError by remember { mutableStateOf("") }
-    var emailPatternError by remember { mutableStateOf("") }
+    var formFillDateError by remember { mutableStateOf("") }
+    var expeditionDateError by remember { mutableStateOf("") }
+    var dateOfBirthError by remember { mutableStateOf("") }
+    var applicantEmailPatternError by remember { mutableStateOf("") }
+    var thirdPartyEmailPatternError by remember { mutableStateOf("") }
+    var enrollerEmailPatternError by remember { mutableStateOf("") }
+    var servantUnpEmailPatternError by remember { mutableStateOf("") }
 
 
     LazyColumn(
@@ -512,27 +517,34 @@ fun FormScreen(
                 onClick = {}
             )
 
+            validateDateField(
+                dateValue = state.fieldValues[FORM_FILL_DATE]!!.text.toString(),
+                setDateError = { error -> formFillDateError = error })
 
             CustomOutlineTextField(
                 state.fieldValues[FORM_FILL_DATE]!!,
                 dateFormat = true,
+                error = formFillDateError,
                 title = stringResource(Res.string.date),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[FORM_COUNTRY]!!,
+                onlyLetters = true,
                 title = stringResource(Res.string.country),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[FORM_DEPARTMENT]!!,
+                onlyLetters = true,
                 title = stringResource(Res.string.department),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
                 state.fieldValues[FORM_CITY]!!,
+                onlyLetters = true,
                 title = stringResource(Res.string.city),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -549,30 +561,36 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_FIRST_NAME]!!,
                 title = stringResource(Res.string.first_name),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_SECOND_NAME]!!,
                 title = stringResource(Res.string.second_name),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_FIRST_LAST_NAME]!!,
                 title = stringResource(Res.string.first_last_name),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_SECOND_LAST_NAME]!!,
                 title = stringResource(Res.string.second_last_name),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_IDENTIFYING_NAME]!!,
                 title = stringResource(Res.string.identifying_name),
+                onlyLetters = true,
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -601,19 +619,25 @@ fun FormScreen(
                         }
                     }
                 }
-            ) //    if cedula de ciudadania abajo only numbers
-
+            )
 
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_ID_NUMBER]!!,
+                onlyDigits = state.fieldValues[APPLICANT_ID_NATIONAL_ID]!!.text.isNotBlank() || state.fieldValues[APPLICANT_ID_NUIP]!!.text.isNotBlank(),
+                maxLength = if (state.fieldValues[APPLICANT_ID_NATIONAL_ID]!!.text.isNotBlank() || state.fieldValues[APPLICANT_ID_NUIP]!!.text.isNotBlank()) 10 else 12,
                 title = stringResource(Res.string.number),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
+
+            validateDateField(
+                dateValue = state.fieldValues[APPLICANT_ID_EXPEDITION_DATE]!!.text.toString(),
+                setDateError = { error -> expeditionDateError = error })
 
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_ID_EXPEDITION_DATE]!!,
                 title = stringResource(Res.string.id_expedition_date),
                 dateFormat = true,
+                error = expeditionDateError,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -624,26 +648,35 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_COUNTRY_OF_BIRTH]!!,
                 title = stringResource(Res.string.country),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_DEPARTMENT_OF_BIRTH]!!,
                 title = stringResource(Res.string.department),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_CITY_OF_BIRTH]!!,
                 title = stringResource(Res.string.city),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             Title(
                 stringResource(Res.string.birth_date),
             )
+
+            validateDateField(
+                dateValue = state.fieldValues[APPLICANT_DATE_OF_BIRTH]!!.text.toString(),
+                setDateError = { error -> dateOfBirthError = error })
+
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_DATE_OF_BIRTH]!!,
                 title = stringResource(Res.string.date_of_birth),
                 dateFormat = true,
+                error = dateOfBirthError,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -654,11 +687,13 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_ADDRESS_COUNTRY]!!,
                 title = stringResource(Res.string.country),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_ADDRESS_DEPARTMENT]!!,
                 title = stringResource(Res.string.department),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
@@ -727,24 +762,35 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_PHONE_NUMBER_1]!!,
                 title = stringResource(Res.string.cellphone_1),
+                startWithThree = true,
+                maxLength = 10,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_PHONE_NUMBER_2]!!,
                 title = stringResource(Res.string.cellphone_2),
+                startWithThree = true,
+                maxLength = 10,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_LANDLINE]!!,
                 title = stringResource(Res.string.landline),
+                onlyDigits = true,
+                maxLength = 10,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
+
+            validateEmailField(
+                emailValue = state.fieldValues[APPLICANT_EMAIL]!!.text.toString(),
+                setEmailPatternError = { error -> applicantEmailPatternError = error })
 
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_EMAIL]!!,
                 title = stringResource(Res.string.applicant_email),
+                error = applicantEmailPatternError,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -784,16 +830,19 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_NOTIFICATION_COUNTRY]!!,
                 title = stringResource(Res.string.country),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_NOTIFICATION_DEPARTMENT]!!,
                 title = stringResource(Res.string.department),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_NOTIFICATION_CITY]!!,
                 title = stringResource(Res.string.city),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
@@ -814,6 +863,8 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[THIRD_PARTY_NAMES_AND_LASTNAMES]!!,
                 title = stringResource(Res.string.third_party_names_and_lastnames),
+                onlyLetters = true,
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -824,16 +875,19 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[THIRD_PARTY_ADDRESS_COUNTRY]!!,
                 title = stringResource(Res.string.country),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
                 state.fieldValues[THIRD_PARTY_ADDRESS_DEPARTMENT]!!,
                 title = stringResource(Res.string.department),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
                 state.fieldValues[THIRD_PARTY_ADDRESS_CITY]!!,
                 title = stringResource(Res.string.city),
+                onlyLetters = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
             CustomOutlineTextField(
@@ -861,6 +915,7 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[THIRD_PARTY_ADDRESS_DETAILS]!!,
                 title = stringResource(Res.string.third_party_home_address_details),
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -871,25 +926,32 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[THIRD_PARTY_PHONE_NUMBER_1]!!,
                 title = stringResource(Res.string.cellphone_1),
+                startWithThree = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[THIRD_PARTY_PHONE_NUMBER_2]!!,
                 title = stringResource(Res.string.cellphone_2),
+                startWithThree = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[THIRD_PARTY_LANDLINE]!!,
                 title = stringResource(Res.string.landline),
+                onlyDigits = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
+
+            validateEmailField(
+                emailValue = state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString(),
+                setEmailPatternError = { error -> thirdPartyEmailPatternError = error })
 
             CustomOutlineTextField(
                 state.fieldValues[THIRD_PARTY_EMAIL]!!,
                 title = stringResource(Res.string.third_party_email),
-                error = emailPatternError,
+                error = thirdPartyEmailPatternError,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -1077,7 +1139,6 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_IDENTIFYING_TRAIT_AMOUNT]!!,
                 title = stringResource(Res.string.how_many),
-                error = emailPatternError,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -1229,6 +1290,7 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_INDIGENOUS_GROUP_NO_REGISTRY]!!,
                 title = "",
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -1236,6 +1298,7 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_AFRICAN_AMERICAN_COMMUNITY]!!,
                 title = "",
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -1303,6 +1366,7 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_OTHER]!!,
                 title = stringResource(Res.string.which),
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -1311,6 +1375,7 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_ORGANIZATION_NAME]!!,
                 title = "",
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -1457,6 +1522,7 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[RISK_SITUATION_OTHER_ACTUAL]!!,
                 title = stringResource(Res.string.which),
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -1819,6 +1885,7 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[APPLICANT_FULL_NAME]!!,
                 title = stringResource(Res.string.applicant_complete_name),
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -1960,6 +2027,7 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[FORM_ENROLLER_NAME_AND_LASTNAME]!!,
                 title = stringResource(Res.string.enroller_names_and_lastnames),
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -1971,17 +2039,24 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[ENROLLER_ENTITY_NAME]!!,
                 title = "",
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
             CustomOutlineTextField(
                 state.fieldValues[FORM_ENROLLER_PHONE_NUMBER]!!,
                 title = stringResource(Res.string.enroller_phone_number),
+                onlyDigits = true,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
+            validateEmailField(
+                emailValue = state.fieldValues[FORM_ENROLLER_EMAIL]!!.text.toString(),
+                setEmailPatternError = { error -> enrollerEmailPatternError = error })
+
             CustomOutlineTextField(
                 state.fieldValues[FORM_ENROLLER_EMAIL]!!,
+                error = enrollerEmailPatternError,
                 title = stringResource(Res.string.enroller_email),
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
@@ -2000,12 +2075,18 @@ fun FormScreen(
             CustomOutlineTextField(
                 state.fieldValues[PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME]!!,
                 title = stringResource(Res.string.servant_upn_names_and_lastnames),
+                maxLength = 50,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
+
+            validateEmailField(
+                emailValue = state.fieldValues[PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL]!!.text.toString(),
+                setEmailPatternError = { error -> servantUnpEmailPatternError = error })
 
             CustomOutlineTextField(
                 state.fieldValues[PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL]!!,
                 title = stringResource(Res.string.servant_upn_email),
+                error = servantUnpEmailPatternError,
                 modifier = Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
             )
 
@@ -2016,7 +2097,7 @@ fun FormScreen(
             )
 
 
-            Row() {
+            Row {
                 Spacer(modifier = Modifier.weight(1f))
                 Button(
                     shape = RoundedCornerShape(8.dp),
@@ -2037,15 +2118,6 @@ fun FormScreen(
                             Font(Res.font.futura_md_bt)
                         )
                     )
-                }
-            }
-
-
-            LaunchedEffect(state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString()) {
-                if (isValidEmail(state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString())) {
-                    emailPatternError = ""
-                } else {
-                    emailPatternError = "Invalid email format"
                 }
             }
         }

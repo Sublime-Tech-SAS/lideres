@@ -1,6 +1,8 @@
 package co.sublimetech.lideres.core.design_system
 
 import androidx.compose.foundation.text.input.TextFieldBuffer
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.TimeZone
@@ -49,7 +51,7 @@ fun formatToDate(buffer: TextFieldBuffer) {
     val validFormattedText = validParts.joinToString("/") { it }
 
     if (validFormattedText != currentText) {
-        buffer.replace(0, buffer.length, validFormattedText )
+        buffer.replace(0, buffer.length, validFormattedText)
     }
 }
 
@@ -86,11 +88,6 @@ fun checkNumbers(buffer: TextFieldBuffer) {
     }
 }
 
-fun limitLength(buffer: TextFieldBuffer, maxLength: Int) {
-    if (buffer.length > maxLength) {
-        buffer.replace(maxLength, buffer.length, "")
-    }
-}
 
 fun numbersStartingWithThree(buffer: TextFieldBuffer) {
     val currentText = buffer.asCharSequence().toString()
@@ -112,25 +109,52 @@ fun numbersStartingWithThree(buffer: TextFieldBuffer) {
 
 fun isDateBeforeToday(dateString: String): Boolean {
     val parts = dateString.split("/")
-    if (parts.size != 3)
-        return false
-    val day = parts[0].toIntOrNull()
-    val month = parts[1].toIntOrNull()
-    val year =
-        parts[2].toIntOrNull()
-    if (day == null || month == null || year == null)
-        return false
-    return try {
-        val inputDate = LocalDate(year, month, day)
-        val today = Clock.System.now()
-            .toLocalDateTime(TimeZone.currentSystemDefault()).date
-        inputDate <= today
-    } catch (e: Exception) {
-        false
+    if (parts.size == 3) {
+        val day = parts[0].toIntOrNull()
+        val month = parts[1].toIntOrNull()
+        val year =
+            parts[2].toIntOrNull()
+        if (day == null || month == null || year == null)
+            return false
+        return try {
+            val inputDate = LocalDate(year, month, day)
+            val today = Clock.System.now()
+                .toLocalDateTime(TimeZone.currentSystemDefault()).date
+            inputDate <= today
+        } catch (e: Exception) {
+            false
+        }
     }
+    return true
 }
 
 fun isValidEmail(email: String): Boolean {
     val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$".toRegex()
     return emailRegex.matches(email)
+}
+
+
+@Composable
+fun validateEmailField(emailValue: String, setEmailPatternError: (String) -> Unit) {
+    LaunchedEffect(emailValue) {
+        if (emailValue.isNotBlank()) {
+            setEmailPatternError(if (isValidEmail(emailValue)) "" else "Formato incorrecto")
+        }
+    }
+}
+
+@Composable
+fun validateDateField(dateValue: String, setDateError: (String) -> Unit) {
+    LaunchedEffect(dateValue) {
+        setDateError(
+            if (dateValue.isNotBlank() && isDateBeforeToday(
+                    dateValue
+                )
+            ) {
+                ""
+            } else {
+                "Fecha incorrecta: no puede ser posterior a hoy."
+            }
+        )
+    }
 }
