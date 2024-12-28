@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.MaterialTheme
@@ -262,6 +263,7 @@ import lideres.composeapp.generated.resources.duties_and_commitments_line_3
 import lideres.composeapp.generated.resources.duties_and_commitments_line_4
 import lideres.composeapp.generated.resources.duties_and_commitments_line_5
 import lideres.composeapp.generated.resources.elderly
+import lideres.composeapp.generated.resources.empty
 import lideres.composeapp.generated.resources.enroller_email
 import lideres.composeapp.generated.resources.enroller_entity_name
 import lideres.composeapp.generated.resources.enroller_information_title
@@ -285,6 +287,7 @@ import lideres.composeapp.generated.resources.form_date
 import lideres.composeapp.generated.resources.form_date_subtitle
 import lideres.composeapp.generated.resources.form_date_title
 import lideres.composeapp.generated.resources.form_details
+import lideres.composeapp.generated.resources.form_instructions_title
 import lideres.composeapp.generated.resources.form_number
 import lideres.composeapp.generated.resources.form_title
 import lideres.composeapp.generated.resources.futura_md_bt
@@ -309,6 +312,19 @@ import lideres.composeapp.generated.resources.indigenous_group_title
 import lideres.composeapp.generated.resources.indigenous_reservation
 import lideres.composeapp.generated.resources.indigenous_to_bolivar
 import lideres.composeapp.generated.resources.indigenous_to_san_andres
+import lideres.composeapp.generated.resources.instruction_block_10
+import lideres.composeapp.generated.resources.instruction_block_11
+import lideres.composeapp.generated.resources.instruction_block_14
+import lideres.composeapp.generated.resources.instruction_block_15
+import lideres.composeapp.generated.resources.instruction_block_16
+import lideres.composeapp.generated.resources.instruction_block_2
+import lideres.composeapp.generated.resources.instruction_block_3
+import lideres.composeapp.generated.resources.instruction_block_4
+import lideres.composeapp.generated.resources.instruction_block_5
+import lideres.composeapp.generated.resources.instruction_block_6
+import lideres.composeapp.generated.resources.instruction_block_7
+import lideres.composeapp.generated.resources.instruction_block_8
+import lideres.composeapp.generated.resources.instruction_block_9
 import lideres.composeapp.generated.resources.intellectual
 import lideres.composeapp.generated.resources.intersexual
 import lideres.composeapp.generated.resources.kidnapping
@@ -426,6 +442,7 @@ import lideres.composeapp.generated.resources.written
 import lideres.composeapp.generated.resources.yes
 import lideres.composeapp.generated.resources.young_adult
 import org.jetbrains.compose.resources.Font
+import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -465,6 +482,15 @@ fun FormScreen(
     var thirdPartyEmailPatternError by remember { mutableStateOf("") }
     var enrollerEmailPatternError by remember { mutableStateOf("") }
     var servantUnpEmailPatternError by remember { mutableStateOf("") }
+
+    var dialogText by remember { mutableStateOf(Res.string.empty) }
+    var showDialog by remember { mutableStateOf(false) }
+
+    if (showDialog) {
+        ShowDialog(
+            text = dialogText,
+            onDismissRequest = { showDialog = false })
+    }
 
 
     LazyColumn(
@@ -514,7 +540,10 @@ fun FormScreen(
                 title = stringResource(Res.string.form_date_title),
                 subtitle = stringResource(Res.string.form_date_subtitle),
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
-                onClick = {}
+                onClick = {
+                    dialogText = Res.string.instruction_block_2
+                    showDialog = true
+                }
             )
 
             validateDateField(
@@ -555,7 +584,10 @@ fun FormScreen(
                 title = stringResource(Res.string.applicant_personal_data_title),
                 subtitle = null,
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
-                onClick = {}
+                onClick = {
+                    dialogText = Res.string.instruction_block_3
+                    showDialog = true
+                }
             )
 
             CustomOutlineTextField(
@@ -857,7 +889,11 @@ fun FormScreen(
                 stringResource(Res.string.third_party_request_title),
                 stringResource(Res.string.third_party_request_disclaimer),
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
-                onClick = {}
+                width = true,
+                onClick = {
+                    dialogText = Res.string.instruction_block_4
+                    showDialog = true
+                }
             )
 
             CustomOutlineTextField(
@@ -990,7 +1026,10 @@ fun FormScreen(
                 stringResource(Res.string.applicant_personal_data_title),
                 null,
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
-                onClick = {}
+                onClick = {
+                    dialogText = Res.string.instruction_block_5
+                    showDialog = true
+                }
             )
 
             Title(
@@ -1473,7 +1512,11 @@ fun FormScreen(
                 stringResource(Res.string.risk_or_threat_title),
                 null,
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
-                onClick = {}
+                width = true,
+                onClick = {
+                    dialogText = Res.string.instruction_block_6
+                    showDialog = true
+                }
             )
 
             Disclaimer(stringResource(Res.string.risk_or_threat_subtitle), 0)
@@ -1485,7 +1528,10 @@ fun FormScreen(
                 stringResource(Res.string.risk_situation_title),
                 null,
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
-                onClick = {}
+                onClick = {
+                    dialogText = Res.string.instruction_block_7
+                    showDialog = true
+                }
             )
 
             Title(
@@ -1566,16 +1612,25 @@ fun FormScreen(
 
             /** Block 8*/
             BlockTitle(
-                stringResource(Res.string.population_object_of_protection_title),
-                stringResource(Res.string.population_object_of_protection_subtitle),
+                title =stringResource(Res.string.population_object_of_protection_title),
+                subtitle = stringResource(Res.string.population_object_of_protection_subtitle),
+                onClick = {
+                    dialogText = Res.string.instruction_block_8
+                    showDialog = true
+                },
+                width = true,
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
 
+            /** Block 9*/
             BlockTitle(
                 title = stringResource(Res.string.population_of_protection_and_prevention_program),
                 subtitle = null,
                 width = true,
-                onClick = {},
+                onClick = {
+                    dialogText = Res.string.instruction_block_9
+                    showDialog = true
+                },
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
 
@@ -1618,12 +1673,15 @@ fun FormScreen(
             )
 
 
-            /** Block 9*/
+            /** Block 10*/
             BlockTitle(
                 title = stringResource(Res.string.patriotic_union_and_communist_party_survivor_title),
                 subtitle = null,
                 width = true,
-                onClick = {},
+                onClick = {
+                    dialogText = Res.string.instruction_block_10
+                    showDialog = true
+                },
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
 
@@ -1649,12 +1707,15 @@ fun FormScreen(
                 }
             )
 
-            /** Block 10*/
+            /** Block 11*/
             BlockTitle(
                 title = stringResource(Res.string.especial_security_and_protection_group_title),
                 subtitle = null,
                 width = true,
-                onClick = {},
+                onClick = {
+                    dialogText = Res.string.instruction_block_11
+                    showDialog = true
+                },
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
 
@@ -1707,12 +1768,11 @@ fun FormScreen(
                 }
             )
 
-            /** Block 11*/
+            /** Block 12*/
             BlockTitle(
                 stringResource(Res.string.prevention_and_protection_registry_request_presentation_title),
                 null,
                 width = true,
-                onClick = {},
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
             Disclaimer(
@@ -1764,12 +1824,11 @@ fun FormScreen(
                 justify = true
             )
 
-            /** Block 12*/
+            /** Block 13*/
             BlockTitle(
                 stringResource(Res.string.national_protection_unit_program_members_duties_and_commitments_title),
                 null,
                 width = true,
-                onClick = {},
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
 
@@ -1784,11 +1843,14 @@ fun FormScreen(
             Disclaimer(stringResource(Res.string.duties_and_commitments_line_4), 8, justify = true)
             Disclaimer(stringResource(Res.string.duties_and_commitments_line_5), justify = true)
 
-            /** Block 13*/
+            /** Block 14*/
             BlockTitle(
                 stringResource(Res.string.consent_title),
                 null,
-                onClick = {},
+                onClick = {
+                    dialogText = Res.string.instruction_block_14
+                    showDialog = true
+                },
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
 
@@ -1983,12 +2045,15 @@ fun FormScreen(
                 justify = true
             )
 
-            /** Block 14*/
+            /** Block 15*/
 
             BlockTitle(
                 title = stringResource(Res.string.enroller_information_title),
                 subtitle = null,
-                onClick = {},
+                onClick = {
+                    dialogText = Res.string.instruction_block_15
+                    showDialog = true
+                },
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
 
@@ -2062,13 +2127,15 @@ fun FormScreen(
             )
 
 
-            /** Block 15*/
-
+            /** Block 16*/
             BlockTitle(
                 title = stringResource(Res.string.public_servant_or_unp_form_receiver_information_title),
                 subtitle = null,
                 width = true,
-                onClick = {},
+                onClick = {
+                    dialogText = Res.string.instruction_block_16
+                    showDialog = true
+                },
                 modifier = Modifier.padding(top = 10.dp, bottom = 24.dp),
             )
 
@@ -2097,7 +2164,7 @@ fun FormScreen(
             )
 
 
-            Row {
+            Row(modifier = Modifier.padding(bottom = 16.dp)) {
                 Spacer(modifier = Modifier.weight(1f))
                 Button(
                     shape = RoundedCornerShape(8.dp),
@@ -2123,3 +2190,27 @@ fun FormScreen(
         }
     }
 }
+
+@Composable
+fun ShowDialog(
+    text: StringResource,
+    onDismissRequest: () -> Unit,
+) {
+    AlertDialog(
+        onDismissRequest = onDismissRequest,
+        text = {
+            LazyColumn {
+                item {
+                    Title(title = stringResource(Res.string.form_instructions_title), 10)
+                    Disclaimer(title = stringResource(text))
+                }
+            }
+        },
+        confirmButton = {
+            // Button(onClick = onDismissRequest) {
+            //     Text("OK")
+            // }
+        },
+    )
+}
+

@@ -1,6 +1,7 @@
 package co.sublimetech.lideres.core.design_system
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -61,6 +62,7 @@ fun BlockTitle(
                     modifier = Modifier
                         .padding(top = if (subtitle != null) 16.dp else 19.dp)
                         .size(16.dp)
+                        .clickable { onClick() }
                 )
             }
         }
@@ -111,15 +113,5 @@ fun Disclaimer(
             Font(Res.font.futura_md_bt)
         ),
         textAlign = if (justify) TextAlign.Justify else TextAlign.Start // Corrected this line
-    )
-}
-
-
-@Composable
-fun BlockTitlePreview() {
-    BlockTitle(
-        "Diligenciamiento del formulario",
-        "1. Fecha y lugar de Diligenciamiento del Formulario:",
-        {}
     )
 }

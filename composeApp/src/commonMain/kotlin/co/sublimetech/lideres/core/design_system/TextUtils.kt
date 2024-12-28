@@ -147,7 +147,7 @@ fun validateEmailField(emailValue: String, setEmailPatternError: (String) -> Uni
 fun validateDateField(dateValue: String, setDateError: (String) -> Unit) {
     LaunchedEffect(dateValue) {
         setDateError(
-            if (dateValue.isNotBlank() && isDateBeforeToday(
+            if (isDateBeforeToday(
                     dateValue
                 )
             ) {
