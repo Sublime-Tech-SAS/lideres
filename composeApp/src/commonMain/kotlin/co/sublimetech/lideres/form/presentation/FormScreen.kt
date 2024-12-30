@@ -208,6 +208,8 @@ import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_ADDRESS_SE
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_EMAIL
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_LANDLINE
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_NAMES_AND_LASTNAMES
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_NOTIFICATION_APPROVAL_NEGATIVE
+import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_NOTIFICATION_APPROVAL_POSITIVE
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_PHONE_NUMBER_1
 import co.sublimetech.lideres.core.presentation.Constants.THIRD_PARTY_PHONE_NUMBER_2
 import co.sublimetech.lideres.core.presentation.toBase64
@@ -996,8 +998,8 @@ fun FormScreen(
             )
 
             val thirdEmailNotificationRequestOptions = listOf(
-                stringResource(Res.string.yes) to state.fieldValues[APPLICANT_ID_NATIONAL_ID]!!,
-                stringResource(Res.string.no) to state.fieldValues[APPLICANT_ID_FOREIGN_ID]!!,
+                stringResource(Res.string.yes) to state.fieldValues[THIRD_PARTY_NOTIFICATION_APPROVAL_POSITIVE]!!,
+                stringResource(Res.string.no) to state.fieldValues[THIRD_PARTY_NOTIFICATION_APPROVAL_NEGATIVE]!!,
             )
 
 
@@ -1612,7 +1614,7 @@ fun FormScreen(
 
             /** Block 8*/
             BlockTitle(
-                title =stringResource(Res.string.population_object_of_protection_title),
+                title = stringResource(Res.string.population_object_of_protection_title),
                 subtitle = stringResource(Res.string.population_object_of_protection_subtitle),
                 onClick = {
                     dialogText = Res.string.instruction_block_8
@@ -2175,7 +2177,219 @@ fun FormScreen(
                         disabledContentColor = MaterialTheme.colorScheme.outline
                     ),
                     onClick = {
-                        onAction(FormAction.OnSaveFormClick)
+                        // BLOCK 1 FORM DETAILS
+                        if (state.fieldValues[FORM_NUMBER]!!.text.toString().isNotBlank()
+                            && state.fieldValues[FORM_DATE]!!.text.toString().isNotBlank()
+                            && state.fieldValues[FORM_OFFICE]!!.text.toString().isNotBlank()
+                            // BLOCK 2 FORM DATE
+                            && state.fieldValues[FORM_FILL_DATE]!!.text.toString().isNotBlank()
+                            && state.fieldValues[FORM_COUNTRY]!!.text.toString().isNotBlank()
+                            && state.fieldValues[FORM_DEPARTMENT]!!.text.toString().isNotBlank()
+                            && state.fieldValues[FORM_CITY]!!.text.toString().isNotBlank()
+                            // BLOCK 3 APPLICANT PERSONAL DATA
+                            && state.fieldValues[APPLICANT_FIRST_NAME]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_SECOND_NAME]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_FIRST_LAST_NAME]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_SECOND_LAST_NAME]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_IDENTIFYING_NAME]!!.text.toString().isNotBlank()
+
+                            && (state.fieldValues[APPLICANT_ID_NATIONAL_ID]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ID_FOREIGN_ID]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ID_NUIP]!!.text.toString().isNotBlank())
+                            && state.fieldValues[APPLICANT_ID_NUMBER]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_ID_EXPEDITION_DATE]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_COUNTRY_OF_BIRTH]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_DEPARTMENT_OF_BIRTH]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_CITY_OF_BIRTH]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_DATE_OF_BIRTH]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_ADDRESS_COUNTRY]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_ADDRESS_DEPARTMENT]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_ADDRESS_CITY]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_ADDRESS_DISTRICT]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_ADDRESS_SETTLEMENT]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_ADDRESS_NEIGHBORHOOD]!!.text.toString().isNotBlank()
+
+                            && (state.fieldValues[APPLICANT_ADDRESS_ZONE_URBAN]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ADDRESS_ZONE_RURAL]!!.text.toString().isNotBlank())
+
+                            && state.fieldValues[APPLICANT_ADDRESS]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_ADDRESS_DETAILS]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_PHONE_NUMBER_1]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_PHONE_NUMBER_2]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_LANDLINE]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_EMAIL]!!.text.toString().isNotBlank()
+
+                            && (state.fieldValues[APPLICANT_NOTIFICATION_APPROVAL_POSITIVE]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_NOTIFICATION_APPROVAL_NEGATIVE]!!.text.toString().isNotBlank())
+
+                            && state.fieldValues[APPLICANT_NOTIFICATION_COUNTRY]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_NOTIFICATION_DEPARTMENT]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_NOTIFICATION_CITY]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_NOTIFICATION_ADDRESS]!!.text.toString().isNotBlank()
+                            // BLOCK 4 THIRD PARTY REQUEST DATA
+                            && state.fieldValues[THIRD_PARTY_NAMES_AND_LASTNAMES]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_ADDRESS_COUNTRY]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_ADDRESS_DEPARTMENT]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_ADDRESS_CITY]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_ADDRESS_DISTRICT]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_ADDRESS_SETTLEMENT]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_ADDRESS_NEIGHBORHOOD]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_ADDRESS]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_ADDRESS_DETAILS]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_PHONE_NUMBER_1]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_PHONE_NUMBER_2]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_LANDLINE]!!.text.toString().isNotBlank()
+                            && state.fieldValues[THIRD_PARTY_EMAIL]!!.text.toString().isNotBlank()
+
+                            && (state.fieldValues[THIRD_PARTY_NOTIFICATION_APPROVAL_POSITIVE]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[THIRD_PARTY_NOTIFICATION_APPROVAL_NEGATIVE]!!.text.toString().isNotBlank())
+
+                            // BLOCK 5 APPLICANT PERSONAL DATA 2
+                            && (state.fieldValues[APPLICANT_SEX_MEN]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_SEX_WOMEN]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_SEX_INTERSEXUAL]!!.text.toString().isNotBlank())
+
+                            && (state.fieldValues[APPLICANT_GENDER_MALE]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_GENDER_FEMALE]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_GENDER_TRANSGENDER]!!.text.toString().isNotBlank())
+
+                            && (state.fieldValues[APPLICANT_SEXUAL_ORIENTATION_HETEROSEXUAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_SEXUAL_ORIENTATION_HOMOSEXUAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_SEXUAL_ORIENTATION_BISEXUAL]!!.text.toString().isNotBlank())
+
+                            && (state.fieldValues[APPLICANT_AGE_CHILD]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_AGE_TEENAGER]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_AGE_YOUNG_ADULT]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_AGE_ADULT]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_AGE_ELDERLY]!!.text.toString().isNotBlank())
+
+                            && (
+                                    if (
+                                        state.fieldValues[APPLICANT_IDENTIFYING_TRAIT_FATHER]!!.text.toString().isNotBlank()
+                                        || state.fieldValues[APPLICANT_IDENTIFYING_TRAIT_MOTHER]!!.text.toString().isNotBlank()
+                                        || state.fieldValues[APPLICANT_IDENTIFYING_TRAIT_CARETAKER]!!.text.toString().isNotBlank()
+                                        || state.fieldValues[APPLICANT_IDENTIFYING_TRAIT_PEOPLE_UNDER_CARE]!!.text.toString().isNotBlank()
+                                    ) {
+
+                                        state.fieldValues[APPLICANT_IDENTIFYING_TRAIT_AMOUNT]!!.text.toString().isNotBlank()
+                                    } else {
+                                        true
+                                    }
+                                    )
+
+                            && (state.fieldValues[APPLICANT_DISABILITY_STATUS_POSITIVE]!!.text.toString().isNotBlank()
+                                    && (state.fieldValues[APPLICANT_DISABILITY_TYPE_PHYSICAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_DISABILITY_TYPE_HEARING]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_DISABILITY_TYPE_VISUAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_DISABILITY_TYPE_BLINDNESS]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_DISABILITY_TYPE_MENTAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_DISABILITY_TYPE_INTELLECTUAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_DISABILITY_TYPE_LITTLE_PEOPLE]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_DISABILITY_TYPE_MULTIPLE]!!.text.toString().isNotBlank())
+                                    || state.fieldValues[APPLICANT_DISABILITY_STATUS_NEGATIVE]!!.text.toString().isNotBlank())
+
+                            && ((state.fieldValues[APPLICANT_ETHNIC_GROUP_STATUS_POSITIVE]!!.text.toString().isNotBlank()
+                                    && (state.fieldValues[APPLICANT_ETHNIC_GROUP_TYPE_INDIGENOUS]!!.text.toString().isNotBlank()
+                                    && (state.fieldValues[APPLICANT_INDIGENOUS_GROUP]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_INDIGENOUS_GROUP_RESERVATION]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_INDIGENOUS_GROUP_RESERVATION_COMMUNITY]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_INDIGENOUS_GROUP_PARTIAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_INDIGENOUS_GROUP_NO_REGISTRY]!!.text.toString().isNotBlank()))
+
+                                    || (state.fieldValues[APPLICANT_ETHNIC_GROUP_TYPE_NEGRO]!!.text.toString().isNotBlank()
+                                    && state.fieldValues[APPLICANT_AFRICAN_AMERICAN_COMMUNITY]!!.text.toString().isNotBlank())
+
+                                    || state.fieldValues[APPLICANT_ETHNIC_GROUP_TYPE_AFRICAN_AMERICAN]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ETHNIC_GROUP_TYPE_SAN_ANDRES]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ETHNIC_GROUP_TYPE_BOLIVAR]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ETHNIC_GROUP_TYPE_GIPSY]!!.text.toString().isNotBlank())
+                            || state.fieldValues[APPLICANT_ETHNIC_GROUP_STATUS_NEGATIVE]!!.text.toString().isNotBlank())
+
+                            && ((state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS_POSITIVE]!!.text.toString().isNotBlank()
+                                    && state.fieldValues[APPLICANT_ORGANIZATION_NAME]!!.text.toString().isNotBlank()
+                                    && (state.fieldValues[APPLICANT_ORGANIZATION_TYPE_SOCIAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ORGANIZATION_TYPE_GUILD]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ORGANIZATION_TYPE_CIVIL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ORGANIZATION_TYPE_COMMUNAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ORGANIZATION_TYPE_FARMER]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ORGANIZATION_TYPE_VICTIMS]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_ORGANIZATION_TYPE_HUMANS_RIGHT_WATCH]!!.text.toString().isNotBlank()
+                                    || (state.fieldValues[APPLICANT_ORGANIZATION_TYPE_OTHER]!!.text.toString().isNotBlank()
+                                    && state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_OTHER]!!.text.toString().isNotBlank())))
+                                    || state.fieldValues[APPLICANT_ORGANIZATION_MEMBERSHIP_STATUS_NEGATIVE]!!.text.toString().isNotBlank())
+
+                            && ((state.fieldValues[APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS_POSITIVE]!!.text.toString().isNotBlank()
+                                    && state.fieldValues[APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_ID_NUMBER]!!.text.toString().isNotBlank())
+                            || state.fieldValues[APPLICANT_ORGANIZATION_LEGAL_REPRESENTATIVE_STATUS_NEGATIVE]!!.text.toString().isNotBlank())
+
+                            && ((state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_STATUS_POSITIVE]!!.text.toString().isNotBlank()
+                                    && (state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COMMISSION]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_TYPE_AMERICAN_COURT]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_TYPE_NATIONAL_JUDGE]!!.text.toString().isNotBlank()))
+                                    || state.fieldValues[APPLICANT_PROVISIONAL_MEASURES_STATUS_NEGATIVE]!!.text.toString().isNotBlank())
+
+                            // BLOCK 6 RISK OR THREAT DATA
+                            && state.fieldValues[RISK_OR_THREAT_REPORT]!!.text.toString().isNotBlank()
+
+                            // BLOCK 7 RISK SITUATION DATA
+                            && (state.fieldValues[RISK_SITUATION_TYPE_THREAT]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_TYPE_ATTACK]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_TYPE_KIDNAPPING]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_TYPE_FAMILY_MEMBER_HOMICIDE]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_TYPE_EXTORTION]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_TYPE_RECRUITMENT]!!.text.toString().isNotBlank()
+                                    || (state.fieldValues[RISK_SITUATION_TYPE_OTHER]!!.text.toString().isNotBlank() && state.fieldValues[RISK_SITUATION_OTHER_ACTUAL]!!.text.toString().isNotBlank()))
+
+                                    && (state.fieldValues[RISK_SITUATION_MEANS_TYPE_BY_PHONE]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_MEANS_TYPE_VERBAL]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_MEANS_TYPE_WRITTEN]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_MEANS_TYPE_THROUGH_THIRD_PARTY]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_MEANS_TYPE_SYMBOLIC]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[RISK_SITUATION_MEANS_TYPE_SOCIAL_MEDIA]!!.text.toString().isNotBlank()
+                                    || (state.fieldValues[RISK_SITUATION_MEANS_TYPE_OTHER]!!.text.toString().isNotBlank() && state.fieldValues[RISK_SITUATION_MEANS_OTHER_ACTUAL]!!.text.toString().isNotBlank()))
+
+                            // BLOCK 8 POPULATION OBJECT OF PROTECTION
+                            && (state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_1]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_2]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_3]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_4]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_5]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_6]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_7]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_8]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_9]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_10]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_11]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_12]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_13]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_14]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_15]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_16]!!.text.toString().isNotBlank()
+                                    || state.fieldValues[PROTECTION_AND_PREVENTION_GROUP_17]!!.text.toString().isNotBlank())
+
+                            //BLOCK 13 CONSENT
+                            && state.fieldValues[DATA_CONSENT_ACCEPTANCE]!!.text.toString().isNotBlank()
+                            && (state.fieldValues[NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_POSITIVE]!!.text.toString().isNotBlank() ||state.fieldValues[NATIONAL_POLICE_PREVENTIVE_MEASURES_ACCEPTANCE_NEGATIVE]!!.text.toString().isNotBlank())
+                            && (state.fieldValues[CERREM_WOMEN_ACCEPTANCE_POSITIVE]!!.text.toString().isNotBlank() || state.fieldValues[CERREM_WOMEN_ACCEPTANCE_NEGATIVE]!!.text.toString().isNotBlank())
+                            && state.fieldValues[APPLICANT_FULL_NAME]!!.text.toString().isNotBlank()
+                            && state.fieldValues[APPLICANT_SIGNATURE]!!.text.toString().isNotBlank()
+
+                            //BLOCK 14 ENROLLER INFORMATION
+                            && (state.fieldValues[APPLICANT_IS_FORM_ENROLLER_POSITIVE]!!.text.toString().isNotBlank()
+                                    || (state.fieldValues[APPLICANT_IS_FORM_ENROLLER_NEGATIVE]!!.text.toString().isNotBlank() && state.fieldValues[FORM_ENROLLER_NAME_AND_LASTNAME]!!.text.toString().isNotBlank()))
+
+                            && state.fieldValues[ENROLLER_ENTITY_NAME]!!.text.toString().isNotBlank()
+                            && state.fieldValues[FORM_ENROLLER_PHONE_NUMBER]!!.text.toString().isNotBlank()
+                            && state.fieldValues[FORM_ENROLLER_EMAIL]!!.text.toString().isNotBlank()
+
+                            //BLOCK 15 PUBLIC SERVANT OR UNP FORM RECEIVER INFORMATION
+                            && state.fieldValues[PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_NAME]!!.text.toString().isNotBlank()
+                            && state.fieldValues[PUBLIC_SERVANT_OR_UNP_FORM_RECEIVER_EMAIL]!!.text.toString().isNotBlank()
+                            && state.fieldValues[FILED_IN_IDENTIFIER]!!.text.toString().isNotBlank()
+
+                        ) {
+                            onAction(FormAction.OnSaveFormClick)
+                        }
                     }) {
                     Text(
                         "Guardar Formulario",
@@ -2187,30 +2401,30 @@ fun FormScreen(
                     )
                 }
             }
+            }
         }
     }
-}
 
-@Composable
-fun ShowDialog(
-    text: StringResource,
-    onDismissRequest: () -> Unit,
-) {
-    AlertDialog(
-        onDismissRequest = onDismissRequest,
-        text = {
-            LazyColumn {
-                item {
-                    Title(title = stringResource(Res.string.form_instructions_title), 10)
-                    Disclaimer(title = stringResource(text))
+    @Composable
+    fun ShowDialog(
+        text: StringResource,
+        onDismissRequest: () -> Unit,
+    ) {
+        AlertDialog(
+            onDismissRequest = onDismissRequest,
+            text = {
+                LazyColumn {
+                    item {
+                        Title(title = stringResource(Res.string.form_instructions_title), 10)
+                        Disclaimer(title = stringResource(text))
+                    }
                 }
-            }
-        },
-        confirmButton = {
-            // Button(onClick = onDismissRequest) {
-            //     Text("OK")
-            // }
-        },
-    )
-}
+            },
+            confirmButton = {
+                // Button(onClick = onDismissRequest) {
+                //     Text("OK")
+                // }
+            },
+        )
+    }
 
