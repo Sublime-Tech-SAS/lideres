@@ -2,6 +2,21 @@
 
 <resources>
 
+    <!--ERRORS & MESSAGES-->
+    <string name="network_error_title">Aviso de conexión</string>
+    <string name="no_network_error">Se ha perdido la conexión a internet.</string>
+
+    <string name="authentication_error_title">Error de autenticación</string>
+    <string name="authentication_error">No has podido ingresar, inténtalo nuevamente o contacta a tu supervisor.</string>
+    <string name="not_active_error">No tienes el ingreso autorizado, inténtalo nuevamente o contacta a tu supervisor.</string>
+
+    <string name="form_submission_error_title">Error guardando el formulario</string>
+    <string name="form_submission_error">No hemos podido guardar el formulario, inténtalo nuevamente o contacta a tu supervisor.</string>
+    <string name="form_submission_title">Formulario guardado</string>
+    <string name="form_submission_successful">Hemos guardado tu formulario! deseas registrar otro?</string>
+    <string name="signature_submission_successful">Firma guardada existosamente</string>
+
+
     <!--GENERAL-->
     <string name="form_title">FORMULARIO DE SOLICITUD DE INSCRIPCIÓN PARA EL PROGRAMA DE PREVENCIÒN Y PROTECCIÒN QUE COORDINA LA UNIDAD NACIONAL DE PROTECCIÓN - RUTA INDIVIDUAL</string>
     <string name="day">DÍA</string>

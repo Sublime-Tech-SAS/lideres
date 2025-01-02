@@ -9,6 +9,9 @@ import co.sublimetech.lideres.authentication.domain.AuthRepositoryInterface
 import co.sublimetech.lideres.core.domain.DataError
 import co.sublimetech.lideres.core.domain.Result
 import kotlinx.coroutines.launch
+import lideres.composeapp.generated.resources.Res
+import lideres.composeapp.generated.resources.authentication_error
+import lideres.composeapp.generated.resources.not_active_error
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.get
 
@@ -25,6 +28,8 @@ class LoginViewModel : ViewModel(), KoinComponent {
             is LoginAction.OnLoginClick -> {
                 loginUser(action.tokenId, action.accessToken)
             }
+
+            is LoginAction.DismissError -> state = state.copy(error = null)
 
             LoginAction.OnLoginSuccess -> {}
         }
@@ -43,9 +48,9 @@ class LoginViewModel : ViewModel(), KoinComponent {
             when (result) {
                 is Result.Error -> {
                     if (result.error == DataError.Network.UNAUTHORIZED) {
-                        //HANDLE UNAUTHORIZED ERROR
+                        state = state.copy(isLoggingIn = false, error = Res.string.not_active_error)
                     } else {
-                        //HANDLE OTHER ERRORS
+                        state = state.copy(isLoggingIn = false, error = Res.string.authentication_error)
                     }
                 }
 

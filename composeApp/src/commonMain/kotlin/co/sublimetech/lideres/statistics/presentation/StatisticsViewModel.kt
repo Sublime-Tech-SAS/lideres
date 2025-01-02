@@ -22,13 +22,15 @@ class StatisticsViewModel : ViewModel(), KoinComponent {
             StatisticsAction.OnGetForms -> {
                 getForms()
             }
+
             StatisticsAction.OnFormClick -> {
-               //Travel to forms
+                //Travel to forms
             }
         }
     }
 
     private fun getForms() {
+        _state.value = _state.value.copy(loading = true)
         viewModelScope.launch {
             repository.getForms()
                 .catch { e ->
@@ -37,9 +39,8 @@ class StatisticsViewModel : ViewModel(), KoinComponent {
 
                 }
                 .collect { forms ->
-                    _state.value = _state.value.copy(fetchedForms = forms)
+                    _state.value = _state.value.copy(fetchedForms = forms, loading = false)
                 }
         }
     }
-
 }

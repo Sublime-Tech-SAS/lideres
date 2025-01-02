@@ -2,8 +2,6 @@ package co.sublimetech.lideres.statistics.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.material3.Button
@@ -12,9 +10,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import co.sublimetech.lideres.core.design_system.CustomLoader
 import co.sublimetech.lideres.core.design_system.MyBarChart
 import co.sublimetech.lideres.core.design_system.MyDonutChart
 import co.sublimetech.lideres.core.design_system.MyPieChart
@@ -102,51 +100,56 @@ fun StatisticsScreen(
         onAction(StatisticsAction.OnGetForms)
     }
 
-    LazyVerticalStaggeredGrid(
-        columns = StaggeredGridCells.Fixed(1),
-        verticalItemSpacing = 16.dp,
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
-        contentPadding = PaddingValues(16.dp)
-    ) {
-        item {
-            //  MyLineChart(
-            //      data = tendenciaTemporal,
-            //      title = "Tendencia temporal",
-            //      maxHeight = 500.dp
-            //  )
-        }
-        item {
-            MyBarChart(
-                title = "Situación de riesgo",
-                data = amenazaData,
-                maxHeight = 400.dp
-            )
-        }
-        item {
-            MyPieChart(
-                data = domicilioData,
-                title = "Zona de Domicilio",
-                chartSize = 250.dp, // Tamaño del gráfico
-                maxHeight = 400.dp, // Altura máxima del Card
-            )
-        }
-        item {
-            MyDonutChart(
-                data = newSexData,
-                title = "Sexo",
-                maxHeight = 500.dp,
-                chartSize = 250.dp,
-                gapAngle = 7f,
-                donutThickness = 20.dp
-            )
-        }
-        item {
-            Button(
-                onClick = { onAction(StatisticsAction.OnFormClick) }
-            ) {
-                Text("Go To Form")
+    if (state.loading) {
+        CustomLoader()
+
+    } else {
+
+        LazyVerticalStaggeredGrid(
+            columns = StaggeredGridCells.Fixed(1),
+            verticalItemSpacing = 16.dp,
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            contentPadding = PaddingValues(16.dp)
+        ) {
+            item {
+                //  MyLineChart(
+                //      data = tendenciaTemporal,
+                //      title = "Tendencia temporal",
+                //      maxHeight = 500.dp
+                //  )
+            }
+            item {
+                MyBarChart(
+                    title = "Situación de riesgo",
+                    data = amenazaData,
+                    maxHeight = 400.dp
+                )
+            }
+            item {
+                MyPieChart(
+                    data = domicilioData,
+                    title = "Zona de Domicilio",
+                    chartSize = 250.dp, // Tamaño del gráfico
+                    maxHeight = 400.dp, // Altura máxima del Card
+                )
+            }
+            item {
+                MyDonutChart(
+                    data = newSexData,
+                    title = "Sexo",
+                    maxHeight = 500.dp,
+                    chartSize = 250.dp,
+                    gapAngle = 7f,
+                    donutThickness = 20.dp
+                )
+            }
+            item {
+                Button(
+                    onClick = { onAction(StatisticsAction.OnFormClick) }
+                ) {
+                    Text("Go To Form")
+                }
             }
         }
     }
-
 }

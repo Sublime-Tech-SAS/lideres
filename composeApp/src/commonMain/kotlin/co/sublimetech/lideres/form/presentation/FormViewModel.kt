@@ -184,6 +184,8 @@ import co.sublimetech.lideres.form.domain.toForm
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import lideres.composeapp.generated.resources.Res
+import lideres.composeapp.generated.resources.form_submission_error
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.get
 
@@ -397,8 +399,10 @@ class FormViewModel : ViewModel(), KoinComponent {
             }
 
             FormAction.OnGetFormClick -> {
-                getForm()
+                //getForm()
             }
+
+            FormAction.OnDismissError ->  _state.value = _state.value.copy(error = null, formSaved = false)
 
             FormAction.OnStatisticsClick -> {
                 //travel to statistics
@@ -407,37 +411,37 @@ class FormViewModel : ViewModel(), KoinComponent {
     }
 
     private fun saveForm() {
+        _state.value = _state.value.copy(loading = true)
         viewModelScope.launch {
             val form = _state.value.toForm()
             val result = repository.saveForm(form)
             when (result) {
                 is Result.Error -> {
-                    //HANDLE ERRORS, LOG TO SYSTEM, WARN ETC
+                    _state.value = _state.value.copy(loading = false, error = Res.string.form_submission_error )
                 }
 
                 is Result.Success -> {
-                    _state.value = _state.value.copy()
-                    //LET USER KNOW?
+                    _state.value = _state.value.copy(loading = false, formSaved = true )
                 }
             }
         }
     }
 
-    private fun getForm() {
-        viewModelScope.launch {
-            val result = repository.getForm(state.value.fieldValues[FORM_NUMBER]!!.text.toString())
-            when (result) {
-                is Result.Error -> {
-                    //HANDLE ERRORS, LOG TO SYSTEM, WARN ETC
-                }
-
-                is Result.Success -> {
-                    _state.value =
-                        _state.value.copy(fetchedFormNumber = result.data.applicantData.firstName)
-                    //LET USER KNOW?
-                }
-            }
-        }
-    }
+   // private fun getForm() {
+   //     viewModelScope.launch {
+   //         val result = repository.getForm(state.value.fieldValues[FORM_NUMBER]!!.text.toString())
+   //         when (result) {
+   //             is Result.Error -> {
+   //                 //HANDLE ERRORS, LOG TO SYSTEM, WARN ETC
+   //             }
+//
+   //             is Result.Success -> {
+   //                 _state.value =
+   //                     _state.value.copy(fetchedFormNumber = result.data.applicantData.firstName)
+   //                 //LET USER KNOW?
+   //             }
+   //         }
+   //     }
+   // }
 }
 

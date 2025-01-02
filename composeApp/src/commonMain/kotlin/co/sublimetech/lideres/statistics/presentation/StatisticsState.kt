@@ -4,4 +4,5 @@ import co.sublimetech.lideres.form.domain.Form
 
 data class StatisticsState(
     val fetchedForms: List<Form> = emptyList(),
+    val loading:Boolean = false
 )

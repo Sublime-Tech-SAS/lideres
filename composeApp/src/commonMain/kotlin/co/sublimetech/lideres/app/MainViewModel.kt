@@ -42,8 +42,10 @@ class MainViewModel : ViewModel(), KoinComponent {
             when (result) {
                 is Result.Error -> {
                     if (result.error == DataError.Network.UNAUTHORIZED) {
+                        state = state.copy(isValidating = false)
                         //HANDLE UNAUTHORIZED ERROR
                     } else {
+                        state = state.copy(isValidating = false)
                         //HANDLE OTHER ERRORS
                     }
                 }

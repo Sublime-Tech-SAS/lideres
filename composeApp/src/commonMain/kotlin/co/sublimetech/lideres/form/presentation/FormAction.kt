@@ -4,4 +4,5 @@ sealed interface FormAction {
     data object OnStatisticsClick : FormAction
     data object OnSaveFormClick : FormAction
     data object OnGetFormClick : FormAction
+    data object OnDismissError : FormAction
 }
