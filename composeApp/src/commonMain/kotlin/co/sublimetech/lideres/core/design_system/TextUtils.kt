@@ -27,14 +27,14 @@ fun formatToDate(buffer: TextFieldBuffer) {
 
     if (parts.isNotEmpty()) {
         val day = parts[0].toIntOrNull()
-        if (day != null && day in 1..31) {
+        if (day != null && day in 0..31) {
             validParts.add(parts[0])
         }
     }
 
     if (parts.size > 1) {
         val month = parts[1].toIntOrNull()
-        if (month != null && month in 1..12) {
+        if (month != null && month in 0..12) {
             validParts.add(parts[1])
         }
     }

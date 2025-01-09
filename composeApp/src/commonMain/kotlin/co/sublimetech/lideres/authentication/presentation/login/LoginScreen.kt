@@ -1,23 +1,30 @@
 package co.sublimetech.lideres.authentication.presentation.login
 
 import CustomDialog
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import co.sublimetech.lideres.core.design_system.CustomLoader
 import com.mmk.kmpauth.google.GoogleAuthCredentials
 import com.mmk.kmpauth.google.GoogleAuthProvider
 import com.mmk.kmpauth.google.GoogleButtonUiContainer
+import com.mmk.kmpauth.uihelper.google.GoogleButtonMode
 import com.mmk.kmpauth.uihelper.google.GoogleSignInButton
 import lideres.composeapp.generated.resources.Res
 import lideres.composeapp.generated.resources.authentication_error_title
+import lideres.composeapp.generated.resources.bolivar_logo_high_resolution
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -79,8 +86,14 @@ fun LoginScreen(
         }
 
         if (authReady) {
-            Column {
-                Spacer(modifier = Modifier.weight(0.7f))
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Spacer(modifier = Modifier.weight(0.2f))
+                Image(
+                    painter = painterResource(Res.drawable.bolivar_logo_high_resolution),
+                    modifier = Modifier.size(250.dp) ,
+                    contentDescription = null
+                )
+                Spacer(modifier = Modifier.weight(0.5f))
                 Row() {
                     Spacer(modifier = Modifier.weight(1f))
                     GoogleButtonUiContainer(
@@ -100,6 +113,7 @@ fun LoginScreen(
 
                         GoogleSignInButton(
                             text = "Iniciar sesión con Google",
+                            mode = GoogleButtonMode.Dark,
                             onClick = { this.onClick() }
                         )
 

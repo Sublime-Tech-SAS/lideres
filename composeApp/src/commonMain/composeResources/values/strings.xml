@@ -99,6 +99,10 @@ con usted. Favor diligenciar los siguientes campos*</string>
 
 
     <!-- BLOCK 5 APPLICANT PERSONAL DATA 2 -->
+    <string name="sexTitle">Sexo</string>
+    <string name="genderTitle">Género</string>
+    <string name="sexual_orientationTitle">Orientación Sexual</string>
+    <string name="ageTitle">Etario</string>
     <string name="sex">26. Sexo</string>
     <string name="gender">27. Género:</string>
     <string name="men">Hombre</string>
@@ -118,6 +122,7 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="adult">Adulto (De 28 a 59 Años)</string>
     <string name="elderly">Adulto Mayor (Desde 60 años)</string>
     <string name="different_identifying_trait">30. Otro Factor Diferencial:</string>
+    <string name="different_identifying_trait_title">Otro Factor Diferencial</string>
     <string name="mother">Madre Cabeza de Familia</string>
     <string name="father">Padre Cabeza de Familia</string>
     <string name="caretaker">Cuidador</string>
@@ -129,6 +134,7 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="28_59_range">(De 28 a 59 Años)</string>
     <string name="60_plus_range">(Desde 60 años)</string>
     <string name="disability_type_title">31. ¿Posee algún tipo de discapacidad?</string>
+    <string name="disability_type_title_2">Tipo de discapacidad</string>
     <string name="disability_type_subtitle">Si la respuesta fue afirmativa, seleccione el tipo de discapacidad que presenta</string>
     <string name="physical">Física</string>
     <string name="hearing">Auditiva</string>
@@ -163,6 +169,7 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="victims">Víctimas</string>
     <string name="human_rights_watch">Defensora de Derechos Humanos</string>
     <string name="other">Otra</string>
+    <string name="organization_membership">Afiliación a Organizaciones</string>
     <string name="organization_name">33a. En caso de pertenecer a una organización, indique el nombre de la organización</string>
     <string name="organization_legal_representative">33b. ¿La organización cuenta con Personería Jurídica?</string>
     <string name="organization_legal_representative_id_number">Si la respuesta fue afirmativa, escriba el número de identificación de la Personería Jurídica</string>
@@ -188,6 +195,7 @@ con usted. Favor diligenciar los siguientes campos*</string>
     <string name="family_member_homicide">Homicidio de Familiares</string>
     <string name="extortion">Extorsión</string>
     <string name="recruitment">Reclutamiento ilegal</string>
+    <string name="threat_means_short">Situación de Riesgo o Amenaza</string>
     <string name="threat_means">37. Medio por el cual se presentó la Situación de Riesgo o Amenaza</string>
     <string name="by_phone">Telefónica</string>
     <string name="verbal">Verbal</string>

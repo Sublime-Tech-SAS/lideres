@@ -85,6 +85,7 @@ kotlin {
 
             implementation(libs.sain)
 
+            implementation(libs.compose.material.dialogs.datetime)
 
             implementation(compose.materialIconsExtended)
 
